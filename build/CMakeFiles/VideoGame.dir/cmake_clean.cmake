@@ -1,0 +1,35 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/VideoGame.dir/src/DrawSystem.cpp.obj"
+  "CMakeFiles/VideoGame.dir/src/Entity.cc.obj"
+  "CMakeFiles/VideoGame.dir/src/Event.cc.obj"
+  "CMakeFiles/VideoGame.dir/src/G_MainMenu.cpp.obj"
+  "CMakeFiles/VideoGame.dir/src/GuiSystem.cpp.obj"
+  "CMakeFiles/VideoGame.dir/src/InputHandler.cpp.obj"
+  "CMakeFiles/VideoGame.dir/src/InputSystem.cpp.obj"
+  "CMakeFiles/VideoGame.dir/src/Locator.cpp.obj"
+  "CMakeFiles/VideoGame.dir/src/MotionSystem.cpp.obj"
+  "CMakeFiles/VideoGame.dir/src/Pool.cc.obj"
+  "CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj"
+  "CMakeFiles/VideoGame.dir/src/Shader.cpp.obj"
+  "CMakeFiles/VideoGame.dir/src/StateMainMenu.cpp.obj"
+  "CMakeFiles/VideoGame.dir/src/System.cc.obj"
+  "CMakeFiles/VideoGame.dir/src/TextureBatch.cpp.obj"
+  "CMakeFiles/VideoGame.dir/src/Timer.cc.obj"
+  "CMakeFiles/VideoGame.dir/src/abstract_variable.cpp.obj"
+  "CMakeFiles/VideoGame.dir/src/game.cpp.obj"
+  "CMakeFiles/VideoGame.dir/src/linear_expression.cpp.obj"
+  "CMakeFiles/VideoGame.dir/src/loadShader.cpp.obj"
+  "CMakeFiles/VideoGame.dir/src/main.cpp.obj"
+  "CMakeFiles/VideoGame.dir/src/simplex_solver.cpp.obj"
+  "CMakeFiles/VideoGame.dir/src/symbolic_weight.cpp.obj"
+  "CMakeFiles/VideoGame.dir/src/tableau.cpp.obj"
+  "VideoGame.exe"
+  "VideoGame.exe.manifest"
+  "VideoGame.pdb"
+  "libVideoGame.dll.a"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/VideoGame.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

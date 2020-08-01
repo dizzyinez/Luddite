@@ -1,4 +1,4 @@
-# Install script for directory: R:/Dev/games/game
+# Install script for directory: R:/Dev/games/Luddite/Luddite
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -41,7 +41,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "C:/Program Files (x86)/VideoGame/bin" TYPE EXECUTABLE PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ FILES "R:/Dev/games/game/build/VideoGame.exe")
+file(INSTALL DESTINATION "C:/Program Files (x86)/VideoGame/bin" TYPE EXECUTABLE PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ FILES "R:/Dev/games/Luddite/Luddite/build/VideoGame.exe")
   if(EXISTS "$ENV{DESTDIR}/C:/Program Files (x86)/VideoGame/bin/VideoGame.exe" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/C:/Program Files (x86)/VideoGame/bin/VideoGame.exe")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -58,5 +58,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "R:/Dev/games/game/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "R:/Dev/games/Luddite/Luddite/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

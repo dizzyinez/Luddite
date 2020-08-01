@@ -7,18 +7,22 @@
 
 // #include "CheckGLError.hpp"
 
-#include "game.hpp"
-#include "States/StateMainMenu.hpp"
+#include "core/game.hpp"
+#include "events/events.hpp"
+#include "states/StateBase.hpp"
+#include "states/StateMainMenu.hpp"
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+
+
 using namespace glm;
 
 
 const int UPDATE_RATE = 500;
 const float SECONDS_PER_UPDATE = 1.0f / (float)UPDATE_RATE;
-Game *game = nullptr;
-int main()
+// std::unique_ptr<Game> *game = nullptr;
+int main(int argc, char *argv[])
 {
         glewExperimental = true;
         if (!glfwInit())
@@ -27,7 +31,7 @@ int main()
                 return 1;
         }
 
-        glfwWindowHint(GLFW_SAMPLES, 1); // 0x antialiasing
+        glfwWindowHint(GLFW_SAMPLES, 1); // no antialiasing
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
         glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // To make MacOS happy; should not be needed
@@ -56,27 +60,28 @@ int main()
         glClearColor(0.0f, 0.3f, 0.6f, 0.0f);
         glfwSwapInterval(0); //v-sync off
 
-        game = new Game();
+        std::unique_ptr<Game> game(new Game());
         if (game->Init(window))
         {
+                game->pushState(new StateBase());
                 game->pushState(new StateMainMenu());
                 double deltaTime;
-                // CheckGLError();
                 while (game->running && !glfwWindowShouldClose(window))           // TODO: FIXED UPDATES
                 {
-                        glClear(GL_COLOR_BUFFER_BIT);
-
+                        //TODO: cap delta time and send warning when over that cap
                         deltaTime = glfwGetTime();
                         if ( deltaTime > SECONDS_PER_UPDATE )
                         {
+                                glClear(GL_COLOR_BUFFER_BIT);
                                 // std::cout << deltaTime << " > " << SECONDS_PER_UPDATE << " FPS: " <<int(1.0f / deltaTime) << std::endl;
                                 glfwSetTime(0);
                                 game->HandleEvents();
                                 game->Update(deltaTime);
                                 game->Render(deltaTime);
                                 glfwSwapBuffers(window);
+                                Events::flush_all();
+                                glfwPollEvents();
                         }
-                        glfwPollEvents();
 
                 }
                 game->Clean();
@@ -84,7 +89,7 @@ int main()
         }
         else
         {
-                std::cout << "Failed to initialise the Game" << std::endl;
+                std::cout << "Failed to initialize the Game" << std::endl;
         }
         glfwTerminate();
         return 0;

@@ -1,55 +1,71 @@
-cmake_minimum_required (VERSION 3.16)
+cmake_minimum_required (VERSION 3.7)
 project (VideoGame)
 
 include_directories(include)
 
 
-SET(CMAKE_MODULE_LINKER_FLAGS "-m32 -Wl,--enable-stdcall-fixup ${CMAKE_SHARED_LINKER_FLAGS}")
+SET(CMAKE_MODULE_LINKER_FLAGS "-m32 -Wl,--disable-stdcall-fixup ${CMAKE_SHARED_LINKER_FLAGS}")
 
 if (NOT DEFINED GLFW_INCLUDE_DIR)
 	message(WARNING "GLFW_INCLUDE_DIR is not set! Example: Add -DGLFW_INCLUDE_DIR=C:\\GLFW\\include")
 else()
+	if (DEFINED CMAKEDEBUG)
 	message("GLFW_INCLUDE_DIR is set to ${GLFW_INCLUDE_DIR}")
+	endif()
 	include_directories(${GLFW_INCLUDE_DIR})
 endif()
 
 if (NOT DEFINED GLFW_LIB_DIR)
 	message(WARNING "GLFW_LIB_DIR is not set! Example: Add -DGLFW_LIB_DIR=C:\\GLFW\\include\\lib")
 else()
+	if (DEFINED CMAKEDEBUG)
 	message("GLFW_LIB_DIR is set to ${GLFW_LIB_DIR}")
+	endif()
 	SET(CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_PATH} ${GLFW_LIB_DIR})	
 endif()
+
+
 
 if (NOT DEFINED GLEW_INCLUDE_DIR)
 	message(WARNING "GLEW_INCLUDE_DIR is not set! Example: Add -DGLEW_INCLUDE_DIR=C:\\GLEW\\include")
 else()
+	if (DEFINED CMAKEDEBUG)
 	message("GLEW_INCLUDE_DIR is set to ${GLEW_INCLUDE_DIR}")
+	endif()
 	include_directories(${GLEW_INCLUDE_DIR})
-endif()
-
-if (NOT DEFINED GLM_INCLUDE_DIR)
-	message(WARNING "GLM_INCLUDE_DIR is not set! Example: Add -DGLM_INCLUDE_DIR=C:\\GLEW\\include")
-else()
-	message("GLM_INCLUDE_DIR is set to ${GLM_INCLUDE_DIR}")
-	include_directories(${GLM_INCLUDE_DIR})
 endif()
 
 if (NOT DEFINED GLEW_LIB_DIR)
 	message(WARNING "GLEW_LIB_DIR is not set! Example: Add -DGLEW_LIB_DIR=C:\\GLEW\\include\\lib")
 else()
+	if (DEFINED CMAKEDEBUG)
 	message("GLEW_LIB_DIR is set to ${GLEW_LIB_DIR}")
+	endif()
 	SET(CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_PATH} ${GLEW_LIB_DIR})	
 endif()
 
 
+
+if (NOT DEFINED GLM_INCLUDE_DIR)
+	message(WARNING "GLM_INCLUDE_DIR is not set! Example: Add -DGLM_INCLUDE_DIR=C:\\GLEW\\include")
+else()
+	if (DEFINED CMAKEDEBUG)
+	message("GLM_INCLUDE_DIR is set to ${GLM_INCLUDE_DIR}")
+	endif()
+	include_directories(${GLM_INCLUDE_DIR})
+endif()
+
+
+
 IF("${CMAKE_SYSTEM}" MATCHES "Linux" OR "${CMAKE_SYSTEM}" MATCHES "FreeBSD")
-	SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -std=c++11 -z defs")
-	SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -std=c++11 -Wall -z defs")
+	SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -std=c++17 -z defs")
+	SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -std=c++17 -Wall -z defs")
 ELSEIF("${CMAKE_SYSTEM}" MATCHES "Windows")
-	SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}")
-	SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall")
+	SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -std=c++17")
+	SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -std=c++17 -Wall")
 ENDIF()
 
+set(CMAKE_CXX_STANDARD 17)
 set(PROJECT_VERSION "0.0.1")
 
 file(GLOB_RECURSE SRC_FILES "src/*.c" "src/*.cc" "src/*.cpp")
@@ -66,7 +82,9 @@ macro(my_find_library)
     if (NOT ${ARGV0})
         message(FATAL_ERROR "-- could not find library ${ARGV1}")
     endif(NOT ${ARGV0})
+	if (DEFINED CMAKEDEBUG)
     message("-- Library ${ARGV1} found as ${${ARGV0}}")   
+	endif()
 endmacro()
 
 my_find_library(glew glew32)

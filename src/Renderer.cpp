@@ -7,24 +7,10 @@
 #include <iostream>
 #include "CheckGLError.hpp"
 
-
-
-
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb/stb_image.h"
 #include "rendering/loadShader.hpp"
 
-struct Vertexd
-{
-        float position[3];
-        float texCoords[2];
-};
-
-
-Renderer::Renderer()
-{
-
-}
 void Renderer::Init()
 {
 
@@ -45,7 +31,7 @@ void Renderer::Init()
         stbi_image_free(data);
 
 
-        spriteBatch = new TextureBatch();
+        spriteBatch = std::make_unique<TextureBatch>();
         spriteBatch->Init();
         spriteBatch->BeginBatch();
 

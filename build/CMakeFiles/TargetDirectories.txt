@@ -1,7 +1,7 @@
-R:/Dev/games/game/build/CMakeFiles/list_install_components.dir
-R:/Dev/games/game/build/CMakeFiles/VideoGame.dir
-R:/Dev/games/game/build/CMakeFiles/install/local.dir
-R:/Dev/games/game/build/CMakeFiles/install.dir
-R:/Dev/games/game/build/CMakeFiles/edit_cache.dir
-R:/Dev/games/game/build/CMakeFiles/rebuild_cache.dir
-R:/Dev/games/game/build/CMakeFiles/install/strip.dir
+R:/Dev/games/Luddite/Luddite/build/CMakeFiles/list_install_components.dir
+R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir
+R:/Dev/games/Luddite/Luddite/build/CMakeFiles/install/local.dir
+R:/Dev/games/Luddite/Luddite/build/CMakeFiles/install.dir
+R:/Dev/games/Luddite/Luddite/build/CMakeFiles/edit_cache.dir
+R:/Dev/games/Luddite/Luddite/build/CMakeFiles/rebuild_cache.dir
+R:/Dev/games/Luddite/Luddite/build/CMakeFiles/install/strip.dir

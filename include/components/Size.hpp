@@ -1,14 +1,14 @@
 #ifndef Size_hpp
 #define Size_hpp
-#include "entityx/entityx.h"
 #include <glm/vec2.hpp>
 
-struct Size : entityx::Component<Size>
+struct C_Size
 {
-        glm::vec2 size;
-        Size(float x = 0, float y = 0) : size(x,y){
+        glm::vec2 size{0.0f, 0.0f};
+        C_Size() = default;
+        C_Size(float x, float y) : size(x,y){
         }
-        Size(glm::vec2 s) : size(s){
+        C_Size(glm::vec2 &s) : size(s){
         }
 
         float getX()
@@ -31,7 +31,7 @@ struct Size : entityx::Component<Size>
                 size.y = h;
         }
 
-        //make add functions
+        operator const glm::vec2& () {return size;}
 };
 
 #endif

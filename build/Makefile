@@ -47,10 +47,10 @@ RM = R:\Dev\applications\cmake-3.16.3-win64-x64\bin\cmake.exe -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = R:\Dev\games\game
+CMAKE_SOURCE_DIR = R:\Dev\games\Luddite\Luddite
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = R:\Dev\games\game\build
+CMAKE_BINARY_DIR = R:\Dev\games\Luddite\Luddite\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -125,9 +125,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start R:\Dev\games\game\build\CMakeFiles R:\Dev\games\game\build\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start R:\Dev\games\Luddite\Luddite\build\CMakeFiles R:\Dev\games\Luddite\Luddite\build\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start R:\Dev\games\game\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start R:\Dev\games\Luddite\Luddite\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -168,194 +168,32 @@ VideoGame/fast:
 	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/build
 .PHONY : VideoGame/fast
 
-src/DrawSystem.obj: src/DrawSystem.cpp.obj
+src/Events.obj: src/Events.cpp.obj
 
-.PHONY : src/DrawSystem.obj
-
-# target to build an object file
-src/DrawSystem.cpp.obj:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/DrawSystem.cpp.obj
-.PHONY : src/DrawSystem.cpp.obj
-
-src/DrawSystem.i: src/DrawSystem.cpp.i
-
-.PHONY : src/DrawSystem.i
-
-# target to preprocess a source file
-src/DrawSystem.cpp.i:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/DrawSystem.cpp.i
-.PHONY : src/DrawSystem.cpp.i
-
-src/DrawSystem.s: src/DrawSystem.cpp.s
-
-.PHONY : src/DrawSystem.s
-
-# target to generate assembly for a file
-src/DrawSystem.cpp.s:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/DrawSystem.cpp.s
-.PHONY : src/DrawSystem.cpp.s
-
-src/Entity.obj: src/Entity.cc.obj
-
-.PHONY : src/Entity.obj
+.PHONY : src/Events.obj
 
 # target to build an object file
-src/Entity.cc.obj:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Entity.cc.obj
-.PHONY : src/Entity.cc.obj
+src/Events.cpp.obj:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Events.cpp.obj
+.PHONY : src/Events.cpp.obj
 
-src/Entity.i: src/Entity.cc.i
+src/Events.i: src/Events.cpp.i
 
-.PHONY : src/Entity.i
-
-# target to preprocess a source file
-src/Entity.cc.i:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Entity.cc.i
-.PHONY : src/Entity.cc.i
-
-src/Entity.s: src/Entity.cc.s
-
-.PHONY : src/Entity.s
-
-# target to generate assembly for a file
-src/Entity.cc.s:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Entity.cc.s
-.PHONY : src/Entity.cc.s
-
-src/Event.obj: src/Event.cc.obj
-
-.PHONY : src/Event.obj
-
-# target to build an object file
-src/Event.cc.obj:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Event.cc.obj
-.PHONY : src/Event.cc.obj
-
-src/Event.i: src/Event.cc.i
-
-.PHONY : src/Event.i
+.PHONY : src/Events.i
 
 # target to preprocess a source file
-src/Event.cc.i:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Event.cc.i
-.PHONY : src/Event.cc.i
+src/Events.cpp.i:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Events.cpp.i
+.PHONY : src/Events.cpp.i
 
-src/Event.s: src/Event.cc.s
+src/Events.s: src/Events.cpp.s
 
-.PHONY : src/Event.s
-
-# target to generate assembly for a file
-src/Event.cc.s:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Event.cc.s
-.PHONY : src/Event.cc.s
-
-src/G_MainMenu.obj: src/G_MainMenu.cpp.obj
-
-.PHONY : src/G_MainMenu.obj
-
-# target to build an object file
-src/G_MainMenu.cpp.obj:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/G_MainMenu.cpp.obj
-.PHONY : src/G_MainMenu.cpp.obj
-
-src/G_MainMenu.i: src/G_MainMenu.cpp.i
-
-.PHONY : src/G_MainMenu.i
-
-# target to preprocess a source file
-src/G_MainMenu.cpp.i:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/G_MainMenu.cpp.i
-.PHONY : src/G_MainMenu.cpp.i
-
-src/G_MainMenu.s: src/G_MainMenu.cpp.s
-
-.PHONY : src/G_MainMenu.s
+.PHONY : src/Events.s
 
 # target to generate assembly for a file
-src/G_MainMenu.cpp.s:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/G_MainMenu.cpp.s
-.PHONY : src/G_MainMenu.cpp.s
-
-src/GuiSystem.obj: src/GuiSystem.cpp.obj
-
-.PHONY : src/GuiSystem.obj
-
-# target to build an object file
-src/GuiSystem.cpp.obj:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/GuiSystem.cpp.obj
-.PHONY : src/GuiSystem.cpp.obj
-
-src/GuiSystem.i: src/GuiSystem.cpp.i
-
-.PHONY : src/GuiSystem.i
-
-# target to preprocess a source file
-src/GuiSystem.cpp.i:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/GuiSystem.cpp.i
-.PHONY : src/GuiSystem.cpp.i
-
-src/GuiSystem.s: src/GuiSystem.cpp.s
-
-.PHONY : src/GuiSystem.s
-
-# target to generate assembly for a file
-src/GuiSystem.cpp.s:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/GuiSystem.cpp.s
-.PHONY : src/GuiSystem.cpp.s
-
-src/InputHandler.obj: src/InputHandler.cpp.obj
-
-.PHONY : src/InputHandler.obj
-
-# target to build an object file
-src/InputHandler.cpp.obj:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/InputHandler.cpp.obj
-.PHONY : src/InputHandler.cpp.obj
-
-src/InputHandler.i: src/InputHandler.cpp.i
-
-.PHONY : src/InputHandler.i
-
-# target to preprocess a source file
-src/InputHandler.cpp.i:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/InputHandler.cpp.i
-.PHONY : src/InputHandler.cpp.i
-
-src/InputHandler.s: src/InputHandler.cpp.s
-
-.PHONY : src/InputHandler.s
-
-# target to generate assembly for a file
-src/InputHandler.cpp.s:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/InputHandler.cpp.s
-.PHONY : src/InputHandler.cpp.s
-
-src/InputSystem.obj: src/InputSystem.cpp.obj
-
-.PHONY : src/InputSystem.obj
-
-# target to build an object file
-src/InputSystem.cpp.obj:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/InputSystem.cpp.obj
-.PHONY : src/InputSystem.cpp.obj
-
-src/InputSystem.i: src/InputSystem.cpp.i
-
-.PHONY : src/InputSystem.i
-
-# target to preprocess a source file
-src/InputSystem.cpp.i:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/InputSystem.cpp.i
-.PHONY : src/InputSystem.cpp.i
-
-src/InputSystem.s: src/InputSystem.cpp.s
-
-.PHONY : src/InputSystem.s
-
-# target to generate assembly for a file
-src/InputSystem.cpp.s:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/InputSystem.cpp.s
-.PHONY : src/InputSystem.cpp.s
+src/Events.cpp.s:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Events.cpp.s
+.PHONY : src/Events.cpp.s
 
 src/Locator.obj: src/Locator.cpp.obj
 
@@ -384,60 +222,6 @@ src/Locator.cpp.s:
 	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Locator.cpp.s
 .PHONY : src/Locator.cpp.s
 
-src/MotionSystem.obj: src/MotionSystem.cpp.obj
-
-.PHONY : src/MotionSystem.obj
-
-# target to build an object file
-src/MotionSystem.cpp.obj:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/MotionSystem.cpp.obj
-.PHONY : src/MotionSystem.cpp.obj
-
-src/MotionSystem.i: src/MotionSystem.cpp.i
-
-.PHONY : src/MotionSystem.i
-
-# target to preprocess a source file
-src/MotionSystem.cpp.i:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/MotionSystem.cpp.i
-.PHONY : src/MotionSystem.cpp.i
-
-src/MotionSystem.s: src/MotionSystem.cpp.s
-
-.PHONY : src/MotionSystem.s
-
-# target to generate assembly for a file
-src/MotionSystem.cpp.s:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/MotionSystem.cpp.s
-.PHONY : src/MotionSystem.cpp.s
-
-src/Pool.obj: src/Pool.cc.obj
-
-.PHONY : src/Pool.obj
-
-# target to build an object file
-src/Pool.cc.obj:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Pool.cc.obj
-.PHONY : src/Pool.cc.obj
-
-src/Pool.i: src/Pool.cc.i
-
-.PHONY : src/Pool.i
-
-# target to preprocess a source file
-src/Pool.cc.i:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Pool.cc.i
-.PHONY : src/Pool.cc.i
-
-src/Pool.s: src/Pool.cc.s
-
-.PHONY : src/Pool.s
-
-# target to generate assembly for a file
-src/Pool.cc.s:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Pool.cc.s
-.PHONY : src/Pool.cc.s
-
 src/Renderer.obj: src/Renderer.cpp.obj
 
 .PHONY : src/Renderer.obj
@@ -465,32 +249,86 @@ src/Renderer.cpp.s:
 	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Renderer.cpp.s
 .PHONY : src/Renderer.cpp.s
 
-src/Shader.obj: src/Shader.cpp.obj
+src/S_Draw.obj: src/S_Draw.cpp.obj
 
-.PHONY : src/Shader.obj
+.PHONY : src/S_Draw.obj
 
 # target to build an object file
-src/Shader.cpp.obj:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Shader.cpp.obj
-.PHONY : src/Shader.cpp.obj
+src/S_Draw.cpp.obj:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj
+.PHONY : src/S_Draw.cpp.obj
 
-src/Shader.i: src/Shader.cpp.i
+src/S_Draw.i: src/S_Draw.cpp.i
 
-.PHONY : src/Shader.i
+.PHONY : src/S_Draw.i
 
 # target to preprocess a source file
-src/Shader.cpp.i:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Shader.cpp.i
-.PHONY : src/Shader.cpp.i
+src/S_Draw.cpp.i:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Draw.cpp.i
+.PHONY : src/S_Draw.cpp.i
 
-src/Shader.s: src/Shader.cpp.s
+src/S_Draw.s: src/S_Draw.cpp.s
 
-.PHONY : src/Shader.s
+.PHONY : src/S_Draw.s
 
 # target to generate assembly for a file
-src/Shader.cpp.s:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Shader.cpp.s
-.PHONY : src/Shader.cpp.s
+src/S_Draw.cpp.s:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Draw.cpp.s
+.PHONY : src/S_Draw.cpp.s
+
+src/S_Motion.obj: src/S_Motion.cpp.obj
+
+.PHONY : src/S_Motion.obj
+
+# target to build an object file
+src/S_Motion.cpp.obj:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Motion.cpp.obj
+.PHONY : src/S_Motion.cpp.obj
+
+src/S_Motion.i: src/S_Motion.cpp.i
+
+.PHONY : src/S_Motion.i
+
+# target to preprocess a source file
+src/S_Motion.cpp.i:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Motion.cpp.i
+.PHONY : src/S_Motion.cpp.i
+
+src/S_Motion.s: src/S_Motion.cpp.s
+
+.PHONY : src/S_Motion.s
+
+# target to generate assembly for a file
+src/S_Motion.cpp.s:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Motion.cpp.s
+.PHONY : src/S_Motion.cpp.s
+
+src/StateBase.obj: src/StateBase.cpp.obj
+
+.PHONY : src/StateBase.obj
+
+# target to build an object file
+src/StateBase.cpp.obj:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/StateBase.cpp.obj
+.PHONY : src/StateBase.cpp.obj
+
+src/StateBase.i: src/StateBase.cpp.i
+
+.PHONY : src/StateBase.i
+
+# target to preprocess a source file
+src/StateBase.cpp.i:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/StateBase.cpp.i
+.PHONY : src/StateBase.cpp.i
+
+src/StateBase.s: src/StateBase.cpp.s
+
+.PHONY : src/StateBase.s
+
+# target to generate assembly for a file
+src/StateBase.cpp.s:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/StateBase.cpp.s
+.PHONY : src/StateBase.cpp.s
 
 src/StateMainMenu.obj: src/StateMainMenu.cpp.obj
 
@@ -519,32 +357,32 @@ src/StateMainMenu.cpp.s:
 	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/StateMainMenu.cpp.s
 .PHONY : src/StateMainMenu.cpp.s
 
-src/System.obj: src/System.cc.obj
+src/System.obj: src/System.cpp.obj
 
 .PHONY : src/System.obj
 
 # target to build an object file
-src/System.cc.obj:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/System.cc.obj
-.PHONY : src/System.cc.obj
+src/System.cpp.obj:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/System.cpp.obj
+.PHONY : src/System.cpp.obj
 
-src/System.i: src/System.cc.i
+src/System.i: src/System.cpp.i
 
 .PHONY : src/System.i
 
 # target to preprocess a source file
-src/System.cc.i:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/System.cc.i
-.PHONY : src/System.cc.i
+src/System.cpp.i:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/System.cpp.i
+.PHONY : src/System.cpp.i
 
-src/System.s: src/System.cc.s
+src/System.s: src/System.cpp.s
 
 .PHONY : src/System.s
 
 # target to generate assembly for a file
-src/System.cc.s:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/System.cc.s
-.PHONY : src/System.cc.s
+src/System.cpp.s:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/System.cpp.s
+.PHONY : src/System.cpp.s
 
 src/TextureBatch.obj: src/TextureBatch.cpp.obj
 
@@ -573,60 +411,6 @@ src/TextureBatch.cpp.s:
 	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/TextureBatch.cpp.s
 .PHONY : src/TextureBatch.cpp.s
 
-src/Timer.obj: src/Timer.cc.obj
-
-.PHONY : src/Timer.obj
-
-# target to build an object file
-src/Timer.cc.obj:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Timer.cc.obj
-.PHONY : src/Timer.cc.obj
-
-src/Timer.i: src/Timer.cc.i
-
-.PHONY : src/Timer.i
-
-# target to preprocess a source file
-src/Timer.cc.i:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Timer.cc.i
-.PHONY : src/Timer.cc.i
-
-src/Timer.s: src/Timer.cc.s
-
-.PHONY : src/Timer.s
-
-# target to generate assembly for a file
-src/Timer.cc.s:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Timer.cc.s
-.PHONY : src/Timer.cc.s
-
-src/abstract_variable.obj: src/abstract_variable.cpp.obj
-
-.PHONY : src/abstract_variable.obj
-
-# target to build an object file
-src/abstract_variable.cpp.obj:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/abstract_variable.cpp.obj
-.PHONY : src/abstract_variable.cpp.obj
-
-src/abstract_variable.i: src/abstract_variable.cpp.i
-
-.PHONY : src/abstract_variable.i
-
-# target to preprocess a source file
-src/abstract_variable.cpp.i:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/abstract_variable.cpp.i
-.PHONY : src/abstract_variable.cpp.i
-
-src/abstract_variable.s: src/abstract_variable.cpp.s
-
-.PHONY : src/abstract_variable.s
-
-# target to generate assembly for a file
-src/abstract_variable.cpp.s:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/abstract_variable.cpp.s
-.PHONY : src/abstract_variable.cpp.s
-
 src/game.obj: src/game.cpp.obj
 
 .PHONY : src/game.obj
@@ -653,33 +437,6 @@ src/game.s: src/game.cpp.s
 src/game.cpp.s:
 	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/game.cpp.s
 .PHONY : src/game.cpp.s
-
-src/linear_expression.obj: src/linear_expression.cpp.obj
-
-.PHONY : src/linear_expression.obj
-
-# target to build an object file
-src/linear_expression.cpp.obj:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/linear_expression.cpp.obj
-.PHONY : src/linear_expression.cpp.obj
-
-src/linear_expression.i: src/linear_expression.cpp.i
-
-.PHONY : src/linear_expression.i
-
-# target to preprocess a source file
-src/linear_expression.cpp.i:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/linear_expression.cpp.i
-.PHONY : src/linear_expression.cpp.i
-
-src/linear_expression.s: src/linear_expression.cpp.s
-
-.PHONY : src/linear_expression.s
-
-# target to generate assembly for a file
-src/linear_expression.cpp.s:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/linear_expression.cpp.s
-.PHONY : src/linear_expression.cpp.s
 
 src/loadShader.obj: src/loadShader.cpp.obj
 
@@ -735,86 +492,167 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/simplex_solver.obj: src/simplex_solver.cpp.obj
+src/rhea/abstract_variable.obj: src/rhea/abstract_variable.cpp.obj
 
-.PHONY : src/simplex_solver.obj
-
-# target to build an object file
-src/simplex_solver.cpp.obj:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/simplex_solver.cpp.obj
-.PHONY : src/simplex_solver.cpp.obj
-
-src/simplex_solver.i: src/simplex_solver.cpp.i
-
-.PHONY : src/simplex_solver.i
-
-# target to preprocess a source file
-src/simplex_solver.cpp.i:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/simplex_solver.cpp.i
-.PHONY : src/simplex_solver.cpp.i
-
-src/simplex_solver.s: src/simplex_solver.cpp.s
-
-.PHONY : src/simplex_solver.s
-
-# target to generate assembly for a file
-src/simplex_solver.cpp.s:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/simplex_solver.cpp.s
-.PHONY : src/simplex_solver.cpp.s
-
-src/symbolic_weight.obj: src/symbolic_weight.cpp.obj
-
-.PHONY : src/symbolic_weight.obj
+.PHONY : src/rhea/abstract_variable.obj
 
 # target to build an object file
-src/symbolic_weight.cpp.obj:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/symbolic_weight.cpp.obj
-.PHONY : src/symbolic_weight.cpp.obj
+src/rhea/abstract_variable.cpp.obj:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/rhea/abstract_variable.cpp.obj
+.PHONY : src/rhea/abstract_variable.cpp.obj
 
-src/symbolic_weight.i: src/symbolic_weight.cpp.i
+src/rhea/abstract_variable.i: src/rhea/abstract_variable.cpp.i
 
-.PHONY : src/symbolic_weight.i
+.PHONY : src/rhea/abstract_variable.i
 
 # target to preprocess a source file
-src/symbolic_weight.cpp.i:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/symbolic_weight.cpp.i
-.PHONY : src/symbolic_weight.cpp.i
+src/rhea/abstract_variable.cpp.i:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/rhea/abstract_variable.cpp.i
+.PHONY : src/rhea/abstract_variable.cpp.i
 
-src/symbolic_weight.s: src/symbolic_weight.cpp.s
+src/rhea/abstract_variable.s: src/rhea/abstract_variable.cpp.s
 
-.PHONY : src/symbolic_weight.s
+.PHONY : src/rhea/abstract_variable.s
 
 # target to generate assembly for a file
-src/symbolic_weight.cpp.s:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/symbolic_weight.cpp.s
-.PHONY : src/symbolic_weight.cpp.s
+src/rhea/abstract_variable.cpp.s:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/rhea/abstract_variable.cpp.s
+.PHONY : src/rhea/abstract_variable.cpp.s
 
-src/tableau.obj: src/tableau.cpp.obj
+src/rhea/linear_expression.obj: src/rhea/linear_expression.cpp.obj
 
-.PHONY : src/tableau.obj
+.PHONY : src/rhea/linear_expression.obj
 
 # target to build an object file
-src/tableau.cpp.obj:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/tableau.cpp.obj
-.PHONY : src/tableau.cpp.obj
+src/rhea/linear_expression.cpp.obj:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/rhea/linear_expression.cpp.obj
+.PHONY : src/rhea/linear_expression.cpp.obj
 
-src/tableau.i: src/tableau.cpp.i
+src/rhea/linear_expression.i: src/rhea/linear_expression.cpp.i
 
-.PHONY : src/tableau.i
+.PHONY : src/rhea/linear_expression.i
 
 # target to preprocess a source file
-src/tableau.cpp.i:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/tableau.cpp.i
-.PHONY : src/tableau.cpp.i
+src/rhea/linear_expression.cpp.i:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/rhea/linear_expression.cpp.i
+.PHONY : src/rhea/linear_expression.cpp.i
 
-src/tableau.s: src/tableau.cpp.s
+src/rhea/linear_expression.s: src/rhea/linear_expression.cpp.s
 
-.PHONY : src/tableau.s
+.PHONY : src/rhea/linear_expression.s
 
 # target to generate assembly for a file
-src/tableau.cpp.s:
-	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/tableau.cpp.s
-.PHONY : src/tableau.cpp.s
+src/rhea/linear_expression.cpp.s:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/rhea/linear_expression.cpp.s
+.PHONY : src/rhea/linear_expression.cpp.s
+
+src/rhea/simplex_solver.obj: src/rhea/simplex_solver.cpp.obj
+
+.PHONY : src/rhea/simplex_solver.obj
+
+# target to build an object file
+src/rhea/simplex_solver.cpp.obj:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/rhea/simplex_solver.cpp.obj
+.PHONY : src/rhea/simplex_solver.cpp.obj
+
+src/rhea/simplex_solver.i: src/rhea/simplex_solver.cpp.i
+
+.PHONY : src/rhea/simplex_solver.i
+
+# target to preprocess a source file
+src/rhea/simplex_solver.cpp.i:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/rhea/simplex_solver.cpp.i
+.PHONY : src/rhea/simplex_solver.cpp.i
+
+src/rhea/simplex_solver.s: src/rhea/simplex_solver.cpp.s
+
+.PHONY : src/rhea/simplex_solver.s
+
+# target to generate assembly for a file
+src/rhea/simplex_solver.cpp.s:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/rhea/simplex_solver.cpp.s
+.PHONY : src/rhea/simplex_solver.cpp.s
+
+src/rhea/symbolic_weight.obj: src/rhea/symbolic_weight.cpp.obj
+
+.PHONY : src/rhea/symbolic_weight.obj
+
+# target to build an object file
+src/rhea/symbolic_weight.cpp.obj:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/rhea/symbolic_weight.cpp.obj
+.PHONY : src/rhea/symbolic_weight.cpp.obj
+
+src/rhea/symbolic_weight.i: src/rhea/symbolic_weight.cpp.i
+
+.PHONY : src/rhea/symbolic_weight.i
+
+# target to preprocess a source file
+src/rhea/symbolic_weight.cpp.i:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/rhea/symbolic_weight.cpp.i
+.PHONY : src/rhea/symbolic_weight.cpp.i
+
+src/rhea/symbolic_weight.s: src/rhea/symbolic_weight.cpp.s
+
+.PHONY : src/rhea/symbolic_weight.s
+
+# target to generate assembly for a file
+src/rhea/symbolic_weight.cpp.s:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/rhea/symbolic_weight.cpp.s
+.PHONY : src/rhea/symbolic_weight.cpp.s
+
+src/rhea/tableau.obj: src/rhea/tableau.cpp.obj
+
+.PHONY : src/rhea/tableau.obj
+
+# target to build an object file
+src/rhea/tableau.cpp.obj:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/rhea/tableau.cpp.obj
+.PHONY : src/rhea/tableau.cpp.obj
+
+src/rhea/tableau.i: src/rhea/tableau.cpp.i
+
+.PHONY : src/rhea/tableau.i
+
+# target to preprocess a source file
+src/rhea/tableau.cpp.i:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/rhea/tableau.cpp.i
+.PHONY : src/rhea/tableau.cpp.i
+
+src/rhea/tableau.s: src/rhea/tableau.cpp.s
+
+.PHONY : src/rhea/tableau.s
+
+# target to generate assembly for a file
+src/rhea/tableau.cpp.s:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/rhea/tableau.cpp.s
+.PHONY : src/rhea/tableau.cpp.s
+
+src/shader.obj: src/shader.cpp.obj
+
+.PHONY : src/shader.obj
+
+# target to build an object file
+src/shader.cpp.obj:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/shader.cpp.obj
+.PHONY : src/shader.cpp.obj
+
+src/shader.i: src/shader.cpp.i
+
+.PHONY : src/shader.i
+
+# target to preprocess a source file
+src/shader.cpp.i:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/shader.cpp.i
+.PHONY : src/shader.cpp.i
+
+src/shader.s: src/shader.cpp.s
+
+.PHONY : src/shader.s
+
+# target to generate assembly for a file
+src/shader.cpp.s:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/shader.cpp.s
+.PHONY : src/shader.cpp.s
 
 # Help Target
 help:
@@ -829,42 +667,24 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... install/strip
-	@echo ... src/DrawSystem.obj
-	@echo ... src/DrawSystem.i
-	@echo ... src/DrawSystem.s
-	@echo ... src/Entity.obj
-	@echo ... src/Entity.i
-	@echo ... src/Entity.s
-	@echo ... src/Event.obj
-	@echo ... src/Event.i
-	@echo ... src/Event.s
-	@echo ... src/G_MainMenu.obj
-	@echo ... src/G_MainMenu.i
-	@echo ... src/G_MainMenu.s
-	@echo ... src/GuiSystem.obj
-	@echo ... src/GuiSystem.i
-	@echo ... src/GuiSystem.s
-	@echo ... src/InputHandler.obj
-	@echo ... src/InputHandler.i
-	@echo ... src/InputHandler.s
-	@echo ... src/InputSystem.obj
-	@echo ... src/InputSystem.i
-	@echo ... src/InputSystem.s
+	@echo ... src/Events.obj
+	@echo ... src/Events.i
+	@echo ... src/Events.s
 	@echo ... src/Locator.obj
 	@echo ... src/Locator.i
 	@echo ... src/Locator.s
-	@echo ... src/MotionSystem.obj
-	@echo ... src/MotionSystem.i
-	@echo ... src/MotionSystem.s
-	@echo ... src/Pool.obj
-	@echo ... src/Pool.i
-	@echo ... src/Pool.s
 	@echo ... src/Renderer.obj
 	@echo ... src/Renderer.i
 	@echo ... src/Renderer.s
-	@echo ... src/Shader.obj
-	@echo ... src/Shader.i
-	@echo ... src/Shader.s
+	@echo ... src/S_Draw.obj
+	@echo ... src/S_Draw.i
+	@echo ... src/S_Draw.s
+	@echo ... src/S_Motion.obj
+	@echo ... src/S_Motion.i
+	@echo ... src/S_Motion.s
+	@echo ... src/StateBase.obj
+	@echo ... src/StateBase.i
+	@echo ... src/StateBase.s
 	@echo ... src/StateMainMenu.obj
 	@echo ... src/StateMainMenu.i
 	@echo ... src/StateMainMenu.s
@@ -874,33 +694,33 @@ help:
 	@echo ... src/TextureBatch.obj
 	@echo ... src/TextureBatch.i
 	@echo ... src/TextureBatch.s
-	@echo ... src/Timer.obj
-	@echo ... src/Timer.i
-	@echo ... src/Timer.s
-	@echo ... src/abstract_variable.obj
-	@echo ... src/abstract_variable.i
-	@echo ... src/abstract_variable.s
 	@echo ... src/game.obj
 	@echo ... src/game.i
 	@echo ... src/game.s
-	@echo ... src/linear_expression.obj
-	@echo ... src/linear_expression.i
-	@echo ... src/linear_expression.s
 	@echo ... src/loadShader.obj
 	@echo ... src/loadShader.i
 	@echo ... src/loadShader.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
-	@echo ... src/simplex_solver.obj
-	@echo ... src/simplex_solver.i
-	@echo ... src/simplex_solver.s
-	@echo ... src/symbolic_weight.obj
-	@echo ... src/symbolic_weight.i
-	@echo ... src/symbolic_weight.s
-	@echo ... src/tableau.obj
-	@echo ... src/tableau.i
-	@echo ... src/tableau.s
+	@echo ... src/rhea/abstract_variable.obj
+	@echo ... src/rhea/abstract_variable.i
+	@echo ... src/rhea/abstract_variable.s
+	@echo ... src/rhea/linear_expression.obj
+	@echo ... src/rhea/linear_expression.i
+	@echo ... src/rhea/linear_expression.s
+	@echo ... src/rhea/simplex_solver.obj
+	@echo ... src/rhea/simplex_solver.i
+	@echo ... src/rhea/simplex_solver.s
+	@echo ... src/rhea/symbolic_weight.obj
+	@echo ... src/rhea/symbolic_weight.i
+	@echo ... src/rhea/symbolic_weight.s
+	@echo ... src/rhea/tableau.obj
+	@echo ... src/rhea/tableau.i
+	@echo ... src/rhea/tableau.s
+	@echo ... src/shader.obj
+	@echo ... src/shader.i
+	@echo ... src/shader.s
 .PHONY : help
 
 

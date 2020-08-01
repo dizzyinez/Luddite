@@ -1,7 +1,9 @@
-#include "States/State.hpp"
-#include "game.hpp"
+#include "states/State.hpp"
+#include "core/game.hpp"
 //#include "TextureAllocator.hpp"
+#include "rendering/Renderer.hpp"
 #include "Locator.hpp"
+#include "core/InputHandling.hpp"
 
 Game::Game() {
 }
@@ -21,11 +23,14 @@ bool Game::Init(GLFWwindow* w)
 {
         window = w;
         running = true;
+
+        Renderer::Init();
         // Locator::provideRenderer(renderer);
         Locator::provideWindow(window);
         Locator::Initialize();
         // Locator::getTexureAllocator()->setWindowIcon("../assets/textures/test.png");
         Locator::provideGame(this);
+        Input::Initialize(w);
         return true;
 }
 
@@ -68,7 +73,7 @@ void Game::Render(float deltaTime)
         }
         // glfwSwapBuffers(window);
         // glfwPollEvents();
-//render the current state
+        //render the current state
         // SDL_RenderPresent(renderer);
 }
 
@@ -80,7 +85,6 @@ void Game::Clean ()
 void Game::pushState(State* state)
 {
         states.push(state);
-        state->provideECS(&this->events, &this->entities, &this->systems);
         state->init();
 }
 

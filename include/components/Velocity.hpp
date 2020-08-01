@@ -1,16 +1,15 @@
 #ifndef Velocity_hpp
 #define Velocity_hpp
 
-#include "entityx/entityx.h"
-#include "vec2.hpp"
+#include <glm/vec3.hpp>
 
-struct Velocity : entityx::Component<Velocity>
+struct C_Velocity
 {
-        glm::vec3 velocity;
-        //TODO: vec4 rotation
-        Velocity(float x = 0, float y = 0) : velocity(x,y,0.0f){
+        glm::vec3 velocity{0.0f, 0.0f, 0.0f};
+        C_Velocity() = default;
+        C_Velocity(float x, float y) : velocity(x,y,0.0f){
         }
-        Velocity(glm::vec3 vel) : velocity(vel){
+        C_Velocity(glm::vec3 &vel) : velocity(vel){
         }
 
         float getX()
@@ -32,6 +31,7 @@ struct Velocity : entityx::Component<Velocity>
         {
                 velocity.y = y;
         }
+        operator const glm::vec3&() {return velocity;}
 
         //make add functions
 };

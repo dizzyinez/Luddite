@@ -2,9 +2,9 @@
 #define Locator_hpp
 
 #include "ResourceAllocator.hpp"
-#include "rendering/Renderer.hpp"
-#include "InputHandler.hpp"
-#include "game.hpp"
+// #include "rendering/Renderer.hpp"
+// #include "InputHandler.hpp"
+#include "core/game.hpp"
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -14,14 +14,14 @@ class Locator
 {
 public:
 static void Initialize() {
-        R.Init();
-        IH.Init();
+        // R.Init();
+        // IH.Init();
 }
 
 static void provideWindow(GLFWwindow* w)
 {
         window = w;
-        IH.provideWindow(w);
+        // IH.provideWindow(w);
 }
 
 static void provideGame(Game* g)
@@ -29,15 +29,15 @@ static void provideGame(Game* g)
         game = g;
 }
 
-static Renderer* getRenderer()
-{
-        return &R;
-}
+// static Renderer* getRenderer()
+// {
+//         return &R;
+// }
 
-static InputHandler* getInputHandler()
-{
-        return &IH;
-}
+// static InputHandler* getInputHandler()
+// {
+//         return &IH;
+// }
 
 static GLFWwindow* getWindow()
 {
@@ -49,8 +49,8 @@ static Game* getGame()
         return game;
 }
 private:
-static Renderer R;
-static InputHandler IH;
+// static Renderer R;
+// static InputHandler IH;
 static GLFWwindow* window;
 static Game* game;
 // static TextureAllocator TA;

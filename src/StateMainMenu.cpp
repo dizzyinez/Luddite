@@ -1,67 +1,54 @@
-#include "States/StateMainMenu.hpp"
+#include "states/StateMainMenu.hpp"
 #include <iostream>
 
 #include "Locator.hpp"
 
-#include "systems/InputSystem.hpp"
-#include "systems/DrawSystem.hpp"
-#include "systems/GuiSystem.hpp"
-#include "systems/MotionSystem.hpp"
-//
-#include "components/Transform.hpp"
-#include "components/Size.hpp"
+#include "systems/Draw.hpp"
+#include "systems/Motion.hpp"
+
+#include "components/Position.hpp"
 #include "components/Velocity.hpp"
-#include "components/Player.hpp"
-// #include "components/Texture.hpp"
-#include "components/Drawable.hpp"
-#include "components/GUIElement.hpp"
-// #include "components/Child.hpp "
-// #include "components/Input_Velocity.hpp "
+#include "components/Size.hpp"
+#include "components/DrawLayer.hpp"
+#include "components/Gui.hpp"
 
-#include "rhea/simplex_solver.hpp"
+#include "events/Events.hpp"
 
-#include "gui/G_MainMenu.hpp"
+// #include "rhea/simplex_solver.hpp "
+// #include "gui/G_MainMenu.hpp "
+
 
 void StateMainMenu::init()
 {
-        systems->add<InputSystem>();
-        systems->add<MotionSystem>();
-        systems->add<GuiSystem>();
-        systems->add<GS_MainMenu>();
-        systems->add<DrawSystem>();
-        systems->configure();
-        // configure(this->events);
-        //
+        systems.add<S_Draw>();
+        systems.add<S_Motion>();
 
-        entityx::Entity gamer = entities->create();
-        gamer.assign<Transform>(-50.0f, -50.0f);
-        gamer.assign<Velocity>(0.0f,0.0f);
-        gamer.assign<Player>();
-        gamer.assign<Drawable>();
-        // gamer.assign<Input_Velocity>(6);
-        // gamer.assign<Texture>("../assets/textures/temp_player.png ");
+        auto entity = createEntity();
+        m_Registry.emplace<C_Position>(entity, 0.0f, 0.0f);
+        m_Registry.emplace<C_Velocity>(entity, 21.1f, 21.1f);
+        m_Registry.emplace<C_Size>(entity, 50.0f, 70.0f);
+        m_Registry.emplace<C_DrawLayer>(entity);
 
-        entityx::Entity box = entities->create();
-        box.assign<Transform>(0.0f, 0.0f);
-        box.assign<Size>(100.0f, 100.0f);
-        box.assign<Drawable>();
-        box.assign<GUIElement>();
-        box.assign<GC_MainMenu>();
+        auto gui = createEntity();
+        m_Registry.emplace<C_Position>(gui);
+        m_Registry.emplace<C_Size>(gui);
+        m_Registry.emplace<C_DrawLayer>(gui, DrawLayer::gui);
+        m_Registry.emplace<C_GUI>(gui);
 }
+
 void StateMainMenu::handleEvents()
 {
 
 }
 void StateMainMenu::update(float deltaTime)
 {
-
-        systems->update<InputSystem>(deltaTime);
-        systems->update<GuiSystem>(deltaTime);
-        systems->update<MotionSystem>(deltaTime);
+        systems.update<S_Draw>(deltaTime, m_Registry);
+        systems.update<S_Motion>(deltaTime, m_Registry);
 }
+
 void StateMainMenu::render(float deltaTime)
 {
-        systems->update<DrawSystem>(deltaTime);
+
 }
 void StateMainMenu::clean()
 {

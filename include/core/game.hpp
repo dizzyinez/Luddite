@@ -3,12 +3,11 @@
 
 #include <iostream>
 #include <vector>
-#include <stack>
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
-class State;
+class Layer;
 
 class Game {
 public:
@@ -17,21 +16,16 @@ bool running;
 Game();
 ~Game();
 bool Init(GLFWwindow* w);
-void HandleEvents();
 void Update(float deltaTime);
 void Render(float deltaTime);
 void Clean();
 
-// states
-std::stack<State*> states;
-
-void pushState(State* state);
-void popState();
-void changeState(State* state);
-State* peekState();
+void PushLayer(Layer* Layer);
+void PopLayer(Layer* layer);
 
 GLFWwindow* window;
 private:
+std::vector<Layer*> Layers;
 };
 
 #endif

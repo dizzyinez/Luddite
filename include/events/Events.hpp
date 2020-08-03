@@ -17,8 +17,18 @@ public:
 
 template <typename T>
 struct Event : public BaseEvent {
+public:
+        void setHandled()
+        {
+                handled = true;
+        }
+        void setHandled(bool h)
+        {
+                handled = h;
+        }
 private:
         friend class Events;
+        bool handled = false;
         static EventID eventID() {
                 static EventID eventID = eventID_counter++; //gets a unique ID for each event struct that inherits Event<>
                 return eventID;
@@ -54,11 +64,39 @@ static void flush()
         t->clear();
 }
 
-template <typename T,typename Func>
-static void iterate(Func func)
+template <typename T, typename Func>
+static void iterate(Func func) //iterates every event that hasn't been handled yet
 {
         for (auto it : *get<T>())
-                func(std::static_pointer_cast<T>(it));
+        {
+                auto e = std::static_pointer_cast<T>(it);
+                if (!e->handled)
+                {
+                        func(e);
+                        e->setHandled(func(e));
+                }
+
+        }
+}
+
+template <typename T, typename Func>
+static void iterateAll(Func func) //iterates every event regardless if it has been handled yet
+{
+        for (auto it : *get<T>())
+        {
+                auto e = std::static_pointer_cast<T>(it);
+                func(e);
+        }
+}
+
+template <typename T, typename Func>
+static void iterateAllWithHandling(Func func) //iterates every event regardless if it has been handled yet
+{
+        for (auto it : *get<T>())
+        {
+                auto e = std::static_pointer_cast<T>(it);
+                e->setHandled(func(e));
+        }
 }
 /*
    allows users to easily iterate through a type of event by providing a lambda

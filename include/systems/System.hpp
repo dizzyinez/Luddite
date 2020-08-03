@@ -8,30 +8,15 @@
 
 using SystemID = size_t;
 
-// inline SystemID getNewSystemTypeID()
-// {
-//         static SystemID lastID = 0;
-//         return lastID++;
-// }
-//
-//
-// template <typename T> inline SystemID getSystemTypeID()
-// {
-//         static SystemID typeID = getNewSystemTypeID();
-//         return typeID();
-// }
-
 class SystemManager;
 
 class BaseSystem {
 public:
 
 virtual ~BaseSystem();
-/*
-   void init(entt::registry reg)  {
-        m_Registry = &reg;
-   }
- */
+
+virtual void configure(entt::registry &reg) {
+}
 
 virtual void update(float deltaTime, entt::registry &reg) {
 }
@@ -72,23 +57,28 @@ std::shared_ptr<T> add(Args && ... args)
 }
 
 template <typename T>
-std::shared_ptr<T> get()
-{
-        auto it = systems.find(T::systemID());
-        assert (it != systems.end());
-        return it == systems.end()
-        ? std::shared_ptr<T>()
-        : std::shared_ptr<T>(std::static_pointer_cast<T>(it->second));
-}
-
-template <typename T>
 void update(float deltaTime, entt::registry &reg)
 {
         std::shared_ptr<T> t = get<T>();
         t->update(deltaTime, reg);
 }
 
+void configure(entt::registry &reg)
+{
+        for (auto s : systems)
+                s.second->configure(reg);
+}
+
 private:
+template <typename T>
+std::shared_ptr<T> get()
+{
+        auto it = systems.find(T::systemID());
+        assert (it != systems.end());
+        return it == systems.end()
+    ? std::shared_ptr<T>()
+    : std::shared_ptr<T>(std::static_pointer_cast<T>(it->second));
+}
 std::unordered_map<SystemID, std::shared_ptr<BaseSystem> > systems;
 };
 

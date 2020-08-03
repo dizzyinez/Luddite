@@ -16,7 +16,7 @@ class TextureBatch : public Batch
 {
 public:
 void Init();
-void SetViewMatrix(glm::mat4 vm);
+void SetViewMatrix(glm::mat4 &vm);
 
 void BeginBatch();
 void EndBatch();

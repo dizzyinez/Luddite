@@ -53,6 +53,6 @@ void S_Draw::update(float dt, entt::registry &reg)
                         Renderer::RenderSprite(pos.position, size);
                         //TODO: textures
                 }
+                Renderer::flushSpriteBatch();
         }
-        Renderer::flushSpriteBatch();
 }

@@ -9,12 +9,15 @@
 
 #include "core/game.hpp"
 #include "events/events.hpp"
-#include "states/StateBase.hpp"
-#include "states/StateMainMenu.hpp"
+#include "events/input.hpp"
+#include "events/logging.hpp"
+#include "layers/LayerBase.hpp"
+#include "layers/LayerMainMenu.hpp"
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
+#include <enet/enet.h>
 
 using namespace glm;
 
@@ -50,6 +53,8 @@ int main(int argc, char *argv[])
                 return 1;
         }
 
+        Events::emit<E_WindowResize>(1024, 768); //change to whatever is used to initialize the window size int the future
+
         std::cout << "Renderer: " << glGetString(GL_RENDERER) << std::endl;
         std::cout << "OpenGL Version supported:  " << glGetString(GL_VERSION) << std::endl;
         int tu = 0;
@@ -60,11 +65,24 @@ int main(int argc, char *argv[])
         glClearColor(0.0f, 0.3f, 0.6f, 0.0f);
         glfwSwapInterval(0); //v-sync off
 
+        //initialize ENET
+        if (enet_initialize() != 0)
+        {
+
+                Events::emit<E_Log>("ENET failed to initialized!");
+        }
+        else
+        {
+                Events::emit<E_Log>("ENET initialized");
+                atexit(enet_deinitialize);
+        }
+
+
         std::unique_ptr<Game> game(new Game());
         if (game->Init(window))
         {
-                game->pushState(new StateBase());
-                game->pushState(new StateMainMenu());
+                game->PushLayer(new L_Base());
+                game->PushLayer(new L_MainMenu());
                 double deltaTime;
                 while (game->running && !glfwWindowShouldClose(window))           // TODO: FIXED UPDATES
                 {
@@ -75,7 +93,6 @@ int main(int argc, char *argv[])
                                 glClear(GL_COLOR_BUFFER_BIT);
                                 // std::cout << deltaTime << " > " << SECONDS_PER_UPDATE << " FPS: " <<int(1.0f / deltaTime) << std::endl;
                                 glfwSetTime(0);
-                                game->HandleEvents();
                                 game->Update(deltaTime);
                                 game->Render(deltaTime);
                                 glfwSwapBuffers(window);

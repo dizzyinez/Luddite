@@ -13,6 +13,7 @@ public:
         {
                 glfwSetKeyCallback(window, key_callback);
                 glfwSetCursorPosCallback(window, cursor_position_callback);
+                glfwSetWindowSizeCallback(window, window_size_callback);
                 glfwSetMouseButtonCallback(window, mouse_button_callback);
         }
 

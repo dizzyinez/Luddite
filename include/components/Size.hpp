@@ -11,12 +11,12 @@ struct C_Size
         C_Size(glm::vec2 &s) : size(s){
         }
 
-        float getX()
+        float getW()
         {
                 return size.x;
         }
 
-        float getY()
+        float getH()
         {
                 return size.y;
         }

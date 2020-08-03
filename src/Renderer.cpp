@@ -16,7 +16,7 @@ void Renderer::Init()
 
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-        stbi_set_flip_vertically_on_load(true);
+        stbi_set_flip_vertically_on_load(false);
 
         int width, height, nrChannels;
         glGenTextures(1, &texture);
@@ -35,7 +35,7 @@ void Renderer::Init()
         spriteBatch->Init();
         spriteBatch->BeginBatch();
 
-        updateMatricies(1024, 768);
+        // updateMatricies(1024, 768);
 }
 void Renderer::RenderSprite(const glm::vec2& position, const glm::vec2& size)
 {
@@ -51,19 +51,20 @@ void Renderer::flushSpriteBatch()
 }
 void Renderer::updateMatricies(int w, int h)
 {
+//TODO: make a maximum aspect ratio so ultra-massive-wide-screen (or just a big vertical shrink) won't make insane viewing distances possible
         float width = float(w);
         float height = float(h);
         float ar = width / height;
         float half_width = (1000 * ar) / 2;
         glm::mat4 view = glm::lookAt(glm::vec3(0,0,0), glm::vec3(0,0,-1), glm::vec3(0,1,0));
 
-        glm::mat4 projection = glm::ortho(-half_width, half_width, -500.0f, 500.0f);
+        glm::mat4 projection = glm::ortho(-half_width, half_width, 500.0f, -500.0f);
         glm::mat4 vp = projection * view;
         worldOrthoMatrix = vp;
         spriteBatch->SetViewMatrix(vp);
         glViewport(0, 0, width, height);
 
-        projection = glm::ortho(0.0f, width, 0.0f, height); //reminder: this function only likes floats and seems to fail with integers
+        projection = glm::ortho(0.0f, width, height, 0.0f); //reminder: this function only likes floats and seems to fail with integers
         vp = projection * view;
         screenOrthoMatrix = vp;
 }

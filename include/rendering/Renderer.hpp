@@ -37,14 +37,6 @@ inline static unsigned int quad_element_buffer;
 // unsigned int texture;
 inline static unsigned int texture_n;
 
-// float QuadPositions[20] =
-// {
-//         -500.0f, -500.0f, 0.0f,  0.0f,  0.0f,
-//         500.0f,  -500.0f, 0.0f,  1.0f,  0.0f,
-//         500.0f,   500.0f, 0.0f,  1.0f,  1.0f,
-//         -500.0f,  500.0f, 0.0f,  0.0f,  1.0f
-// };
-
 static constexpr unsigned int QuadIndices[6] =
 {
         0, 1, 2,

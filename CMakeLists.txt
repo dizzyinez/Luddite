@@ -83,20 +83,24 @@ macro(my_find_library)
         message(FATAL_ERROR "-- could not find library ${ARGV1}")
     endif(NOT ${ARGV0})
 	if (DEFINED CMAKEDEBUG)
-    message("-- Library ${ARGV1} found as ${${ARGV0}}")   
 	endif()
+    message("-- Library ${ARGV1} found as ${${ARGV0}}")   
 endmacro()
 
 my_find_library(glew glew32)
 my_find_library(GLFW glfw3)
 my_find_library(glu glu32)
 my_find_library(opengl opengl32)
+my_find_library(winsock ws2_32)
+my_find_library(winmm winmm)
 
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} 
 ${glew}
 ${GLFW}
 ${glu}
 ${opengl}
+${winsock}
+${winmm}
 )
 
 #[[

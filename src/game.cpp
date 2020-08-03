@@ -1,4 +1,4 @@
-#include "states/State.hpp"
+#include "layers/Layer.hpp"
 #include "core/game.hpp"
 //#include "TextureAllocator.hpp"
 #include "rendering/Renderer.hpp"
@@ -10,6 +10,8 @@ Game::Game() {
 
 Game::~Game()
 {
+        for (Layer* layer : Layers)
+                delete layer;
         // SDL_DestroyRenderer(renderer);
         // SDL_DestroyWindow(window);
         //TTF_Quit();
@@ -34,76 +36,42 @@ bool Game::Init(GLFWwindow* w)
         return true;
 }
 
-void Game::HandleEvents()
-{
-        /*
-              events.clear();
-              while(SDL_PollEvent(&event))
-              {
-                      events.push_back(event);
-                      switch (event.type)
-                      {
-                      case SDL_QUIT:
-                              running = false;
-                              break;
-                      default:
-                              if (peekState() != nullptr)
-                              {
-                                      peekState()->handleEvents(event); //pass through events vector
-                              }
-                      }
-              }*/
-}
 
 void Game::Update(float deltaTime)
 {
-        if (peekState() != nullptr)
-        {
-                peekState()->update(deltaTime);
-        }
+        std::for_each(std::rbegin(Layers), std::rend(Layers), [deltaTime](auto const& l){
+                l->handleEvents(deltaTime);
+        });
+        // for (auto rit = std::rbegin(Layers); rit != std::rend(Layers); ++rit)
+        //         *rit->handleInput(deltaTime);
+        for(Layer* layer : Layers)
+                layer->update(deltaTime);
 }
 
 void Game::Render(float deltaTime)
 {
-        // glClear( GL_COLOR_BUFFER_BIT );
-        // SDL_RenderClear(renderer);
-        if (peekState() != nullptr)
-        {
-                peekState()->render(deltaTime);
-        }
-        // glfwSwapBuffers(window);
-        // glfwPollEvents();
-        //render the current state
-        // SDL_RenderPresent(renderer);
+        for(Layer* layer : Layers)
+                layer->render(deltaTime);
 }
 
 void Game::Clean ()
 {
-
+        for(Layer* layer : Layers)
+                layer->clean();
 }
 
-void Game::pushState(State* state)
+void Game::PushLayer(Layer* Layer)
 {
-        states.push(state);
-        state->init();
+        Layers.emplace_back(Layer);
+        Layer->init();
 }
 
-void Game::popState()
+void Game::PopLayer(Layer* layer)
 {
-        peekState()->clean();
-        delete states.top();
-        states.pop();
-}
-
-void Game::changeState(State* state)
-{
-        if (!states.empty()) popState();
-        pushState(state);
-}
-
-State* Game::peekState()
-{
-        if (states.empty()) return nullptr;
-
-        return states.top();
+        auto it = std::find(Layers.begin(), Layers.end(), layer);
+        if (it != Layers.end())
+        {
+                (*it)->clean();
+                Layers.erase(it);
+        }
 }

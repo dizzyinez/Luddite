@@ -1,0 +1,45 @@
+#ifndef Layer_hpp
+#define Layer_hpp
+
+//#include "game.h"
+#include <stack>
+#include "entt.hpp"
+#include "systems/System.hpp"
+
+class Game;
+
+class Layer
+{
+public:
+Game* game;
+
+
+virtual void init() {
+}
+virtual void handleEvents(float deltaTime) {
+}
+virtual void update(float deltaTime) {
+}
+virtual void render(float deltaTime) {
+}
+virtual void clean() {
+}
+
+entt::entity createEntity()
+{
+        return m_Registry.create();
+}
+
+protected:
+entt::registry m_Registry;
+SystemManager systems;
+
+
+// template <typename T>
+// void addSystem()
+// {
+//
+// }
+};
+
+#endif

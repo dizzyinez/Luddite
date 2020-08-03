@@ -194,7 +194,7 @@ void TextureBatch::addQuadToBuffer(const glm::vec2& position, const glm::vec2& s
         IndexCount += 6;
 }
 
-void TextureBatch::SetViewMatrix(glm::mat4 vm)
+void TextureBatch::SetViewMatrix(glm::mat4 &vm)
 {
         viewMatrix = vm;
         shader.Bind();

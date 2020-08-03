@@ -1,5 +1,5 @@
 #ifndef Motion_hpp
-#define Motino_hpp
+#define Motion_hpp
 
 #include "systems/System.hpp"
 

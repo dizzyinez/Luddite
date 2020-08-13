@@ -5,15 +5,15 @@
 
 /* ----------  Keyboard  ----------  */
 
-struct E_KeyAction : public Event<E_KeyAction>
+struct E_Keyboard : public Event<E_Keyboard>
 {
-        E_KeyAction(int key_, int scancode_, int action_, int mods_) : key(key_), scancode(scancode_), action(action_), mods(mods_)
+        E_Keyboard(int key_, int scancode_, int action_, int mods_) : key(key_), scancode(scancode_), action(action_), mods(mods_)
         {
         }
-        int key;
-        int scancode;
-        int action;
-        int mods;
+        uint16_t key;
+        uint16_t scancode;
+        uint16_t action;
+        uint16_t mods;
 };
 
 struct E_KeyPress : public Event<E_KeyPress>
@@ -70,12 +70,15 @@ struct E_CusrsorMotion : public Event<E_CusrsorMotion>
 
 struct E_MouseButton : public Event<E_MouseButton>
 {
-        E_MouseButton(int button_, int action_, int mods_) : button(button_), action(action_), mods(mods_)
+        E_MouseButton(int button_, int action_, int mods_, double &xpos_, double &ypos_)
+                : button(button_), action(action_), mods(mods_), xpos(xpos_), ypos(ypos_)
         {
         }
         int button;
         int action;
         int mods;
+        double xpos;
+        double ypos;
 };
 
 struct E_MouseButtonPress : public Event<E_MouseButtonPress>

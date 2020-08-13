@@ -2,24 +2,33 @@
 #define C_Networking_hpp
 
 #include <enet/enet.h>
+#include "entt.hpp"
 #include "events/logging.hpp"
+#include <bitset>
 
 struct C_Net_Client
 {
-        C_Net_Client(size_t peerCount, size_t channelLimit, enet_uint32 incomingBandwidth, enet_uint32 outgoingBandwidth)
-                : client(enet_host_create(NULL, peerCount, channelLimit, incomingBandwidth, outgoingBandwidth))
+        C_Net_Client()
         {
-                if (client == NULL)
-                        Events::emit<E_Log>("Client failed to initialize!");
-                else{
-                        Events::emit<E_Log>("Client initialized");
-                }
         }
 
-        std::unique_ptr<ENetHost> client;
-        ENetAddress address;
+        ENetHost* client;
+        ENetPeer* server;
         ENetEvent event;
-        std::unique_ptr<ENetPeer> peer;
+        bool initialized = false;
+        void setInitialized(bool init)
+        {
+                initialized = init;
+        }
+};
+
+struct C_Net_Host
+{
+        C_Net_Host() = default;
+
+        ENetHost* server;
+        ENetEvent event;
+        bool initialized = false;
 };
 
 #endif

@@ -236,15 +236,6 @@ CMAKE_STRIP:FILEPATH=C:/MinGW/bin/strip.exe
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//Path to a library.
-ENET:FILEPATH=R:/Dev/Libraries/C++/enet-1.3.15/enet.lib
-
-//No help, variable specified on the command line.
-ENET_INCLUDE_DIR:UNINITIALIZED=R:\Dev\Libraries\C++\enet-1.3.15\include
-
-//No help, variable specified on the command line.
-ENET_LIB_DIR:UNINITIALIZED=R:\Dev\Libraries\C++\enet-1.3.15
-
 //No help, variable specified on the command line.
 GLEW_INCLUDE_DIR:UNINITIALIZED=R:\Dev\Libraries\C++\glew-2.1.0\include
 
@@ -279,7 +270,7 @@ glu:FILEPATH=C:/Windows/System32/glu32.dll
 opengl:FILEPATH=C:/Windows/System32/opengl32.dll
 
 //Path to a library.
-winmm:FILEPATH=C:/Windows/System32/winmm.dll
+winmedia:FILEPATH=C:/Windows/System32/winmm.dll
 
 //Path to a library.
 winsock:FILEPATH=C:/Windows/System32/ws2_32.dll

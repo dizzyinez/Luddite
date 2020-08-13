@@ -96,7 +96,7 @@ int main(int argc, char *argv[])
                                 game->Update(deltaTime);
                                 game->Render(deltaTime);
                                 glfwSwapBuffers(window);
-                                Events::flush_all();
+                                Events::flushAll();
                                 glfwPollEvents();
                         }
 

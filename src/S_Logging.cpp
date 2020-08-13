@@ -7,7 +7,8 @@
 
 void S_Logging::update(float deltaTime, entt::registry &reg)
 {
-        Events::iterateAll<E_Log>([](auto &e){
+        Events::iterate<E_Log>([](auto &e){
                 std::cout << *e << std::endl;
+                return true;
         });
 }

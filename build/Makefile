@@ -303,6 +303,33 @@ src/Locator.cpp.s:
 	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Locator.cpp.s
 .PHONY : src/Locator.cpp.s
 
+src/PacketDefinitions.obj: src/PacketDefinitions.cpp.obj
+
+.PHONY : src/PacketDefinitions.obj
+
+# target to build an object file
+src/PacketDefinitions.cpp.obj:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj
+.PHONY : src/PacketDefinitions.cpp.obj
+
+src/PacketDefinitions.i: src/PacketDefinitions.cpp.i
+
+.PHONY : src/PacketDefinitions.i
+
+# target to preprocess a source file
+src/PacketDefinitions.cpp.i:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.i
+.PHONY : src/PacketDefinitions.cpp.i
+
+src/PacketDefinitions.s: src/PacketDefinitions.cpp.s
+
+.PHONY : src/PacketDefinitions.s
+
+# target to generate assembly for a file
+src/PacketDefinitions.cpp.s:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.s
+.PHONY : src/PacketDefinitions.cpp.s
+
 src/Renderer.obj: src/Renderer.cpp.obj
 
 .PHONY : src/Renderer.obj
@@ -438,6 +465,114 @@ src/S_Motion.cpp.s:
 	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Motion.cpp.s
 .PHONY : src/S_Motion.cpp.s
 
+src/S_Net_Client.obj: src/S_Net_Client.cpp.obj
+
+.PHONY : src/S_Net_Client.obj
+
+# target to build an object file
+src/S_Net_Client.cpp.obj:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Client.cpp.obj
+.PHONY : src/S_Net_Client.cpp.obj
+
+src/S_Net_Client.i: src/S_Net_Client.cpp.i
+
+.PHONY : src/S_Net_Client.i
+
+# target to preprocess a source file
+src/S_Net_Client.cpp.i:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Client.cpp.i
+.PHONY : src/S_Net_Client.cpp.i
+
+src/S_Net_Client.s: src/S_Net_Client.cpp.s
+
+.PHONY : src/S_Net_Client.s
+
+# target to generate assembly for a file
+src/S_Net_Client.cpp.s:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Client.cpp.s
+.PHONY : src/S_Net_Client.cpp.s
+
+src/S_Net_Host.obj: src/S_Net_Host.cpp.obj
+
+.PHONY : src/S_Net_Host.obj
+
+# target to build an object file
+src/S_Net_Host.cpp.obj:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Host.cpp.obj
+.PHONY : src/S_Net_Host.cpp.obj
+
+src/S_Net_Host.i: src/S_Net_Host.cpp.i
+
+.PHONY : src/S_Net_Host.i
+
+# target to preprocess a source file
+src/S_Net_Host.cpp.i:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Host.cpp.i
+.PHONY : src/S_Net_Host.cpp.i
+
+src/S_Net_Host.s: src/S_Net_Host.cpp.s
+
+.PHONY : src/S_Net_Host.s
+
+# target to generate assembly for a file
+src/S_Net_Host.cpp.s:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Host.cpp.s
+.PHONY : src/S_Net_Host.cpp.s
+
+src/S_Net_Send.obj: src/S_Net_Send.cpp.obj
+
+.PHONY : src/S_Net_Send.obj
+
+# target to build an object file
+src/S_Net_Send.cpp.obj:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Send.cpp.obj
+.PHONY : src/S_Net_Send.cpp.obj
+
+src/S_Net_Send.i: src/S_Net_Send.cpp.i
+
+.PHONY : src/S_Net_Send.i
+
+# target to preprocess a source file
+src/S_Net_Send.cpp.i:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Send.cpp.i
+.PHONY : src/S_Net_Send.cpp.i
+
+src/S_Net_Send.s: src/S_Net_Send.cpp.s
+
+.PHONY : src/S_Net_Send.s
+
+# target to generate assembly for a file
+src/S_Net_Send.cpp.s:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Send.cpp.s
+.PHONY : src/S_Net_Send.cpp.s
+
+src/S_PlayerController.obj: src/S_PlayerController.cpp.obj
+
+.PHONY : src/S_PlayerController.obj
+
+# target to build an object file
+src/S_PlayerController.cpp.obj:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj
+.PHONY : src/S_PlayerController.cpp.obj
+
+src/S_PlayerController.i: src/S_PlayerController.cpp.i
+
+.PHONY : src/S_PlayerController.i
+
+# target to preprocess a source file
+src/S_PlayerController.cpp.i:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.i
+.PHONY : src/S_PlayerController.cpp.i
+
+src/S_PlayerController.s: src/S_PlayerController.cpp.s
+
+.PHONY : src/S_PlayerController.s
+
+# target to generate assembly for a file
+src/S_PlayerController.cpp.s:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.s
+.PHONY : src/S_PlayerController.cpp.s
+
 src/S_Projection.obj: src/S_Projection.cpp.obj
 
 .PHONY : src/S_Projection.obj
@@ -464,6 +599,33 @@ src/S_Projection.s: src/S_Projection.cpp.s
 src/S_Projection.cpp.s:
 	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Projection.cpp.s
 .PHONY : src/S_Projection.cpp.s
+
+src/S_Spawning.obj: src/S_Spawning.cpp.obj
+
+.PHONY : src/S_Spawning.obj
+
+# target to build an object file
+src/S_Spawning.cpp.obj:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj
+.PHONY : src/S_Spawning.cpp.obj
+
+src/S_Spawning.i: src/S_Spawning.cpp.i
+
+.PHONY : src/S_Spawning.i
+
+# target to preprocess a source file
+src/S_Spawning.cpp.i:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.i
+.PHONY : src/S_Spawning.cpp.i
+
+src/S_Spawning.s: src/S_Spawning.cpp.s
+
+.PHONY : src/S_Spawning.s
+
+# target to generate assembly for a file
+src/S_Spawning.cpp.s:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.s
+.PHONY : src/S_Spawning.cpp.s
 
 src/System.obj: src/System.cpp.obj
 
@@ -898,6 +1060,9 @@ help:
 	@echo ... src/Locator.obj
 	@echo ... src/Locator.i
 	@echo ... src/Locator.s
+	@echo ... src/PacketDefinitions.obj
+	@echo ... src/PacketDefinitions.i
+	@echo ... src/PacketDefinitions.s
 	@echo ... src/Renderer.obj
 	@echo ... src/Renderer.i
 	@echo ... src/Renderer.s
@@ -913,9 +1078,24 @@ help:
 	@echo ... src/S_Motion.obj
 	@echo ... src/S_Motion.i
 	@echo ... src/S_Motion.s
+	@echo ... src/S_Net_Client.obj
+	@echo ... src/S_Net_Client.i
+	@echo ... src/S_Net_Client.s
+	@echo ... src/S_Net_Host.obj
+	@echo ... src/S_Net_Host.i
+	@echo ... src/S_Net_Host.s
+	@echo ... src/S_Net_Send.obj
+	@echo ... src/S_Net_Send.i
+	@echo ... src/S_Net_Send.s
+	@echo ... src/S_PlayerController.obj
+	@echo ... src/S_PlayerController.i
+	@echo ... src/S_PlayerController.s
 	@echo ... src/S_Projection.obj
 	@echo ... src/S_Projection.i
 	@echo ... src/S_Projection.s
+	@echo ... src/S_Spawning.obj
+	@echo ... src/S_Spawning.i
+	@echo ... src/S_Spawning.s
 	@echo ... src/System.obj
 	@echo ... src/System.i
 	@echo ... src/System.s

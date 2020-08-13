@@ -1,9 +1,9 @@
-#ifndef S_Motion_hpp
-#define S_Motion_hpp
+#ifndef S_Spawning_hpp
+#define S_Spawning_hpp
 
 #include "systems/System.hpp"
 
-struct S_Motion : public System<S_Motion>
+struct S_Spawning : public System<S_Spawning>
 {
         void update(float deltaTime, entt::registry &reg) override;
 };

@@ -24,4 +24,6 @@ struct E_Log : public Event<E_Log>
         }
 };
 
+// typedef Events::emit<E_Log>;
+#define LOG_DEBUG(m) Events::emit<E_Log>(m)
 #endif

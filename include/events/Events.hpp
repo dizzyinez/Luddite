@@ -47,7 +47,7 @@ static void emit(Args && ... args)
         get<T>()->push_back(std::make_shared<T>(std::forward<Args>(args) ...));
 }
 
-static void flush_all()
+static void flushAll()
 {
         auto it = events.begin();
         while (it != events.end())
@@ -72,7 +72,6 @@ static void iterate(Func func) //iterates every event that hasn't been handled y
                 auto e = std::static_pointer_cast<T>(it);
                 if (!e->handled)
                 {
-                        func(e);
                         e->setHandled(func(e));
                 }
 
@@ -108,9 +107,6 @@ static void iterateAllWithHandling(Func func) //iterates every event regardless 
  */
 
 
-
-private:
-
 template <typename T>
 static VecPointer get()
 {
@@ -118,11 +114,14 @@ static VecPointer get()
 
         if (it == events.end())
         {
-                addVector<T>();   //creates the vector if its doesn't exist
+                addVector<T>();    //creates the vector if its doesn't exist
                 it = events.find(T::eventID());
         }
         return VecPointer(std::static_pointer_cast<std::vector<std::shared_ptr<BaseEvent> > >(it->second));
 }
+
+
+private:
 
 template <typename T>
 static void addVector()

@@ -92,7 +92,7 @@ my_find_library(GLFW glfw3)
 my_find_library(glu glu32)
 my_find_library(opengl opengl32)
 my_find_library(winsock ws2_32)
-my_find_library(winmm winmm)
+my_find_library(winmedia winmm)
 
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} 
 ${glew}
@@ -100,7 +100,7 @@ ${GLFW}
 ${glu}
 ${opengl}
 ${winsock}
-${winmm}
+${winmedia}
 )
 
 #[[

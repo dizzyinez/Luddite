@@ -6,13 +6,19 @@
 #include "systems/Draw.hpp"
 #include "systems/Motion.hpp"
 #include "systems/Gui.hpp"
+#include "systems/Networking.hpp"
+#include "systems/PlayerController.hpp"
+#include "systems/Spawning.hpp"
 
 #include "components/Position.hpp"
 #include "components/Velocity.hpp"
+#include "components/Drag.hpp"
 #include "components/Size.hpp"
 #include "components/DrawLayer.hpp"
 #include "components/Gui.hpp"
 #include "components/Networking.hpp"
+#include "components/Player.hpp"
+#include "components/PlayerKeymap.hpp"
 
 #include "events/Events.hpp"
 #include "events/Logging.hpp"
@@ -22,10 +28,7 @@
 #include <iostream>
 
 
-#include "kiwi/kiwi.h"
-// #include "rhea/simplex_solver.hpp "
-// #include "gui/G_MainMenu.hpp "
-
+#include "events/Gameworld.hpp"
 
 void L_MainMenu::init()
 {
@@ -33,27 +36,31 @@ void L_MainMenu::init()
         systems.add<S_Motion>();
         systems.add<S_Gui_Input>();
         systems.add<S_Gui>();
+        systems.add<S_Net_Client>();
+        systems.add<S_Net_Host>();
+        systems.add<S_Net_Send>();
+        systems.add<S_PlayerController>();
+        systems.add<S_Spawning>();
         systems.configure(m_Registry);
 
-        auto entity = createEntity();
-        m_Registry.emplace<C_Position>(entity, 0.0f, 0.0f);
-        m_Registry.emplace<C_Velocity>(entity, 11.1f, 11.1f);
-        m_Registry.emplace<C_Size>(entity, 150.0f, 150.0f);
-        m_Registry.emplace<C_DrawLayer>(entity);
 
-        auto gui = createEntity();
-        m_Registry.emplace<C_Position>(gui);
-        m_Registry.emplace<C_Size>(gui);
-        m_Registry.emplace<C_DrawLayer>(gui, DrawLayer::gui);
-        m_Registry.emplace<C_Gui>(gui);
-        m_Registry.emplace<C_Gui_Container>(gui,
+
+        Events::emit<E_SpawnPlayer>(true);
+
+        auto host = createEntity();
+        m_Registry.emplace<C_Position>(host);
+        m_Registry.emplace<C_Size>(host);
+        m_Registry.emplace<C_DrawLayer>(host, DrawLayer::gui);
+        m_Registry.emplace<C_Gui>(host);
+        m_Registry.emplace<C_Gui_Container>(host,
                                             [](auto &Gui, auto &Gui_container){
-                Gui_container.solver->addEditVariable(Gui.x, kiwi::strength::strong);
                 Gui_container.solver->addEditVariable(Gui.w, kiwi::strength::strong);
                 Gui_container.solver->addEditVariable(Gui.h, kiwi::strength::strong);
                 kiwi::Constraint constraints[] = {
                         kiwi::Constraint {Gui.x == 0},
-                        kiwi::Constraint {Gui.y == 0}
+                        kiwi::Constraint {Gui.y == 0},
+                        kiwi::Constraint {Gui.h <= 50},
+                        kiwi::Constraint {Gui.w <= 50}
                 };
                 for (auto& constraint : constraints)
                         Gui_container.solver->addConstraint(constraint);
@@ -62,27 +69,79 @@ void L_MainMenu::init()
 
                                             [](auto &Gui, auto &Gui_container){
                 Events::iterateAll<E_WindowResize>([&Gui, &Gui_container](auto e){
-                        Gui_container.solver->suggestValue(Gui.x, e->width / 5);
                         Gui_container.solver->suggestValue(Gui.w, e->width / 2);
                         Gui_container.solver->suggestValue(Gui.h, e->height / 2);
                         Gui_container.solver->updateVariables();
                         return false;
                 });
         });
+        m_Registry.emplace<C_Gui_Button>(host,
+                                         [](){
+                Events::emit<E_Net_Host>(7777, 32);
+                std::cout << "sending event" << std::endl;
+        });
 
-        auto client = createEntity();
-        m_Registry.emplace<C_Net_Client>(client, 1, 1, 0, 0);
+
+
+
+        auto join = createEntity();
+        m_Registry.emplace<C_Position>(join);
+        m_Registry.emplace<C_Size>(join);
+        m_Registry.emplace<C_DrawLayer>(join, DrawLayer::gui);
+        m_Registry.emplace<C_Gui>(join);
+        m_Registry.emplace<C_Gui_Container>(join,
+                                            [](auto &Gui, auto &Gui_container){
+                Gui_container.solver->addEditVariable(Gui.w, kiwi::strength::strong);
+                Gui_container.solver->addEditVariable(Gui.h, kiwi::strength::strong);
+                kiwi::Constraint constraints[] = {
+                        kiwi::Constraint {Gui.x >= 55},
+                        kiwi::Constraint {Gui.y == 0},
+                        kiwi::Constraint {Gui.h <= 50},
+                        kiwi::Constraint {Gui.w <= 50}
+                };
+                for (auto& constraint : constraints)
+                        Gui_container.solver->addConstraint(constraint);
+                Gui_container.solver->updateVariables();
+        },
+
+                                            [](auto &Gui, auto &Gui_container){
+                Events::iterateAll<E_WindowResize>([&Gui, &Gui_container](auto e){
+                        Gui_container.solver->suggestValue(Gui.w, e->width / 2);
+                        Gui_container.solver->suggestValue(Gui.h, e->height / 2);
+                        Gui_container.solver->updateVariables();
+                        return false;
+                });
+        });
+        m_Registry.emplace<C_Gui_Button>(join,
+                                         [](){
+                Events::emit<E_Net_Connect>("localhost", 7777);
+        });
+
+
+        // auto slots = createEntity();
+        m_Registry.set<C_PlayerSlots>();
+
+        // auto client = createEntity();
+        m_Registry.set<C_Net_Client>();
+
+        // auto hosst = createEntity();
+        m_Registry.set<C_Net_Host>();
 
 }
 
 void L_MainMenu::handleEvents(float deltaTime)
 {
         systems.update<S_Gui_Input>(deltaTime, m_Registry);
+        systems.update<S_Net_Client>(deltaTime, m_Registry);
+        systems.update<S_Net_Host>(deltaTime, m_Registry);
+        systems.update<S_PlayerController>(deltaTime, m_Registry);
+        systems.update<S_Spawning>(deltaTime, m_Registry);
 }
 void L_MainMenu::update(float deltaTime)
 {
         systems.update<S_Motion>(deltaTime, m_Registry);
         systems.update<S_Gui>(deltaTime, m_Registry);
+        systems.update<S_Net_Send>(deltaTime, m_Registry);
 }
 
 void L_MainMenu::render(float deltaTime)

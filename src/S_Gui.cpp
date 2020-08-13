@@ -7,6 +7,7 @@
 #include "entt.hpp"
 
 #include <iostream>
+#include <GLFW/glfw3.h>
 
 void on_gui_container_create(entt::registry &Reg, entt::entity Entity)
 {
@@ -32,5 +33,21 @@ void S_Gui_Input::update(float deltaTime, entt::registry &reg)
 {
         reg.group<C_Gui_Container>(entt::get<C_Gui>).each([](auto Entity, auto &Gui_container, auto &Gui){
                 Gui_container.onInput(Gui, Gui_container);
+        });
+        Events::iterate<E_MouseButton>([&reg](auto &e) {
+                if (e->button == GLFW_MOUSE_BUTTON_1 && e->action == GLFW_PRESS)
+                        reg.view<C_Gui_Button>().each([&reg, e](auto Entity, auto &Gui_button) {
+                                auto gui = reg.get<C_Gui>(Entity);
+                                //make a collision function (or macro?)
+                                if (gui.x.value() <= e->xpos &&
+                                    gui.y.value() <= e->ypos &&
+                                    gui.x.value() + gui.w.value() >= e->xpos &&
+                                    gui.y.value() + gui.h.value() >= e->ypos)
+                                {
+                                        Gui_button.onClick();
+                                        return true;
+                                }
+                        });
+                return false;
         });
 }

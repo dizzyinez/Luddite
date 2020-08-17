@@ -102,7 +102,8 @@ static void iterateAllWithHandling(Func func) //iterates every event regardless 
    example:
    Events::iterate<TestEvent>([](auto e)
    {
-
+   foo(e->value);
+   return true;
    });
  */
 

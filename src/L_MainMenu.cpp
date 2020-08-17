@@ -39,6 +39,7 @@ void L_MainMenu::init()
         systems.add<S_Net_Client>();
         systems.add<S_Net_Host>();
         systems.add<S_Net_Send>();
+        systems.add<S_Net_Update_Player>();
         systems.add<S_PlayerController>();
         systems.add<S_Spawning>();
         systems.configure(m_Registry);
@@ -77,8 +78,7 @@ void L_MainMenu::init()
         });
         m_Registry.emplace<C_Gui_Button>(host,
                                          [](){
-                Events::emit<E_Net_Host>(7777, 32);
-                std::cout << "sending event" << std::endl;
+                Events::emit<E_Net_Host>(27015, 32);
         });
 
 
@@ -114,7 +114,7 @@ void L_MainMenu::init()
         });
         m_Registry.emplace<C_Gui_Button>(join,
                                          [](){
-                Events::emit<E_Net_Connect>("localhost", 7777);
+                Events::emit<E_Net_Connect>("73.14.41.127", 27015);
         });
 
 
@@ -141,7 +141,11 @@ void L_MainMenu::update(float deltaTime)
 {
         systems.update<S_Motion>(deltaTime, m_Registry);
         systems.update<S_Gui>(deltaTime, m_Registry);
+
+
+        systems.update<S_Net_Update_Player>(deltaTime, m_Registry);
         systems.update<S_Net_Send>(deltaTime, m_Registry);
+
 }
 
 void L_MainMenu::render(float deltaTime)

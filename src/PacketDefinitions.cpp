@@ -5,23 +5,12 @@
 #include "components/networking.hpp"
 #include "components/player.hpp"
 #include "components/position.hpp"
+#include "components/velocity.hpp"
 
-std::string string_to_hex(const std::string& input)
-{
-        static const char hex_digits[] = "0123456789ABCDEF";
-
-        std::string output;
-        output.reserve(input.length() * 2);
-        for (unsigned char c : input)
-        {
-                output.push_back(hex_digits[c >> 4]);
-                output.push_back(hex_digits[c & 15]);
-        }
-        return output;
-}
 
 void P_Connect_Request::on_host_receive(ENetPeer* peer, entt::registry &reg)
 {
+        std::cout << "connection request is being handled, version: " << version << std::endl;
         P_Connect_Request rq;
         if (strcmp(version, rq.version) == 0) //0 is means they match in strcmp
         {
@@ -36,38 +25,98 @@ void P_Connect_Request::on_host_receive(ENetPeer* peer, entt::registry &reg)
                                 break;
                         }
                 }
-                slot = 4;
+                std::cout << "slot: " << slot << std::endl;
                 if (slot != 256)
                 {
-                        P_Connect_Approved p(slot);
+                        P_Connect_Approved p;
+                        p.player_slot = slot;
                         ENetPacket* packet = convertToPacket(p);
                         enet_peer_send(peer, 0, packet);
-                        P_Spawn_Player sp(slot);
-                        Events::emit<E_Net_Send>(convertToPacket(sp));
+                        P_Spawn_Player spawn_peer;
+                        spawn_peer.player_slot = slot;
+                        Events::emit<E_Net_Send>(convertToPacket(spawn_peer));
                         reg.group<C_Player>(entt::get<C_Position>).each([](auto Entity, auto &player, auto &pos){
-                                P_Spawn_Player spawn(player.playerSlot, pos.getX(), pos.getY());
+                                P_Spawn_Player spawn;
+                                spawn.player_slot = player.player_slot;
+                                // spawn.x = pos.getX();
+                                // spawn.y = pos.getY();
                                 Events::emit<E_Net_Send>(convertToPacket(spawn));
-
                         });
                         Events::emit<E_SpawnPlayer>(slot, 0.0f, 0.0f);
                         /*
                            send packets to player to spawn all the other players
                          */
                         // enet_host_broadcast(host.server, 0, packet);
+                        std::cout << "successfully handled connection request" << std::endl;
                 }
-                std::cout << std::endl;
+        }
+        else
+        {
+                P_Connect_Denied p;
+                strcpy(p.version, rq.version);
+                Events::emit<E_Net_Send>(convertToPacket(p));
         }
 }
 
 void P_Connect_Approved::on_client_receive(entt::registry &reg)
 {
-        reg.view<C_Player>().each([=](auto Entity, auto &player){
-                player.playerSlot = Playerid;
+
+        reg.view<C_Player>().each([&reg, this](auto Entity, auto &player){
+                auto &slots = reg.ctx<C_PlayerSlots>();
+                player.player_slot = player_slot;
+                slots.players[0] = entt::null;
+                slots.players[player_slot] = Entity;
+                std::cout << "player slot set to: " << player_slot << std::endl;
         });
         std::cout << "Connection approved" <<std::endl;
 }
 
 void P_Spawn_Player::on_client_receive(entt::registry &reg)
 {
-        Events::emit<E_SpawnPlayer>(slot, x, y);
+        std::cout << "sending spawning event" << std::endl;
+        Events::emit<E_SpawnPlayer>(player_slot, 0.0f, 0.0f);
+}
+
+void P_Player_Control::on_host_receive(ENetPeer* peer, entt::registry &reg)
+{
+        auto &slots = reg.ctx<C_PlayerSlots>();
+        if (player_slot <= 256 && slots.players[player_slot] != entt::null)
+        {
+                auto &player = reg.get<C_Player>(slots.players[player_slot]);
+                if (player.local_player)
+                {
+                        auto &pos = reg.get<C_Position>(slots.players[player_slot]);
+                        pos.setX(x);
+                        pos.setY(y);
+                }
+                else
+                {
+                        auto &net_pos = reg.get<C_Net_Position>(slots.players[player_slot]);
+                        net_pos.setX(x);
+                        net_pos.setY(y);
+                        net_pos.time = 0.04;
+                }
+        }
+}
+
+void P_Player_Control::on_client_receive(entt::registry &reg)
+{
+        auto &slots = reg.ctx<C_PlayerSlots>();
+        if (player_slot <= 256 && slots.players[player_slot] != entt::null)
+        {
+                auto &player = reg.get<C_Player>(slots.players[player_slot]);
+                if (player.local_player)
+                {
+                        auto &pos = reg.get<C_Position>(slots.players[player_slot]);
+                        pos.setX(x);
+                        pos.setY(y);
+                }
+                else
+                {
+                        auto &net_pos = reg.get<C_Net_Position>(slots.players[player_slot]);
+                        net_pos.setX(x);
+                        net_pos.setY(y);
+                        net_pos.time = 0.04;
+                }
+        }
 }

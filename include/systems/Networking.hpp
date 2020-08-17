@@ -17,4 +17,9 @@ struct S_Net_Send : public System<S_Net_Send>
 {
         void update(float deltaTime, entt::registry &reg) override;
 };
+
+struct S_Net_Update_Player : public System<S_Net_Update_Player>
+{
+        void update(float deltaTime, entt::registry &reg) override;
+};
 #endif

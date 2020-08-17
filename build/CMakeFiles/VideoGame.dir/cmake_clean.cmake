@@ -13,6 +13,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/VideoGame.dir/src/S_Net_Client.cpp.obj"
   "CMakeFiles/VideoGame.dir/src/S_Net_Host.cpp.obj"
   "CMakeFiles/VideoGame.dir/src/S_Net_Send.cpp.obj"
+  "CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj"
   "CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj"
   "CMakeFiles/VideoGame.dir/src/S_Projection.cpp.obj"
   "CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj"

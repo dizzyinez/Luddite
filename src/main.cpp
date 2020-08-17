@@ -90,9 +90,9 @@ int main(int argc, char *argv[])
                         deltaTime = glfwGetTime();
                         if ( deltaTime > SECONDS_PER_UPDATE )
                         {
+                                glfwSetTime(0);
                                 glClear(GL_COLOR_BUFFER_BIT);
                                 // std::cout << deltaTime << " > " << SECONDS_PER_UPDATE << " FPS: " <<int(1.0f / deltaTime) << std::endl;
-                                glfwSetTime(0);
                                 game->Update(deltaTime);
                                 game->Render(deltaTime);
                                 glfwSwapBuffers(window);

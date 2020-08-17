@@ -5,6 +5,8 @@
 #include <cstddef>
 #include <unordered_map>
 #include <vector>
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
 
 using SystemID = size_t;
 
@@ -27,6 +29,10 @@ static SystemID systemID_counter;
 template <typename T>
 class System : public BaseSystem {
 public:
+double run_time()
+{
+        return end_time - start_time;
+}
 virtual ~System() {
 }
 private:
@@ -35,6 +41,9 @@ static SystemID systemID() {
         static SystemID systemID = systemID_counter++;
         return systemID;
 }
+double start_time = 0;
+double end_time = 0;
+
 };
 
 class SystemManager
@@ -60,7 +69,9 @@ template <typename T>
 void update(float deltaTime, entt::registry &reg)
 {
         std::shared_ptr<T> t = get<T>();
+        t->start_time = glfwGetTime();
         t->update(deltaTime, reg);
+        t->end_time = glfwGetTime();
 }
 
 void configure(entt::registry &reg)

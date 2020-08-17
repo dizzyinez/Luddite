@@ -40,9 +40,9 @@ void S_Net_Client::update(float deltaTime, entt::registry &reg)
 
 
                 ENetAddress address;
-                enet_address_set_host(&address, "127.0.0.1");
-                // enet_address_set_host(&address, e->hostName);
-                address.port = 1234;                                //e->port;
+                // enet_address_set_host(&address, "127.0.0.1");
+                enet_address_set_host(&address, e->hostName);
+                address.port = e->port;
 
                 client.server = enet_host_connect(client.client, &address, 2, 0);
                 if(client.server == NULL)
@@ -53,9 +53,14 @@ void S_Net_Client::update(float deltaTime, entt::registry &reg)
                 if (enet_host_service(client.client, &client.event, 1000) > 0 &&
                     client.event.type == ENET_EVENT_TYPE_CONNECT)
                 {
+                        // P_Fatal_Error event("ahahahhahahaha");
+                        // ENetPacket* packet = convertToPacket(event);
+                        // Events::emit<E_Net_Send>(packet);
                         P_Connect_Request rq;
                         ENetPacket* packet = convertToPacket(rq);
                         enet_peer_send(client.server, 0, packet);
+                        // Events::emit<E_Net_Send>(packet);
+
                         LOG_DEBUG("Connected to host");
                         client.initialized = true;
                 }
@@ -63,22 +68,20 @@ void S_Net_Client::update(float deltaTime, entt::registry &reg)
                 {
                         // enet_peer_reset(client.server);
                         // client.server = nullptr;
+                        // client.initialized = false;
                         // log("Failed to connect to host");
                 }
                 e->setHandled();
                 //return true;                 //event was handled
         }
         //handle disconnection
-        Events::iterate<E_Net_Disconnect>([client](auto &e) {
-                enet_peer_disconnect(client.server, 0);
-                return true;
-        });
+        // Events::iterate<E_Net_Disconnect>([client](auto &e) {
+        //         // enet_peer_disconnect(client.server, 0);
+        //         return true;
+        // });
 
         if (client.initialized == true)
         {
-                // P_Fatal_Error event("ahahahhahahaha");
-                // ENetPacket* packet = convertToPacket(event);
-                // Events::emit<E_Net_Send>(packet);
                 while (enet_host_service(client.client, &client.event, 0) > 0)
                 {
                         switch (client.event.type)
@@ -90,14 +93,27 @@ void S_Net_Client::update(float deltaTime, entt::registry &reg)
                                 switch (client.event.packet->data[0]) {
                                 case 1:
                                 {
-                                        P_Fatal_Error p = convertFromPacket<P_Fatal_Error>(client.event);
+                                        P_Fatal_Error p = convertFromPacket<P_Fatal_Error>(client.event.packet);
                                         // LOG_DEBUG(p.error_message);
                                         // std::cout << "stored: " << strlen(p.error_message) << " copied: " << host.event.packet->dataLength << " message: " << p.error_message << std::endl;
                                         break;
                                 }
                                 case 3:
                                 {
-                                        P_Connect_Approved p = convertFromPacket<P_Connect_Approved>(client.event);
+                                        P_Connect_Approved p = convertFromPacket<P_Connect_Approved>(client.event.packet);
+                                        p.on_client_receive(reg);
+                                        break;
+                                }
+                                case 5:
+                                {
+                                        std::cout << "received player spawning packet" << std::endl;
+                                        P_Spawn_Player p = convertFromPacket<P_Spawn_Player>(client.event.packet);
+                                        p.on_client_receive(reg);
+                                        break;
+                                }
+                                case 6:
+                                {
+                                        P_Player_Control p = convertFromPacket<P_Player_Control>(client.event.packet);
                                         p.on_client_receive(reg);
                                         break;
                                 }

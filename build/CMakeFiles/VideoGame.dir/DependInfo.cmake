@@ -39,6 +39,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "R:/Dev/games/Luddite/Luddite/src/S_Net_Client.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/S_Net_Client.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/S_Net_Host.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/S_Net_Host.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/S_Net_Send.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/S_Net_Send.cpp.obj"
+  "R:/Dev/games/Luddite/Luddite/src/S_Net_Update_Player.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/S_PlayerController.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/S_Projection.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/S_Projection.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/S_Spawning.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj"

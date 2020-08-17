@@ -11,7 +11,7 @@
 void S_PlayerController::update(float deltaTime, entt::registry &reg)
 {
         reg.group<C_Player>(entt::get<C_Position, C_Velocity, C_PlayerKeymap>).each([&reg](auto Entity, auto &player, auto &pos, auto &vel, auto &keymap){
-                if (player.localPlayer)
+                if (player.local_player)
                 {
 
                         Events::iterate<E_Keyboard>([&Entity, &keymap](auto &e){

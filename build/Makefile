@@ -546,6 +546,33 @@ src/S_Net_Send.cpp.s:
 	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Send.cpp.s
 .PHONY : src/S_Net_Send.cpp.s
 
+src/S_Net_Update_Player.obj: src/S_Net_Update_Player.cpp.obj
+
+.PHONY : src/S_Net_Update_Player.obj
+
+# target to build an object file
+src/S_Net_Update_Player.cpp.obj:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj
+.PHONY : src/S_Net_Update_Player.cpp.obj
+
+src/S_Net_Update_Player.i: src/S_Net_Update_Player.cpp.i
+
+.PHONY : src/S_Net_Update_Player.i
+
+# target to preprocess a source file
+src/S_Net_Update_Player.cpp.i:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.i
+.PHONY : src/S_Net_Update_Player.cpp.i
+
+src/S_Net_Update_Player.s: src/S_Net_Update_Player.cpp.s
+
+.PHONY : src/S_Net_Update_Player.s
+
+# target to generate assembly for a file
+src/S_Net_Update_Player.cpp.s:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.s
+.PHONY : src/S_Net_Update_Player.cpp.s
+
 src/S_PlayerController.obj: src/S_PlayerController.cpp.obj
 
 .PHONY : src/S_PlayerController.obj
@@ -1087,6 +1114,9 @@ help:
 	@echo ... src/S_Net_Send.obj
 	@echo ... src/S_Net_Send.i
 	@echo ... src/S_Net_Send.s
+	@echo ... src/S_Net_Update_Player.obj
+	@echo ... src/S_Net_Update_Player.i
+	@echo ... src/S_Net_Update_Player.s
 	@echo ... src/S_PlayerController.obj
 	@echo ... src/S_PlayerController.i
 	@echo ... src/S_PlayerController.s

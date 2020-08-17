@@ -5,12 +5,12 @@
 struct C_Player
 {
         C_Player() = default;
-        C_Player(bool localPlayer_, uint8_t playerSlot_)
-                : localPlayer(localPlayer_), playerSlot(playerSlot_)
+        C_Player(bool local_player_, uint8_t player_slot_)
+                : local_player(local_player_), player_slot(player_slot_)
         {
         }
-        bool localPlayer = false;
-        uint8_t playerSlot = 0;
+        bool local_player = false;
+        uint8_t player_slot = 0;
 };
 
 struct C_PlayerSlots

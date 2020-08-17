@@ -17,7 +17,9 @@ void S_Spawning::update(float deltaTime, entt::registry &reg)
                 auto &slots = reg.ctx<C_PlayerSlots>();
                 if (slots.players[e->slot] == entt::null)
                 {
+                        std::cout << "spawning" << std::endl;
                         auto player = reg.create();
+                        slots.players[e->slot] = player;
                         reg.emplace<C_Position>(player, e->xpos, e->ypos);
                         reg.emplace<C_Velocity>(player);
                         reg.emplace<C_Drag>(player, 0.8f);
@@ -27,6 +29,10 @@ void S_Spawning::update(float deltaTime, entt::registry &reg)
                         if (e->localPlayer)
                         {
                                 reg.emplace<C_PlayerKeymap>(player);
+                        }
+                        else
+                        {
+                                reg.emplace<C_Net_Position>(player, e->xpos, e->ypos);
                         }
                 }
                 else

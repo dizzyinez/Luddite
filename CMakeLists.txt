@@ -6,6 +6,8 @@ include_directories(include)
 
 SET(CMAKE_MODULE_LINKER_FLAGS "-m32 -Wl,--disable-stdcall-fixup ${CMAKE_SHARED_LINKER_FLAGS}")
 
+SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static")
+
 if (NOT DEFINED GLFW_INCLUDE_DIR)
 	message(WARNING "GLFW_INCLUDE_DIR is not set! Example: Add -DGLFW_INCLUDE_DIR=C:\\GLFW\\include")
 else()

@@ -20,14 +20,14 @@ bool sortbyheight(const std::pair<int,entt::entity> &a,
                   const std::pair<int,entt::entity> &b)
 {
         //TODO: check if the entity is on the ground and loop through those first
-        return (a.first > b.first);
+        return (a.first < b.first);
 }
 
 void S_Draw::update(float dt, entt::registry &reg)
 {
         std::vector<std::vector<std::pair<int, entt::entity> > > v(static_cast<int8_t>(DrawLayer::count));
         reg.group<C_DrawLayer>(entt::get<C_Position, C_Size>).each([&v](auto entity, auto &drawLayer, auto &pos, auto &size){
-                v[static_cast<int8_t>(drawLayer.layer)].push_back(std::make_pair(pos.getY(), entity));
+                v[static_cast<int8_t>(drawLayer.layer)].push_back(std::make_pair(pos.getY() + size.getW(), entity));
         });
 
         sort(v[static_cast<int8_t>(DrawLayer::sprite)].begin(), v[static_cast<int8_t>(DrawLayer::sprite)].end(), sortbyheight);       //sort the sprites by their height on the screen
@@ -54,5 +54,6 @@ void S_Draw::update(float dt, entt::registry &reg)
                         //TODO: textures
                 }
                 Renderer::flushSpriteBatch();
+                Renderer::flushTextureBatch();
         }
 }

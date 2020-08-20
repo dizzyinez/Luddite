@@ -1,4 +1,4 @@
-#include "rendering/TextureBatch.hpp"
+#include "rendering/SpriteBatch.hpp"
 #include <GL/glew.h>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/transform.hpp>
@@ -6,31 +6,32 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 
+#include "stb/stb_image.h"
 
-void TextureBatch::Clean()
+void SpriteBatch::Clean()
 {
         glDeleteVertexArrays(1, &QuadVA);
         glDeleteBuffers(1, &QuadVB);
         glDeleteBuffers(1, &QuadIB);
 
-        glDeleteTextures(1, &WhiteTexture);
+        glDeleteTextures(1, &PalleteTexture);
 
         delete[] QuadBuffer;
 }
 
-void TextureBatch::BeginBatch()
+void SpriteBatch::BeginBatch()
 {
         QuadBufferPtr = QuadBuffer;
 }
 
-void TextureBatch::EndBatch()
+void SpriteBatch::EndBatch()
 {
         GLsizeiptr size = (uint8_t*)QuadBufferPtr - (uint8_t*)QuadBuffer;
         glBindBuffer(GL_ARRAY_BUFFER, QuadVB);
         glBufferSubData(GL_ARRAY_BUFFER, 0, size, QuadBuffer);
 }
 
-void TextureBatch::Flush()
+void SpriteBatch::Flush()
 {
         shader.Bind();
         for (uint32_t i = 0; i < TextureSlotIndex; i++)
@@ -45,7 +46,7 @@ void TextureBatch::Flush()
 }
 
 
-void TextureBatch::Init()
+void SpriteBatch::Init()
 {
         MaxQuadCount = 5000;
         MaxVertexCount = MaxQuadCount * 4;
@@ -64,16 +65,19 @@ void TextureBatch::Init()
 
         glCreateBuffers(1, &QuadVB);
         glBindBuffer(GL_ARRAY_BUFFER, QuadVB);
-        glBufferData(GL_ARRAY_BUFFER, MaxVertexCount * sizeof(TextureBatch::Vertex), nullptr, GL_DYNAMIC_DRAW);
+        glBufferData(GL_ARRAY_BUFFER, MaxVertexCount * sizeof(Vertex), nullptr, GL_DYNAMIC_DRAW);
 
         glEnableVertexArrayAttrib(QuadVA, 0);
-        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(TextureBatch::Vertex), (const void*)offsetof(TextureBatch::Vertex, position));
+        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)offsetof(Vertex, position));
 
         glEnableVertexArrayAttrib(QuadVA, 1);
-        glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(TextureBatch::Vertex), (const void*)offsetof(TextureBatch::Vertex, texCoords));
+        glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)offsetof(Vertex, texCoords));
 
         glEnableVertexArrayAttrib(QuadVA, 2);
-        glVertexAttribPointer(2, 1, GL_FLOAT, GL_FALSE, sizeof(TextureBatch::Vertex), (const void*)offsetof(TextureBatch::Vertex, texIndex));
+        glVertexAttribPointer(2, 1, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)offsetof(Vertex, texIndex));
+
+        glEnableVertexArrayAttrib(QuadVA, 3);
+        glVertexAttribIPointer(3, 4, GL_UNSIGNED_INT, sizeof(Vertex), (const void*)offsetof(Vertex, colors));
 
         uint32_t indices[MaxIndexCount];
         uint32_t offset = 0;
@@ -95,20 +99,25 @@ void TextureBatch::Init()
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
 
-        glCreateTextures(GL_TEXTURE_2D, 1, &WhiteTexture);
-        glBindTexture(GL_TEXTURE_2D, WhiteTexture);
+        int width, height, nrChannels;
+        glCreateTextures(GL_TEXTURE_2D, 1, &PalleteTexture);
+        glBindTexture(GL_TEXTURE_2D, PalleteTexture);
+        unsigned char *data = stbi_load("../assets/textures/pallete.png", &width, &height, &nrChannels, 0);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-        uint32_t color = 0xffffffff;
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, 1, 1, 0, GL_RGBA, GL_UNSIGNED_BYTE, &color);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 256, 1, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+        glBindTexture(GL_TEXTURE_2D, 0);
+        stbi_image_free(data);
 
-        TextureSlots[0] = WhiteTexture;
+        TextureSlots[0] = PalleteTexture;
         for (size_t i = 1; i < MaxTextures; i++)
+        {
                 TextureSlots[i] = 0;
+        }
 
-        shader.Load("../assets/shaders/basicvert.vshader", "../assets/shaders/basicfrag.fshader");
+        shader.Load("../assets/shaders/spritevert.vshader", "../assets/shaders/spritefrag.fshader");
         shader.Bind();
         glUniformMatrix4fv(shader.GetUniformLocation("ortho"), 1, GL_FALSE, &viewMatrix[0][0]);
         int samplers[32];
@@ -120,19 +129,20 @@ void TextureBatch::Init()
 }
 
 
-void TextureBatch::DrawQuad(const glm::vec2& position, const glm::vec2& size) // add colored quad
+void SpriteBatch::DrawQuad(const glm::vec2& position, const glm::vec2& size) // add colored quad
 {
-        if (IndexCount >= MaxIndexCount)
-        {
-                std::cout << "Batch overflowed, beginning a new batch" << std::endl;
-                EndBatch();
-                Flush();
-                BeginBatch();
-        }
-        addQuadToBuffer(position, size, 1.0f);
+        std::cout << "ERROR: tried to render a sprite without providing a texture!" << std::endl;
+        // if (IndexCount >= MaxIndexCount)
+        // {
+        //         std::cout << "Batch overflowed, beginning a new batch" << std::endl;
+        //         EndBatch();
+        //         Flush();
+        //         BeginBatch();
+        // }
+        // addQuadToBuffer(position, size, 0.0f);
 }
 
-void TextureBatch::DrawQuad(const glm::vec2& position, const glm::vec2& size, uint32_t textureID)
+void SpriteBatch::DrawQuad(const glm::vec2& position, const glm::vec2& size, uint32_t textureID, const glm::uvec4& colors)
 {
         if (IndexCount >= MaxIndexCount)
         {
@@ -143,7 +153,7 @@ void TextureBatch::DrawQuad(const glm::vec2& position, const glm::vec2& size, ui
         }
         //constexpr glm::vec4 color = {}
 
-        float textureIndex = 0.0f;
+        float textureIndex = 0;
         for (uint32_t i = 1; i < TextureSlotIndex; i++)
         {
                 if (TextureSlots[i] == textureID)
@@ -153,46 +163,50 @@ void TextureBatch::DrawQuad(const glm::vec2& position, const glm::vec2& size, ui
                 }
         }
 
-        if (textureIndex == 0.0f)//TODO: check if above maximum textures
+        if (textureIndex == 0)//TODO: check if above maximum textures
         {
                 textureIndex = (float)TextureSlotIndex;
                 TextureSlots[TextureSlotIndex] = textureID;
                 TextureSlotIndex++;
         }
 
-
-        addQuadToBuffer(position, size, textureIndex);
+        // std::cout << textureIndex << std::endl;
+        addQuadToBuffer(position, size, textureIndex, colors);
 }
 
 
 
-void TextureBatch::addQuadToBuffer(const glm::vec2& position, const glm::vec2& size, float texIndex)
+void SpriteBatch::addQuadToBuffer(const glm::vec2& position, const glm::vec2& size, float texIndex, const glm::uvec4& colors)
 {
         QuadBufferPtr->position = {position.x, position.y, 0.0f};
         QuadBufferPtr->texCoords = {0.0f, 0.0f};
         QuadBufferPtr->texIndex = texIndex;
+        QuadBufferPtr->colors = colors;
         QuadBufferPtr++;
 
         QuadBufferPtr->position = {position.x + size.x, position.y, 0.0f};
         QuadBufferPtr->texCoords = {1.0f, 0.0f};
         QuadBufferPtr->texIndex = texIndex;
+        QuadBufferPtr->colors = colors;
         QuadBufferPtr++;
 
         QuadBufferPtr->position = {position.x + size.x, position.y + size.y, 0.0f};
         QuadBufferPtr->texCoords = {1.0f, 1.0f};
         QuadBufferPtr->texIndex = texIndex;
+        QuadBufferPtr->colors = colors;
         QuadBufferPtr++;
 
         QuadBufferPtr->position = {position.x, position.y + size.y, 0.0f};
         QuadBufferPtr->texCoords = {0.0f, 1.0f};
         QuadBufferPtr->texIndex = texIndex;
-        std::cout << QuadBufferPtr->texIndex << std::endl;
+        QuadBufferPtr->colors = colors;
+        // std::cout << QuadBufferPtr->colors.x << std::endl;
         QuadBufferPtr++;
 
         IndexCount += 6;
 }
 
-void TextureBatch::SetViewMatrix(glm::mat4 &vm)
+void SpriteBatch::SetViewMatrix(glm::mat4 &vm)
 {
         viewMatrix = vm;
         shader.Bind();

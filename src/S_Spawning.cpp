@@ -23,7 +23,7 @@ void S_Spawning::update(float deltaTime, entt::registry &reg)
                         reg.emplace<C_Position>(player, e->xpos, e->ypos);
                         reg.emplace<C_Velocity>(player);
                         reg.emplace<C_Drag>(player, 0.8f);
-                        reg.emplace<C_Size>(player, 150.0f, 150.0f);
+                        reg.emplace<C_Size>(player, 450.0f, 450.0f);
                         reg.emplace<C_DrawLayer>(player);
                         reg.emplace<C_Player>(player, e->localPlayer, e->slot);
                         if (e->localPlayer)

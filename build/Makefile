@@ -654,6 +654,33 @@ src/S_Spawning.cpp.s:
 	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.s
 .PHONY : src/S_Spawning.cpp.s
 
+src/SpriteBatch.obj: src/SpriteBatch.cpp.obj
+
+.PHONY : src/SpriteBatch.obj
+
+# target to build an object file
+src/SpriteBatch.cpp.obj:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/SpriteBatch.cpp.obj
+.PHONY : src/SpriteBatch.cpp.obj
+
+src/SpriteBatch.i: src/SpriteBatch.cpp.i
+
+.PHONY : src/SpriteBatch.i
+
+# target to preprocess a source file
+src/SpriteBatch.cpp.i:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/SpriteBatch.cpp.i
+.PHONY : src/SpriteBatch.cpp.i
+
+src/SpriteBatch.s: src/SpriteBatch.cpp.s
+
+.PHONY : src/SpriteBatch.s
+
+# target to generate assembly for a file
+src/SpriteBatch.cpp.s:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/SpriteBatch.cpp.s
+.PHONY : src/SpriteBatch.cpp.s
+
 src/System.obj: src/System.cpp.obj
 
 .PHONY : src/System.obj
@@ -1126,6 +1153,9 @@ help:
 	@echo ... src/S_Spawning.obj
 	@echo ... src/S_Spawning.i
 	@echo ... src/S_Spawning.s
+	@echo ... src/SpriteBatch.obj
+	@echo ... src/SpriteBatch.i
+	@echo ... src/SpriteBatch.s
 	@echo ... src/System.obj
 	@echo ... src/System.i
 	@echo ... src/System.s

@@ -5,6 +5,7 @@
 #include <glm/glm.hpp>
 #include "Shader.hpp"
 #include "rendering/TextureBatch.hpp"
+#include "rendering/SpriteBatch.hpp"
 
 class Renderer
 {
@@ -14,7 +15,9 @@ static void Init();
 
 // void Render3DQuad
 
+static void RenderTexture(const glm::vec2& position, const glm::vec2& size);
 static void RenderSprite(const glm::vec2& position, const glm::vec2& size);
+static void flushTextureBatch();
 static void flushSpriteBatch();
 static void updateMatricies(int w, int h);
 
@@ -23,7 +26,8 @@ static void setProjectionScreen();
 private:
 inline static uint32_t texture;
 
-inline static std::unique_ptr<TextureBatch> spriteBatch;
+inline static std::unique_ptr<TextureBatch> texture_batch;
+inline static std::unique_ptr<SpriteBatch> sprite_batch;
 
 
 inline static glm::mat4 worldOrthoMatrix;
@@ -31,7 +35,7 @@ inline static glm::mat4 screenOrthoMatrix;
 inline static unsigned int orthoMatrixID;
 
 inline static unsigned int vertexarrayid;
-inline static Shader basic_shader;
+// inline static Shader basic_shader;
 inline static unsigned int quad_position_buffer;
 inline static unsigned int quad_element_buffer;
 // unsigned int texture;

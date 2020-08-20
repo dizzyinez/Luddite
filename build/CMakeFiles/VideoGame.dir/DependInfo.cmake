@@ -43,6 +43,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "R:/Dev/games/Luddite/Luddite/src/S_PlayerController.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/S_Projection.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/S_Projection.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/S_Spawning.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj"
+  "R:/Dev/games/Luddite/Luddite/src/SpriteBatch.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/SpriteBatch.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/System.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/System.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/TextureBatch.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/TextureBatch.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/game.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/game.cpp.obj"

@@ -21,8 +21,8 @@ void Renderer::Init()
         int width, height, nrChannels;
         glGenTextures(1, &texture);
         glBindTexture(GL_TEXTURE_2D, texture);
-        unsigned char *data = stbi_load("../assets/textures/place_holder_normals.png", &width, &height, &nrChannels, 0);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        unsigned char *data = stbi_load("../assets/textures/untitled.png", &width, &height, &nrChannels, 0);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
@@ -30,24 +30,40 @@ void Renderer::Init()
         glBindTexture(GL_TEXTURE_2D, 0);
         stbi_image_free(data);
 
+        texture_batch = std::make_unique<TextureBatch>();
+        texture_batch->Init();
+        texture_batch->BeginBatch();
 
-        spriteBatch = std::make_unique<TextureBatch>();
-        spriteBatch->Init();
-        spriteBatch->BeginBatch();
+        sprite_batch = std::make_unique<SpriteBatch>();
+        sprite_batch->Init();
+        sprite_batch->BeginBatch();
 
         // updateMatricies(1024, 768);
 }
+void Renderer::RenderTexture(const glm::vec2& position, const glm::vec2& size)
+{
+        CheckGLError();
+        texture_batch->DrawQuad(position, size, texture);
+}
+
 void Renderer::RenderSprite(const glm::vec2& position, const glm::vec2& size)
 {
         CheckGLError();
-        spriteBatch->DrawQuad(position, size, texture);
+        sprite_batch->DrawQuad(position, size, texture, glm::uvec4(0xFF0000FF, 0xFF00FF00, 0xFFFF0000, 0xFFFF00FF));
+}
+
+void Renderer::flushTextureBatch()
+{
+        texture_batch->EndBatch();
+        texture_batch->Flush();
+        texture_batch->BeginBatch();
 }
 
 void Renderer::flushSpriteBatch()
 {
-        spriteBatch->EndBatch();
-        spriteBatch->Flush();
-        spriteBatch->BeginBatch();
+        sprite_batch->EndBatch();
+        sprite_batch->Flush();
+        sprite_batch->BeginBatch();
 }
 void Renderer::updateMatricies(int w, int h)
 {
@@ -61,7 +77,7 @@ void Renderer::updateMatricies(int w, int h)
         glm::mat4 projection = glm::ortho(-half_width, half_width, 500.0f, -500.0f);
         glm::mat4 vp = projection * view;
         worldOrthoMatrix = vp;
-        spriteBatch->SetViewMatrix(vp);
+        sprite_batch->SetViewMatrix(vp);
         glViewport(0, 0, width, height);
 
         projection = glm::ortho(0.0f, width, height, 0.0f); //reminder: this function only likes floats and seems to fail with integers
@@ -71,10 +87,12 @@ void Renderer::updateMatricies(int w, int h)
 
 void Renderer::setProjectionWorld()
 {
-        spriteBatch->SetViewMatrix(worldOrthoMatrix);
+        sprite_batch->SetViewMatrix(worldOrthoMatrix);
+        texture_batch->SetViewMatrix(worldOrthoMatrix);
 }
 
 void Renderer::setProjectionScreen()
 {
-        spriteBatch->SetViewMatrix(screenOrthoMatrix);
+        sprite_batch->SetViewMatrix(screenOrthoMatrix);
+        texture_batch->SetViewMatrix(screenOrthoMatrix);
 }

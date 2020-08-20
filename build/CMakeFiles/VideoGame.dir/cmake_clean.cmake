@@ -17,6 +17,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj"
   "CMakeFiles/VideoGame.dir/src/S_Projection.cpp.obj"
   "CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj"
+  "CMakeFiles/VideoGame.dir/src/SpriteBatch.cpp.obj"
   "CMakeFiles/VideoGame.dir/src/System.cpp.obj"
   "CMakeFiles/VideoGame.dir/src/TextureBatch.cpp.obj"
   "CMakeFiles/VideoGame.dir/src/enet/callbacks.c.obj"

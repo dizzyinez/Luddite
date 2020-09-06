@@ -84,6 +84,12 @@ CMakeFiles/VideoGame.dir/src/enet/win32.c.obj: ../include/enet/unix.h
 CMakeFiles/VideoGame.dir/src/enet/win32.c.obj: ../include/enet/win32.h
 CMakeFiles/VideoGame.dir/src/enet/win32.c.obj: ../src/enet/win32.c
 
+CMakeFiles/VideoGame.dir/src/Assets.cpp.obj: ../include/core/Assets.hpp
+CMakeFiles/VideoGame.dir/src/Assets.cpp.obj: ../include/stb/stb_image.h
+CMakeFiles/VideoGame.dir/src/Assets.cpp.obj: R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
+CMakeFiles/VideoGame.dir/src/Assets.cpp.obj: R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
+CMakeFiles/VideoGame.dir/src/Assets.cpp.obj: ../src/Assets.cpp
+
 CMakeFiles/VideoGame.dir/src/Events.cpp.obj: ../include/events/Events.hpp
 CMakeFiles/VideoGame.dir/src/Events.cpp.obj: ../src/Events.cpp
 
@@ -370,6 +376,7 @@ CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj: ../src/PacketDefinitions
 CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj: ../include/CheckGLError.hpp
 CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj: ../include/Locator.hpp
 CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj: ../include/ResourceAllocator.hpp
+CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj: ../include/core/assets.hpp
 CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj: ../include/core/game.hpp
 CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj: ../include/rendering/Batch.hpp
 CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj: ../include/rendering/Renderer.hpp
@@ -595,6 +602,8 @@ CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj: ../include/ResourceAllocator.hpp
 CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj: ../include/components/DrawLayer.hpp
 CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj: ../include/components/Position.hpp
 CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj: ../include/components/Size.hpp
+CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj: ../include/components/Texture.hpp
+CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj: ../include/components/Tileset.hpp
 CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj: ../include/core/game.hpp
 CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj: ../include/entt.hpp
 CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj: ../include/rendering/Batch.hpp
@@ -1507,7 +1516,10 @@ CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/components/Player.hp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/components/PlayerKeymap.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/components/Position.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/components/Size.hpp
+CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/components/Texture.hpp
+CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/components/Tileset.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/components/Velocity.hpp
+CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/core/assets.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/enet/callbacks.h
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/enet/enet.h
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/enet/list.h

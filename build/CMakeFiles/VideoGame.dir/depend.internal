@@ -84,6 +84,12 @@ CMakeFiles/VideoGame.dir/src/enet/win32.c.obj
  ../include/enet/unix.h
  ../include/enet/win32.h
  R:/Dev/games/Luddite/Luddite/src/enet/win32.c
+CMakeFiles/VideoGame.dir/src/Assets.cpp.obj
+ ../include/core/Assets.hpp
+ ../include/stb/stb_image.h
+ R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
+ R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
+ R:/Dev/games/Luddite/Luddite/src/Assets.cpp
 CMakeFiles/VideoGame.dir/src/Events.cpp.obj
  ../include/events/Events.hpp
  R:/Dev/games/Luddite/Luddite/src/Events.cpp
@@ -371,6 +377,7 @@ CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj
  ../include/CheckGLError.hpp
  ../include/Locator.hpp
  ../include/ResourceAllocator.hpp
+ ../include/core/assets.hpp
  ../include/core/game.hpp
  ../include/rendering/Batch.hpp
  ../include/rendering/Renderer.hpp
@@ -596,6 +603,8 @@ CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj
  ../include/components/DrawLayer.hpp
  ../include/components/Position.hpp
  ../include/components/Size.hpp
+ ../include/components/Texture.hpp
+ ../include/components/Tileset.hpp
  ../include/core/game.hpp
  ../include/entt.hpp
  ../include/rendering/Batch.hpp
@@ -1508,7 +1517,10 @@ CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj
  ../include/components/PlayerKeymap.hpp
  ../include/components/Position.hpp
  ../include/components/Size.hpp
+ ../include/components/Texture.hpp
+ ../include/components/Tileset.hpp
  ../include/components/Velocity.hpp
+ ../include/core/assets.hpp
  ../include/enet/callbacks.h
  ../include/enet/enet.h
  ../include/enet/list.h

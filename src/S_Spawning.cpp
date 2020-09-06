@@ -10,6 +10,11 @@
 #include "components/Size.hpp"
 #include "components/DrawLayer.hpp"
 #include "components/PlayerKeymap.hpp"
+#include "components/Texture.hpp"
+#include "components/Tileset.hpp"
+
+#include <glm/glm.hpp>
+#include "core/assets.hpp"
 
 void S_Spawning::update(float deltaTime, entt::registry &reg)
 {
@@ -23,8 +28,11 @@ void S_Spawning::update(float deltaTime, entt::registry &reg)
                         reg.emplace<C_Position>(player, e->xpos, e->ypos);
                         reg.emplace<C_Velocity>(player);
                         reg.emplace<C_Drag>(player, 0.8f);
-                        reg.emplace<C_Size>(player, 450.0f, 450.0f);
+                        reg.emplace<C_Size>(player, 200.0f, 200.0f);
                         reg.emplace<C_DrawLayer>(player);
+                        reg.emplace<C_Sprite>(player, Assets::Sprite::Get(Assets::Sprite::player), glm::uvec4(0xFFFF00FF, 0xEEEEEEFF, 0xAAAAAAFF, 0xFFFFFFFF)); //RGBA
+                        reg.emplace<C_Tileset>(player, 22, 8, 0);
+                        reg.emplace<C_Animation>(player, 2, 22, 0, 1.0/30.0, 0.0, true, true);
                         reg.emplace<C_Player>(player, e->localPlayer, e->slot);
                         if (e->localPlayer)
                         {

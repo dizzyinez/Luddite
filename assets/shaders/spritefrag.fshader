@@ -4,6 +4,8 @@ in vec2 v_TexCoord;
 in float v_TexIndex;
 flat in uvec4 v_Colors;
 
+flat in vec3 v_WorldPosition;
+
 out vec4 o_Color;
 
 uniform sampler2D u_Textures[32];
@@ -25,20 +27,40 @@ else
 {
 
   int index = int(texture_data.w * 255) - 1;
-  vec4 tex_color = vec4(float((v_Colors[index]) & 0xFF)/255, float((v_Colors[index]>>8) & 0xFF)/255, float((v_Colors[index]>>16)  & 0xFF)/255, float((v_Colors[index]>>24) & 0xFF)/255);
+  vec4 tex_color = vec4(float((v_Colors[index]>>24) & 0xFF)/255, float((v_Colors[index]>>16) & 0xFF)/255, float((v_Colors[index]>>8)  & 0xFF)/255, float((v_Colors[index]) & 0xFF)/255);
 
 
-  vec3 normal = texture_data.rgb;
-  normal = normalize(normal * 2.0 - 1.0);
-  float dotProduct = dot(normal, normalize(vec3(-1.0f,0.0f, -1.0f)));
-  if (dotProduct < 0.3)
-  {
-    color = tex_color * 0.3;
-  }
-  else
-  {
-    color = tex_color * dotProduct;
-  }
+  vec3 normal = normalize(texture_data.rgb * 2.0 - 1.0);
+  // vec3 normal  = normalize(texture_data.rgb);
+  vec3 light_pos = vec3(0.0f,0.0f,10.0f);
+
+  float light_dist = distance(v_WorldPosition, light_pos);
+  float light_pow = 100;
+
+  vec3 light_dir = normalize(light_pos - v_WorldPosition);
+  float diff = max(dot(normal, light_dir), 0.0f);
+  // diff = max(diff, min(light_pow/(light_dist+50), 0.6f));
+  // diff = min(diff, 1);
+
+
+
+vec3 view_dir = normalize(vec3(0.0f, 1.41f, 1.0f));
+float spec = 0;
+
+if (dot(normal, light_dir) > 0)
+{
+  vec3 reflect_dir = reflect(-light_dir, normal);
+  spec = pow(max(dot(view_dir, reflect_dir), 0.0f), 3);
+
+}
+
+float ambient = 0.4;
+float light = max(spec + diff, ambient);
+
+  // color = vec4(tex_color.rgb * diff, tex_color.a);
+  color = vec4(tex_color.rgb * (ambient + spec + diff), tex_color.a);
+  // color = vec4(texture_data.rgb, tex_color.a);
+  // color = texture_data;
 }
 
   o_Color = color;

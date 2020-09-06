@@ -17,10 +17,11 @@ void EndBatch();
 void Clean();
 void DrawQuad(const glm::vec2& position, const glm::vec2& size);
 void DrawQuad(const glm::vec2& position, const glm::vec2& size, uint32_t textureID);
+void DrawQuad(const glm::vec2& position, const glm::vec2& size, uint32_t textureID, const glm::vec4& tex_coords);
 //TODO: void DrawRotatedQuad();
 void Flush(); //virtual?
 private:
-void addQuadToBuffer(const glm::vec2& position, const glm::vec2& size, float texIndex);
+void addQuadToBuffer(const glm::vec2& position, const glm::vec2& size, float texIndex, const glm::vec4& tex_coords);
 static const size_t MaxTextures = 32;
 std::array<uint32_t, MaxTextures> TextureSlots;
 uint32_t TextureSlotIndex = 1;

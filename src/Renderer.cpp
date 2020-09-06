@@ -7,28 +7,29 @@
 #include <iostream>
 #include "CheckGLError.hpp"
 
-#define STB_IMAGE_IMPLEMENTATION
-#include "stb/stb_image.h"
+// #define STB_IMAGE_IMPLEMENTATION
+// #include "stb/stb_image.h"
 #include "rendering/loadShader.hpp"
+#include "core/assets.hpp"
 
 void Renderer::Init()
 {
-
-        glEnable(GL_BLEND);
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-        stbi_set_flip_vertically_on_load(false);
-
-        int width, height, nrChannels;
-        glGenTextures(1, &texture);
-        glBindTexture(GL_TEXTURE_2D, texture);
-        unsigned char *data = stbi_load("../assets/textures/untitled.png", &width, &height, &nrChannels, 0);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-        glBindTexture(GL_TEXTURE_2D, 0);
-        stbi_image_free(data);
+        std::cout << "id is: " <<  Assets::Sprite::Get(Assets::Sprite::player) << std::endl;
+        // glEnable(GL_BLEND);
+        // glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        // stbi_set_flip_vertically_on_load(false);
+        //
+        // int width, height, nrChannels;
+        // glGenTextures(1, &texture);
+        // glBindTexture(GL_TEXTURE_2D, texture);
+        // unsigned char *data = stbi_load("../assets/textures/untitled.png", &width, &height, &nrChannels, 0);
+        // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+        // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+        // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+        // glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+        // glBindTexture(GL_TEXTURE_2D, 0);
+        // stbi_image_free(data);
 
         texture_batch = std::make_unique<TextureBatch>();
         texture_batch->Init();
@@ -40,16 +41,22 @@ void Renderer::Init()
 
         // updateMatricies(1024, 768);
 }
-void Renderer::RenderTexture(const glm::vec2& position, const glm::vec2& size)
+void Renderer::RenderSquare(const glm::vec2& position, const glm::vec2& size) //TODO: add color
 {
         CheckGLError();
-        texture_batch->DrawQuad(position, size, texture);
+        texture_batch->DrawQuad(position, size);
 }
 
-void Renderer::RenderSprite(const glm::vec2& position, const glm::vec2& size)
+void Renderer::RenderTexture(const glm::vec2& position, const glm::vec2& size, uint32_t texture_id, const glm::vec4& tex_coords) //TODO: add color
 {
         CheckGLError();
-        sprite_batch->DrawQuad(position, size, texture, glm::uvec4(0xFF0000FF, 0xFF00FF00, 0xFFFF0000, 0xFFFF00FF));
+        texture_batch->DrawQuad(position, size, texture_id, tex_coords);
+}
+
+void Renderer::RenderSprite(const glm::vec2& position, const glm::vec2& size, uint32_t texture_id, const glm::vec4& tex_coords, const glm::uvec4& colors)
+{
+        CheckGLError();
+        sprite_batch->DrawQuad(position, size, texture_id, tex_coords, colors);
 }
 
 void Renderer::flushTextureBatch()

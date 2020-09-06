@@ -5,6 +5,7 @@ layout(location = 0) in vec3 a_Position;
 layout(location = 1) in vec2 a_TexCoord;
 layout(location = 2) in float a_TexIndex;
 layout(location = 3) in uvec4 a_Colors;
+layout(location = 4) in vec3 a_WorldPosition;
 
 uniform mat4 ortho;
 
@@ -19,6 +20,8 @@ out vec2 v_TexCoord;
 out float v_TexIndex;
 flat out uvec4 v_Colors;
 
+flat out vec3 v_WorldPosition;
+
 void main(){
 
 
@@ -27,6 +30,7 @@ void main(){
 			v_TexCoord = a_TexCoord;
 			v_TexIndex = a_TexIndex;
 			v_Colors = a_Colors;
+			v_WorldPosition = a_WorldPosition;
 			// Output position of the vertex, in clip space : MVP * position
 			gl_Position =  ortho * vec4(a_Position, 1.0);
 }

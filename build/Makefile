@@ -168,6 +168,33 @@ VideoGame/fast:
 	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/build
 .PHONY : VideoGame/fast
 
+src/Assets.obj: src/Assets.cpp.obj
+
+.PHONY : src/Assets.obj
+
+# target to build an object file
+src/Assets.cpp.obj:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Assets.cpp.obj
+.PHONY : src/Assets.cpp.obj
+
+src/Assets.i: src/Assets.cpp.i
+
+.PHONY : src/Assets.i
+
+# target to preprocess a source file
+src/Assets.cpp.i:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Assets.cpp.i
+.PHONY : src/Assets.cpp.i
+
+src/Assets.s: src/Assets.cpp.s
+
+.PHONY : src/Assets.s
+
+# target to generate assembly for a file
+src/Assets.cpp.s:
+	$(MAKE) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Assets.cpp.s
+.PHONY : src/Assets.cpp.s
+
 src/Events.obj: src/Events.cpp.obj
 
 .PHONY : src/Events.obj
@@ -1099,6 +1126,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... install/strip
+	@echo ... src/Assets.obj
+	@echo ... src/Assets.i
+	@echo ... src/Assets.s
 	@echo ... src/Events.obj
 	@echo ... src/Events.i
 	@echo ... src/Events.s

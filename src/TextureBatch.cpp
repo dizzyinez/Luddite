@@ -129,7 +129,7 @@ void TextureBatch::DrawQuad(const glm::vec2& position, const glm::vec2& size) //
                 Flush();
                 BeginBatch();
         }
-        addQuadToBuffer(position, size, 1.0f);
+        addQuadToBuffer(position, size, 0.0f, glm::vec4(0.0f, 0.0f, 1.0f, 1.0f));
 }
 
 void TextureBatch::DrawQuad(const glm::vec2& position, const glm::vec2& size, uint32_t textureID)
@@ -141,7 +141,6 @@ void TextureBatch::DrawQuad(const glm::vec2& position, const glm::vec2& size, ui
                 Flush();
                 BeginBatch();
         }
-        //constexpr glm::vec4 color = {}
 
         float textureIndex = 0.0f;
         for (uint32_t i = 1; i < TextureSlotIndex; i++)
@@ -160,31 +159,60 @@ void TextureBatch::DrawQuad(const glm::vec2& position, const glm::vec2& size, ui
                 TextureSlotIndex++;
         }
 
+        addQuadToBuffer(position, size, textureIndex, glm::vec4(0.0f, 0.0f, 1.0f, 1.0f));
+}
 
-        addQuadToBuffer(position, size, textureIndex);
+void TextureBatch::DrawQuad(const glm::vec2& position, const glm::vec2& size, uint32_t textureID, const glm::vec4& tex_coords)
+{
+        if (IndexCount >= MaxIndexCount)
+        {
+                std::cout << "Batch overflowed, beginning a new batch" << std::endl;
+                EndBatch();
+                Flush();
+                BeginBatch();
+        }
+
+        float textureIndex = 0.0f;
+        for (uint32_t i = 1; i < TextureSlotIndex; i++)
+        {
+                if (TextureSlots[i] == textureID)
+                {
+                        textureIndex = (float)i;
+                        break;
+                }
+        }
+
+        if (textureIndex == 0.0f)//TODO: check if above maximum textures
+        {
+                textureIndex = (float)TextureSlotIndex;
+                TextureSlots[TextureSlotIndex] = textureID;
+                TextureSlotIndex++;
+        }
+
+        addQuadToBuffer(position, size, textureIndex, tex_coords);
 }
 
 
 
-void TextureBatch::addQuadToBuffer(const glm::vec2& position, const glm::vec2& size, float texIndex)
+void TextureBatch::addQuadToBuffer(const glm::vec2& position, const glm::vec2& size, float texIndex, const glm::vec4& tex_coords)
 {
         QuadBufferPtr->position = {position.x, position.y, 0.0f};
-        QuadBufferPtr->texCoords = {0.0f, 0.0f};
+        QuadBufferPtr->texCoords = {tex_coords.x, tex_coords.y};
         QuadBufferPtr->texIndex = texIndex;
         QuadBufferPtr++;
 
         QuadBufferPtr->position = {position.x + size.x, position.y, 0.0f};
-        QuadBufferPtr->texCoords = {1.0f, 0.0f};
+        QuadBufferPtr->texCoords = {tex_coords.x + tex_coords.z, tex_coords.y};
         QuadBufferPtr->texIndex = texIndex;
         QuadBufferPtr++;
 
         QuadBufferPtr->position = {position.x + size.x, position.y + size.y, 0.0f};
-        QuadBufferPtr->texCoords = {1.0f, 1.0f};
+        QuadBufferPtr->texCoords = {tex_coords.x + tex_coords.z, tex_coords.y + tex_coords.w};
         QuadBufferPtr->texIndex = texIndex;
         QuadBufferPtr++;
 
         QuadBufferPtr->position = {position.x, position.y + size.y, 0.0f};
-        QuadBufferPtr->texCoords = {0.0f, 1.0f};
+        QuadBufferPtr->texCoords = {tex_coords.x, tex_coords.y + tex_coords.w};
         QuadBufferPtr->texIndex = texIndex;
         std::cout << QuadBufferPtr->texIndex << std::endl;
         QuadBufferPtr++;

@@ -15,8 +15,9 @@ static void Init();
 
 // void Render3DQuad
 
-static void RenderTexture(const glm::vec2& position, const glm::vec2& size);
-static void RenderSprite(const glm::vec2& position, const glm::vec2& size);
+static void RenderSquare(const glm::vec2& position, const glm::vec2& size); //TODO: add color
+static void RenderTexture(const glm::vec2& position, const glm::vec2& size, uint32_t texture_id, const glm::vec4& tex_coords); //TODO: add color
+static void RenderSprite(const glm::vec2& position, const glm::vec2& size, uint32_t texture_id, const glm::vec4& tex_coords, const glm::uvec4& colors);
 static void flushTextureBatch();
 static void flushSpriteBatch();
 static void updateMatricies(int w, int h);

@@ -25,6 +25,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "R:/Dev/Libraries/C++/glm"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
+  "R:/Dev/games/Luddite/Luddite/src/Assets.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/Assets.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/Events.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/Events.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/L_Base.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/L_Base.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/L_MainMenu.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj"

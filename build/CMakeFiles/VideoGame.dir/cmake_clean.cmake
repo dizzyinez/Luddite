@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/VideoGame.dir/src/Assets.cpp.obj"
   "CMakeFiles/VideoGame.dir/src/Events.cpp.obj"
   "CMakeFiles/VideoGame.dir/src/L_Base.cpp.obj"
   "CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj"

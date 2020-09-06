@@ -74,10 +74,13 @@ void SpriteBatch::Init()
         glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)offsetof(Vertex, texCoords));
 
         glEnableVertexArrayAttrib(QuadVA, 2);
-        glVertexAttribPointer(2, 1, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)offsetof(Vertex, texIndex));
+        glVertexAttribPointer(2, 1, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)offsetof(Vertex, tex_index));
 
         glEnableVertexArrayAttrib(QuadVA, 3);
         glVertexAttribIPointer(3, 4, GL_UNSIGNED_INT, sizeof(Vertex), (const void*)offsetof(Vertex, colors));
+
+        glEnableVertexArrayAttrib(QuadVA, 4);
+        glVertexAttribPointer(4, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)offsetof(Vertex, world_position));
 
         uint32_t indices[MaxIndexCount];
         uint32_t offset = 0;
@@ -142,7 +145,7 @@ void SpriteBatch::DrawQuad(const glm::vec2& position, const glm::vec2& size) // 
         // addQuadToBuffer(position, size, 0.0f);
 }
 
-void SpriteBatch::DrawQuad(const glm::vec2& position, const glm::vec2& size, uint32_t textureID, const glm::uvec4& colors)
+void SpriteBatch::DrawQuad(const glm::vec2& position, const glm::vec2& size, uint32_t textureID,  const glm::vec4& tex_coords, const glm::uvec4& colors)
 {
         if (IndexCount >= MaxIndexCount)
         {
@@ -171,35 +174,39 @@ void SpriteBatch::DrawQuad(const glm::vec2& position, const glm::vec2& size, uin
         }
 
         // std::cout << textureIndex << std::endl;
-        addQuadToBuffer(position, size, textureIndex, colors);
+        addQuadToBuffer(position, size, textureIndex, tex_coords, colors);
 }
 
 
 
-void SpriteBatch::addQuadToBuffer(const glm::vec2& position, const glm::vec2& size, float texIndex, const glm::uvec4& colors)
+void SpriteBatch::addQuadToBuffer(const glm::vec2& position, const glm::vec2& size, float tex_index, const glm::vec4& tex_coords, const glm::uvec4& colors)
 {
         QuadBufferPtr->position = {position.x, position.y, 0.0f};
-        QuadBufferPtr->texCoords = {0.0f, 0.0f};
-        QuadBufferPtr->texIndex = texIndex;
+        QuadBufferPtr->texCoords = {tex_coords.x, tex_coords.y};
+        QuadBufferPtr->tex_index = tex_index;
         QuadBufferPtr->colors = colors;
+        QuadBufferPtr->world_position = {position.x + size.x/2, position.y + size.y/2, 0.0f};
         QuadBufferPtr++;
 
         QuadBufferPtr->position = {position.x + size.x, position.y, 0.0f};
-        QuadBufferPtr->texCoords = {1.0f, 0.0f};
-        QuadBufferPtr->texIndex = texIndex;
+        QuadBufferPtr->texCoords = {tex_coords.x + tex_coords.z, tex_coords.y};
+        QuadBufferPtr->tex_index = tex_index;
         QuadBufferPtr->colors = colors;
+        QuadBufferPtr->world_position = {position.x + size.x/2, position.y + size.y/2, 0.0f};
         QuadBufferPtr++;
 
         QuadBufferPtr->position = {position.x + size.x, position.y + size.y, 0.0f};
-        QuadBufferPtr->texCoords = {1.0f, 1.0f};
-        QuadBufferPtr->texIndex = texIndex;
+        QuadBufferPtr->texCoords = {tex_coords.x + tex_coords.z, tex_coords.y + tex_coords.w};
+        QuadBufferPtr->tex_index = tex_index;
         QuadBufferPtr->colors = colors;
+        QuadBufferPtr->world_position = {position.x + size.x/2, position.y + size.y/2, 0.0f};
         QuadBufferPtr++;
 
         QuadBufferPtr->position = {position.x, position.y + size.y, 0.0f};
-        QuadBufferPtr->texCoords = {0.0f, 1.0f};
-        QuadBufferPtr->texIndex = texIndex;
+        QuadBufferPtr->texCoords = {tex_coords.x, tex_coords.y + tex_coords.w};
+        QuadBufferPtr->tex_index = tex_index;
         QuadBufferPtr->colors = colors;
+        QuadBufferPtr->world_position = {position.x + size.x/2, position.y + size.y/2, 0.0f};
         // std::cout << QuadBufferPtr->colors.x << std::endl;
         QuadBufferPtr++;
 

@@ -1,9 +1,9 @@
 import controlP5.*;
 ControlP5 gui;
 
-PShape character;
+//PShape character;
 
-int frames = 22;
+//int frames = 35;
 
 PImage sprite_sheet_data;
 PImage sprite_sheet_visible;

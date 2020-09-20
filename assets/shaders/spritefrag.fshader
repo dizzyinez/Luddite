@@ -54,7 +54,7 @@ if (dot(normal, light_dir) > 0)
 
 }
 
-float ambient = 0.4;
+float ambient = 0.6;
 float light = max(spec + diff, ambient);
 
   // color = vec4(tex_color.rgb * diff, tex_color.a);

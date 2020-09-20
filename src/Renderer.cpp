@@ -10,7 +10,7 @@
 // #define STB_IMAGE_IMPLEMENTATION
 // #include "stb/stb_image.h"
 #include "rendering/loadShader.hpp"
-#include "core/assets.hpp"
+#include "data/assets.hpp"
 
 void Renderer::Init()
 {
@@ -102,4 +102,9 @@ void Renderer::setProjectionScreen()
 {
         sprite_batch->SetViewMatrix(screenOrthoMatrix);
         texture_batch->SetViewMatrix(screenOrthoMatrix);
+}
+
+glm::vec2 Renderer::screenToWorld(glm::vec2 position)
+{
+        return ( screenOrthoMatrix * glm::vec4(position.x, position.y, 0.0f, 1.0f)) / worldOrthoMatrix;
 }

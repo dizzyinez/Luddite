@@ -24,6 +24,8 @@ static void updateMatricies(int w, int h);
 
 static void setProjectionWorld();
 static void setProjectionScreen();
+
+static glm::vec2 screenToWorld(glm::vec2 position);
 private:
 inline static uint32_t texture;
 

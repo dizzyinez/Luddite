@@ -1,0 +1,30 @@
+{
+  "animations" :
+  [
+    {
+      "name" : ""
+      "frames" :
+      [
+        {
+          "hitboxes" :
+          [
+            {
+              "x" : 0,
+              "y" : 0,
+              "w" : 0,
+              "h" : 0,
+              "xvel" : 0,
+              "yvel" : 0,
+              "dmg" : 0,
+              "hitstun" : 0
+            },
+          ]
+          "flags" :
+          [
+          ]
+        },
+      ]
+    },
+
+  ]
+}

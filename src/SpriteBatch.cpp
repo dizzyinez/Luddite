@@ -6,15 +6,12 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 
-#include "stb/stb_image.h"
-
 void SpriteBatch::Clean()
 {
         glDeleteVertexArrays(1, &QuadVA);
         glDeleteBuffers(1, &QuadVB);
         glDeleteBuffers(1, &QuadIB);
 
-        glDeleteTextures(1, &PalleteTexture);
 
         delete[] QuadBuffer;
 }
@@ -101,21 +98,7 @@ void SpriteBatch::Init()
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, QuadIB);
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
-
-        int width, height, nrChannels;
-        glCreateTextures(GL_TEXTURE_2D, 1, &PalleteTexture);
-        glBindTexture(GL_TEXTURE_2D, PalleteTexture);
-        unsigned char *data = stbi_load("../assets/textures/pallete.png", &width, &height, &nrChannels, 0);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 256, 1, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-        glBindTexture(GL_TEXTURE_2D, 0);
-        stbi_image_free(data);
-
-        TextureSlots[0] = PalleteTexture;
-        for (size_t i = 1; i < MaxTextures; i++)
+        for (size_t i = 0; i < MaxTextures; i++)
         {
                 TextureSlots[i] = 0;
         }

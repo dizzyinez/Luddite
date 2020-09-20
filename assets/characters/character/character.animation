@@ -1,0 +1,51 @@
+{
+  "animations": [
+  {
+    "name": "Idle"
+    "frames": [
+    {
+      "hitboxes": []
+      "flags": []
+    },
+    {
+      "hitboxes": []
+      "flags": []
+    },
+    {
+      "hitboxes": []
+      "flags": []
+    }, ]
+  },
+  {
+    "name": "Run"
+    "frames": [
+    {
+      "hitboxes": []
+      "flags": []
+    },
+    {
+      "hitboxes": []
+      "flags": []
+    },
+    {
+      "hitboxes": []
+      "flags": []
+    }, ]
+  },
+  {
+    "name": "Light Attack"
+    "frames": [
+    {
+      "hitboxes": []
+      "flags": []
+    },
+    {
+      "hitboxes": []
+      "flags": []
+    },
+    {
+      "hitboxes": []
+      "flags": []
+    }, ]
+  }]
+}

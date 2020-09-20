@@ -7,11 +7,16 @@
 #include <vector>
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include "entt.hpp"
+// #include "layers/Layer.hpp"
+// #include "ecs/Entity.hpp"
+
 
 using SystemID = size_t;
 
 class SystemManager;
-
+class Layer;
+class Entity;
 class BaseSystem {
 public:
 
@@ -24,6 +29,21 @@ virtual void update(float deltaTime, entt::registry &reg) {
 }
 
 static SystemID systemID_counter;
+double start_time = 0;
+double end_time = 0;
+Layer* m_Layer;
+
+
+
+Entity CreateEntity();
+Entity ToEntity(entt::entity e);
+// template <typename T>
+// void view(Func)
+// {
+//
+// }
+
+
 };
 
 template <typename T>
@@ -41,8 +61,9 @@ static SystemID systemID() {
         static SystemID systemID = systemID_counter++;
         return systemID;
 }
-double start_time = 0;
-double end_time = 0;
+
+
+
 
 };
 
@@ -74,10 +95,13 @@ void update(float deltaTime, entt::registry &reg)
         t->end_time = glfwGetTime();
 }
 
-void configure(entt::registry &reg)
+void configure(entt::registry &reg, Layer* layer)
 {
         for (auto s : systems)
+        {
+                s.second->m_Layer = layer;
                 s.second->configure(reg);
+        }
 }
 
 private:

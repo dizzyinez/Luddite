@@ -35,5 +35,56 @@ struct C_PlayerKeymap
                         return dir;
                 }
         }
+        int8_t animation_direction()
+        {
+                int8_t x = (move_left_pressed || move_right_pressed) ? (H_Most_Recent_Press_Left ? -1.0f : 1.0f) : 0.0f;
+                int8_t y = (move_up_pressed   || move_down_pressed ) ? (V_Most_Recent_Press_Up   ? -1.0f : 1.0f) : 0.0f;
+                switch (x)
+                {
+                case 1:
+                        switch (y)
+                        {
+                        case -1:
+                                return 1;
+                                break;
+                        case 0:
+                                return 2;
+                                break;
+                        case 1:
+                                return 3;
+                                break;
+                        }
+                        break;
+                case 0:
+                        switch (y)
+                        {
+                        case -1:
+                                return 0;
+                                break;
+                        case 0:
+                                return -1;
+                                break;
+                        case 1:
+                                return 4;
+                                break;
+                        }
+                        break;
+                case -1:
+                        switch (y)
+                        {
+                        case -1:
+                                return 7;
+                                break;
+                        case 0:
+                                return 6;
+                                break;
+                        case 1:
+                                return 5;
+                                break;
+                        }
+                        break;
+                }
+                return -1;
+        }
 };
 #endif

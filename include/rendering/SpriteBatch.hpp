@@ -25,9 +25,6 @@ static const size_t MaxTextures = 32;
 std::array<uint32_t, MaxTextures> TextureSlots;
 uint32_t TextureSlotIndex = 1;
 
-unsigned int PalleteTexture = 0;
-uint32_t PalleteTextureSlot = 0;
-
 unsigned int texture;
 unsigned int texture_n;
 

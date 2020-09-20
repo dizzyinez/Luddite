@@ -6,6 +6,7 @@ void L_Base::init()
 {
         systems.add<S_Projection>();
         systems.add<S_Logging>();
+        systems.configure(m_Registry, this);
 }
 
 void L_Base::handleEvents(float deltaTime)

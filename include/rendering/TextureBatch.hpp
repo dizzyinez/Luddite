@@ -3,7 +3,6 @@
 
 #include <array>
 #include "rendering/Batch.hpp"
-#include "rendering/Texture.hpp"
 
 
 class TextureBatch : public Batch

@@ -97,10 +97,10 @@ my_find_library(winsock ws2_32)
 my_find_library(winmedia winmm)
 
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} 
-${glew}
 ${GLFW}
-${glu}
+${glew}
 ${opengl}
+${glu}
 ${winsock}
 ${winmedia}
 )

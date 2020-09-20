@@ -10,10 +10,10 @@
 
 void S_PlayerController::update(float deltaTime, entt::registry &reg)
 {
-        reg.group<C_Player>(entt::get<C_Position, C_Velocity, C_PlayerKeymap>).each([&reg](auto Entity, auto &player, auto &pos, auto &vel, auto &keymap){
+        reg.group<C_Player>(entt::get<C_Position, C_Velocity, C_PlayerKeymap, C_PlayerDirection>).each([&reg](auto Entity, auto &player, auto &pos, auto &vel, auto &keymap, auto &direction){
                 if (player.local_player)
                 {
-
+                        //set the movement direction of the player based on input.
                         Events::iterate<E_Keyboard>([&Entity, &keymap](auto &e){
                                 if (e->action == GLFW_PRESS)
                                 {
@@ -74,6 +74,11 @@ void S_PlayerController::update(float deltaTime, entt::registry &reg)
                         glm::vec2 dir = keymap.direction();
                         vel.velocity.x = dir.x * 450;
                         vel.velocity.y = dir.y * 450;
+
+                        //set the integer direction of the player
+                        auto anim_dir = keymap.animation_direction();
+                        if (anim_dir != -1)
+                                direction.movement_direction = anim_dir;
                 }
         });
 }

@@ -1,6 +1,7 @@
 #ifndef C_Player_hpp
 #define C_Player_hpp
 #include <iostream>
+#include "ecs/Entity.hpp"
 
 struct C_Player
 {
@@ -24,6 +25,13 @@ struct C_PlayerSlots
                 }
         }
         entt::entity players[256];
+};
+
+struct C_PlayerDirection
+{
+        C_PlayerDirection() = default;
+        int8_t movement_direction = 0;
+        int8_t mouse_direction = 0;
 };
 
 #endif

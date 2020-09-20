@@ -7,6 +7,7 @@
 #include "systems/System.hpp"
 
 class Game;
+class Entity;
 
 class Layer
 {
@@ -25,21 +26,13 @@ virtual void render(float deltaTime) {
 virtual void clean() {
 }
 
-entt::entity createEntity()
-{
-        return m_Registry.create();
-}
+Entity CreateEntity();
+Entity ToEntity(entt::entity);
 
 protected:
 entt::registry m_Registry;
 SystemManager systems;
-
-
-// template <typename T>
-// void addSystem()
-// {
-//
-// }
+friend class Entity;
 };
 
 #endif

@@ -1,6 +1,6 @@
 PShape loadOBJ(int i)
 {
-  String load_string = "bio_"; 
+  String load_string = "character_"; 
   if ( i < 10)
   {
     load_string += "00000" + i;

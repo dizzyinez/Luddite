@@ -12,35 +12,43 @@
 #include "components/PlayerKeymap.hpp"
 #include "components/Texture.hpp"
 #include "components/Tileset.hpp"
+#include "ecs/Entity.hpp"
+#include "script/PlayerScript.hpp"
 
 #include <glm/glm.hpp>
-#include "core/assets.hpp"
+
+
+#include "data/assets.hpp"
+#include "data/resources.hpp"
 
 void S_Spawning::update(float deltaTime, entt::registry &reg)
 {
-        Events::iterate<E_SpawnPlayer>([&reg](auto e){
+        Events::iterate<E_SpawnPlayer>([&reg, this](auto e){
                 auto &slots = reg.ctx<C_PlayerSlots>();
                 if (slots.players[e->slot] == entt::null)
                 {
+                        auto player = CreateEntity();
                         std::cout << "spawning" << std::endl;
-                        auto player = reg.create();
-                        slots.players[e->slot] = player;
-                        reg.emplace<C_Position>(player, e->xpos, e->ypos);
-                        reg.emplace<C_Velocity>(player);
-                        reg.emplace<C_Drag>(player, 0.8f);
-                        reg.emplace<C_Size>(player, 200.0f, 200.0f);
-                        reg.emplace<C_DrawLayer>(player);
-                        reg.emplace<C_Sprite>(player, Assets::Sprite::Get(Assets::Sprite::player), glm::uvec4(0xFFFF00FF, 0xEEEEEEFF, 0xAAAAAAFF, 0xFFFFFFFF)); //RGBA
-                        reg.emplace<C_Tileset>(player, 22, 8, 0);
-                        reg.emplace<C_Animation>(player, 2, 22, 0, 1.0/30.0, 0.0, true, true);
-                        reg.emplace<C_Player>(player, e->localPlayer, e->slot);
+                        slots.players[e->slot] = player.GetId();
+                        player.AddScript<PlayerScript>();
+                        player.AddComponent<C_Position>(e->xpos, e->ypos);
+                        player.AddComponent<C_Velocity>();
+                        player.AddComponent<C_Drag>(0.8f);
+                        player.AddComponent<C_Size>(200.0f, 200.0f);
+                        player.AddComponent<C_DrawLayer>();
+                        // player.AddComponent<C_Sprite>(textures.Get("../assets/characters/character/character.png"), glm::uvec4(0xAAAABBFF, 0x555555FF, 0xAAAAAAFF, 0xFFFFFFFF)); //RGBA
+                        player.AddComponent<C_Sprite>(textures.Get(Characters::GetTextureFilePath(Characters::eCharacter::character)), glm::uvec4(0xAAAABBFF, 0x555555FF, 0xAAAAAAFF, 0xFFFFFFFF)); //RGBA
+                        player.AddComponent<C_Tileset>(50, 8, 0);
+                        player.AddComponent<C_Animation>(6, 50, 0, 1.0/30.0, 0.0, true, true);
+                        player.AddComponent<C_Player>(e->localPlayer, e->slot);
+                        player.AddComponent<C_PlayerDirection>();
                         if (e->localPlayer)
                         {
-                                reg.emplace<C_PlayerKeymap>(player);
+                                player.AddComponent<C_PlayerKeymap>();
                         }
                         else
                         {
-                                reg.emplace<C_Net_Position>(player, e->xpos, e->ypos);
+                                player.AddComponent<C_Net_Position>(e->xpos, e->ypos);
                         }
                 }
                 else

@@ -87,6 +87,7 @@ CMakeFiles/VideoGame.dir/src/enet/win32.c.obj: ../src/enet/win32.c
 CMakeFiles/VideoGame.dir/src/Assets.cpp.obj: ../include/data/Assets.hpp
 CMakeFiles/VideoGame.dir/src/Assets.cpp.obj: ../src/Assets.cpp
 
+CMakeFiles/VideoGame.dir/src/C_NativeScript.cpp.obj: ../include/Layers/Layer.hpp
 CMakeFiles/VideoGame.dir/src/C_NativeScript.cpp.obj: ../include/components/NativeScript.hpp
 CMakeFiles/VideoGame.dir/src/C_NativeScript.cpp.obj: ../include/components/Networking.hpp
 CMakeFiles/VideoGame.dir/src/C_NativeScript.cpp.obj: ../include/ecs/Entity.hpp
@@ -99,8 +100,7 @@ CMakeFiles/VideoGame.dir/src/C_NativeScript.cpp.obj: ../include/enet/unix.h
 CMakeFiles/VideoGame.dir/src/C_NativeScript.cpp.obj: ../include/enet/win32.h
 CMakeFiles/VideoGame.dir/src/C_NativeScript.cpp.obj: ../include/entt.hpp
 CMakeFiles/VideoGame.dir/src/C_NativeScript.cpp.obj: ../include/events/Events.hpp
-CMakeFiles/VideoGame.dir/src/C_NativeScript.cpp.obj: ../include/events/logging.hpp
-CMakeFiles/VideoGame.dir/src/C_NativeScript.cpp.obj: ../include/layers/Layer.hpp
+CMakeFiles/VideoGame.dir/src/C_NativeScript.cpp.obj: ../include/events/Logging.hpp
 CMakeFiles/VideoGame.dir/src/C_NativeScript.cpp.obj: ../include/script/NativeScript.hpp
 CMakeFiles/VideoGame.dir/src/C_NativeScript.cpp.obj: ../include/systems/System.hpp
 CMakeFiles/VideoGame.dir/src/C_NativeScript.cpp.obj: R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
@@ -137,6 +137,11 @@ CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/components/Size.hpp
 CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/components/Tileset.hpp
 CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/components/Velocity.hpp
 CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/core/game.hpp
+CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/data/Json.hpp
+CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/data/ResourceManager.hpp
+CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/data/Texture.hpp
+CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/data/assets.hpp
+CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/data/resources.hpp
 CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/ecs/Entity.hpp
 CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/enet/callbacks.h
 CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/enet/enet.h
@@ -151,6 +156,7 @@ CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/events/Gameworld.hpp
 CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/events/Input.hpp
 CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/events/Logging.hpp
 CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/events/Networking.hpp
+CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/gason.hpp
 CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/kiwi/AssocVector.h
 CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/kiwi/constraint.h
 CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/kiwi/debug.h
@@ -178,6 +184,7 @@ CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/rendering/loadShader
 CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/rendering/renderer.hpp
 CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/script/NativeScript.hpp
 CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/script/PlayerScript.hpp
+CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/stb/stb_image.h
 CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/systems/Draw.hpp
 CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/systems/Gui.hpp
 CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj: ../include/systems/Motion.hpp
@@ -544,10 +551,10 @@ CMakeFiles/VideoGame.dir/src/L_Networking.cpp.obj: R:/Dev/Libraries/C++/glew-2.1
 CMakeFiles/VideoGame.dir/src/L_Networking.cpp.obj: R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
 CMakeFiles/VideoGame.dir/src/L_Networking.cpp.obj: ../src/L_Networking.cpp
 
+CMakeFiles/VideoGame.dir/src/Layer.cpp.obj: ../include/Layers/Layer.hpp
 CMakeFiles/VideoGame.dir/src/Layer.cpp.obj: ../include/components/NativeScript.hpp
 CMakeFiles/VideoGame.dir/src/Layer.cpp.obj: ../include/ecs/Entity.hpp
 CMakeFiles/VideoGame.dir/src/Layer.cpp.obj: ../include/entt.hpp
-CMakeFiles/VideoGame.dir/src/Layer.cpp.obj: ../include/layers/Layer.hpp
 CMakeFiles/VideoGame.dir/src/Layer.cpp.obj: ../include/systems/System.hpp
 CMakeFiles/VideoGame.dir/src/Layer.cpp.obj: R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
 CMakeFiles/VideoGame.dir/src/Layer.cpp.obj: R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
@@ -560,6 +567,7 @@ CMakeFiles/VideoGame.dir/src/Locator.cpp.obj: R:/Dev/Libraries/C++/glew-2.1.0/in
 CMakeFiles/VideoGame.dir/src/Locator.cpp.obj: R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
 CMakeFiles/VideoGame.dir/src/Locator.cpp.obj: ../src/Locator.cpp
 
+CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj: ../include/Layers/Layer.hpp
 CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj: ../include/components/NativeScript.hpp
 CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj: ../include/components/Networking.hpp
 CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj: ../include/components/Player.hpp
@@ -577,9 +585,8 @@ CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj: ../include/enet/win32.h
 CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj: ../include/entt.hpp
 CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj: ../include/events/Events.hpp
 CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj: ../include/events/Gameworld.hpp
+CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj: ../include/events/Logging.hpp
 CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj: ../include/events/Networking.hpp
-CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj: ../include/events/logging.hpp
-CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj: ../include/layers/Layer.hpp
 CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj: ../include/systems/System.hpp
 CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj: R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
 CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj: R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
@@ -605,12 +612,27 @@ CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj: R:/Dev/Libraries/C++/glm
 CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj: R:/Dev/Libraries/C++/glm/glm/vec3.hpp
 CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj: ../src/PacketDefinitions.cpp
 
+CMakeFiles/VideoGame.dir/src/R_Json.cpp.obj: ../include/Locator.hpp
+CMakeFiles/VideoGame.dir/src/R_Json.cpp.obj: ../include/ResourceAllocator.hpp
+CMakeFiles/VideoGame.dir/src/R_Json.cpp.obj: ../include/core/game.hpp
+CMakeFiles/VideoGame.dir/src/R_Json.cpp.obj: ../include/data/Json.hpp
+CMakeFiles/VideoGame.dir/src/R_Json.cpp.obj: ../include/data/ResourceManager.hpp
+CMakeFiles/VideoGame.dir/src/R_Json.cpp.obj: ../include/data/Texture.hpp
+CMakeFiles/VideoGame.dir/src/R_Json.cpp.obj: ../include/data/resources.hpp
+CMakeFiles/VideoGame.dir/src/R_Json.cpp.obj: ../include/gason.hpp
+CMakeFiles/VideoGame.dir/src/R_Json.cpp.obj: ../include/stb/stb_image.h
+CMakeFiles/VideoGame.dir/src/R_Json.cpp.obj: R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
+CMakeFiles/VideoGame.dir/src/R_Json.cpp.obj: R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
+CMakeFiles/VideoGame.dir/src/R_Json.cpp.obj: ../src/R_Json.cpp
+
 CMakeFiles/VideoGame.dir/src/R_Textures.cpp.obj: ../include/Locator.hpp
 CMakeFiles/VideoGame.dir/src/R_Textures.cpp.obj: ../include/ResourceAllocator.hpp
 CMakeFiles/VideoGame.dir/src/R_Textures.cpp.obj: ../include/core/game.hpp
+CMakeFiles/VideoGame.dir/src/R_Textures.cpp.obj: ../include/data/Json.hpp
 CMakeFiles/VideoGame.dir/src/R_Textures.cpp.obj: ../include/data/ResourceManager.hpp
-CMakeFiles/VideoGame.dir/src/R_Textures.cpp.obj: ../include/data/Resources.hpp
 CMakeFiles/VideoGame.dir/src/R_Textures.cpp.obj: ../include/data/Texture.hpp
+CMakeFiles/VideoGame.dir/src/R_Textures.cpp.obj: ../include/data/resources.hpp
+CMakeFiles/VideoGame.dir/src/R_Textures.cpp.obj: ../include/gason.hpp
 CMakeFiles/VideoGame.dir/src/R_Textures.cpp.obj: ../include/stb/stb_image.h
 CMakeFiles/VideoGame.dir/src/R_Textures.cpp.obj: R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
 CMakeFiles/VideoGame.dir/src/R_Textures.cpp.obj: R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
@@ -619,11 +641,11 @@ CMakeFiles/VideoGame.dir/src/R_Textures.cpp.obj: ../src/R_Textures.cpp
 CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj: ../include/CheckGLError.hpp
 CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj: ../include/data/Assets.hpp
 CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj: ../include/rendering/Batch.hpp
-CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj: ../include/rendering/Renderer.hpp
 CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj: ../include/rendering/Shader.hpp
 CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj: ../include/rendering/SpriteBatch.hpp
 CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj: ../include/rendering/TextureBatch.hpp
 CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj: ../include/rendering/loadShader.hpp
+CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj: ../include/rendering/renderer.hpp
 CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj: R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
 CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj: R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
 CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj: R:/Dev/Libraries/C++/glm/glm/common.hpp
@@ -846,11 +868,11 @@ CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj: ../include/core/game.hpp
 CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj: ../include/data/Texture.hpp
 CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj: ../include/entt.hpp
 CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj: ../include/rendering/Batch.hpp
-CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj: ../include/rendering/Renderer.hpp
 CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj: ../include/rendering/Shader.hpp
 CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj: ../include/rendering/SpriteBatch.hpp
 CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj: ../include/rendering/TextureBatch.hpp
 CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj: ../include/rendering/loadShader.hpp
+CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj: ../include/rendering/renderer.hpp
 CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj: ../include/stb/stb_image.h
 CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj: ../include/systems/Draw.hpp
 CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj: ../include/systems/System.hpp
@@ -1374,6 +1396,7 @@ CMakeFiles/VideoGame.dir/src/S_Net_Send.cpp.obj: R:/Dev/Libraries/C++/glew-2.1.0
 CMakeFiles/VideoGame.dir/src/S_Net_Send.cpp.obj: R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
 CMakeFiles/VideoGame.dir/src/S_Net_Send.cpp.obj: ../src/S_Net_Send.cpp
 
+CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj: ../include/Layers/Layer.hpp
 CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj: ../include/components/NativeScript.hpp
 CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj: ../include/components/Networking.hpp
 CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj: ../include/components/Player.hpp
@@ -1390,9 +1413,8 @@ CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj: ../include/enet/unix.h
 CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj: ../include/enet/win32.h
 CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj: ../include/entt.hpp
 CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj: ../include/events/Events.hpp
+CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj: ../include/events/Logging.hpp
 CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj: ../include/events/Networking.hpp
-CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj: ../include/events/logging.hpp
-CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj: ../include/layers/Layer.hpp
 CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj: ../include/systems/Networking.hpp
 CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj: ../include/systems/System.hpp
 CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj: R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
@@ -1419,6 +1441,7 @@ CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj: R:/Dev/Libraries/C++/g
 CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj: R:/Dev/Libraries/C++/glm/glm/vec3.hpp
 CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj: ../src/S_Net_Update_Player.cpp
 
+CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj: ../include/Layers/Layer.hpp
 CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj: ../include/components/NativeScript.hpp
 CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj: ../include/components/Player.hpp
 CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj: ../include/components/PlayerKeymap.hpp
@@ -1428,7 +1451,6 @@ CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj: ../include/ecs/Entity.h
 CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj: ../include/entt.hpp
 CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj: ../include/events/Events.hpp
 CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj: ../include/events/Input.hpp
-CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj: ../include/layers/Layer.hpp
 CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj: ../include/systems/PlayerController.hpp
 CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj: ../include/systems/System.hpp
 CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj: R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
@@ -1748,6 +1770,7 @@ CMakeFiles/VideoGame.dir/src/S_Projection.cpp.obj: R:/Dev/Libraries/C++/glm/glm/
 CMakeFiles/VideoGame.dir/src/S_Projection.cpp.obj: R:/Dev/Libraries/C++/glm/glm/vector_relational.hpp
 CMakeFiles/VideoGame.dir/src/S_Projection.cpp.obj: ../src/S_Projection.cpp
 
+CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.obj: ../include/Layers/Layer.hpp
 CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.obj: ../include/components/NativeScript.hpp
 CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.obj: ../include/components/Networking.hpp
 CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.obj: ../include/ecs/Entity.hpp
@@ -1760,8 +1783,7 @@ CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.obj: ../include/enet/unix.h
 CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.obj: ../include/enet/win32.h
 CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.obj: ../include/entt.hpp
 CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.obj: ../include/events/Events.hpp
-CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.obj: ../include/events/logging.hpp
-CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.obj: ../include/layers/Layer.hpp
+CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.obj: ../include/events/Logging.hpp
 CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.obj: ../include/script/NativeScript.hpp
 CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.obj: ../include/systems/Scripts.hpp
 CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.obj: ../include/systems/System.hpp
@@ -1769,6 +1791,7 @@ CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.obj: R:/Dev/Libraries/C++/glew-2.1.0/
 CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.obj: R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
 CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.obj: ../src/S_Scripts.cpp
 
+CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/Layers/Layer.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/Locator.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/ResourceAllocator.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/components/Drag.hpp
@@ -1783,10 +1806,11 @@ CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/components/Texture.h
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/components/Tileset.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/components/Velocity.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/core/game.hpp
+CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/data/Json.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/data/ResourceManager.hpp
-CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/data/Resources.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/data/Texture.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/data/assets.hpp
+CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/data/resources.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/ecs/Entity.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/enet/callbacks.h
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/enet/enet.h
@@ -1799,14 +1823,14 @@ CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/entt.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/events/Events.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/events/Gameworld.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/events/Input.hpp
-CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/events/logging.hpp
-CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/layers/Layer.hpp
+CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/events/Logging.hpp
+CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/gason.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/rendering/Batch.hpp
-CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/rendering/Renderer.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/rendering/Shader.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/rendering/SpriteBatch.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/rendering/TextureBatch.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/rendering/loadShader.hpp
+CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/rendering/renderer.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/script/NativeScript.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/script/PlayerScript.hpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj: ../include/stb/stb_image.h
@@ -2366,10 +2390,10 @@ CMakeFiles/VideoGame.dir/src/SpriteBatch.cpp.obj: R:/Dev/Libraries/C++/glm/glm/v
 CMakeFiles/VideoGame.dir/src/SpriteBatch.cpp.obj: R:/Dev/Libraries/C++/glm/glm/vector_relational.hpp
 CMakeFiles/VideoGame.dir/src/SpriteBatch.cpp.obj: ../src/SpriteBatch.cpp
 
+CMakeFiles/VideoGame.dir/src/System.cpp.obj: ../include/Layers/Layer.hpp
 CMakeFiles/VideoGame.dir/src/System.cpp.obj: ../include/components/NativeScript.hpp
 CMakeFiles/VideoGame.dir/src/System.cpp.obj: ../include/ecs/Entity.hpp
 CMakeFiles/VideoGame.dir/src/System.cpp.obj: ../include/entt.hpp
-CMakeFiles/VideoGame.dir/src/System.cpp.obj: ../include/layers/Layer.hpp
 CMakeFiles/VideoGame.dir/src/System.cpp.obj: ../include/systems/System.hpp
 CMakeFiles/VideoGame.dir/src/System.cpp.obj: R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
 CMakeFiles/VideoGame.dir/src/System.cpp.obj: R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
@@ -2766,6 +2790,9 @@ CMakeFiles/VideoGame.dir/src/game.cpp.obj: R:/Dev/Libraries/C++/glm/glm/vec3.hpp
 CMakeFiles/VideoGame.dir/src/game.cpp.obj: R:/Dev/Libraries/C++/glm/glm/vec4.hpp
 CMakeFiles/VideoGame.dir/src/game.cpp.obj: R:/Dev/Libraries/C++/glm/glm/vector_relational.hpp
 CMakeFiles/VideoGame.dir/src/game.cpp.obj: ../src/game.cpp
+
+CMakeFiles/VideoGame.dir/src/gason.cpp.obj: ../include/gason.hpp
+CMakeFiles/VideoGame.dir/src/gason.cpp.obj: ../src/gason.cpp
 
 CMakeFiles/VideoGame.dir/src/loadShader.cpp.obj: ../include/rendering/loadShader.hpp
 CMakeFiles/VideoGame.dir/src/loadShader.cpp.obj: R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h

@@ -1,51 +1,56 @@
 {
-  "animations": [
+  "animations":
   {
-    "name": "Idle"
-    "frames": [
+    "Idle":
     {
-      "hitboxes": []
-      "flags": []
+      "line": 0,
+      "frames": [
+      {
+        "hitboxes": []
+        "flags": []
+      },
+      {
+        "hitboxes": []
+        "flags": []
+      },
+      {
+        "hitboxes": []
+        "flags": []
+      }, ]
     },
+    "Run":
     {
-      "hitboxes": []
-      "flags": []
+      "line": 8,
+      "frames": [
+      {
+        "hitboxes": []
+        "flags": []
+      },
+      {
+        "hitboxes": []
+        "flags": []
+      },
+      {
+        "hitboxes": []
+        "flags": []
+      }, ]
     },
+    "Light Attack":
     {
-      "hitboxes": []
-      "flags": []
-    }, ]
-  },
-  {
-    "name": "Run"
-    "frames": [
-    {
-      "hitboxes": []
-      "flags": []
-    },
-    {
-      "hitboxes": []
-      "flags": []
-    },
-    {
-      "hitboxes": []
-      "flags": []
-    }, ]
-  },
-  {
-    "name": "Light Attack"
-    "frames": [
-    {
-      "hitboxes": []
-      "flags": []
-    },
-    {
-      "hitboxes": []
-      "flags": []
-    },
-    {
-      "hitboxes": []
-      "flags": []
-    }, ]
-  }]
+      "line": 16,
+      "frames": [
+      {
+        "hitboxes": []
+        "flags": []
+      },
+      {
+        "hitboxes": []
+        "flags": []
+      },
+      {
+        "hitboxes": []
+        "flags": []
+      }, ]
+    }
+  }
 }

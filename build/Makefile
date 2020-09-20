@@ -457,6 +457,33 @@ src/PacketDefinitions.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.s
 .PHONY : src/PacketDefinitions.cpp.s
 
+src/R_Json.obj: src/R_Json.cpp.obj
+
+.PHONY : src/R_Json.obj
+
+# target to build an object file
+src/R_Json.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/R_Json.cpp.obj
+.PHONY : src/R_Json.cpp.obj
+
+src/R_Json.i: src/R_Json.cpp.i
+
+.PHONY : src/R_Json.i
+
+# target to preprocess a source file
+src/R_Json.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/R_Json.cpp.i
+.PHONY : src/R_Json.cpp.i
+
+src/R_Json.s: src/R_Json.cpp.s
+
+.PHONY : src/R_Json.s
+
+# target to generate assembly for a file
+src/R_Json.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/R_Json.cpp.s
+.PHONY : src/R_Json.cpp.s
+
 src/R_Textures.obj: src/R_Textures.cpp.obj
 
 .PHONY : src/R_Textures.obj
@@ -1213,6 +1240,33 @@ src/game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/game.cpp.s
 .PHONY : src/game.cpp.s
 
+src/gason.obj: src/gason.cpp.obj
+
+.PHONY : src/gason.obj
+
+# target to build an object file
+src/gason.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/gason.cpp.obj
+.PHONY : src/gason.cpp.obj
+
+src/gason.i: src/gason.cpp.i
+
+.PHONY : src/gason.i
+
+# target to preprocess a source file
+src/gason.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/gason.cpp.i
+.PHONY : src/gason.cpp.i
+
+src/gason.s: src/gason.cpp.s
+
+.PHONY : src/gason.s
+
+# target to generate assembly for a file
+src/gason.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/gason.cpp.s
+.PHONY : src/gason.cpp.s
+
 src/loadShader.obj: src/loadShader.cpp.obj
 
 .PHONY : src/loadShader.obj
@@ -1337,6 +1391,9 @@ help:
 	@echo ... src/PacketDefinitions.obj
 	@echo ... src/PacketDefinitions.i
 	@echo ... src/PacketDefinitions.s
+	@echo ... src/R_Json.obj
+	@echo ... src/R_Json.i
+	@echo ... src/R_Json.s
 	@echo ... src/R_Textures.obj
 	@echo ... src/R_Textures.i
 	@echo ... src/R_Textures.s
@@ -1421,6 +1478,9 @@ help:
 	@echo ... src/game.obj
 	@echo ... src/game.i
 	@echo ... src/game.s
+	@echo ... src/gason.obj
+	@echo ... src/gason.i
+	@echo ... src/gason.s
 	@echo ... src/loadShader.obj
 	@echo ... src/loadShader.i
 	@echo ... src/loadShader.s

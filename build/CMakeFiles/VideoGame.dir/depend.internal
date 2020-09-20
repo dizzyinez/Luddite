@@ -88,6 +88,7 @@ CMakeFiles/VideoGame.dir/src/Assets.cpp.obj
  ../include/data/Assets.hpp
  R:/Dev/games/Luddite/Luddite/src/Assets.cpp
 CMakeFiles/VideoGame.dir/src/C_NativeScript.cpp.obj
+ ../include/Layers/Layer.hpp
  ../include/components/NativeScript.hpp
  ../include/components/Networking.hpp
  ../include/ecs/Entity.hpp
@@ -100,8 +101,7 @@ CMakeFiles/VideoGame.dir/src/C_NativeScript.cpp.obj
  ../include/enet/win32.h
  ../include/entt.hpp
  ../include/events/Events.hpp
- ../include/events/logging.hpp
- ../include/layers/Layer.hpp
+ ../include/events/Logging.hpp
  ../include/script/NativeScript.hpp
  ../include/systems/System.hpp
  R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
@@ -138,6 +138,11 @@ CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj
  ../include/components/Tileset.hpp
  ../include/components/Velocity.hpp
  ../include/core/game.hpp
+ ../include/data/Json.hpp
+ ../include/data/ResourceManager.hpp
+ ../include/data/Texture.hpp
+ ../include/data/assets.hpp
+ ../include/data/resources.hpp
  ../include/ecs/Entity.hpp
  ../include/enet/callbacks.h
  ../include/enet/enet.h
@@ -152,6 +157,7 @@ CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj
  ../include/events/Input.hpp
  ../include/events/Logging.hpp
  ../include/events/Networking.hpp
+ ../include/gason.hpp
  ../include/kiwi/AssocVector.h
  ../include/kiwi/constraint.h
  ../include/kiwi/debug.h
@@ -179,6 +185,7 @@ CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj
  ../include/rendering/renderer.hpp
  ../include/script/NativeScript.hpp
  ../include/script/PlayerScript.hpp
+ ../include/stb/stb_image.h
  ../include/systems/Draw.hpp
  ../include/systems/Gui.hpp
  ../include/systems/Motion.hpp
@@ -545,10 +552,10 @@ CMakeFiles/VideoGame.dir/src/L_Networking.cpp.obj
  R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
  R:/Dev/games/Luddite/Luddite/src/L_Networking.cpp
 CMakeFiles/VideoGame.dir/src/Layer.cpp.obj
+ ../include/Layers/Layer.hpp
  ../include/components/NativeScript.hpp
  ../include/ecs/Entity.hpp
  ../include/entt.hpp
- ../include/layers/Layer.hpp
  ../include/systems/System.hpp
  R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
  R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
@@ -561,6 +568,7 @@ CMakeFiles/VideoGame.dir/src/Locator.cpp.obj
  R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
  R:/Dev/games/Luddite/Luddite/src/Locator.cpp
 CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj
+ ../include/Layers/Layer.hpp
  ../include/components/NativeScript.hpp
  ../include/components/Networking.hpp
  ../include/components/Player.hpp
@@ -578,9 +586,8 @@ CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj
  ../include/entt.hpp
  ../include/events/Events.hpp
  ../include/events/Gameworld.hpp
+ ../include/events/Logging.hpp
  ../include/events/Networking.hpp
- ../include/events/logging.hpp
- ../include/layers/Layer.hpp
  ../include/systems/System.hpp
  R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
  R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
@@ -605,13 +612,28 @@ CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj
  R:/Dev/Libraries/C++/glm/glm/simd/platform.h
  R:/Dev/Libraries/C++/glm/glm/vec3.hpp
  R:/Dev/games/Luddite/Luddite/src/PacketDefinitions.cpp
+CMakeFiles/VideoGame.dir/src/R_Json.cpp.obj
+ ../include/Locator.hpp
+ ../include/ResourceAllocator.hpp
+ ../include/core/game.hpp
+ ../include/data/Json.hpp
+ ../include/data/ResourceManager.hpp
+ ../include/data/Texture.hpp
+ ../include/data/resources.hpp
+ ../include/gason.hpp
+ ../include/stb/stb_image.h
+ R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
+ R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
+ R:/Dev/games/Luddite/Luddite/src/R_Json.cpp
 CMakeFiles/VideoGame.dir/src/R_Textures.cpp.obj
  ../include/Locator.hpp
  ../include/ResourceAllocator.hpp
  ../include/core/game.hpp
+ ../include/data/Json.hpp
  ../include/data/ResourceManager.hpp
- ../include/data/Resources.hpp
  ../include/data/Texture.hpp
+ ../include/data/resources.hpp
+ ../include/gason.hpp
  ../include/stb/stb_image.h
  R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
  R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
@@ -620,11 +642,11 @@ CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj
  ../include/CheckGLError.hpp
  ../include/data/Assets.hpp
  ../include/rendering/Batch.hpp
- ../include/rendering/Renderer.hpp
  ../include/rendering/Shader.hpp
  ../include/rendering/SpriteBatch.hpp
  ../include/rendering/TextureBatch.hpp
  ../include/rendering/loadShader.hpp
+ ../include/rendering/renderer.hpp
  R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
  R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
  R:/Dev/Libraries/C++/glm/glm/common.hpp
@@ -847,11 +869,11 @@ CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj
  ../include/data/Texture.hpp
  ../include/entt.hpp
  ../include/rendering/Batch.hpp
- ../include/rendering/Renderer.hpp
  ../include/rendering/Shader.hpp
  ../include/rendering/SpriteBatch.hpp
  ../include/rendering/TextureBatch.hpp
  ../include/rendering/loadShader.hpp
+ ../include/rendering/renderer.hpp
  ../include/stb/stb_image.h
  ../include/systems/Draw.hpp
  ../include/systems/System.hpp
@@ -1375,6 +1397,7 @@ CMakeFiles/VideoGame.dir/src/S_Net_Send.cpp.obj
  R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
  R:/Dev/games/Luddite/Luddite/src/S_Net_Send.cpp
 CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj
+ ../include/Layers/Layer.hpp
  ../include/components/NativeScript.hpp
  ../include/components/Networking.hpp
  ../include/components/Player.hpp
@@ -1391,9 +1414,8 @@ CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj
  ../include/enet/win32.h
  ../include/entt.hpp
  ../include/events/Events.hpp
+ ../include/events/Logging.hpp
  ../include/events/Networking.hpp
- ../include/events/logging.hpp
- ../include/layers/Layer.hpp
  ../include/systems/Networking.hpp
  ../include/systems/System.hpp
  R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
@@ -1420,6 +1442,7 @@ CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj
  R:/Dev/Libraries/C++/glm/glm/vec3.hpp
  R:/Dev/games/Luddite/Luddite/src/S_Net_Update_Player.cpp
 CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj
+ ../include/Layers/Layer.hpp
  ../include/components/NativeScript.hpp
  ../include/components/Player.hpp
  ../include/components/PlayerKeymap.hpp
@@ -1429,7 +1452,6 @@ CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj
  ../include/entt.hpp
  ../include/events/Events.hpp
  ../include/events/Input.hpp
- ../include/layers/Layer.hpp
  ../include/systems/PlayerController.hpp
  ../include/systems/System.hpp
  R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
@@ -1749,6 +1771,7 @@ CMakeFiles/VideoGame.dir/src/S_Projection.cpp.obj
  R:/Dev/Libraries/C++/glm/glm/vector_relational.hpp
  R:/Dev/games/Luddite/Luddite/src/S_Projection.cpp
 CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.obj
+ ../include/Layers/Layer.hpp
  ../include/components/NativeScript.hpp
  ../include/components/Networking.hpp
  ../include/ecs/Entity.hpp
@@ -1761,8 +1784,7 @@ CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.obj
  ../include/enet/win32.h
  ../include/entt.hpp
  ../include/events/Events.hpp
- ../include/events/logging.hpp
- ../include/layers/Layer.hpp
+ ../include/events/Logging.hpp
  ../include/script/NativeScript.hpp
  ../include/systems/Scripts.hpp
  ../include/systems/System.hpp
@@ -1770,6 +1792,7 @@ CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.obj
  R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
  R:/Dev/games/Luddite/Luddite/src/S_Scripts.cpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj
+ ../include/Layers/Layer.hpp
  ../include/Locator.hpp
  ../include/ResourceAllocator.hpp
  ../include/components/Drag.hpp
@@ -1784,10 +1807,11 @@ CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj
  ../include/components/Tileset.hpp
  ../include/components/Velocity.hpp
  ../include/core/game.hpp
+ ../include/data/Json.hpp
  ../include/data/ResourceManager.hpp
- ../include/data/Resources.hpp
  ../include/data/Texture.hpp
  ../include/data/assets.hpp
+ ../include/data/resources.hpp
  ../include/ecs/Entity.hpp
  ../include/enet/callbacks.h
  ../include/enet/enet.h
@@ -1800,14 +1824,14 @@ CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj
  ../include/events/Events.hpp
  ../include/events/Gameworld.hpp
  ../include/events/Input.hpp
- ../include/events/logging.hpp
- ../include/layers/Layer.hpp
+ ../include/events/Logging.hpp
+ ../include/gason.hpp
  ../include/rendering/Batch.hpp
- ../include/rendering/Renderer.hpp
  ../include/rendering/Shader.hpp
  ../include/rendering/SpriteBatch.hpp
  ../include/rendering/TextureBatch.hpp
  ../include/rendering/loadShader.hpp
+ ../include/rendering/renderer.hpp
  ../include/script/NativeScript.hpp
  ../include/script/PlayerScript.hpp
  ../include/stb/stb_image.h
@@ -2367,10 +2391,10 @@ CMakeFiles/VideoGame.dir/src/SpriteBatch.cpp.obj
  R:/Dev/Libraries/C++/glm/glm/vector_relational.hpp
  R:/Dev/games/Luddite/Luddite/src/SpriteBatch.cpp
 CMakeFiles/VideoGame.dir/src/System.cpp.obj
+ ../include/Layers/Layer.hpp
  ../include/components/NativeScript.hpp
  ../include/ecs/Entity.hpp
  ../include/entt.hpp
- ../include/layers/Layer.hpp
  ../include/systems/System.hpp
  R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
  R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
@@ -2767,6 +2791,9 @@ CMakeFiles/VideoGame.dir/src/game.cpp.obj
  R:/Dev/Libraries/C++/glm/glm/vec4.hpp
  R:/Dev/Libraries/C++/glm/glm/vector_relational.hpp
  R:/Dev/games/Luddite/Luddite/src/game.cpp
+CMakeFiles/VideoGame.dir/src/gason.cpp.obj
+ ../include/gason.hpp
+ R:/Dev/games/Luddite/Luddite/src/gason.cpp
 CMakeFiles/VideoGame.dir/src/loadShader.cpp.obj
  ../include/rendering/loadShader.hpp
  R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h

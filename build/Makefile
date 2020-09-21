@@ -538,6 +538,33 @@ src/Renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Renderer.cpp.s
 .PHONY : src/Renderer.cpp.s
 
+src/S_Animation.obj: src/S_Animation.cpp.obj
+
+.PHONY : src/S_Animation.obj
+
+# target to build an object file
+src/S_Animation.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Animation.cpp.obj
+.PHONY : src/S_Animation.cpp.obj
+
+src/S_Animation.i: src/S_Animation.cpp.i
+
+.PHONY : src/S_Animation.i
+
+# target to preprocess a source file
+src/S_Animation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Animation.cpp.i
+.PHONY : src/S_Animation.cpp.i
+
+src/S_Animation.s: src/S_Animation.cpp.s
+
+.PHONY : src/S_Animation.s
+
+# target to generate assembly for a file
+src/S_Animation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Animation.cpp.s
+.PHONY : src/S_Animation.cpp.s
+
 src/S_Draw.obj: src/S_Draw.cpp.obj
 
 .PHONY : src/S_Draw.obj
@@ -861,6 +888,33 @@ src/S_Spawning.s: src/S_Spawning.cpp.s
 src/S_Spawning.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.s
 .PHONY : src/S_Spawning.cpp.s
+
+src/S_Tileset.obj: src/S_Tileset.cpp.obj
+
+.PHONY : src/S_Tileset.obj
+
+# target to build an object file
+src/S_Tileset.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Tileset.cpp.obj
+.PHONY : src/S_Tileset.cpp.obj
+
+src/S_Tileset.i: src/S_Tileset.cpp.i
+
+.PHONY : src/S_Tileset.i
+
+# target to preprocess a source file
+src/S_Tileset.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Tileset.cpp.i
+.PHONY : src/S_Tileset.cpp.i
+
+src/S_Tileset.s: src/S_Tileset.cpp.s
+
+.PHONY : src/S_Tileset.s
+
+# target to generate assembly for a file
+src/S_Tileset.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Tileset.cpp.s
+.PHONY : src/S_Tileset.cpp.s
 
 src/SpriteBatch.obj: src/SpriteBatch.cpp.obj
 
@@ -1400,6 +1454,9 @@ help:
 	@echo ... src/Renderer.obj
 	@echo ... src/Renderer.i
 	@echo ... src/Renderer.s
+	@echo ... src/S_Animation.obj
+	@echo ... src/S_Animation.i
+	@echo ... src/S_Animation.s
 	@echo ... src/S_Draw.obj
 	@echo ... src/S_Draw.i
 	@echo ... src/S_Draw.s
@@ -1436,6 +1493,9 @@ help:
 	@echo ... src/S_Spawning.obj
 	@echo ... src/S_Spawning.i
 	@echo ... src/S_Spawning.s
+	@echo ... src/S_Tileset.obj
+	@echo ... src/S_Tileset.i
+	@echo ... src/S_Tileset.s
 	@echo ... src/SpriteBatch.obj
 	@echo ... src/SpriteBatch.i
 	@echo ... src/SpriteBatch.s

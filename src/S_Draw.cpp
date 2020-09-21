@@ -26,41 +26,7 @@ bool sortbyheight(const std::pair<int, entt::entity> &a,
 
 void S_Draw::update(float dt, entt::registry &reg)
 {
-        //Animation
-        reg.view<C_Animation>().each([&reg, dt](auto Entity, auto &animation) {
-                if (animation.animating)
-                {
-                        auto &tileset = reg.get<C_Tileset>(Entity);
-                        animation.timer += dt;
-                        if (animation.timer >= animation.seconds_per_frame)
-                        {
-                                animation.timer -= animation.seconds_per_frame;
-                                if (animation.current_frame < animation.frames - 1)
-                                {
-                                        animation.current_frame++;
-                                }
-                                else if (animation.repeat)
-                                {
-                                        animation.current_frame = 0;
-                                }
-                                else
-                                {
-                                        animation.animating = false;
-                                        animation.timer = 0.0;
-                                }
-                        }
-
-                        tileset.index = tileset.tiles_width * animation.line + animation.current_frame;
-                }
-        });
-
         //Tilesets
-        reg.group<C_Tileset>(entt::get<C_Sprite>).each([](auto Entity, auto &tileset, auto &sprite) {
-                sprite.tex_coords = glm::vec4(1.0f / (float)tileset.tiles_width * (tileset.index % tileset.tiles_width),
-                        1.0f / (float)tileset.tiles_height * (tileset.index / tileset.tiles_width),
-                        1.0f / (float)tileset.tiles_width,
-                        1.0f / (float)tileset.tiles_height);
-        });
 
 
         //Rendering

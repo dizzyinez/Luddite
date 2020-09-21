@@ -10,6 +10,7 @@
 #include "components/Size.hpp"
 #include "components/Velocity.hpp"
 #include "components/Tileset.hpp"
+#include "components/Animation.hpp"
 
 #include "rendering/renderer.hpp"
 #include "events/Input.hpp"
@@ -22,6 +23,7 @@ public:
         void OnCreate()
         {
                 animation = json_manager.Get(Characters::GetAnimationFilePath(Characters::eCharacter::character));
+                GetComponent<C_Animation>().PlayAnimation("Run");
         }
         void OnEvents(float deltaTime)
         {
@@ -39,7 +41,7 @@ public:
         void OnLateUpdate(float deltaTime)
         {
                 // animation->root.child("animations")
-                GetComponent<C_Animation>().line = animation->root("animations")("Run")("line").toNumber() + GetComponent<C_PlayerDirection>().movement_direction;
+                GetComponent<C_Animation>().direction = GetComponent<C_PlayerDirection>().movement_direction;
         }
 private:
         std::shared_ptr<Json> animation;

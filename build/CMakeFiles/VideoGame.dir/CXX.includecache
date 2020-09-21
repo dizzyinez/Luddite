@@ -34,6 +34,12 @@ iostream
 memory
 -
 
+../include/components/Animation.hpp
+data/resources.hpp
+../include/components/data/resources.hpp
+string
+-
+
 ../include/components/Drag.hpp
 
 ../include/components/DrawLayer.hpp
@@ -89,6 +95,8 @@ glm/vec2.hpp
 ../include/components/Texture.hpp
 data/Texture.hpp
 ../include/components/data/Texture.hpp
+glm/glm.hpp
+-
 
 ../include/components/Tileset.hpp
 
@@ -943,6 +951,8 @@ components/Velocity.hpp
 ../include/script/components/Velocity.hpp
 components/Tileset.hpp
 ../include/script/components/Tileset.hpp
+components/Animation.hpp
+../include/script/components/Animation.hpp
 rendering/renderer.hpp
 ../include/script/rendering/renderer.hpp
 events/Input.hpp
@@ -983,6 +993,10 @@ intrin.h
 -
 arm_neon.h
 -
+
+../include/systems/Animation.hpp
+systems/System.hpp
+../include/systems/systems/System.hpp
 
 ../include/systems/Draw.hpp
 systems/System.hpp
@@ -1027,6 +1041,10 @@ GLFW/glfw3.h
 -
 entt.hpp
 ../include/systems/entt.hpp
+
+../include/systems/Tileset.hpp
+systems/System.hpp
+../include/systems/systems/System.hpp
 
 R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
 stddef.h
@@ -3743,6 +3761,10 @@ systems/Spawning.hpp
 R:/Dev/games/Luddite/Luddite/src/systems/Spawning.hpp
 systems/Scripts.hpp
 R:/Dev/games/Luddite/Luddite/src/systems/Scripts.hpp
+systems/Animation.hpp
+R:/Dev/games/Luddite/Luddite/src/systems/Animation.hpp
+systems/Tileset.hpp
+R:/Dev/games/Luddite/Luddite/src/systems/Tileset.hpp
 components/Position.hpp
 R:/Dev/games/Luddite/Luddite/src/components/Position.hpp
 components/Velocity.hpp
@@ -3782,6 +3804,28 @@ iostream
 events/Gameworld.hpp
 R:/Dev/games/Luddite/Luddite/src/events/Gameworld.hpp
 
+R:/Dev/games/Luddite/Luddite/src/R_Json.cpp
+data/Resources.hpp
+R:/Dev/games/Luddite/Luddite/src/data/resources.hpp
+
+R:/Dev/games/Luddite/Luddite/src/R_Textures.cpp
+data/Resources.hpp
+R:/Dev/games/Luddite/Luddite/src/data/resources.hpp
+GL/glew.h
+-
+GLFW/glfw3.h
+-
+stb/stb_image.h
+R:/Dev/games/Luddite/Luddite/src/stb/stb_image.h
+
+R:/Dev/games/Luddite/Luddite/src/S_Animation.cpp
+systems/Animation.hpp
+R:/Dev/games/Luddite/Luddite/src/systems/Animation.hpp
+components/Animation.hpp
+R:/Dev/games/Luddite/Luddite/src/components/Animation.hpp
+components/Tileset.hpp
+R:/Dev/games/Luddite/Luddite/src/components/Tileset.hpp
+
 R:/Dev/games/Luddite/Luddite/src/S_Spawning.cpp
 systems/Spawning.hpp
 R:/Dev/games/Luddite/Luddite/src/systems/Spawning.hpp
@@ -3809,6 +3853,8 @@ components/Texture.hpp
 R:/Dev/games/Luddite/Luddite/src/components/Texture.hpp
 components/Tileset.hpp
 R:/Dev/games/Luddite/Luddite/src/components/Tileset.hpp
+components/Animation.hpp
+R:/Dev/games/Luddite/Luddite/src/components/Animation.hpp
 ecs/Entity.hpp
 R:/Dev/games/Luddite/Luddite/src/ecs/Entity.hpp
 script/PlayerScript.hpp

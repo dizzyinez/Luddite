@@ -11,6 +11,8 @@
 #include "systems/PlayerController.hpp"
 #include "systems/Spawning.hpp"
 #include "systems/Scripts.hpp"
+#include "systems/Animation.hpp"
+#include "systems/Tileset.hpp"
 
 #include "components/Position.hpp"
 #include "components/Velocity.hpp"
@@ -39,7 +41,6 @@
 
 void L_MainMenu::init()
 {
-        systems.add<S_Draw>();
         systems.add<S_Motion>();
         systems.add<S_Gui_Input>();
         systems.add<S_Gui>();
@@ -49,6 +50,9 @@ void L_MainMenu::init()
         systems.add<S_Net_Update_Player>();
         systems.add<S_PlayerController>();
         systems.add<S_Spawning>();
+        systems.add<S_Tileset>();
+        systems.add<S_Animation>();
+        systems.add<S_Draw>();
         systems.add<S_Scripts_Events>();
         systems.add<S_Scripts_Update>();
         systems.add<S_Scripts_LateUpdate>();
@@ -165,6 +169,8 @@ void L_MainMenu::update(float deltaTime)
 
 void L_MainMenu::render(float deltaTime)
 {
+        systems.update<S_Tileset>(deltaTime, m_Registry);
+        systems.update<S_Animation>(deltaTime, m_Registry);
         systems.update<S_Draw>(deltaTime, m_Registry);
 }
 void L_MainMenu::clean()

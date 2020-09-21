@@ -1,6 +1,7 @@
 #ifndef C_Texture_hpp
 #define C_Texture_hpp
 #include "data/Texture.hpp"
+#include <glm/glm.hpp>
 
 struct C_Texture
 {

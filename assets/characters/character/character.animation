@@ -1,56 +1,59 @@
 {
-  "animations":
+  "Idle":
   {
-    "Idle":
+    "line": 0,
+    "fps": 30,
+    "frame count": 50,
+    "frames": [
     {
-      "line": 0,
-      "frames": [
-      {
-        "hitboxes": []
-        "flags": []
-      },
-      {
-        "hitboxes": []
-        "flags": []
-      },
-      {
-        "hitboxes": []
-        "flags": []
-      }, ]
+      "hitboxes": []
+      "flags": []
     },
-    "Run":
     {
-      "line": 8,
-      "frames": [
-      {
-        "hitboxes": []
-        "flags": []
-      },
-      {
-        "hitboxes": []
-        "flags": []
-      },
-      {
-        "hitboxes": []
-        "flags": []
-      }, ]
+      "hitboxes": []
+      "flags": []
     },
-    "Light Attack":
     {
-      "line": 16,
-      "frames": [
-      {
-        "hitboxes": []
-        "flags": []
-      },
-      {
-        "hitboxes": []
-        "flags": []
-      },
-      {
-        "hitboxes": []
-        "flags": []
-      }, ]
-    }
+      "hitboxes": []
+      "flags": []
+    }, ]
+  },
+  "Run":
+  {
+    "line": 8,
+    "fps": 30,
+    "frame count": 35,
+    "frames": [
+    {
+      "hitboxes": []
+      "flags": []
+    },
+    {
+      "hitboxes": []
+      "flags": []
+    },
+    {
+      "hitboxes": []
+      "flags": []
+    }, ]
+  },
+  "Light Attack":
+  {
+    "line": 16,
+    "fps": 30,
+    "frame count": 20,
+    "frames": [
+    {
+      "hitboxes": []
+      "flags": []
+    },
+    {
+      "hitboxes": []
+      "flags": []
+    },
+    {
+      "hitboxes": []
+      "flags": []
+    }, ]
   }
 }

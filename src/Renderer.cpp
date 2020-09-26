@@ -14,7 +14,7 @@
 
 void Renderer::Init()
 {
-        std::cout << "id is: " <<  Assets::Sprite::Get(Assets::Sprite::player) << std::endl;
+        std::cout << "id is: " << Assets::Sprite::Get(Assets::Sprite::player) << std::endl;
         // glEnable(GL_BLEND);
         // glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         // stbi_set_flip_vertically_on_load(false);
@@ -79,7 +79,7 @@ void Renderer::updateMatricies(int w, int h)
         float height = float(h);
         float ar = width / height;
         float half_width = (1000 * ar) / 2;
-        glm::mat4 view = glm::lookAt(glm::vec3(0,0,0), glm::vec3(0,0,-1), glm::vec3(0,1,0));
+        glm::mat4 view = glm::lookAt(glm::vec3(0, 0, 0), glm::vec3(0, 0, -1), glm::vec3(0, 1, 0));
 
         glm::mat4 projection = glm::ortho(-half_width, half_width, 500.0f, -500.0f);
         glm::mat4 vp = projection * view;
@@ -106,5 +106,5 @@ void Renderer::setProjectionScreen()
 
 glm::vec2 Renderer::screenToWorld(glm::vec2 position)
 {
-        return ( screenOrthoMatrix * glm::vec4(position.x, position.y, 0.0f, 1.0f)) / worldOrthoMatrix;
+        return (screenOrthoMatrix * glm::vec4(position.x, position.y, 0.0f, 1.0f)) / worldOrthoMatrix;
 }

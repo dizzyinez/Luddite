@@ -9,7 +9,10 @@ void C_NativeScript::BindEntity(entt::entity e, Layer* layer)
 
 C_NativeScript::~C_NativeScript()
 {
-        m_Script->OnDestroy();
-        delete m_Script;
+        if (m_Script)
+                m_Script->OnDestroy();
+        DestroyScript(this);
+        // delete m_Script;
+        // m_Script = nullptr;
         //woww
 }

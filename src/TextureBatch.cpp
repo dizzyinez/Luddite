@@ -214,7 +214,6 @@ void TextureBatch::addQuadToBuffer(const glm::vec2& position, const glm::vec2& s
         QuadBufferPtr->position = {position.x, position.y + size.y, 0.0f};
         QuadBufferPtr->texCoords = {tex_coords.x, tex_coords.y + tex_coords.w};
         QuadBufferPtr->texIndex = texIndex;
-        std::cout << QuadBufferPtr->texIndex << std::endl;
         QuadBufferPtr++;
 
         IndexCount += 6;

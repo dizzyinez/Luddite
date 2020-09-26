@@ -13,6 +13,7 @@
 #include "systems/Scripts.hpp"
 #include "systems/Animation.hpp"
 #include "systems/Tileset.hpp"
+#include "systems/LocalPlayerInput.hpp"
 
 #include "components/Position.hpp"
 #include "components/Velocity.hpp"
@@ -24,6 +25,7 @@
 #include "components/Player.hpp"
 #include "components/PlayerKeymap.hpp"
 #include "components/NativeScript.hpp"
+#include "components/Texture.hpp"
 
 #include "events/Events.hpp"
 #include "events/Logging.hpp"
@@ -39,6 +41,8 @@
 
 #include "events/Gameworld.hpp"
 
+
+
 void L_MainMenu::init()
 {
         systems.add<S_Motion>();
@@ -48,6 +52,7 @@ void L_MainMenu::init()
         systems.add<S_Net_Host>();
         systems.add<S_Net_Send>();
         systems.add<S_Net_Update_Player>();
+        systems.add<S_LocalPlayerInput>();
         systems.add<S_PlayerController>();
         systems.add<S_Spawning>();
         systems.add<S_Tileset>();
@@ -65,6 +70,8 @@ void L_MainMenu::init()
         host.AddComponent<C_Position>();
         host.AddComponent<C_Size>();
         host.AddComponent<C_DrawLayer>(DrawLayer::gui);
+        // host.AddComponent<C_Texture>(textures.Get("../assets/textures/wall.jpg"));
+        host.AddComponent<C_Texture>(textures.Get("../assets/textures/wall.jpg"));
         host.AddComponent<C_Gui>();
         host.AddComponent<C_Gui_Container>(
                 [](auto &Gui, auto &Gui_container) {
@@ -100,6 +107,7 @@ void L_MainMenu::init()
         join.AddComponent<C_Position>();
         join.AddComponent<C_Size>();
         join.AddComponent<C_DrawLayer>(DrawLayer::gui);
+        join.AddComponent<C_Texture>(textures.Get("../assets/textures/wall.jpg"));
         join.AddComponent<C_Gui>();
         join.AddComponent<C_Gui_Container>(
                 [](auto &Gui, auto &Gui_container) {
@@ -141,6 +149,7 @@ void L_MainMenu::init()
 
 
         Events::emit<E_SpawnPlayer>(true);
+        Events::emit<E_SpawnPlayer>(1, 0, 0);
         // Entity test = CreateEntity();
         // test.AddScript<PlayerScript>();
 }
@@ -150,14 +159,18 @@ void L_MainMenu::handleEvents(float deltaTime)
         systems.update<S_Gui_Input>(deltaTime, m_Registry);
         systems.update<S_Net_Client>(deltaTime, m_Registry);
         systems.update<S_Net_Host>(deltaTime, m_Registry);
+        systems.update<S_LocalPlayerInput>(deltaTime, m_Registry);
         systems.update<S_PlayerController>(deltaTime, m_Registry);
+        Events::emit<E_SpawnPlayer>(true);
         systems.update<S_Spawning>(deltaTime, m_Registry);
         systems.update<S_Scripts_Events>(deltaTime, m_Registry);
 }
 void L_MainMenu::update(float deltaTime)
 {
+        Events::emit<E_SpawnPlayer>(true, 100, 100);
         systems.update<S_Motion>(deltaTime, m_Registry);
         systems.update<S_Gui>(deltaTime, m_Registry);
+        systems.update<S_Animation>(deltaTime, m_Registry);
         systems.update<S_Scripts_Update>(deltaTime, m_Registry);
 
 
@@ -170,7 +183,6 @@ void L_MainMenu::update(float deltaTime)
 void L_MainMenu::render(float deltaTime)
 {
         systems.update<S_Tileset>(deltaTime, m_Registry);
-        systems.update<S_Animation>(deltaTime, m_Registry);
         systems.update<S_Draw>(deltaTime, m_Registry);
 }
 void L_MainMenu::clean()

@@ -619,6 +619,33 @@ src/S_Gui.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Gui.cpp.s
 .PHONY : src/S_Gui.cpp.s
 
+src/S_LocalPlayerInput.obj: src/S_LocalPlayerInput.cpp.obj
+
+.PHONY : src/S_LocalPlayerInput.obj
+
+# target to build an object file
+src/S_LocalPlayerInput.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_LocalPlayerInput.cpp.obj
+.PHONY : src/S_LocalPlayerInput.cpp.obj
+
+src/S_LocalPlayerInput.i: src/S_LocalPlayerInput.cpp.i
+
+.PHONY : src/S_LocalPlayerInput.i
+
+# target to preprocess a source file
+src/S_LocalPlayerInput.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_LocalPlayerInput.cpp.i
+.PHONY : src/S_LocalPlayerInput.cpp.i
+
+src/S_LocalPlayerInput.s: src/S_LocalPlayerInput.cpp.s
+
+.PHONY : src/S_LocalPlayerInput.s
+
+# target to generate assembly for a file
+src/S_LocalPlayerInput.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_LocalPlayerInput.cpp.s
+.PHONY : src/S_LocalPlayerInput.cpp.s
+
 src/S_Logging.obj: src/S_Logging.cpp.obj
 
 .PHONY : src/S_Logging.obj
@@ -807,6 +834,33 @@ src/S_PlayerController.s: src/S_PlayerController.cpp.s
 src/S_PlayerController.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.s
 .PHONY : src/S_PlayerController.cpp.s
+
+src/S_PlayerDirection.obj: src/S_PlayerDirection.cpp.obj
+
+.PHONY : src/S_PlayerDirection.obj
+
+# target to build an object file
+src/S_PlayerDirection.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_PlayerDirection.cpp.obj
+.PHONY : src/S_PlayerDirection.cpp.obj
+
+src/S_PlayerDirection.i: src/S_PlayerDirection.cpp.i
+
+.PHONY : src/S_PlayerDirection.i
+
+# target to preprocess a source file
+src/S_PlayerDirection.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_PlayerDirection.cpp.i
+.PHONY : src/S_PlayerDirection.cpp.i
+
+src/S_PlayerDirection.s: src/S_PlayerDirection.cpp.s
+
+.PHONY : src/S_PlayerDirection.s
+
+# target to generate assembly for a file
+src/S_PlayerDirection.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_PlayerDirection.cpp.s
+.PHONY : src/S_PlayerDirection.cpp.s
 
 src/S_Projection.obj: src/S_Projection.cpp.obj
 
@@ -1463,6 +1517,9 @@ help:
 	@echo ... src/S_Gui.obj
 	@echo ... src/S_Gui.i
 	@echo ... src/S_Gui.s
+	@echo ... src/S_LocalPlayerInput.obj
+	@echo ... src/S_LocalPlayerInput.i
+	@echo ... src/S_LocalPlayerInput.s
 	@echo ... src/S_Logging.obj
 	@echo ... src/S_Logging.i
 	@echo ... src/S_Logging.s
@@ -1484,6 +1541,9 @@ help:
 	@echo ... src/S_PlayerController.obj
 	@echo ... src/S_PlayerController.i
 	@echo ... src/S_PlayerController.s
+	@echo ... src/S_PlayerDirection.obj
+	@echo ... src/S_PlayerDirection.i
+	@echo ... src/S_PlayerDirection.s
 	@echo ... src/S_Projection.obj
 	@echo ... src/S_Projection.i
 	@echo ... src/S_Projection.s

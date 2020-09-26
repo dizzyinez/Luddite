@@ -4,10 +4,7 @@
 
 SystemID BaseSystem::systemID_counter;
 
-BaseSystem::~BaseSystem()
-{
-
-}
+BaseSystem::~BaseSystem() {}
 Entity BaseSystem::CreateEntity()
 {
         return m_Layer->CreateEntity();

@@ -26,9 +26,9 @@ struct Characters
         {
                 auto id = static_cast<uint32_t>(c);
                 std::string buffer = "../assets/characters/";
-                buffer += Character_Ids [id];
+                buffer += Character_Ids[id];
                 buffer += "/";
-                buffer += Character_Ids [id];
+                buffer += Character_Ids[id];
                 buffer += ".png";
                 return buffer;
                 // return "../assets/characters/" + Character_Ids[id] + "/" + Character_Ids[id] + ".png";
@@ -38,10 +38,21 @@ struct Characters
         {
                 auto id = static_cast<uint32_t>(c);
                 std::string buffer = "../assets/characters/";
-                buffer += Character_Ids [id];
+                buffer += Character_Ids[id];
                 buffer += "/";
-                buffer += Character_Ids [id];
+                buffer += Character_Ids[id];
                 buffer += ".animation";
+                return buffer;
+                // return "../assets/characters/" + Character_Ids[id] + "/" + Character_Ids[id] + ".png";
+        };
+        static std::string GetAnimationBehaviorFilePath(eCharacter c)
+        {
+                auto id = static_cast<uint32_t>(c);
+                std::string buffer = "../assets/characters/";
+                buffer += Character_Ids[id];
+                buffer += "/";
+                buffer += Character_Ids[id];
+                buffer += ".lua";
                 return buffer;
                 // return "../assets/characters/" + Character_Ids[id] + "/" + Character_Ids[id] + ".png";
         };

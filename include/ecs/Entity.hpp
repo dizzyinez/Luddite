@@ -42,11 +42,10 @@ public:
 
 
         template <typename T>
-        T* AddScript()
+        void AddScript()
         {
-                auto script = AddComponent<C_NativeScript>().Bind<T>(m_EntityId, m_Layer);
-                script->OnCreate();
-                return script;
+                AddComponent<C_NativeScript>().Bind<T>(m_EntityId, m_Layer);
+                // script->OnCreate();
                 // nsc.m_Script = std::make_unique<T>();
         }
 

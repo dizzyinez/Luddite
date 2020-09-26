@@ -8,6 +8,8 @@ struct C_NativeScript;                  // for friend class
 struct NativeScript
 {
 public:
+        virtual ~NativeScript() {}
+
         virtual void OnCreate() {}
         virtual void OnDestroy() {}
         virtual void OnEvents(float deltaTime) {}
@@ -42,8 +44,8 @@ public:
                 return m_Entity.GetContext<T>();
         }
 
-protected:
         Entity m_Entity;
+protected:
 
         friend class C_NativeScript;
         // friend class Layer; ??

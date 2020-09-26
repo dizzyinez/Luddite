@@ -58,6 +58,15 @@ else()
 endif()
 
 
+if (NOT DEFINED LUA_LIB_DIR)
+	message(WARNING "LUA_LIB_DIR is not set! Example: Add -DLUA_LIB_DIR=C:\\LUA\\include\\lib")
+else()
+	if (DEFINED CMAKEDEBUG)
+	message("LUA_LIB_DIR is set to ${LUA_LIB_DIR}")
+	endif()
+	SET(CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_PATH} ${LUA_LIB_DIR})	
+endif()
+
 
 IF("${CMAKE_SYSTEM}" MATCHES "Linux" OR "${CMAKE_SYSTEM}" MATCHES "FreeBSD")
 	SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -std=c++17 -z defs")
@@ -95,6 +104,7 @@ my_find_library(glu glu32)
 my_find_library(opengl opengl32)
 my_find_library(winsock ws2_32)
 my_find_library(winmedia winmm)
+my_find_library(lua lua54)
 
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} 
 ${GLFW}
@@ -103,6 +113,7 @@ ${opengl}
 ${glu}
 ${winsock}
 ${winmedia}
+${lua}
 )
 
 #[[

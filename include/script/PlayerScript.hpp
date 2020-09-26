@@ -1,3 +1,4 @@
+#pragma once
 #include "script/NativeScript.hpp"
 #include "events/events.hpp"
 // #include "components/Networking.hpp"
@@ -17,13 +18,21 @@
 #include "data/resources.hpp"
 #include "data/assets.hpp"
 
+
+
 struct PlayerScript : public NativeScript
 {
 public:
+        // PlayerScript() {}
+        // ~PlayerScript() {}
         void OnCreate()
         {
-                animation = json_manager.Get(Characters::GetAnimationFilePath(Characters::eCharacter::character));
-                GetComponent<C_Animation>().PlayAnimation("Run");
+                // animation = json_manager.Get(Characters::GetAnimationFilePath(Characters::eCharacter::character));
+                // GetComponent<C_Animation>().PlayAnimation("Run");
+        }
+        void OnDestroy()
+        {
+                std::cout << "script destruction" << std::endl;
         }
         void OnEvents(float deltaTime)
         {
@@ -37,12 +46,10 @@ public:
         }
         void OnUpdate(float deltaTime)
         {
+                // std::cout << HasComponent<C_PlayerKeymap>() << std::endl;
         }
         void OnLateUpdate(float deltaTime)
         {
-                // animation->root.child("animations")
                 GetComponent<C_Animation>().direction = GetComponent<C_PlayerDirection>().movement_direction;
         }
-private:
-        std::shared_ptr<Json> animation;
 };

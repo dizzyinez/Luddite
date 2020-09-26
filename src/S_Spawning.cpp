@@ -13,6 +13,7 @@
 #include "components/Texture.hpp"
 #include "components/Tileset.hpp"
 #include "components/Animation.hpp"
+#include "components/AnimationBehavior.hpp"
 #include "ecs/Entity.hpp"
 #include "script/PlayerScript.hpp"
 
@@ -26,11 +27,11 @@ void S_Spawning::update(float deltaTime, entt::registry &reg)
 {
         Events::iterate<E_SpawnPlayer>([&reg, this](auto e) {
                 auto &slots = reg.ctx<C_PlayerSlots>();
-                if (slots.players [e->slot] == entt::null)
+                if (slots.players[e->slot] == entt::null)
                 {
                         auto player = CreateEntity();
                         std::cout << "spawning" << std::endl;
-                        slots.players [e->slot] = player.GetId();
+                        slots.players[e->slot] = player.GetId();
                         player.AddComponent<C_Position>(e->xpos, e->ypos);
                         player.AddComponent<C_Velocity>();
                         player.AddComponent<C_Drag>(0.8f);
@@ -39,9 +40,11 @@ void S_Spawning::update(float deltaTime, entt::registry &reg)
                         // player.AddComponent<C_Sprite>(textures.Get("../assets/characters/character/character.png"), glm::uvec4(0xAAAABBFF, 0x555555FF, 0xAAAAAAFF, 0xFFFFFFFF)); //RGBA
                         player.AddComponent<C_Sprite>(textures.Get(Characters::GetTextureFilePath(Characters::eCharacter::character)), glm::uvec4(0xAAAABBFF, 0x555555FF, 0xAAAAAAFF, 0xFFFFFFFF)); //RGBA
                         player.AddComponent<C_Tileset>(50, 16, 0);
-                        player.AddComponent<C_Animation>(Characters::GetAnimationFilePath(Characters::eCharacter::character));
+                        player.AddComponent<C_Animation>();
+                        player.AddComponent<C_AnimationBehavior>(Characters::GetAnimationFilePath(Characters::eCharacter::character), Characters::GetAnimationBehaviorFilePath(Characters::eCharacter::character));
                         player.AddComponent<C_Player>(e->localPlayer, e->slot);
                         player.AddComponent<C_PlayerDirection>();
+                        player.AddComponent<C_PlayerInput>();
                         player.AddScript<PlayerScript>();
                         if (e->localPlayer)
                         {

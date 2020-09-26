@@ -12,27 +12,27 @@ class Entity;
 class Layer
 {
 public:
-Game* game;
+        Game* game;
 
 
-virtual void init() {
-}
-virtual void handleEvents(float deltaTime) {
-}
-virtual void update(float deltaTime) {
-}
-virtual void render(float deltaTime) {
-}
-virtual void clean() {
-}
+        virtual void init() {}
+        virtual void handleEvents(float deltaTime) {}
+        virtual void update(float deltaTime) {}
+        virtual void render(float deltaTime) {}
+        virtual void clean() {}
 
-Entity CreateEntity();
-Entity ToEntity(entt::entity);
+        Entity CreateEntity();
+        Entity ToEntity(entt::entity);
+        template <typename T>
+        T& GetContext()
+        {
+                return m_Registry.ctx<T>();
+        }
 
 protected:
-entt::registry m_Registry;
-SystemManager systems;
-friend class Entity;
+        entt::registry m_Registry;
+        SystemManager systems;
+        friend class Entity;
 };
 
 #endif

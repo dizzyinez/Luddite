@@ -33,10 +33,10 @@ void S_Draw::update(float dt, entt::registry &reg)
         std::vector<std::vector<std::pair<int, entt::entity> > > v(static_cast<int8_t>(DrawLayer::count));
 
         reg.group<C_DrawLayer>(entt::get<C_Position, C_Size>).each([&v](auto entity, auto &drawLayer, auto &pos, auto &size) {
-                v [static_cast<int8_t>(drawLayer.layer)].push_back(std::make_pair(pos.getY() + size.getW(), entity));
+                v[static_cast<int8_t>(drawLayer.layer)].push_back(std::make_pair(pos.getY() + size.getW(), entity));
         });
 
-        sort(v [static_cast<int8_t>(DrawLayer::sprite)].begin(), v [static_cast<int8_t>(DrawLayer::sprite)].end(), sortbyheight);          //sort the sprites by their height on the screen
+        sort(v[static_cast<int8_t>(DrawLayer::sprite)].begin(), v[static_cast<int8_t>(DrawLayer::sprite)].end(), sortbyheight);            //sort the sprites by their height on the screen
         std::vector<std::vector<std::pair<int, entt::entity> > >::iterator layer;
         std::vector<std::pair<int, entt::entity> >::iterator pair;
 
@@ -59,6 +59,7 @@ void S_Draw::update(float dt, entt::registry &reg)
                         const auto [pos, size] = reg.get<C_Position, C_Size>(pair->second);
                         if (reg.has<C_Texture>(pair->second))
                         {
+                                // std::cout << "rendering texture" << std::endl;
                                 const auto tex = reg.get<C_Texture>(pair->second);
                                 Renderer::RenderTexture(pos.position, size, *tex.texture, tex.tex_coords);
                         }

@@ -13,21 +13,21 @@
 class Locator
 {
 public:
-static void Initialize() {
-        // R.Init();
-        // IH.Init();
-}
+        static void Initialize() {
+                // R.Init();
+                // IH.Init();
+        }
 
-static void provideWindow(GLFWwindow* w)
-{
-        window = w;
-        // IH.provideWindow(w);
-}
+        static void provideWindow(GLFWwindow* w)
+        {
+                window = w;
+                // IH.provideWindow(w);
+        }
 
-static void provideGame(Game* g)
-{
-        game = g;
-}
+        static void provideGame(Game* g)
+        {
+                game = g;
+        }
 
 // static Renderer* getRenderer()
 // {
@@ -39,20 +39,20 @@ static void provideGame(Game* g)
 //         return &IH;
 // }
 
-static GLFWwindow* getWindow()
-{
-        return window;
-}
+        static GLFWwindow* getWindow()
+        {
+                return window;
+        }
 
-static Game* getGame()
-{
-        return game;
-}
+        static Game* getGame()
+        {
+                return game;
+        }
 private:
 // static Renderer R;
 // static InputHandler IH;
-static GLFWwindow* window;
-static Game* game;
+        static GLFWwindow* window;
+        static Game* game;
 // static TextureAllocator TA;
 };
 

@@ -11,7 +11,6 @@ void L_Base::init()
 
 void L_Base::handleEvents(float deltaTime)
 {
-
 }
 void L_Base::update(float deltaTime)
 {
@@ -21,14 +20,11 @@ void L_Base::update(float deltaTime)
 
 void L_Base::render(float deltaTime)
 {
-
 }
 void L_Base::clean()
 {
-
 }
 
 L_Base::L_Base()
 {
-
 }

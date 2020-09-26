@@ -251,6 +251,9 @@ GLFW_LIB_DIR:UNINITIALIZED=R:\Dev\Libraries\C++\glfw-3.3.2.bin.WIN32\lib-mingw
 //No help, variable specified on the command line.
 GLM_INCLUDE_DIR:UNINITIALIZED=R:\Dev\Libraries\C++\glm
 
+//No help, variable specified on the command line.
+LUA_LIB_DIR:UNINITIALIZED=R:\Dev\Libraries\C++\lua-5.4.0
+
 //Value Computed by CMake
 VideoGame_BINARY_DIR:STATIC=R:/Dev/games/Luddite/Luddite/build
 
@@ -262,6 +265,9 @@ glew:FILEPATH=R:/Dev/Libraries/C++/glew-2.1.0/lib/libglew32.dll.a
 
 //Path to a library.
 glu:FILEPATH=C:/MinGW/lib/libglu32.a
+
+//Path to a library.
+lua:FILEPATH=R:/Dev/Libraries/C++/lua-5.4.0/liblua54.a
 
 //Path to a library.
 opengl:FILEPATH=C:/MinGW/lib/libopengl32.a

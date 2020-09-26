@@ -88,7 +88,6 @@ CMakeFiles/VideoGame.dir/src/Assets.cpp.obj
  ../include/data/Assets.hpp
  R:/Dev/games/Luddite/Luddite/src/Assets.cpp
 CMakeFiles/VideoGame.dir/src/C_NativeScript.cpp.obj
- ../include/Layers/Layer.hpp
  ../include/components/NativeScript.hpp
  ../include/components/Networking.hpp
  ../include/ecs/Entity.hpp
@@ -101,7 +100,8 @@ CMakeFiles/VideoGame.dir/src/C_NativeScript.cpp.obj
  ../include/enet/win32.h
  ../include/entt.hpp
  ../include/events/Events.hpp
- ../include/events/Logging.hpp
+ ../include/events/logging.hpp
+ ../include/layers/Layer.hpp
  ../include/script/NativeScript.hpp
  ../include/systems/System.hpp
  R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
@@ -113,8 +113,8 @@ CMakeFiles/VideoGame.dir/src/Events.cpp.obj
  ../include/events/Events.hpp
  R:/Dev/games/Luddite/Luddite/src/Events.cpp
 CMakeFiles/VideoGame.dir/src/L_Base.cpp.obj
+ ../include/Layers/Layer.hpp
  ../include/entt.hpp
- ../include/layers/Layer.hpp
  ../include/layers/LayerBase.hpp
  ../include/systems/Logging.hpp
  ../include/systems/Projection.hpp
@@ -136,13 +136,14 @@ CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj
  ../include/components/PlayerKeymap.hpp
  ../include/components/Position.hpp
  ../include/components/Size.hpp
+ ../include/components/Texture.hpp
  ../include/components/Tileset.hpp
  ../include/components/Velocity.hpp
  ../include/core/game.hpp
+ ../include/data/Assets.hpp
  ../include/data/Json.hpp
  ../include/data/ResourceManager.hpp
  ../include/data/Texture.hpp
- ../include/data/assets.hpp
  ../include/data/resources.hpp
  ../include/ecs/Entity.hpp
  ../include/enet/callbacks.h
@@ -190,6 +191,7 @@ CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj
  ../include/systems/Animation.hpp
  ../include/systems/Draw.hpp
  ../include/systems/Gui.hpp
+ ../include/systems/LocalPlayerInput.hpp
  ../include/systems/Motion.hpp
  ../include/systems/Networking.hpp
  ../include/systems/PlayerController.hpp
@@ -555,10 +557,10 @@ CMakeFiles/VideoGame.dir/src/L_Networking.cpp.obj
  R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
  R:/Dev/games/Luddite/Luddite/src/L_Networking.cpp
 CMakeFiles/VideoGame.dir/src/Layer.cpp.obj
- ../include/Layers/Layer.hpp
  ../include/components/NativeScript.hpp
  ../include/ecs/Entity.hpp
  ../include/entt.hpp
+ ../include/layers/Layer.hpp
  ../include/systems/System.hpp
  R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
  R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
@@ -571,7 +573,6 @@ CMakeFiles/VideoGame.dir/src/Locator.cpp.obj
  R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
  R:/Dev/games/Luddite/Luddite/src/Locator.cpp
 CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj
- ../include/Layers/Layer.hpp
  ../include/components/NativeScript.hpp
  ../include/components/Networking.hpp
  ../include/components/Player.hpp
@@ -589,31 +590,217 @@ CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj
  ../include/entt.hpp
  ../include/events/Events.hpp
  ../include/events/Gameworld.hpp
- ../include/events/Logging.hpp
  ../include/events/Networking.hpp
+ ../include/events/logging.hpp
+ ../include/layers/Layer.hpp
  ../include/systems/System.hpp
  R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
  R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
+ R:/Dev/Libraries/C++/glm/glm/common.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/_fixes.hpp
  R:/Dev/Libraries/C++/glm/glm/detail/_swizzle.hpp
  R:/Dev/Libraries/C++/glm/glm/detail/_swizzle_func.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/_vectorize.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/compute_common.hpp
  R:/Dev/Libraries/C++/glm/glm/detail/compute_vector_relational.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/func_common.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_common_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_exponential.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_exponential_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_geometric.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_geometric_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_integer.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_integer_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_matrix.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_matrix_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_packing.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_packing_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_trigonometric.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_trigonometric_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_vector_relational.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_vector_relational_simd.inl
  R:/Dev/Libraries/C++/glm/glm/detail/qualifier.hpp
  R:/Dev/Libraries/C++/glm/glm/detail/setup.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_float.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_half.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_half.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x2.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x3.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x4.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat3x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat3x2.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat3x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat3x3.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat3x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat3x4.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x2.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x3.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x4.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x4_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_quat.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_quat.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_quat_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec1.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec1.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec2.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec2.inl
  R:/Dev/Libraries/C++/glm/glm/detail/type_vec3.hpp
  R:/Dev/Libraries/C++/glm/glm/detail/type_vec3.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec4.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec4.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec4_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/exponential.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_clip_space.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_clip_space.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double3x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double3x2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double3x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double3x3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double3x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double3x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double4x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double4x2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double4x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double4x3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double4x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double4x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float2x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float2x2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float2x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float2x3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float2x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float2x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float3x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float3x2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float3x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float3x3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float3x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float3x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_projection.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_projection.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_transform.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_common.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_common.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_common_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_double.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_double_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_float.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_float_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_geometric.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_geometric.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_relational.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_relational.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_transform.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_transform.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_trigonometric.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_trigonometric.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/scalar_constants.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/scalar_constants.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/scalar_int_sized.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/scalar_uint_sized.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool1_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool2_precision.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_bool3.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_bool3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double1_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double2_precision.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_double3.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_double3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float1_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float2_precision.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_float3.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_float3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int1_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int2_precision.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_int3.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_int3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_relational.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_relational.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint1_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint2_precision.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_uint3.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_uint3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/fwd.hpp
+ R:/Dev/Libraries/C++/glm/glm/geometric.hpp
+ R:/Dev/Libraries/C++/glm/glm/glm.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/constants.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/constants.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/epsilon.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/epsilon.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/matrix_transform.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/matrix_transform.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/quaternion.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/quaternion.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/quaternion_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/type_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/type_precision.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/vec1.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtx/dual_quaternion.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtx/dual_quaternion.inl
+ R:/Dev/Libraries/C++/glm/glm/gtx/string_cast.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtx/string_cast.inl
+ R:/Dev/Libraries/C++/glm/glm/integer.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat2x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat2x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat2x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat3x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat3x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat3x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat4x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat4x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat4x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/matrix.hpp
+ R:/Dev/Libraries/C++/glm/glm/packing.hpp
+ R:/Dev/Libraries/C++/glm/glm/simd/common.h
+ R:/Dev/Libraries/C++/glm/glm/simd/exponential.h
+ R:/Dev/Libraries/C++/glm/glm/simd/geometric.h
+ R:/Dev/Libraries/C++/glm/glm/simd/integer.h
+ R:/Dev/Libraries/C++/glm/glm/simd/matrix.h
  R:/Dev/Libraries/C++/glm/glm/simd/neon.h
  R:/Dev/Libraries/C++/glm/glm/simd/platform.h
+ R:/Dev/Libraries/C++/glm/glm/trigonometric.hpp
+ R:/Dev/Libraries/C++/glm/glm/vec2.hpp
  R:/Dev/Libraries/C++/glm/glm/vec3.hpp
+ R:/Dev/Libraries/C++/glm/glm/vec4.hpp
+ R:/Dev/Libraries/C++/glm/glm/vector_relational.hpp
  R:/Dev/games/Luddite/Luddite/src/PacketDefinitions.cpp
 CMakeFiles/VideoGame.dir/src/R_Json.cpp.obj
  ../include/Locator.hpp
@@ -861,18 +1048,9 @@ CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj
  R:/Dev/Libraries/C++/glm/glm/vector_relational.hpp
  R:/Dev/games/Luddite/Luddite/src/Renderer.cpp
 CMakeFiles/VideoGame.dir/src/S_Animation.cpp.obj
- ../include/Locator.hpp
- ../include/ResourceAllocator.hpp
  ../include/components/Animation.hpp
  ../include/components/Tileset.hpp
- ../include/core/game.hpp
- ../include/data/Json.hpp
- ../include/data/ResourceManager.hpp
- ../include/data/Texture.hpp
- ../include/data/resources.hpp
  ../include/entt.hpp
- ../include/gason.hpp
- ../include/stb/stb_image.h
  ../include/systems/Animation.hpp
  ../include/systems/System.hpp
  R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
@@ -890,11 +1068,11 @@ CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj
  ../include/data/Texture.hpp
  ../include/entt.hpp
  ../include/rendering/Batch.hpp
- ../include/rendering/Renderer.hpp
  ../include/rendering/Shader.hpp
  ../include/rendering/SpriteBatch.hpp
  ../include/rendering/TextureBatch.hpp
  ../include/rendering/loadShader.hpp
+ ../include/rendering/renderer.hpp
  ../include/stb/stb_image.h
  ../include/systems/Draw.hpp
  ../include/systems/System.hpp
@@ -1113,6 +1291,225 @@ CMakeFiles/VideoGame.dir/src/S_Gui.cpp.obj
  R:/Dev/Libraries/C++/glm/glm/vec2.hpp
  R:/Dev/Libraries/C++/glm/glm/vec3.hpp
  R:/Dev/games/Luddite/Luddite/src/S_Gui.cpp
+CMakeFiles/VideoGame.dir/src/S_LocalPlayerInput.cpp.obj
+ ../include/components/NativeScript.hpp
+ ../include/components/player.hpp
+ ../include/components/playerkeymap.hpp
+ ../include/ecs/Entity.hpp
+ ../include/entt.hpp
+ ../include/events/Events.hpp
+ ../include/events/Input.hpp
+ ../include/layers/Layer.hpp
+ ../include/systems/LocalPlayerInput.hpp
+ ../include/systems/System.hpp
+ R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
+ R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
+ R:/Dev/Libraries/C++/glm/glm/common.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/_fixes.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/_swizzle.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/_swizzle_func.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/_vectorize.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/compute_common.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/compute_vector_relational.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/func_common.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_common_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_exponential.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_exponential_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_geometric.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_geometric_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_integer.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_integer_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_matrix.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_matrix_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_packing.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_packing_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_trigonometric.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_trigonometric_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_vector_relational.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_vector_relational_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/qualifier.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/setup.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_float.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_half.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_half.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x2.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x3.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x4.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat3x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat3x2.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat3x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat3x3.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat3x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat3x4.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x2.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x3.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x4.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x4_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_quat.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_quat.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_quat_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec1.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec1.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec2.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec2.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec3.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec3.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec4.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec4.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec4_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/exponential.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_clip_space.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_clip_space.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double3x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double3x2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double3x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double3x3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double3x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double3x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double4x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double4x2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double4x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double4x3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double4x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double4x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float2x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float2x2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float2x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float2x3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float2x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float2x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float3x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float3x2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float3x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float3x3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float3x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float3x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_projection.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_projection.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_transform.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_common.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_common.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_common_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_double.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_double_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_float.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_float_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_geometric.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_geometric.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_relational.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_relational.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_transform.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_transform.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_trigonometric.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_trigonometric.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/scalar_constants.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/scalar_constants.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/scalar_int_sized.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/scalar_uint_sized.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool1_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double1_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float1_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int1_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_relational.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_relational.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint1_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/fwd.hpp
+ R:/Dev/Libraries/C++/glm/glm/geometric.hpp
+ R:/Dev/Libraries/C++/glm/glm/glm.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/constants.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/constants.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/epsilon.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/epsilon.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/matrix_transform.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/matrix_transform.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/quaternion.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/quaternion.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/quaternion_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/type_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/type_precision.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/vec1.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtx/dual_quaternion.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtx/dual_quaternion.inl
+ R:/Dev/Libraries/C++/glm/glm/gtx/string_cast.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtx/string_cast.inl
+ R:/Dev/Libraries/C++/glm/glm/integer.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat2x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat2x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat2x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat3x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat3x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat3x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat4x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat4x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat4x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/matrix.hpp
+ R:/Dev/Libraries/C++/glm/glm/packing.hpp
+ R:/Dev/Libraries/C++/glm/glm/simd/common.h
+ R:/Dev/Libraries/C++/glm/glm/simd/exponential.h
+ R:/Dev/Libraries/C++/glm/glm/simd/geometric.h
+ R:/Dev/Libraries/C++/glm/glm/simd/integer.h
+ R:/Dev/Libraries/C++/glm/glm/simd/matrix.h
+ R:/Dev/Libraries/C++/glm/glm/simd/neon.h
+ R:/Dev/Libraries/C++/glm/glm/simd/platform.h
+ R:/Dev/Libraries/C++/glm/glm/trigonometric.hpp
+ R:/Dev/Libraries/C++/glm/glm/vec2.hpp
+ R:/Dev/Libraries/C++/glm/glm/vec3.hpp
+ R:/Dev/Libraries/C++/glm/glm/vec4.hpp
+ R:/Dev/Libraries/C++/glm/glm/vector_relational.hpp
+ R:/Dev/games/Luddite/Luddite/src/S_LocalPlayerInput.cpp
 CMakeFiles/VideoGame.dir/src/S_Logging.cpp.obj
  ../include/entt.hpp
  ../include/events/Events.hpp
@@ -1418,7 +1815,6 @@ CMakeFiles/VideoGame.dir/src/S_Net_Send.cpp.obj
  R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
  R:/Dev/games/Luddite/Luddite/src/S_Net_Send.cpp
 CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj
- ../include/Layers/Layer.hpp
  ../include/components/NativeScript.hpp
  ../include/components/Networking.hpp
  ../include/components/Player.hpp
@@ -1435,45 +1831,10 @@ CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj
  ../include/enet/win32.h
  ../include/entt.hpp
  ../include/events/Events.hpp
- ../include/events/Logging.hpp
  ../include/events/Networking.hpp
+ ../include/events/logging.hpp
+ ../include/layers/Layer.hpp
  ../include/systems/Networking.hpp
- ../include/systems/System.hpp
- R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
- R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
- R:/Dev/Libraries/C++/glm/glm/detail/_swizzle.hpp
- R:/Dev/Libraries/C++/glm/glm/detail/_swizzle_func.hpp
- R:/Dev/Libraries/C++/glm/glm/detail/compute_vector_relational.hpp
- R:/Dev/Libraries/C++/glm/glm/detail/qualifier.hpp
- R:/Dev/Libraries/C++/glm/glm/detail/setup.hpp
- R:/Dev/Libraries/C++/glm/glm/detail/type_vec3.hpp
- R:/Dev/Libraries/C++/glm/glm/detail/type_vec3.inl
- R:/Dev/Libraries/C++/glm/glm/ext/vector_bool3.hpp
- R:/Dev/Libraries/C++/glm/glm/ext/vector_bool3_precision.hpp
- R:/Dev/Libraries/C++/glm/glm/ext/vector_double3.hpp
- R:/Dev/Libraries/C++/glm/glm/ext/vector_double3_precision.hpp
- R:/Dev/Libraries/C++/glm/glm/ext/vector_float3.hpp
- R:/Dev/Libraries/C++/glm/glm/ext/vector_float3_precision.hpp
- R:/Dev/Libraries/C++/glm/glm/ext/vector_int3.hpp
- R:/Dev/Libraries/C++/glm/glm/ext/vector_int3_precision.hpp
- R:/Dev/Libraries/C++/glm/glm/ext/vector_uint3.hpp
- R:/Dev/Libraries/C++/glm/glm/ext/vector_uint3_precision.hpp
- R:/Dev/Libraries/C++/glm/glm/simd/neon.h
- R:/Dev/Libraries/C++/glm/glm/simd/platform.h
- R:/Dev/Libraries/C++/glm/glm/vec3.hpp
- R:/Dev/games/Luddite/Luddite/src/S_Net_Update_Player.cpp
-CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj
- ../include/Layers/Layer.hpp
- ../include/components/NativeScript.hpp
- ../include/components/Player.hpp
- ../include/components/PlayerKeymap.hpp
- ../include/components/Position.hpp
- ../include/components/Velocity.hpp
- ../include/ecs/Entity.hpp
- ../include/entt.hpp
- ../include/events/Events.hpp
- ../include/events/Input.hpp
- ../include/systems/PlayerController.hpp
  ../include/systems/System.hpp
  R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
  R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
@@ -1502,6 +1863,7 @@ CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj
  R:/Dev/Libraries/C++/glm/glm/detail/func_vector_relational_simd.inl
  R:/Dev/Libraries/C++/glm/glm/detail/qualifier.hpp
  R:/Dev/Libraries/C++/glm/glm/detail/setup.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_float.hpp
  R:/Dev/Libraries/C++/glm/glm/detail/type_half.hpp
  R:/Dev/Libraries/C++/glm/glm/detail/type_half.inl
  R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x2.hpp
@@ -1523,6 +1885,9 @@ CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj
  R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x4.hpp
  R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x4.inl
  R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x4_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_quat.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_quat.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_quat_simd.inl
  R:/Dev/Libraries/C++/glm/glm/detail/type_vec1.hpp
  R:/Dev/Libraries/C++/glm/glm/detail/type_vec1.inl
  R:/Dev/Libraries/C++/glm/glm/detail/type_vec2.hpp
@@ -1533,6 +1898,8 @@ CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj
  R:/Dev/Libraries/C++/glm/glm/detail/type_vec4.inl
  R:/Dev/Libraries/C++/glm/glm/detail/type_vec4_simd.inl
  R:/Dev/Libraries/C++/glm/glm/exponential.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_clip_space.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_clip_space.inl
  R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x2.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x2_precision.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x3.hpp
@@ -1569,30 +1936,64 @@ CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj
  R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x3_precision.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x4.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_projection.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_projection.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_transform.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_common.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_common.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_common_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_double.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_double_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_float.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_float_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_geometric.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_geometric.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_relational.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_relational.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_transform.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_transform.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_trigonometric.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_trigonometric.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/scalar_constants.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/scalar_constants.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/scalar_int_sized.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/scalar_uint_sized.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool1_precision.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_bool2.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_bool2_precision.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_bool3.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_bool3_precision.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_bool4.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_bool4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double1_precision.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_double2.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_double2_precision.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_double3.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_double3_precision.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_double4.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_double4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float1_precision.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_float2.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_float2_precision.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_float3.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_float3_precision.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_float4.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_float4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int1_precision.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_int2.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_int2_precision.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_int3.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_int3_precision.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_int4.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_int4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_relational.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_relational.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint1_precision.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_uint2.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_uint2_precision.hpp
  R:/Dev/Libraries/C++/glm/glm/ext/vector_uint3.hpp
@@ -1602,6 +2003,243 @@ CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj
  R:/Dev/Libraries/C++/glm/glm/fwd.hpp
  R:/Dev/Libraries/C++/glm/glm/geometric.hpp
  R:/Dev/Libraries/C++/glm/glm/glm.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/constants.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/constants.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/epsilon.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/epsilon.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/matrix_transform.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/matrix_transform.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/quaternion.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/quaternion.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/quaternion_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/type_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/type_precision.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/vec1.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtx/dual_quaternion.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtx/dual_quaternion.inl
+ R:/Dev/Libraries/C++/glm/glm/gtx/string_cast.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtx/string_cast.inl
+ R:/Dev/Libraries/C++/glm/glm/integer.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat2x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat2x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat2x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat3x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat3x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat3x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat4x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat4x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat4x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/matrix.hpp
+ R:/Dev/Libraries/C++/glm/glm/packing.hpp
+ R:/Dev/Libraries/C++/glm/glm/simd/common.h
+ R:/Dev/Libraries/C++/glm/glm/simd/exponential.h
+ R:/Dev/Libraries/C++/glm/glm/simd/geometric.h
+ R:/Dev/Libraries/C++/glm/glm/simd/integer.h
+ R:/Dev/Libraries/C++/glm/glm/simd/matrix.h
+ R:/Dev/Libraries/C++/glm/glm/simd/neon.h
+ R:/Dev/Libraries/C++/glm/glm/simd/platform.h
+ R:/Dev/Libraries/C++/glm/glm/trigonometric.hpp
+ R:/Dev/Libraries/C++/glm/glm/vec2.hpp
+ R:/Dev/Libraries/C++/glm/glm/vec3.hpp
+ R:/Dev/Libraries/C++/glm/glm/vec4.hpp
+ R:/Dev/Libraries/C++/glm/glm/vector_relational.hpp
+ R:/Dev/games/Luddite/Luddite/src/S_Net_Update_Player.cpp
+CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj
+ ../include/components/NativeScript.hpp
+ ../include/components/Player.hpp
+ ../include/components/PlayerKeymap.hpp
+ ../include/components/Position.hpp
+ ../include/components/Velocity.hpp
+ ../include/ecs/Entity.hpp
+ ../include/entt.hpp
+ ../include/events/Events.hpp
+ ../include/events/Input.hpp
+ ../include/layers/Layer.hpp
+ ../include/systems/PlayerController.hpp
+ ../include/systems/System.hpp
+ R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
+ R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
+ R:/Dev/Libraries/C++/glm/glm/common.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/_fixes.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/_swizzle.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/_swizzle_func.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/_vectorize.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/compute_common.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/compute_vector_relational.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/func_common.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_common_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_exponential.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_exponential_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_geometric.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_geometric_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_integer.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_integer_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_matrix.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_matrix_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_packing.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_packing_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_trigonometric.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_trigonometric_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_vector_relational.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_vector_relational_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/qualifier.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/setup.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_float.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_half.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_half.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x2.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x3.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x4.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat3x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat3x2.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat3x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat3x3.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat3x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat3x4.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x2.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x3.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x4.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x4_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_quat.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_quat.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_quat_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec1.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec1.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec2.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec2.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec3.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec3.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec4.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec4.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec4_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/exponential.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_clip_space.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_clip_space.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double3x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double3x2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double3x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double3x3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double3x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double3x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double4x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double4x2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double4x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double4x3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double4x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double4x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float2x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float2x2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float2x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float2x3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float2x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float2x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float3x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float3x2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float3x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float3x3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float3x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float3x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_projection.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_projection.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_transform.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_common.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_common.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_common_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_double.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_double_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_float.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_float_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_geometric.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_geometric.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_relational.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_relational.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_transform.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_transform.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_trigonometric.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_trigonometric.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/scalar_constants.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/scalar_constants.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/scalar_int_sized.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/scalar_uint_sized.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool1_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double1_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float1_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int1_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_relational.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_relational.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint1_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/fwd.hpp
+ R:/Dev/Libraries/C++/glm/glm/geometric.hpp
+ R:/Dev/Libraries/C++/glm/glm/glm.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/constants.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/constants.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/epsilon.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/epsilon.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/matrix_transform.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/matrix_transform.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/quaternion.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/quaternion.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/quaternion_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/type_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/type_precision.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/vec1.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtx/dual_quaternion.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtx/dual_quaternion.inl
+ R:/Dev/Libraries/C++/glm/glm/gtx/string_cast.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtx/string_cast.inl
  R:/Dev/Libraries/C++/glm/glm/integer.hpp
  R:/Dev/Libraries/C++/glm/glm/mat2x2.hpp
  R:/Dev/Libraries/C++/glm/glm/mat2x3.hpp
@@ -1627,6 +2265,224 @@ CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj
  R:/Dev/Libraries/C++/glm/glm/vec4.hpp
  R:/Dev/Libraries/C++/glm/glm/vector_relational.hpp
  R:/Dev/games/Luddite/Luddite/src/S_PlayerController.cpp
+CMakeFiles/VideoGame.dir/src/S_PlayerDirection.cpp.obj
+ ../include/components/NativeScript.hpp
+ ../include/components/Player.hpp
+ ../include/ecs/Entity.hpp
+ ../include/entt.hpp
+ ../include/events/Events.hpp
+ ../include/events/Input.hpp
+ ../include/layers/Layer.hpp
+ ../include/systems/PlayerDirection.hpp
+ ../include/systems/System.hpp
+ R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
+ R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
+ R:/Dev/Libraries/C++/glm/glm/common.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/_fixes.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/_swizzle.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/_swizzle_func.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/_vectorize.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/compute_common.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/compute_vector_relational.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/func_common.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_common_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_exponential.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_exponential_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_geometric.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_geometric_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_integer.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_integer_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_matrix.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_matrix_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_packing.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_packing_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_trigonometric.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_trigonometric_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_vector_relational.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/func_vector_relational_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/qualifier.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/setup.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_float.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_half.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_half.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x2.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x3.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat2x4.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat3x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat3x2.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat3x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat3x3.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat3x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat3x4.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x2.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x3.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x4.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_mat4x4_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_quat.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_quat.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_quat_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec1.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec1.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec2.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec2.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec3.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec3.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec4.hpp
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec4.inl
+ R:/Dev/Libraries/C++/glm/glm/detail/type_vec4_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/exponential.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_clip_space.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_clip_space.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double2x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double3x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double3x2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double3x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double3x3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double3x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double3x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double4x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double4x2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double4x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double4x3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double4x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_double4x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float2x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float2x2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float2x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float2x3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float2x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float2x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float3x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float3x2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float3x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float3x3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float3x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float3x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_float4x4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_projection.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_projection.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/matrix_transform.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_common.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_common.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_common_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_double.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_double_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_float.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_float_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_geometric.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_geometric.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_relational.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_relational.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_transform.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_transform.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_trigonometric.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/quaternion_trigonometric.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/scalar_constants.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/scalar_constants.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/scalar_int_sized.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/scalar_uint_sized.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool1_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_bool4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double1_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_double4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float1_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_float4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int1_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_int4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_relational.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_relational.inl
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint1.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint1_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint2.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint2_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint3.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint3_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint4.hpp
+ R:/Dev/Libraries/C++/glm/glm/ext/vector_uint4_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/fwd.hpp
+ R:/Dev/Libraries/C++/glm/glm/geometric.hpp
+ R:/Dev/Libraries/C++/glm/glm/glm.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/constants.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/constants.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/epsilon.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/epsilon.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/matrix_transform.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/matrix_transform.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/quaternion.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/quaternion.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/quaternion_simd.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/type_precision.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtc/type_precision.inl
+ R:/Dev/Libraries/C++/glm/glm/gtc/vec1.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtx/dual_quaternion.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtx/dual_quaternion.inl
+ R:/Dev/Libraries/C++/glm/glm/gtx/string_cast.hpp
+ R:/Dev/Libraries/C++/glm/glm/gtx/string_cast.inl
+ R:/Dev/Libraries/C++/glm/glm/integer.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat2x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat2x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat2x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat3x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat3x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat3x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat4x2.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat4x3.hpp
+ R:/Dev/Libraries/C++/glm/glm/mat4x4.hpp
+ R:/Dev/Libraries/C++/glm/glm/matrix.hpp
+ R:/Dev/Libraries/C++/glm/glm/packing.hpp
+ R:/Dev/Libraries/C++/glm/glm/simd/common.h
+ R:/Dev/Libraries/C++/glm/glm/simd/exponential.h
+ R:/Dev/Libraries/C++/glm/glm/simd/geometric.h
+ R:/Dev/Libraries/C++/glm/glm/simd/integer.h
+ R:/Dev/Libraries/C++/glm/glm/simd/matrix.h
+ R:/Dev/Libraries/C++/glm/glm/simd/neon.h
+ R:/Dev/Libraries/C++/glm/glm/simd/platform.h
+ R:/Dev/Libraries/C++/glm/glm/trigonometric.hpp
+ R:/Dev/Libraries/C++/glm/glm/vec2.hpp
+ R:/Dev/Libraries/C++/glm/glm/vec3.hpp
+ R:/Dev/Libraries/C++/glm/glm/vec4.hpp
+ R:/Dev/Libraries/C++/glm/glm/vector_relational.hpp
+ R:/Dev/games/Luddite/Luddite/src/S_PlayerDirection.cpp
 CMakeFiles/VideoGame.dir/src/S_Projection.cpp.obj
  ../include/entt.hpp
  ../include/events/Events.hpp
@@ -1792,10 +2648,9 @@ CMakeFiles/VideoGame.dir/src/S_Projection.cpp.obj
  R:/Dev/Libraries/C++/glm/glm/vector_relational.hpp
  R:/Dev/games/Luddite/Luddite/src/S_Projection.cpp
 CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.obj
- ../include/Layers/Layer.hpp
  ../include/components/NativeScript.hpp
  ../include/components/Networking.hpp
- ../include/ecs/Entity.hpp
+ ../include/ecs/entity.hpp
  ../include/enet/callbacks.h
  ../include/enet/enet.h
  ../include/enet/list.h
@@ -1805,7 +2660,8 @@ CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.obj
  ../include/enet/win32.h
  ../include/entt.hpp
  ../include/events/Events.hpp
- ../include/events/Logging.hpp
+ ../include/events/logging.hpp
+ ../include/layers/Layer.hpp
  ../include/script/NativeScript.hpp
  ../include/systems/Scripts.hpp
  ../include/systems/System.hpp
@@ -1813,10 +2669,10 @@ CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.obj
  R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
  R:/Dev/games/Luddite/Luddite/src/S_Scripts.cpp
 CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj
- ../include/Layers/Layer.hpp
  ../include/Locator.hpp
  ../include/ResourceAllocator.hpp
  ../include/components/Animation.hpp
+ ../include/components/AnimationBehavior.hpp
  ../include/components/Drag.hpp
  ../include/components/DrawLayer.hpp
  ../include/components/NativeScript.hpp
@@ -1846,8 +2702,13 @@ CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj
  ../include/events/Events.hpp
  ../include/events/Gameworld.hpp
  ../include/events/Input.hpp
- ../include/events/Logging.hpp
+ ../include/events/logging.hpp
  ../include/gason.hpp
+ ../include/layers/Layer.hpp
+ ../include/lua/lauxlib.h
+ ../include/lua/lua.h
+ ../include/lua/luaconf.h
+ ../include/lua/lualib.h
  ../include/rendering/Batch.hpp
  ../include/rendering/Shader.hpp
  ../include/rendering/SpriteBatch.hpp
@@ -2576,10 +3437,10 @@ CMakeFiles/VideoGame.dir/src/SpriteBatch.cpp.obj
  R:/Dev/Libraries/C++/glm/glm/vector_relational.hpp
  R:/Dev/games/Luddite/Luddite/src/SpriteBatch.cpp
 CMakeFiles/VideoGame.dir/src/System.cpp.obj
- ../include/Layers/Layer.hpp
  ../include/components/NativeScript.hpp
  ../include/ecs/Entity.hpp
  ../include/entt.hpp
+ ../include/layers/Layer.hpp
  ../include/systems/System.hpp
  R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
  R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
@@ -2984,6 +3845,7 @@ CMakeFiles/VideoGame.dir/src/loadShader.cpp.obj
  R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
  R:/Dev/games/Luddite/Luddite/src/loadShader.cpp
 CMakeFiles/VideoGame.dir/src/main.cpp.obj
+ ../include/Layers/Layer.hpp
  ../include/core/game.hpp
  ../include/enet/callbacks.h
  ../include/enet/enet.h
@@ -2993,10 +3855,9 @@ CMakeFiles/VideoGame.dir/src/main.cpp.obj
  ../include/enet/unix.h
  ../include/enet/win32.h
  ../include/entt.hpp
- ../include/events/Events.hpp
- ../include/events/Input.hpp
+ ../include/events/events.hpp
+ ../include/events/input.hpp
  ../include/events/logging.hpp
- ../include/layers/Layer.hpp
  ../include/layers/LayerBase.hpp
  ../include/layers/LayerMainMenu.hpp
  ../include/systems/System.hpp

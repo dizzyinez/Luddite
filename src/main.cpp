@@ -22,7 +22,7 @@
 using namespace glm;
 
 
-const int UPDATE_RATE = 500;
+const int UPDATE_RATE = 60;
 const float SECONDS_PER_UPDATE = 1.0f / (float)UPDATE_RATE;
 // std::unique_ptr<Game> *game = nullptr;
 int main(int argc, char *argv[])
@@ -41,14 +41,16 @@ int main(int argc, char *argv[])
         glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // We don't want the old OpenGL
 
         GLFWwindow* window = glfwCreateWindow(1024, 768, "VideoGame", NULL, NULL);
-        if( !window ) {
+        if (!window)
+        {
                 std::cout << "Failed to open GLFW window." << std::endl;
                 glfwTerminate();
                 return 1;
         }
         glfwMakeContextCurrent(window); // Initialize GLEW
-        glewExperimental=true; // Needed in core profile
-        if (glewInit() != GLEW_OK) {
+        glewExperimental = true; // Needed in core profile
+        if (glewInit() != GLEW_OK)
+        {
                 std::cout << "Failed to initialise GLEW" << std::endl;
                 return 1;
         }
@@ -68,7 +70,6 @@ int main(int argc, char *argv[])
         //initialize ENET
         if (enet_initialize() != 0)
         {
-
                 Events::emit<E_Log>("ENET failed to initialized!");
         }
         else
@@ -88,7 +89,7 @@ int main(int argc, char *argv[])
                 {
                         //TODO: cap delta time and send warning when over that cap
                         deltaTime = glfwGetTime();
-                        if ( deltaTime > SECONDS_PER_UPDATE )
+                        if (deltaTime > SECONDS_PER_UPDATE)
                         {
                                 glfwSetTime(0);
                                 glClear(GL_COLOR_BUFFER_BIT);
@@ -99,7 +100,6 @@ int main(int argc, char *argv[])
                                 Events::flushAll();
                                 glfwPollEvents();
                         }
-
                 }
                 game->Clean();
                 std::cout << "game exited" << std::endl;

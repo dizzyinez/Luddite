@@ -30,11 +30,11 @@ void S_Spawning::update(float deltaTime, entt::registry &reg)
                 if (slots.players[e->slot] == entt::null)
                 {
                         auto player = CreateEntity();
-                        std::cout << "spawning" << std::endl;
+                        std::cout << "spawning | slot: " << static_cast<int>(e->slot) << std::endl;
                         slots.players[e->slot] = player.GetId();
                         player.AddComponent<C_Position>(e->xpos, e->ypos);
                         player.AddComponent<C_Velocity>();
-                        player.AddComponent<C_Drag>(0.8f);
+                        // player.AddComponent<C_Drag>(0.8f);
                         player.AddComponent<C_Size>(200.0f, 200.0f);
                         player.AddComponent<C_DrawLayer>();
                         // player.AddComponent<C_Sprite>(textures.Get("../assets/characters/character/character.png"), glm::uvec4(0xAAAABBFF, 0x555555FF, 0xAAAAAAFF, 0xFFFFFFFF)); //RGBA
@@ -52,7 +52,8 @@ void S_Spawning::update(float deltaTime, entt::registry &reg)
                         }
                         else
                         {
-                                player.AddComponent<C_Net_Position>(e->xpos, e->ypos);
+                                // player.AddComponent<C_PlayerKeymap>();
+                                // player.AddComponent<C_Net_Position>(e->xpos, e->ypos);
                         }
                 }
                 else

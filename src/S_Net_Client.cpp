@@ -16,7 +16,7 @@ void show_binrep(const T& a)
 {
         const char* beg = reinterpret_cast<const char*>(&a);
         const char* end = beg + sizeof(a);
-        while(beg != end)
+        while (beg != end)
                 std::cout << std::bitset<CHAR_BIT>(*beg++) << ' ';
         std::cout << '\n';
 }
@@ -34,7 +34,8 @@ void S_Net_Client::update(float deltaTime, entt::registry &reg)
                 client.client = enet_host_create(NULL, 1, 2, 0, 0);
                 if (client.client == NULL)
                         LOG_DEBUG("Client failed to initialize!");
-                else{
+                else
+                {
                         LOG_DEBUG("Client initialized");
                 }
 
@@ -45,13 +46,13 @@ void S_Net_Client::update(float deltaTime, entt::registry &reg)
                 address.port = e->port;
 
                 client.server = enet_host_connect(client.client, &address, 2, 0);
-                if(client.server == NULL)
+                if (client.server == NULL)
                 {
                         LOG_DEBUG("No available servers for initiating an ENet connection!");
                 }
-                std::cout << client.server->channelCount << std::endl;
-                if (enet_host_service(client.client, &client.event, 1000) > 0 &&
-                    client.event.type == ENET_EVENT_TYPE_CONNECT)
+                std::cout << "channels: " << client.server->channelCount << std::endl;
+                if (enet_host_service(client.client, &client.event, 1000) > 0
+                    && client.event.type == ENET_EVENT_TYPE_CONNECT)
                 {
                         // P_Fatal_Error event("ahahahhahahaha");
                         // ENetPacket* packet = convertToPacket(event);
@@ -66,10 +67,10 @@ void S_Net_Client::update(float deltaTime, entt::registry &reg)
                 }
                 else
                 {
-                        // enet_peer_reset(client.server);
-                        // client.server = nullptr;
-                        // client.initialized = false;
-                        // log("Failed to connect to host");
+                        enet_peer_reset(client.server);
+                        client.server = nullptr;
+                        client.initialized = false;
+                        std::cout << "Failed to connect to host" << std::endl;
                 }
                 e->setHandled();
                 //return true;                 //event was handled
@@ -89,8 +90,10 @@ void S_Net_Client::update(float deltaTime, entt::registry &reg)
                         case ENET_EVENT_TYPE_CONNECT:
                                 LOG_DEBUG("A new client connected!");
                                 break;
+
                         case ENET_EVENT_TYPE_RECEIVE:
-                                switch (client.event.packet->data[0]) {
+                                switch (client.event.packet->data[0])
+                                {
                                 case 1:
                                 {
                                         P_Fatal_Error p = convertFromPacket<P_Fatal_Error>(client.event.packet);
@@ -98,12 +101,14 @@ void S_Net_Client::update(float deltaTime, entt::registry &reg)
                                         // std::cout << "stored: " << strlen(p.error_message) << " copied: " << host.event.packet->dataLength << " message: " << p.error_message << std::endl;
                                         break;
                                 }
+
                                 case 3:
                                 {
                                         P_Connect_Approved p = convertFromPacket<P_Connect_Approved>(client.event.packet);
                                         p.on_client_receive(reg);
                                         break;
                                 }
+
                                 case 5:
                                 {
                                         std::cout << "received player spawning packet" << std::endl;
@@ -111,6 +116,7 @@ void S_Net_Client::update(float deltaTime, entt::registry &reg)
                                         p.on_client_receive(reg);
                                         break;
                                 }
+
                                 case 6:
                                 {
                                         P_Player_Control p = convertFromPacket<P_Player_Control>(client.event.packet);
@@ -120,10 +126,10 @@ void S_Net_Client::update(float deltaTime, entt::registry &reg)
                                 }
                                 enet_packet_destroy(client.event.packet);
                                 break;
+
                         case ENET_EVENT_TYPE_DISCONNECT:
                                 LOG_DEBUG("disconected from host");
                                 break;
-
                         }
                 }
         }

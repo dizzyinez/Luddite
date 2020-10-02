@@ -3,7 +3,7 @@
   {
     "line": 0,
     "fps": 30,
-    "frame count": 50,
+    "framecount": 50,
     "frames": [
     {
       "hitboxes": []
@@ -22,7 +22,7 @@
   {
     "line": 8,
     "fps": 30,
-    "frame count": 35,
+    "framecount": 35,
     "frames": [
     {
       "hitboxes": []
@@ -41,7 +41,7 @@
   {
     "line": 16,
     "fps": 30,
-    "frame count": 20,
+    "framecount": 20,
     "frames": [
     {
       "hitboxes": []

@@ -565,6 +565,33 @@ src/S_Animation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Animation.cpp.s
 .PHONY : src/S_Animation.cpp.s
 
+src/S_AnimationBehavior.obj: src/S_AnimationBehavior.cpp.obj
+
+.PHONY : src/S_AnimationBehavior.obj
+
+# target to build an object file
+src/S_AnimationBehavior.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_AnimationBehavior.cpp.obj
+.PHONY : src/S_AnimationBehavior.cpp.obj
+
+src/S_AnimationBehavior.i: src/S_AnimationBehavior.cpp.i
+
+.PHONY : src/S_AnimationBehavior.i
+
+# target to preprocess a source file
+src/S_AnimationBehavior.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_AnimationBehavior.cpp.i
+.PHONY : src/S_AnimationBehavior.cpp.i
+
+src/S_AnimationBehavior.s: src/S_AnimationBehavior.cpp.s
+
+.PHONY : src/S_AnimationBehavior.s
+
+# target to generate assembly for a file
+src/S_AnimationBehavior.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_AnimationBehavior.cpp.s
+.PHONY : src/S_AnimationBehavior.cpp.s
+
 src/S_Draw.obj: src/S_Draw.cpp.obj
 
 .PHONY : src/S_Draw.obj
@@ -1511,6 +1538,9 @@ help:
 	@echo ... src/S_Animation.obj
 	@echo ... src/S_Animation.i
 	@echo ... src/S_Animation.s
+	@echo ... src/S_AnimationBehavior.obj
+	@echo ... src/S_AnimationBehavior.i
+	@echo ... src/S_AnimationBehavior.s
 	@echo ... src/S_Draw.obj
 	@echo ... src/S_Draw.i
 	@echo ... src/S_Draw.s

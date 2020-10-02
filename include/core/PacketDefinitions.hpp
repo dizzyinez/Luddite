@@ -6,6 +6,7 @@
 #include <glm/vec3.hpp>
 #include <unordered_map>
 #include <iostream>
+#include <bitset>
 
 
 template <typename T>
@@ -32,7 +33,6 @@ T convertFromPacket(ENetPacket* packet)
         //tho, so this is what we get.
         // strcpy(static_cast<char*>(static_cast<void*>(&data)), static_cast<char*>(static_cast<void*>(event.packet->data)));
         // memcpy(&data, event.packet->data, sizeof(T));
-
 }
 
 struct P_Fatal_Error
@@ -104,6 +104,7 @@ struct P_Connect_Approved
         {
                 data[0] = signature;
                 data[1] = player_slot;
+                std::cout << "serializing slot: " << static_cast<uint8_t>(data[1]) << " acutal slot: " << player_slot << std::endl;
                 memcpy(&data[2], &x, 4);
                 memcpy(&data[6], &y, 4);
                 return 10;
@@ -112,6 +113,7 @@ struct P_Connect_Approved
         {
                 signature = data[0];
                 player_slot = data[1];
+                std::cout << "deserializing slot: " << player_slot << std::endl;
                 memcpy(&x, &data[2], 4);
                 memcpy(&y, &data[6], 4);
         }
@@ -178,24 +180,22 @@ struct P_Player_Control
         //         :  playerSlot(playerSlot_), xpos(xpos_), ypos(ypos_)
         // {
         // }
-        float x;
-        float y;
+
+        std::bitset<8> buttons;
         uint8_t signature = 6;
         uint8_t player_slot;
         size_t serialize(uint8_t* data)
         {
                 data[0] = signature;
                 data[1] = player_slot;
-                memcpy(&data[2], &x, 4);
-                memcpy(&data[6], &y, 4);
+                memcpy(&data[2], &buttons, 1);
                 return 10;
         }
         void deserialize(uint8_t* data)
         {
                 signature = data[0];
                 player_slot = data[1];
-                memcpy(&x, &data[2], 4);
-                memcpy(&y, &data[6], 4);
+                memcpy(&buttons, &data[2], 1);
         }
 };
 

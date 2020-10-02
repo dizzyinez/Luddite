@@ -50,6 +50,15 @@ struct C_PlayerInput
          * 6 Button 3
          * 7 Button 4
          */
+
+        int moveX()
+        {
+                return (buttons[0] == 1) ? ((buttons[1] == 1) ? 1 : -1) : 0;
+        }
+        int moveY()
+        {
+                return (buttons[2] == 1) ? ((buttons[3] == 1) ? -1 : 1) : 0;
+        }
         glm::vec2 direction()
         {
                 glm::vec2 dir = glm::vec2(

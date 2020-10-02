@@ -104,7 +104,7 @@ my_find_library(glu glu32)
 my_find_library(opengl opengl32)
 my_find_library(winsock ws2_32)
 my_find_library(winmedia winmm)
-my_find_library(lua lua54)
+my_find_library(lua lua53)
 
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} 
 ${GLFW}

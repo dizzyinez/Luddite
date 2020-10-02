@@ -27,6 +27,7 @@ public:
         // ~PlayerScript() {}
         void OnCreate()
         {
+                std::cout << "Player script instantiated" << std::endl;
                 // animation = json_manager.Get(Characters::GetAnimationFilePath(Characters::eCharacter::character));
                 // GetComponent<C_Animation>().PlayAnimation("Run");
         }
@@ -46,6 +47,7 @@ public:
         }
         void OnUpdate(float deltaTime)
         {
+                // std::cout << "native script updated" << std::endl;
                 // std::cout << HasComponent<C_PlayerKeymap>() << std::endl;
         }
         void OnLateUpdate(float deltaTime)

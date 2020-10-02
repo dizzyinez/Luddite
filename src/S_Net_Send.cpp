@@ -5,7 +5,6 @@
 
 void S_Net_Send::update(float deltaTime, entt::registry &reg)
 {
-
         Events::iterate<E_Net_Send>([&reg](auto &e) {
                 auto &client = reg.ctx<C_Net_Client>();
                 if (client.initialized == true)
@@ -18,8 +17,9 @@ void S_Net_Send::update(float deltaTime, entt::registry &reg)
         });
 
         auto &client = reg.ctx<C_Net_Client>();
-        if (client.initialized == true) {
-                std::cout << client.server->roundTripTime << std::endl;
+        if (client.initialized == true)
+        {
+                // std::cout << client.server->roundTripTime << std::endl;
                 enet_host_flush(client.client);
         }
 

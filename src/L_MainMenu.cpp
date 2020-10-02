@@ -12,6 +12,7 @@
 #include "systems/Spawning.hpp"
 #include "systems/Scripts.hpp"
 #include "systems/Animation.hpp"
+#include "systems/AnimationBehavior.hpp"
 #include "systems/Tileset.hpp"
 #include "systems/LocalPlayerInput.hpp"
 
@@ -57,6 +58,7 @@ void L_MainMenu::init()
         systems.add<S_Spawning>();
         systems.add<S_Tileset>();
         systems.add<S_Animation>();
+        systems.add<S_AnimationBehavior>();
         systems.add<S_Draw>();
         systems.add<S_Scripts_Events>();
         systems.add<S_Scripts_Update>();
@@ -101,7 +103,38 @@ void L_MainMenu::init()
         });
 
 
+        auto createPlayer = CreateEntity();
+        createPlayer.AddComponent<C_Position>();
+        createPlayer.AddComponent<C_Size>();
+        createPlayer.AddComponent<C_DrawLayer>(DrawLayer::gui);
+        createPlayer.AddComponent<C_Texture>(textures.Get("../assets/textures/wall.jpg"));
+        createPlayer.AddComponent<C_Gui>();
+        createPlayer.AddComponent<C_Gui_Container>(
+                [](auto &Gui, auto &Gui_container) {
+                Gui_container.solver->addEditVariable(Gui.w, kiwi::strength::strong);
+                Gui_container.solver->addEditVariable(Gui.h, kiwi::strength::strong);
+                kiwi::Constraint constraints[] = {
+                        kiwi::Constraint {Gui.x >= 110},
+                        kiwi::Constraint {Gui.y == 0},
+                        kiwi::Constraint {Gui.h <= 50},
+                        kiwi::Constraint {Gui.w <= 50}
+                };
+                for (auto& constraint : constraints)
+                        Gui_container.solver->addConstraint(constraint);
+                Gui_container.solver->updateVariables();
+        },
 
+                [](auto &Gui, auto &Gui_container) {
+                Events::iterateAll<E_WindowResize>([&Gui, &Gui_container](auto e) {
+                        Gui_container.solver->suggestValue(Gui.w, e->width / 2);
+                        Gui_container.solver->suggestValue(Gui.h, e->height / 2);
+                        Gui_container.solver->updateVariables();
+                        return false;
+                });
+        });
+        createPlayer.AddComponent<C_Gui_Button>([]() {
+                Events::emit<E_SpawnPlayer>(1, 0, 0);
+        });
 
         auto join = CreateEntity();
         join.AddComponent<C_Position>();
@@ -149,7 +182,7 @@ void L_MainMenu::init()
 
 
         Events::emit<E_SpawnPlayer>(true);
-        Events::emit<E_SpawnPlayer>(1, 0, 0);
+        // Events::emit<E_SpawnPlayer>(1, 0, 0);
         // Entity test = CreateEntity();
         // test.AddScript<PlayerScript>();
 }
@@ -159,18 +192,18 @@ void L_MainMenu::handleEvents(float deltaTime)
         systems.update<S_Gui_Input>(deltaTime, m_Registry);
         systems.update<S_Net_Client>(deltaTime, m_Registry);
         systems.update<S_Net_Host>(deltaTime, m_Registry);
-        systems.update<S_LocalPlayerInput>(deltaTime, m_Registry);
-        systems.update<S_PlayerController>(deltaTime, m_Registry);
-        Events::emit<E_SpawnPlayer>(true);
         systems.update<S_Spawning>(deltaTime, m_Registry);
+        systems.update<S_LocalPlayerInput>(deltaTime, m_Registry);
         systems.update<S_Scripts_Events>(deltaTime, m_Registry);
 }
 void L_MainMenu::update(float deltaTime)
 {
         Events::emit<E_SpawnPlayer>(true, 100, 100);
-        systems.update<S_Motion>(deltaTime, m_Registry);
         systems.update<S_Gui>(deltaTime, m_Registry);
+        systems.update<S_PlayerController>(deltaTime, m_Registry);
         systems.update<S_Animation>(deltaTime, m_Registry);
+        // systems.update<S_AnimationBehavior>(deltaTime, m_Registry);
+        systems.update<S_Motion>(deltaTime, m_Registry);
         systems.update<S_Scripts_Update>(deltaTime, m_Registry);
 
 
@@ -178,6 +211,7 @@ void L_MainMenu::update(float deltaTime)
         systems.update<S_Scripts_LateUpdate>(deltaTime, m_Registry);
         systems.update<S_Net_Update_Player>(deltaTime, m_Registry);
         systems.update<S_Net_Send>(deltaTime, m_Registry);
+        // std::cout << "Network send system" << std::endl;
 }
 
 void L_MainMenu::render(float deltaTime)

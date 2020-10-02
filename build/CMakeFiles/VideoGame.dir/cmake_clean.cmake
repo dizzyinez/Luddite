@@ -13,6 +13,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/VideoGame.dir/src/R_Textures.cpp.obj"
   "CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj"
   "CMakeFiles/VideoGame.dir/src/S_Animation.cpp.obj"
+  "CMakeFiles/VideoGame.dir/src/S_AnimationBehavior.cpp.obj"
   "CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj"
   "CMakeFiles/VideoGame.dir/src/S_Gui.cpp.obj"
   "CMakeFiles/VideoGame.dir/src/S_LocalPlayerInput.cpp.obj"

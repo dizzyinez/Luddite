@@ -13,7 +13,7 @@ void S_Scripts_Events::update(float deltaTime, entt::registry &reg)
 void S_Scripts_Update::update(float deltaTime, entt::registry &reg)
 {
         reg.view<C_NativeScript>().each([deltaTime, this](auto entity, auto &nsc) {
-                if (!nsc.m_Script)
+                if (nsc.m_Script == nullptr)
                 {
                         nsc.m_Script = nsc.InstantiateScript();
                         nsc.m_Script->m_Entity = ToEntity(entity);

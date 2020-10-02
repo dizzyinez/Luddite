@@ -39,6 +39,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "R:/Dev/games/Luddite/Luddite/src/R_Textures.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/R_Textures.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/Renderer.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/S_Animation.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/S_Animation.cpp.obj"
+  "R:/Dev/games/Luddite/Luddite/src/S_AnimationBehavior.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/S_AnimationBehavior.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/S_Draw.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/S_Gui.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/S_Gui.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/S_LocalPlayerInput.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/VideoGame.dir/src/S_LocalPlayerInput.cpp.obj"

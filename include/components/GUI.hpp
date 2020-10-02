@@ -15,7 +15,6 @@ public:
         kiwi::Variable y = ("ypos");
         kiwi::Variable w = ("width");
         kiwi::Variable h = ("height");
-
 };
 
 //------------------------------------------//
@@ -39,12 +38,9 @@ public:
         {
         }
         std::vector<std::unique_ptr<C_Gui> > children;
-        std::function<void(C_Gui&, C_Gui_Container&)> onBirth  = [](auto &Gui, auto &Gui_container){
-                                                                 };
-        std::function<void(C_Gui&, C_Gui_Container&)> onInput  = [](auto &Gui, auto &Gui_container){
-                                                                 };
-        std::function<void(C_Gui&, C_Gui_Container&)> onUpdate = [](auto &Gui, auto &Gui_container){
-                                                                 };
+        std::function<void(C_Gui&, C_Gui_Container&)> onBirth = [](auto &Gui, auto &Gui_container) {};
+        std::function<void(C_Gui&, C_Gui_Container&)> onInput = [](auto &Gui, auto &Gui_container) {};
+        std::function<void(C_Gui&, C_Gui_Container&)> onUpdate = [](auto &Gui, auto &Gui_container) {};
         std::unique_ptr<kiwi::Solver> solver = std::make_unique<kiwi::Solver>();
 };
 

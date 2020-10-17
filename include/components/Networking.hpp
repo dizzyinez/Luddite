@@ -1,34 +1,27 @@
-#ifndef C_Networking_hpp
-#define C_Networking_hpp
-
-#include <enet/enet.h>
+#pragma once
 #include "entt.hpp"
 #include "events/logging.hpp"
-#include <bitset>
+#include "core/net.hpp"
+// #include <bitset>
 
 struct C_Net_Client
 {
         C_Net_Client()
         {
         }
-
-        ENetHost* client;
-        ENetPeer* server;
-        ENetEvent event;
         bool initialized = false;
         void setInitialized(bool init)
         {
                 initialized = init;
         }
+        Client client;
 };
 
-struct C_Net_Host
+struct C_Net_Server
 {
-        C_Net_Host() = default;
-
-        ENetHost* server;
-        ENetEvent event;
+        C_Net_Server()
+        {
+        }
         bool initialized = false;
+        Server server;
 };
-
-#endif

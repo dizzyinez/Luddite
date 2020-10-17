@@ -35,6 +35,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.18.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.18.2/CMakeRCCompiler.cmake"
   "CMakeFiles/3.18.2/CMakeSystem.cmake"
+  "../include/Config.h.in"
   )
 
 # The corresponding makefile is:
@@ -45,10 +46,11 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+  "../include/Config.h"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/VideoGame.dir/DependInfo.cmake"
+  "CMakeFiles/Luddite.dir/DependInfo.cmake"
   )

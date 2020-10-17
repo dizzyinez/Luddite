@@ -1,1 +1,0 @@
- R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/lib-mingw/libglfw3.a R:/Dev/Libraries/C++/glew-2.1.0/lib/libglew32.dll.a C:/MinGW/lib/libopengl32.a C:/MinGW/lib/libglu32.a C:/MinGW/lib/libws2_32.a C:/MinGW/lib/libwinmm.a R:/Dev/Libraries/C++/lua-5.3.5/liblua53.a -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

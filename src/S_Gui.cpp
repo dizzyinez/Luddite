@@ -21,7 +21,7 @@ void S_Gui::configure(entt::registry &reg)
 
 void S_Gui::update(float deltaTime, entt::registry &reg)
 {
-        reg.group<C_Gui>(entt::get<C_Position, C_Size>).each([](auto Entity, auto &Gui, auto &Pos, auto &Size){
+        reg.group<C_Gui>(entt::get<C_Position, C_Size>).each([](auto Entity, auto &Gui, auto &Pos, auto &Size) {
                 Pos.setX(Gui.x.value());
                 Pos.setY(Gui.y.value());
                 Size.setW(Gui.w.value());
@@ -29,9 +29,12 @@ void S_Gui::update(float deltaTime, entt::registry &reg)
         });
 }
 
+int somefunction();
+int some_other_function();
+
 void S_Gui_Input::update(float deltaTime, entt::registry &reg)
 {
-        reg.group<C_Gui_Container>(entt::get<C_Gui>).each([](auto Entity, auto &Gui_container, auto &Gui){
+        reg.group<C_Gui_Container>(entt::get<C_Gui>).each([](auto Entity, auto &Gui_container, auto &Gui) {
                 Gui_container.onInput(Gui, Gui_container);
         });
         Events::iterate<E_MouseButton>([&reg](auto &e) {

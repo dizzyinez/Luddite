@@ -1,3 +1,2 @@
-make cc=g++ ccx=g++
-VideoGame.exe
-cd ..
+mingw32-make 
+Luddite.exe

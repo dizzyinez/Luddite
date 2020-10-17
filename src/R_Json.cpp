@@ -1,6 +1,7 @@
-#include "data/Resources.hpp"
+#include "data/JsonAllocator.hpp"
 
-std::shared_ptr<Json> JsonManager::Allocate(std::string file_path)
+template <>
+std::shared_ptr<Json> ResourceAllocator<Json>::Allocate(std::string file_path)
 {
         return std::make_shared<Json>(file_path);
 }

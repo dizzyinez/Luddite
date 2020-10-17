@@ -1,0 +1,11 @@
+{
+    "workbench.colorTheme": "Material Theme",
+    "editor.formatOnSave": true,
+    "cmake.configureOnOpen": true,
+    "files.associations": {
+        "iosfwd": "cpp",
+        "iostream": "cpp",
+        "system_error": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+}

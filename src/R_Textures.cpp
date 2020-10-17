@@ -1,11 +1,13 @@
-#include "data/Resources.hpp"
+#include "data/TextureAllocator.hpp"
 
 #define STB_IMAGE_IMPLEMENTATION
+#define GLEW_STATIC
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include "stb/stb_image.h"
 
-std::shared_ptr<Texture> TextureManager::Allocate(std::string file_path)
+template <>
+std::shared_ptr<Texture> ResourceAllocator<Texture>::Allocate(std::string file_path)
 {
         uint32_t texture;
         //init
@@ -28,5 +30,5 @@ std::shared_ptr<Texture> TextureManager::Allocate(std::string file_path)
         glBindTexture(GL_TEXTURE_2D, 0);
         stbi_image_free(data);
 
-        return std::make_shared<Texture>(texture);
+        return std::make_shared<Texture>(texture, width, height);
 }

@@ -1,0 +1,14 @@
+#pragma once
+
+#include "Layers/Layer.hpp"
+
+class L_Game : public Layer
+{
+public:
+        void init();
+        void handleEvents(float deltaTime);
+        void update(float deltaTime);
+        void render(float alpha);
+        void clean();
+        L_Game();
+};

@@ -6,12 +6,12 @@
 class L_Networking : public Layer
 {
 public:
-void init();
-void handleEvents(float deltaTime);
-void update(float deltaTime);
-void render(float deltaTime);
-void clean();
-L_Networking();
+        void init();
+        void handleEvents(float deltaTime);
+        void update(float deltaTime);
+        void render(float alpha);
+        void clean();
+        L_Networking();
 };
 
 

@@ -1,0 +1,2 @@
+#define VERSION_MAJOR @Luddite_VERSION_MAJOR@
+#define VERSION_MINOR @Luddite_VERSION_MINOR@

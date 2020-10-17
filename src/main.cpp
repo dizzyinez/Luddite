@@ -6,24 +6,24 @@
 #include <string>
 
 // #include "CheckGLError.hpp"
-
 #include "core/game.hpp"
 #include "events/events.hpp"
 #include "events/input.hpp"
 #include "events/logging.hpp"
-#include "layers/LayerBase.hpp"
-#include "layers/LayerMainMenu.hpp"
+#include "layers/L_Base.hpp"
+#include "layers/L_MainMenu.hpp"
+#include <enet/enet.h>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
-#include <enet/enet.h>
+#include "data/FontAllocator.hpp"
 
 using namespace glm;
 
 
-const int UPDATE_RATE = 60;
-const float SECONDS_PER_UPDATE = 1.0f / (float)UPDATE_RATE;
+constexpr int UPDATE_RATE = 60;
+constexpr float SECONDS_PER_UPDATE = 1.0f / (float)UPDATE_RATE;
 // std::unique_ptr<Game> *game = nullptr;
 int main(int argc, char *argv[])
 {
@@ -63,42 +63,73 @@ int main(int argc, char *argv[])
         glGetIntegerv(GL_MAX_TEXTURE_IMAGE_UNITS, &tu);
         std::cout << "Maximum Texture Units: " << tu << std::endl;
 
-        // Dark blue background
-        glClearColor(0.0f, 0.3f, 0.6f, 0.0f);
-        glfwSwapInterval(0); //v-sync off
-
-        //initialize ENET
         if (enet_initialize() != 0)
         {
-                Events::emit<E_Log>("ENET failed to initialized!");
+                fprintf(stderr, "An error occurred while initializing ENet.\n");
+                return EXIT_FAILURE;
         }
         else
         {
-                Events::emit<E_Log>("ENET initialized");
-                atexit(enet_deinitialize);
+                std::cout << "enet initialized" << std::endl;
         }
+        atexit(enet_deinitialize);
 
+        glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
-        std::unique_ptr<Game> game(new Game());
+        // Dark blue background
+        glClearColor(0.0f, 0.6f, 0.6f, 0.0f);
+        glfwSwapInterval(0); //v-sync off
+
+        FontAllocator::Initialize();
+
+        std::unique_ptr<Game> game(new Game()); //why is this a pointer????
         if (game->Init(window))
         {
                 game->PushLayer(new L_Base());
                 game->PushLayer(new L_MainMenu());
-                double deltaTime;
-                while (game->running && !glfwWindowShouldClose(window))           // TODO: FIXED UPDATES
+
+                // double time;
+                double accumulator = 0.0;
+                double render_accumulator = 0.0;
+                double current_time = glfwGetTime();
+
+
+                double max_fps = 165;
+                double min_frame_time = 1.0f / (double)max_fps;
+                std::cout << "min frame time: " << min_frame_time << std::endl;
+                // double deltaTime;
+                game->Update(SECONDS_PER_UPDATE);
+                while (game->running && !glfwWindowShouldClose(window))
                 {
-                        //TODO: cap delta time and send warning when over that cap
-                        deltaTime = glfwGetTime();
-                        if (deltaTime > SECONDS_PER_UPDATE)
+                        double new_time = glfwGetTime();
+                        double frame_time = new_time - current_time;
+                        if (frame_time > 0.5)
                         {
-                                glfwSetTime(0);
-                                glClear(GL_COLOR_BUFFER_BIT);
+                                //TODO: Throw an error or something because the simulation has fallen to much behind
+                        }
+                        current_time = new_time;
+                        accumulator += frame_time;
+                        render_accumulator += frame_time;
+
+                        while (accumulator >= SECONDS_PER_UPDATE)
+                        {
+                                // std::cout << "gamign" << std::endl;
                                 // std::cout << deltaTime << " > " << SECONDS_PER_UPDATE << " FPS: " <<int(1.0f / deltaTime) << std::endl;
-                                game->Update(deltaTime);
-                                game->Render(deltaTime);
-                                glfwSwapBuffers(window);
-                                Events::flushAll();
                                 glfwPollEvents();
+                                game->Update(SECONDS_PER_UPDATE);
+                                accumulator -= SECONDS_PER_UPDATE;
+                        }
+                        // std::cout << "render accum: " << render_accumulator << std::endl;
+                        if (render_accumulator >= min_frame_time)
+                        {
+                                // std::cout << "rendering" << std::endl;
+                                glClear(GL_COLOR_BUFFER_BIT);
+                                game->Render(accumulator / SECONDS_PER_UPDATE);
+                                glfwSwapBuffers(window);
+
+                                render_accumulator -= min_frame_time;
+                                while (render_accumulator >= min_frame_time)
+                                        render_accumulator -= min_frame_time;
                         }
                 }
                 game->Clean();

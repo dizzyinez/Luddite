@@ -74,40 +74,6 @@ CMAKE_BINARY_DIR = R:\Dev\games\Luddite\Luddite\build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	R:\Dev\applications\cmake\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	R:\Dev\applications\cmake\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	R:\Dev\applications\cmake\bin\cmake.exe -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	R:\Dev\applications\cmake\bin\cmake.exe -P cmake_install.cmake
-.PHONY : install/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -129,18 +95,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	R:\Dev\applications\cmake\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	R:\Dev\applications\cmake\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -175,17 +129,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named VideoGame
+# Target rules for targets named Luddite
 
 # Build rule for target.
-VideoGame: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 VideoGame
-.PHONY : VideoGame
+Luddite: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Luddite
+.PHONY : Luddite
 
 # fast build rule for target.
-VideoGame/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/build
-.PHONY : VideoGame/fast
+Luddite/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/build
+.PHONY : Luddite/fast
 
 src/Assets.obj: src/Assets.cpp.obj
 
@@ -193,7 +147,7 @@ src/Assets.obj: src/Assets.cpp.obj
 
 # target to build an object file
 src/Assets.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Assets.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Assets.cpp.obj
 .PHONY : src/Assets.cpp.obj
 
 src/Assets.i: src/Assets.cpp.i
@@ -202,7 +156,7 @@ src/Assets.i: src/Assets.cpp.i
 
 # target to preprocess a source file
 src/Assets.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Assets.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Assets.cpp.i
 .PHONY : src/Assets.cpp.i
 
 src/Assets.s: src/Assets.cpp.s
@@ -211,7 +165,7 @@ src/Assets.s: src/Assets.cpp.s
 
 # target to generate assembly for a file
 src/Assets.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Assets.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Assets.cpp.s
 .PHONY : src/Assets.cpp.s
 
 src/C_NativeScript.obj: src/C_NativeScript.cpp.obj
@@ -220,7 +174,7 @@ src/C_NativeScript.obj: src/C_NativeScript.cpp.obj
 
 # target to build an object file
 src/C_NativeScript.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/C_NativeScript.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/C_NativeScript.cpp.obj
 .PHONY : src/C_NativeScript.cpp.obj
 
 src/C_NativeScript.i: src/C_NativeScript.cpp.i
@@ -229,7 +183,7 @@ src/C_NativeScript.i: src/C_NativeScript.cpp.i
 
 # target to preprocess a source file
 src/C_NativeScript.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/C_NativeScript.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/C_NativeScript.cpp.i
 .PHONY : src/C_NativeScript.cpp.i
 
 src/C_NativeScript.s: src/C_NativeScript.cpp.s
@@ -238,7 +192,7 @@ src/C_NativeScript.s: src/C_NativeScript.cpp.s
 
 # target to generate assembly for a file
 src/C_NativeScript.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/C_NativeScript.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/C_NativeScript.cpp.s
 .PHONY : src/C_NativeScript.cpp.s
 
 src/Entity.obj: src/Entity.cpp.obj
@@ -247,7 +201,7 @@ src/Entity.obj: src/Entity.cpp.obj
 
 # target to build an object file
 src/Entity.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Entity.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Entity.cpp.obj
 .PHONY : src/Entity.cpp.obj
 
 src/Entity.i: src/Entity.cpp.i
@@ -256,7 +210,7 @@ src/Entity.i: src/Entity.cpp.i
 
 # target to preprocess a source file
 src/Entity.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Entity.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Entity.cpp.i
 .PHONY : src/Entity.cpp.i
 
 src/Entity.s: src/Entity.cpp.s
@@ -265,7 +219,7 @@ src/Entity.s: src/Entity.cpp.s
 
 # target to generate assembly for a file
 src/Entity.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Entity.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Entity.cpp.s
 .PHONY : src/Entity.cpp.s
 
 src/Events.obj: src/Events.cpp.obj
@@ -274,7 +228,7 @@ src/Events.obj: src/Events.cpp.obj
 
 # target to build an object file
 src/Events.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Events.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Events.cpp.obj
 .PHONY : src/Events.cpp.obj
 
 src/Events.i: src/Events.cpp.i
@@ -283,7 +237,7 @@ src/Events.i: src/Events.cpp.i
 
 # target to preprocess a source file
 src/Events.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Events.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Events.cpp.i
 .PHONY : src/Events.cpp.i
 
 src/Events.s: src/Events.cpp.s
@@ -292,7 +246,7 @@ src/Events.s: src/Events.cpp.s
 
 # target to generate assembly for a file
 src/Events.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Events.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Events.cpp.s
 .PHONY : src/Events.cpp.s
 
 src/L_Base.obj: src/L_Base.cpp.obj
@@ -301,7 +255,7 @@ src/L_Base.obj: src/L_Base.cpp.obj
 
 # target to build an object file
 src/L_Base.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/L_Base.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/L_Base.cpp.obj
 .PHONY : src/L_Base.cpp.obj
 
 src/L_Base.i: src/L_Base.cpp.i
@@ -310,7 +264,7 @@ src/L_Base.i: src/L_Base.cpp.i
 
 # target to preprocess a source file
 src/L_Base.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/L_Base.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/L_Base.cpp.i
 .PHONY : src/L_Base.cpp.i
 
 src/L_Base.s: src/L_Base.cpp.s
@@ -319,8 +273,35 @@ src/L_Base.s: src/L_Base.cpp.s
 
 # target to generate assembly for a file
 src/L_Base.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/L_Base.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/L_Base.cpp.s
 .PHONY : src/L_Base.cpp.s
+
+src/L_Game.obj: src/L_Game.cpp.obj
+
+.PHONY : src/L_Game.obj
+
+# target to build an object file
+src/L_Game.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/L_Game.cpp.obj
+.PHONY : src/L_Game.cpp.obj
+
+src/L_Game.i: src/L_Game.cpp.i
+
+.PHONY : src/L_Game.i
+
+# target to preprocess a source file
+src/L_Game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/L_Game.cpp.i
+.PHONY : src/L_Game.cpp.i
+
+src/L_Game.s: src/L_Game.cpp.s
+
+.PHONY : src/L_Game.s
+
+# target to generate assembly for a file
+src/L_Game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/L_Game.cpp.s
+.PHONY : src/L_Game.cpp.s
 
 src/L_MainMenu.obj: src/L_MainMenu.cpp.obj
 
@@ -328,7 +309,7 @@ src/L_MainMenu.obj: src/L_MainMenu.cpp.obj
 
 # target to build an object file
 src/L_MainMenu.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.obj
 .PHONY : src/L_MainMenu.cpp.obj
 
 src/L_MainMenu.i: src/L_MainMenu.cpp.i
@@ -337,7 +318,7 @@ src/L_MainMenu.i: src/L_MainMenu.cpp.i
 
 # target to preprocess a source file
 src/L_MainMenu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.i
 .PHONY : src/L_MainMenu.cpp.i
 
 src/L_MainMenu.s: src/L_MainMenu.cpp.s
@@ -346,7 +327,7 @@ src/L_MainMenu.s: src/L_MainMenu.cpp.s
 
 # target to generate assembly for a file
 src/L_MainMenu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/L_MainMenu.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.s
 .PHONY : src/L_MainMenu.cpp.s
 
 src/L_Networking.obj: src/L_Networking.cpp.obj
@@ -355,7 +336,7 @@ src/L_Networking.obj: src/L_Networking.cpp.obj
 
 # target to build an object file
 src/L_Networking.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/L_Networking.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/L_Networking.cpp.obj
 .PHONY : src/L_Networking.cpp.obj
 
 src/L_Networking.i: src/L_Networking.cpp.i
@@ -364,7 +345,7 @@ src/L_Networking.i: src/L_Networking.cpp.i
 
 # target to preprocess a source file
 src/L_Networking.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/L_Networking.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/L_Networking.cpp.i
 .PHONY : src/L_Networking.cpp.i
 
 src/L_Networking.s: src/L_Networking.cpp.s
@@ -373,7 +354,7 @@ src/L_Networking.s: src/L_Networking.cpp.s
 
 # target to generate assembly for a file
 src/L_Networking.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/L_Networking.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/L_Networking.cpp.s
 .PHONY : src/L_Networking.cpp.s
 
 src/Layer.obj: src/Layer.cpp.obj
@@ -382,7 +363,7 @@ src/Layer.obj: src/Layer.cpp.obj
 
 # target to build an object file
 src/Layer.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Layer.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Layer.cpp.obj
 .PHONY : src/Layer.cpp.obj
 
 src/Layer.i: src/Layer.cpp.i
@@ -391,7 +372,7 @@ src/Layer.i: src/Layer.cpp.i
 
 # target to preprocess a source file
 src/Layer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Layer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Layer.cpp.i
 .PHONY : src/Layer.cpp.i
 
 src/Layer.s: src/Layer.cpp.s
@@ -400,35 +381,8 @@ src/Layer.s: src/Layer.cpp.s
 
 # target to generate assembly for a file
 src/Layer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Layer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Layer.cpp.s
 .PHONY : src/Layer.cpp.s
-
-src/Locator.obj: src/Locator.cpp.obj
-
-.PHONY : src/Locator.obj
-
-# target to build an object file
-src/Locator.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Locator.cpp.obj
-.PHONY : src/Locator.cpp.obj
-
-src/Locator.i: src/Locator.cpp.i
-
-.PHONY : src/Locator.i
-
-# target to preprocess a source file
-src/Locator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Locator.cpp.i
-.PHONY : src/Locator.cpp.i
-
-src/Locator.s: src/Locator.cpp.s
-
-.PHONY : src/Locator.s
-
-# target to generate assembly for a file
-src/Locator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Locator.cpp.s
-.PHONY : src/Locator.cpp.s
 
 src/PacketDefinitions.obj: src/PacketDefinitions.cpp.obj
 
@@ -436,7 +390,7 @@ src/PacketDefinitions.obj: src/PacketDefinitions.cpp.obj
 
 # target to build an object file
 src/PacketDefinitions.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/PacketDefinitions.cpp.obj
 .PHONY : src/PacketDefinitions.cpp.obj
 
 src/PacketDefinitions.i: src/PacketDefinitions.cpp.i
@@ -445,7 +399,7 @@ src/PacketDefinitions.i: src/PacketDefinitions.cpp.i
 
 # target to preprocess a source file
 src/PacketDefinitions.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/PacketDefinitions.cpp.i
 .PHONY : src/PacketDefinitions.cpp.i
 
 src/PacketDefinitions.s: src/PacketDefinitions.cpp.s
@@ -454,8 +408,35 @@ src/PacketDefinitions.s: src/PacketDefinitions.cpp.s
 
 # target to generate assembly for a file
 src/PacketDefinitions.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/PacketDefinitions.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/PacketDefinitions.cpp.s
 .PHONY : src/PacketDefinitions.cpp.s
+
+src/R_Font.obj: src/R_Font.cpp.obj
+
+.PHONY : src/R_Font.obj
+
+# target to build an object file
+src/R_Font.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/R_Font.cpp.obj
+.PHONY : src/R_Font.cpp.obj
+
+src/R_Font.i: src/R_Font.cpp.i
+
+.PHONY : src/R_Font.i
+
+# target to preprocess a source file
+src/R_Font.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/R_Font.cpp.i
+.PHONY : src/R_Font.cpp.i
+
+src/R_Font.s: src/R_Font.cpp.s
+
+.PHONY : src/R_Font.s
+
+# target to generate assembly for a file
+src/R_Font.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/R_Font.cpp.s
+.PHONY : src/R_Font.cpp.s
 
 src/R_Json.obj: src/R_Json.cpp.obj
 
@@ -463,7 +444,7 @@ src/R_Json.obj: src/R_Json.cpp.obj
 
 # target to build an object file
 src/R_Json.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/R_Json.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/R_Json.cpp.obj
 .PHONY : src/R_Json.cpp.obj
 
 src/R_Json.i: src/R_Json.cpp.i
@@ -472,7 +453,7 @@ src/R_Json.i: src/R_Json.cpp.i
 
 # target to preprocess a source file
 src/R_Json.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/R_Json.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/R_Json.cpp.i
 .PHONY : src/R_Json.cpp.i
 
 src/R_Json.s: src/R_Json.cpp.s
@@ -481,7 +462,7 @@ src/R_Json.s: src/R_Json.cpp.s
 
 # target to generate assembly for a file
 src/R_Json.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/R_Json.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/R_Json.cpp.s
 .PHONY : src/R_Json.cpp.s
 
 src/R_Textures.obj: src/R_Textures.cpp.obj
@@ -490,7 +471,7 @@ src/R_Textures.obj: src/R_Textures.cpp.obj
 
 # target to build an object file
 src/R_Textures.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/R_Textures.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/R_Textures.cpp.obj
 .PHONY : src/R_Textures.cpp.obj
 
 src/R_Textures.i: src/R_Textures.cpp.i
@@ -499,7 +480,7 @@ src/R_Textures.i: src/R_Textures.cpp.i
 
 # target to preprocess a source file
 src/R_Textures.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/R_Textures.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/R_Textures.cpp.i
 .PHONY : src/R_Textures.cpp.i
 
 src/R_Textures.s: src/R_Textures.cpp.s
@@ -508,7 +489,7 @@ src/R_Textures.s: src/R_Textures.cpp.s
 
 # target to generate assembly for a file
 src/R_Textures.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/R_Textures.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/R_Textures.cpp.s
 .PHONY : src/R_Textures.cpp.s
 
 src/Renderer.obj: src/Renderer.cpp.obj
@@ -517,7 +498,7 @@ src/Renderer.obj: src/Renderer.cpp.obj
 
 # target to build an object file
 src/Renderer.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Renderer.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Renderer.cpp.obj
 .PHONY : src/Renderer.cpp.obj
 
 src/Renderer.i: src/Renderer.cpp.i
@@ -526,7 +507,7 @@ src/Renderer.i: src/Renderer.cpp.i
 
 # target to preprocess a source file
 src/Renderer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Renderer.cpp.i
 .PHONY : src/Renderer.cpp.i
 
 src/Renderer.s: src/Renderer.cpp.s
@@ -535,7 +516,7 @@ src/Renderer.s: src/Renderer.cpp.s
 
 # target to generate assembly for a file
 src/Renderer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Renderer.cpp.s
 .PHONY : src/Renderer.cpp.s
 
 src/S_Animation.obj: src/S_Animation.cpp.obj
@@ -544,7 +525,7 @@ src/S_Animation.obj: src/S_Animation.cpp.obj
 
 # target to build an object file
 src/S_Animation.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Animation.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Animation.cpp.obj
 .PHONY : src/S_Animation.cpp.obj
 
 src/S_Animation.i: src/S_Animation.cpp.i
@@ -553,7 +534,7 @@ src/S_Animation.i: src/S_Animation.cpp.i
 
 # target to preprocess a source file
 src/S_Animation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Animation.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Animation.cpp.i
 .PHONY : src/S_Animation.cpp.i
 
 src/S_Animation.s: src/S_Animation.cpp.s
@@ -562,7 +543,7 @@ src/S_Animation.s: src/S_Animation.cpp.s
 
 # target to generate assembly for a file
 src/S_Animation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Animation.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Animation.cpp.s
 .PHONY : src/S_Animation.cpp.s
 
 src/S_AnimationBehavior.obj: src/S_AnimationBehavior.cpp.obj
@@ -571,7 +552,7 @@ src/S_AnimationBehavior.obj: src/S_AnimationBehavior.cpp.obj
 
 # target to build an object file
 src/S_AnimationBehavior.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_AnimationBehavior.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_AnimationBehavior.cpp.obj
 .PHONY : src/S_AnimationBehavior.cpp.obj
 
 src/S_AnimationBehavior.i: src/S_AnimationBehavior.cpp.i
@@ -580,7 +561,7 @@ src/S_AnimationBehavior.i: src/S_AnimationBehavior.cpp.i
 
 # target to preprocess a source file
 src/S_AnimationBehavior.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_AnimationBehavior.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_AnimationBehavior.cpp.i
 .PHONY : src/S_AnimationBehavior.cpp.i
 
 src/S_AnimationBehavior.s: src/S_AnimationBehavior.cpp.s
@@ -589,7 +570,7 @@ src/S_AnimationBehavior.s: src/S_AnimationBehavior.cpp.s
 
 # target to generate assembly for a file
 src/S_AnimationBehavior.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_AnimationBehavior.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_AnimationBehavior.cpp.s
 .PHONY : src/S_AnimationBehavior.cpp.s
 
 src/S_Draw.obj: src/S_Draw.cpp.obj
@@ -598,7 +579,7 @@ src/S_Draw.obj: src/S_Draw.cpp.obj
 
 # target to build an object file
 src/S_Draw.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Draw.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Draw.cpp.obj
 .PHONY : src/S_Draw.cpp.obj
 
 src/S_Draw.i: src/S_Draw.cpp.i
@@ -607,7 +588,7 @@ src/S_Draw.i: src/S_Draw.cpp.i
 
 # target to preprocess a source file
 src/S_Draw.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Draw.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Draw.cpp.i
 .PHONY : src/S_Draw.cpp.i
 
 src/S_Draw.s: src/S_Draw.cpp.s
@@ -616,7 +597,7 @@ src/S_Draw.s: src/S_Draw.cpp.s
 
 # target to generate assembly for a file
 src/S_Draw.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Draw.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Draw.cpp.s
 .PHONY : src/S_Draw.cpp.s
 
 src/S_Gui.obj: src/S_Gui.cpp.obj
@@ -625,7 +606,7 @@ src/S_Gui.obj: src/S_Gui.cpp.obj
 
 # target to build an object file
 src/S_Gui.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Gui.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Gui.cpp.obj
 .PHONY : src/S_Gui.cpp.obj
 
 src/S_Gui.i: src/S_Gui.cpp.i
@@ -634,7 +615,7 @@ src/S_Gui.i: src/S_Gui.cpp.i
 
 # target to preprocess a source file
 src/S_Gui.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Gui.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Gui.cpp.i
 .PHONY : src/S_Gui.cpp.i
 
 src/S_Gui.s: src/S_Gui.cpp.s
@@ -643,7 +624,7 @@ src/S_Gui.s: src/S_Gui.cpp.s
 
 # target to generate assembly for a file
 src/S_Gui.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Gui.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Gui.cpp.s
 .PHONY : src/S_Gui.cpp.s
 
 src/S_LocalPlayerInput.obj: src/S_LocalPlayerInput.cpp.obj
@@ -652,7 +633,7 @@ src/S_LocalPlayerInput.obj: src/S_LocalPlayerInput.cpp.obj
 
 # target to build an object file
 src/S_LocalPlayerInput.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_LocalPlayerInput.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_LocalPlayerInput.cpp.obj
 .PHONY : src/S_LocalPlayerInput.cpp.obj
 
 src/S_LocalPlayerInput.i: src/S_LocalPlayerInput.cpp.i
@@ -661,7 +642,7 @@ src/S_LocalPlayerInput.i: src/S_LocalPlayerInput.cpp.i
 
 # target to preprocess a source file
 src/S_LocalPlayerInput.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_LocalPlayerInput.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_LocalPlayerInput.cpp.i
 .PHONY : src/S_LocalPlayerInput.cpp.i
 
 src/S_LocalPlayerInput.s: src/S_LocalPlayerInput.cpp.s
@@ -670,7 +651,7 @@ src/S_LocalPlayerInput.s: src/S_LocalPlayerInput.cpp.s
 
 # target to generate assembly for a file
 src/S_LocalPlayerInput.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_LocalPlayerInput.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_LocalPlayerInput.cpp.s
 .PHONY : src/S_LocalPlayerInput.cpp.s
 
 src/S_Logging.obj: src/S_Logging.cpp.obj
@@ -679,7 +660,7 @@ src/S_Logging.obj: src/S_Logging.cpp.obj
 
 # target to build an object file
 src/S_Logging.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Logging.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Logging.cpp.obj
 .PHONY : src/S_Logging.cpp.obj
 
 src/S_Logging.i: src/S_Logging.cpp.i
@@ -688,7 +669,7 @@ src/S_Logging.i: src/S_Logging.cpp.i
 
 # target to preprocess a source file
 src/S_Logging.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Logging.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Logging.cpp.i
 .PHONY : src/S_Logging.cpp.i
 
 src/S_Logging.s: src/S_Logging.cpp.s
@@ -697,7 +678,7 @@ src/S_Logging.s: src/S_Logging.cpp.s
 
 # target to generate assembly for a file
 src/S_Logging.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Logging.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Logging.cpp.s
 .PHONY : src/S_Logging.cpp.s
 
 src/S_Motion.obj: src/S_Motion.cpp.obj
@@ -706,7 +687,7 @@ src/S_Motion.obj: src/S_Motion.cpp.obj
 
 # target to build an object file
 src/S_Motion.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Motion.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Motion.cpp.obj
 .PHONY : src/S_Motion.cpp.obj
 
 src/S_Motion.i: src/S_Motion.cpp.i
@@ -715,7 +696,7 @@ src/S_Motion.i: src/S_Motion.cpp.i
 
 # target to preprocess a source file
 src/S_Motion.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Motion.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Motion.cpp.i
 .PHONY : src/S_Motion.cpp.i
 
 src/S_Motion.s: src/S_Motion.cpp.s
@@ -724,7 +705,7 @@ src/S_Motion.s: src/S_Motion.cpp.s
 
 # target to generate assembly for a file
 src/S_Motion.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Motion.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Motion.cpp.s
 .PHONY : src/S_Motion.cpp.s
 
 src/S_Net_Client.obj: src/S_Net_Client.cpp.obj
@@ -733,7 +714,7 @@ src/S_Net_Client.obj: src/S_Net_Client.cpp.obj
 
 # target to build an object file
 src/S_Net_Client.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Client.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Net_Client.cpp.obj
 .PHONY : src/S_Net_Client.cpp.obj
 
 src/S_Net_Client.i: src/S_Net_Client.cpp.i
@@ -742,7 +723,7 @@ src/S_Net_Client.i: src/S_Net_Client.cpp.i
 
 # target to preprocess a source file
 src/S_Net_Client.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Client.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Net_Client.cpp.i
 .PHONY : src/S_Net_Client.cpp.i
 
 src/S_Net_Client.s: src/S_Net_Client.cpp.s
@@ -751,7 +732,7 @@ src/S_Net_Client.s: src/S_Net_Client.cpp.s
 
 # target to generate assembly for a file
 src/S_Net_Client.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Client.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Net_Client.cpp.s
 .PHONY : src/S_Net_Client.cpp.s
 
 src/S_Net_Host.obj: src/S_Net_Host.cpp.obj
@@ -760,7 +741,7 @@ src/S_Net_Host.obj: src/S_Net_Host.cpp.obj
 
 # target to build an object file
 src/S_Net_Host.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Host.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Net_Host.cpp.obj
 .PHONY : src/S_Net_Host.cpp.obj
 
 src/S_Net_Host.i: src/S_Net_Host.cpp.i
@@ -769,7 +750,7 @@ src/S_Net_Host.i: src/S_Net_Host.cpp.i
 
 # target to preprocess a source file
 src/S_Net_Host.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Host.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Net_Host.cpp.i
 .PHONY : src/S_Net_Host.cpp.i
 
 src/S_Net_Host.s: src/S_Net_Host.cpp.s
@@ -778,7 +759,7 @@ src/S_Net_Host.s: src/S_Net_Host.cpp.s
 
 # target to generate assembly for a file
 src/S_Net_Host.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Host.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Net_Host.cpp.s
 .PHONY : src/S_Net_Host.cpp.s
 
 src/S_Net_Send.obj: src/S_Net_Send.cpp.obj
@@ -787,7 +768,7 @@ src/S_Net_Send.obj: src/S_Net_Send.cpp.obj
 
 # target to build an object file
 src/S_Net_Send.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Send.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Net_Send.cpp.obj
 .PHONY : src/S_Net_Send.cpp.obj
 
 src/S_Net_Send.i: src/S_Net_Send.cpp.i
@@ -796,7 +777,7 @@ src/S_Net_Send.i: src/S_Net_Send.cpp.i
 
 # target to preprocess a source file
 src/S_Net_Send.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Send.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Net_Send.cpp.i
 .PHONY : src/S_Net_Send.cpp.i
 
 src/S_Net_Send.s: src/S_Net_Send.cpp.s
@@ -805,7 +786,7 @@ src/S_Net_Send.s: src/S_Net_Send.cpp.s
 
 # target to generate assembly for a file
 src/S_Net_Send.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Send.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Net_Send.cpp.s
 .PHONY : src/S_Net_Send.cpp.s
 
 src/S_Net_Update_Player.obj: src/S_Net_Update_Player.cpp.obj
@@ -814,7 +795,7 @@ src/S_Net_Update_Player.obj: src/S_Net_Update_Player.cpp.obj
 
 # target to build an object file
 src/S_Net_Update_Player.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Net_Update_Player.cpp.obj
 .PHONY : src/S_Net_Update_Player.cpp.obj
 
 src/S_Net_Update_Player.i: src/S_Net_Update_Player.cpp.i
@@ -823,7 +804,7 @@ src/S_Net_Update_Player.i: src/S_Net_Update_Player.cpp.i
 
 # target to preprocess a source file
 src/S_Net_Update_Player.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Net_Update_Player.cpp.i
 .PHONY : src/S_Net_Update_Player.cpp.i
 
 src/S_Net_Update_Player.s: src/S_Net_Update_Player.cpp.s
@@ -832,7 +813,7 @@ src/S_Net_Update_Player.s: src/S_Net_Update_Player.cpp.s
 
 # target to generate assembly for a file
 src/S_Net_Update_Player.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Net_Update_Player.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Net_Update_Player.cpp.s
 .PHONY : src/S_Net_Update_Player.cpp.s
 
 src/S_PlayerController.obj: src/S_PlayerController.cpp.obj
@@ -841,7 +822,7 @@ src/S_PlayerController.obj: src/S_PlayerController.cpp.obj
 
 # target to build an object file
 src/S_PlayerController.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.obj
 .PHONY : src/S_PlayerController.cpp.obj
 
 src/S_PlayerController.i: src/S_PlayerController.cpp.i
@@ -850,7 +831,7 @@ src/S_PlayerController.i: src/S_PlayerController.cpp.i
 
 # target to preprocess a source file
 src/S_PlayerController.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.i
 .PHONY : src/S_PlayerController.cpp.i
 
 src/S_PlayerController.s: src/S_PlayerController.cpp.s
@@ -859,7 +840,7 @@ src/S_PlayerController.s: src/S_PlayerController.cpp.s
 
 # target to generate assembly for a file
 src/S_PlayerController.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_PlayerController.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.s
 .PHONY : src/S_PlayerController.cpp.s
 
 src/S_PlayerDirection.obj: src/S_PlayerDirection.cpp.obj
@@ -868,7 +849,7 @@ src/S_PlayerDirection.obj: src/S_PlayerDirection.cpp.obj
 
 # target to build an object file
 src/S_PlayerDirection.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_PlayerDirection.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_PlayerDirection.cpp.obj
 .PHONY : src/S_PlayerDirection.cpp.obj
 
 src/S_PlayerDirection.i: src/S_PlayerDirection.cpp.i
@@ -877,7 +858,7 @@ src/S_PlayerDirection.i: src/S_PlayerDirection.cpp.i
 
 # target to preprocess a source file
 src/S_PlayerDirection.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_PlayerDirection.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_PlayerDirection.cpp.i
 .PHONY : src/S_PlayerDirection.cpp.i
 
 src/S_PlayerDirection.s: src/S_PlayerDirection.cpp.s
@@ -886,7 +867,7 @@ src/S_PlayerDirection.s: src/S_PlayerDirection.cpp.s
 
 # target to generate assembly for a file
 src/S_PlayerDirection.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_PlayerDirection.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_PlayerDirection.cpp.s
 .PHONY : src/S_PlayerDirection.cpp.s
 
 src/S_Projection.obj: src/S_Projection.cpp.obj
@@ -895,7 +876,7 @@ src/S_Projection.obj: src/S_Projection.cpp.obj
 
 # target to build an object file
 src/S_Projection.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Projection.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Projection.cpp.obj
 .PHONY : src/S_Projection.cpp.obj
 
 src/S_Projection.i: src/S_Projection.cpp.i
@@ -904,7 +885,7 @@ src/S_Projection.i: src/S_Projection.cpp.i
 
 # target to preprocess a source file
 src/S_Projection.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Projection.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Projection.cpp.i
 .PHONY : src/S_Projection.cpp.i
 
 src/S_Projection.s: src/S_Projection.cpp.s
@@ -913,7 +894,7 @@ src/S_Projection.s: src/S_Projection.cpp.s
 
 # target to generate assembly for a file
 src/S_Projection.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Projection.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Projection.cpp.s
 .PHONY : src/S_Projection.cpp.s
 
 src/S_Scripts.obj: src/S_Scripts.cpp.obj
@@ -922,7 +903,7 @@ src/S_Scripts.obj: src/S_Scripts.cpp.obj
 
 # target to build an object file
 src/S_Scripts.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Scripts.cpp.obj
 .PHONY : src/S_Scripts.cpp.obj
 
 src/S_Scripts.i: src/S_Scripts.cpp.i
@@ -931,7 +912,7 @@ src/S_Scripts.i: src/S_Scripts.cpp.i
 
 # target to preprocess a source file
 src/S_Scripts.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Scripts.cpp.i
 .PHONY : src/S_Scripts.cpp.i
 
 src/S_Scripts.s: src/S_Scripts.cpp.s
@@ -940,7 +921,7 @@ src/S_Scripts.s: src/S_Scripts.cpp.s
 
 # target to generate assembly for a file
 src/S_Scripts.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Scripts.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Scripts.cpp.s
 .PHONY : src/S_Scripts.cpp.s
 
 src/S_Spawning.obj: src/S_Spawning.cpp.obj
@@ -949,7 +930,7 @@ src/S_Spawning.obj: src/S_Spawning.cpp.obj
 
 # target to build an object file
 src/S_Spawning.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Spawning.cpp.obj
 .PHONY : src/S_Spawning.cpp.obj
 
 src/S_Spawning.i: src/S_Spawning.cpp.i
@@ -958,7 +939,7 @@ src/S_Spawning.i: src/S_Spawning.cpp.i
 
 # target to preprocess a source file
 src/S_Spawning.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Spawning.cpp.i
 .PHONY : src/S_Spawning.cpp.i
 
 src/S_Spawning.s: src/S_Spawning.cpp.s
@@ -967,7 +948,7 @@ src/S_Spawning.s: src/S_Spawning.cpp.s
 
 # target to generate assembly for a file
 src/S_Spawning.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Spawning.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Spawning.cpp.s
 .PHONY : src/S_Spawning.cpp.s
 
 src/S_Tileset.obj: src/S_Tileset.cpp.obj
@@ -976,7 +957,7 @@ src/S_Tileset.obj: src/S_Tileset.cpp.obj
 
 # target to build an object file
 src/S_Tileset.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Tileset.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Tileset.cpp.obj
 .PHONY : src/S_Tileset.cpp.obj
 
 src/S_Tileset.i: src/S_Tileset.cpp.i
@@ -985,7 +966,7 @@ src/S_Tileset.i: src/S_Tileset.cpp.i
 
 # target to preprocess a source file
 src/S_Tileset.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Tileset.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Tileset.cpp.i
 .PHONY : src/S_Tileset.cpp.i
 
 src/S_Tileset.s: src/S_Tileset.cpp.s
@@ -994,8 +975,35 @@ src/S_Tileset.s: src/S_Tileset.cpp.s
 
 # target to generate assembly for a file
 src/S_Tileset.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/S_Tileset.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Tileset.cpp.s
 .PHONY : src/S_Tileset.cpp.s
+
+src/Server.obj: src/Server.cpp.obj
+
+.PHONY : src/Server.obj
+
+# target to build an object file
+src/Server.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Server.cpp.obj
+.PHONY : src/Server.cpp.obj
+
+src/Server.i: src/Server.cpp.i
+
+.PHONY : src/Server.i
+
+# target to preprocess a source file
+src/Server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Server.cpp.i
+.PHONY : src/Server.cpp.i
+
+src/Server.s: src/Server.cpp.s
+
+.PHONY : src/Server.s
+
+# target to generate assembly for a file
+src/Server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Server.cpp.s
+.PHONY : src/Server.cpp.s
 
 src/SpriteBatch.obj: src/SpriteBatch.cpp.obj
 
@@ -1003,7 +1011,7 @@ src/SpriteBatch.obj: src/SpriteBatch.cpp.obj
 
 # target to build an object file
 src/SpriteBatch.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/SpriteBatch.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/SpriteBatch.cpp.obj
 .PHONY : src/SpriteBatch.cpp.obj
 
 src/SpriteBatch.i: src/SpriteBatch.cpp.i
@@ -1012,7 +1020,7 @@ src/SpriteBatch.i: src/SpriteBatch.cpp.i
 
 # target to preprocess a source file
 src/SpriteBatch.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/SpriteBatch.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/SpriteBatch.cpp.i
 .PHONY : src/SpriteBatch.cpp.i
 
 src/SpriteBatch.s: src/SpriteBatch.cpp.s
@@ -1021,7 +1029,7 @@ src/SpriteBatch.s: src/SpriteBatch.cpp.s
 
 # target to generate assembly for a file
 src/SpriteBatch.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/SpriteBatch.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/SpriteBatch.cpp.s
 .PHONY : src/SpriteBatch.cpp.s
 
 src/System.obj: src/System.cpp.obj
@@ -1030,7 +1038,7 @@ src/System.obj: src/System.cpp.obj
 
 # target to build an object file
 src/System.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/System.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/System.cpp.obj
 .PHONY : src/System.cpp.obj
 
 src/System.i: src/System.cpp.i
@@ -1039,7 +1047,7 @@ src/System.i: src/System.cpp.i
 
 # target to preprocess a source file
 src/System.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/System.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/System.cpp.i
 .PHONY : src/System.cpp.i
 
 src/System.s: src/System.cpp.s
@@ -1048,7 +1056,7 @@ src/System.s: src/System.cpp.s
 
 # target to generate assembly for a file
 src/System.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/System.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/System.cpp.s
 .PHONY : src/System.cpp.s
 
 src/Texture.obj: src/Texture.cpp.obj
@@ -1057,7 +1065,7 @@ src/Texture.obj: src/Texture.cpp.obj
 
 # target to build an object file
 src/Texture.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Texture.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Texture.cpp.obj
 .PHONY : src/Texture.cpp.obj
 
 src/Texture.i: src/Texture.cpp.i
@@ -1066,7 +1074,7 @@ src/Texture.i: src/Texture.cpp.i
 
 # target to preprocess a source file
 src/Texture.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Texture.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Texture.cpp.i
 .PHONY : src/Texture.cpp.i
 
 src/Texture.s: src/Texture.cpp.s
@@ -1075,7 +1083,7 @@ src/Texture.s: src/Texture.cpp.s
 
 # target to generate assembly for a file
 src/Texture.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/Texture.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Texture.cpp.s
 .PHONY : src/Texture.cpp.s
 
 src/TextureBatch.obj: src/TextureBatch.cpp.obj
@@ -1084,7 +1092,7 @@ src/TextureBatch.obj: src/TextureBatch.cpp.obj
 
 # target to build an object file
 src/TextureBatch.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/TextureBatch.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/TextureBatch.cpp.obj
 .PHONY : src/TextureBatch.cpp.obj
 
 src/TextureBatch.i: src/TextureBatch.cpp.i
@@ -1093,7 +1101,7 @@ src/TextureBatch.i: src/TextureBatch.cpp.i
 
 # target to preprocess a source file
 src/TextureBatch.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/TextureBatch.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/TextureBatch.cpp.i
 .PHONY : src/TextureBatch.cpp.i
 
 src/TextureBatch.s: src/TextureBatch.cpp.s
@@ -1102,251 +1110,8 @@ src/TextureBatch.s: src/TextureBatch.cpp.s
 
 # target to generate assembly for a file
 src/TextureBatch.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/TextureBatch.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/TextureBatch.cpp.s
 .PHONY : src/TextureBatch.cpp.s
-
-src/enet/callbacks.obj: src/enet/callbacks.c.obj
-
-.PHONY : src/enet/callbacks.obj
-
-# target to build an object file
-src/enet/callbacks.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/callbacks.c.obj
-.PHONY : src/enet/callbacks.c.obj
-
-src/enet/callbacks.i: src/enet/callbacks.c.i
-
-.PHONY : src/enet/callbacks.i
-
-# target to preprocess a source file
-src/enet/callbacks.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/callbacks.c.i
-.PHONY : src/enet/callbacks.c.i
-
-src/enet/callbacks.s: src/enet/callbacks.c.s
-
-.PHONY : src/enet/callbacks.s
-
-# target to generate assembly for a file
-src/enet/callbacks.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/callbacks.c.s
-.PHONY : src/enet/callbacks.c.s
-
-src/enet/compress.obj: src/enet/compress.c.obj
-
-.PHONY : src/enet/compress.obj
-
-# target to build an object file
-src/enet/compress.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/compress.c.obj
-.PHONY : src/enet/compress.c.obj
-
-src/enet/compress.i: src/enet/compress.c.i
-
-.PHONY : src/enet/compress.i
-
-# target to preprocess a source file
-src/enet/compress.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/compress.c.i
-.PHONY : src/enet/compress.c.i
-
-src/enet/compress.s: src/enet/compress.c.s
-
-.PHONY : src/enet/compress.s
-
-# target to generate assembly for a file
-src/enet/compress.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/compress.c.s
-.PHONY : src/enet/compress.c.s
-
-src/enet/host.obj: src/enet/host.c.obj
-
-.PHONY : src/enet/host.obj
-
-# target to build an object file
-src/enet/host.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/host.c.obj
-.PHONY : src/enet/host.c.obj
-
-src/enet/host.i: src/enet/host.c.i
-
-.PHONY : src/enet/host.i
-
-# target to preprocess a source file
-src/enet/host.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/host.c.i
-.PHONY : src/enet/host.c.i
-
-src/enet/host.s: src/enet/host.c.s
-
-.PHONY : src/enet/host.s
-
-# target to generate assembly for a file
-src/enet/host.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/host.c.s
-.PHONY : src/enet/host.c.s
-
-src/enet/list.obj: src/enet/list.c.obj
-
-.PHONY : src/enet/list.obj
-
-# target to build an object file
-src/enet/list.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/list.c.obj
-.PHONY : src/enet/list.c.obj
-
-src/enet/list.i: src/enet/list.c.i
-
-.PHONY : src/enet/list.i
-
-# target to preprocess a source file
-src/enet/list.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/list.c.i
-.PHONY : src/enet/list.c.i
-
-src/enet/list.s: src/enet/list.c.s
-
-.PHONY : src/enet/list.s
-
-# target to generate assembly for a file
-src/enet/list.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/list.c.s
-.PHONY : src/enet/list.c.s
-
-src/enet/packet.obj: src/enet/packet.c.obj
-
-.PHONY : src/enet/packet.obj
-
-# target to build an object file
-src/enet/packet.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/packet.c.obj
-.PHONY : src/enet/packet.c.obj
-
-src/enet/packet.i: src/enet/packet.c.i
-
-.PHONY : src/enet/packet.i
-
-# target to preprocess a source file
-src/enet/packet.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/packet.c.i
-.PHONY : src/enet/packet.c.i
-
-src/enet/packet.s: src/enet/packet.c.s
-
-.PHONY : src/enet/packet.s
-
-# target to generate assembly for a file
-src/enet/packet.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/packet.c.s
-.PHONY : src/enet/packet.c.s
-
-src/enet/peer.obj: src/enet/peer.c.obj
-
-.PHONY : src/enet/peer.obj
-
-# target to build an object file
-src/enet/peer.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/peer.c.obj
-.PHONY : src/enet/peer.c.obj
-
-src/enet/peer.i: src/enet/peer.c.i
-
-.PHONY : src/enet/peer.i
-
-# target to preprocess a source file
-src/enet/peer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/peer.c.i
-.PHONY : src/enet/peer.c.i
-
-src/enet/peer.s: src/enet/peer.c.s
-
-.PHONY : src/enet/peer.s
-
-# target to generate assembly for a file
-src/enet/peer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/peer.c.s
-.PHONY : src/enet/peer.c.s
-
-src/enet/protocol.obj: src/enet/protocol.c.obj
-
-.PHONY : src/enet/protocol.obj
-
-# target to build an object file
-src/enet/protocol.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/protocol.c.obj
-.PHONY : src/enet/protocol.c.obj
-
-src/enet/protocol.i: src/enet/protocol.c.i
-
-.PHONY : src/enet/protocol.i
-
-# target to preprocess a source file
-src/enet/protocol.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/protocol.c.i
-.PHONY : src/enet/protocol.c.i
-
-src/enet/protocol.s: src/enet/protocol.c.s
-
-.PHONY : src/enet/protocol.s
-
-# target to generate assembly for a file
-src/enet/protocol.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/protocol.c.s
-.PHONY : src/enet/protocol.c.s
-
-src/enet/unix.obj: src/enet/unix.c.obj
-
-.PHONY : src/enet/unix.obj
-
-# target to build an object file
-src/enet/unix.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/unix.c.obj
-.PHONY : src/enet/unix.c.obj
-
-src/enet/unix.i: src/enet/unix.c.i
-
-.PHONY : src/enet/unix.i
-
-# target to preprocess a source file
-src/enet/unix.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/unix.c.i
-.PHONY : src/enet/unix.c.i
-
-src/enet/unix.s: src/enet/unix.c.s
-
-.PHONY : src/enet/unix.s
-
-# target to generate assembly for a file
-src/enet/unix.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/unix.c.s
-.PHONY : src/enet/unix.c.s
-
-src/enet/win32.obj: src/enet/win32.c.obj
-
-.PHONY : src/enet/win32.obj
-
-# target to build an object file
-src/enet/win32.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/win32.c.obj
-.PHONY : src/enet/win32.c.obj
-
-src/enet/win32.i: src/enet/win32.c.i
-
-.PHONY : src/enet/win32.i
-
-# target to preprocess a source file
-src/enet/win32.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/win32.c.i
-.PHONY : src/enet/win32.c.i
-
-src/enet/win32.s: src/enet/win32.c.s
-
-.PHONY : src/enet/win32.s
-
-# target to generate assembly for a file
-src/enet/win32.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/enet/win32.c.s
-.PHONY : src/enet/win32.c.s
 
 src/game.obj: src/game.cpp.obj
 
@@ -1354,7 +1119,7 @@ src/game.obj: src/game.cpp.obj
 
 # target to build an object file
 src/game.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/game.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/game.cpp.obj
 .PHONY : src/game.cpp.obj
 
 src/game.i: src/game.cpp.i
@@ -1363,7 +1128,7 @@ src/game.i: src/game.cpp.i
 
 # target to preprocess a source file
 src/game.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/game.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/game.cpp.i
 .PHONY : src/game.cpp.i
 
 src/game.s: src/game.cpp.s
@@ -1372,7 +1137,7 @@ src/game.s: src/game.cpp.s
 
 # target to generate assembly for a file
 src/game.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/game.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/game.cpp.s
 .PHONY : src/game.cpp.s
 
 src/gason.obj: src/gason.cpp.obj
@@ -1381,7 +1146,7 @@ src/gason.obj: src/gason.cpp.obj
 
 # target to build an object file
 src/gason.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/gason.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/gason.cpp.obj
 .PHONY : src/gason.cpp.obj
 
 src/gason.i: src/gason.cpp.i
@@ -1390,7 +1155,7 @@ src/gason.i: src/gason.cpp.i
 
 # target to preprocess a source file
 src/gason.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/gason.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/gason.cpp.i
 .PHONY : src/gason.cpp.i
 
 src/gason.s: src/gason.cpp.s
@@ -1399,7 +1164,7 @@ src/gason.s: src/gason.cpp.s
 
 # target to generate assembly for a file
 src/gason.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/gason.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/gason.cpp.s
 .PHONY : src/gason.cpp.s
 
 src/loadShader.obj: src/loadShader.cpp.obj
@@ -1408,7 +1173,7 @@ src/loadShader.obj: src/loadShader.cpp.obj
 
 # target to build an object file
 src/loadShader.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/loadShader.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/loadShader.cpp.obj
 .PHONY : src/loadShader.cpp.obj
 
 src/loadShader.i: src/loadShader.cpp.i
@@ -1417,7 +1182,7 @@ src/loadShader.i: src/loadShader.cpp.i
 
 # target to preprocess a source file
 src/loadShader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/loadShader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/loadShader.cpp.i
 .PHONY : src/loadShader.cpp.i
 
 src/loadShader.s: src/loadShader.cpp.s
@@ -1426,7 +1191,7 @@ src/loadShader.s: src/loadShader.cpp.s
 
 # target to generate assembly for a file
 src/loadShader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/loadShader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/loadShader.cpp.s
 .PHONY : src/loadShader.cpp.s
 
 src/main.obj: src/main.cpp.obj
@@ -1435,7 +1200,7 @@ src/main.obj: src/main.cpp.obj
 
 # target to build an object file
 src/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/main.cpp.obj
 .PHONY : src/main.cpp.obj
 
 src/main.i: src/main.cpp.i
@@ -1444,7 +1209,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -1453,7 +1218,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/shader.obj: src/shader.cpp.obj
@@ -1462,7 +1227,7 @@ src/shader.obj: src/shader.cpp.obj
 
 # target to build an object file
 src/shader.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/shader.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/shader.cpp.obj
 .PHONY : src/shader.cpp.obj
 
 src/shader.i: src/shader.cpp.i
@@ -1471,7 +1236,7 @@ src/shader.i: src/shader.cpp.i
 
 # target to preprocess a source file
 src/shader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/shader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/shader.cpp.i
 .PHONY : src/shader.cpp.i
 
 src/shader.s: src/shader.cpp.s
@@ -1480,7 +1245,7 @@ src/shader.s: src/shader.cpp.s
 
 # target to generate assembly for a file
 src/shader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VideoGame.dir\build.make CMakeFiles/VideoGame.dir/src/shader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/shader.cpp.s
 .PHONY : src/shader.cpp.s
 
 # Help Target
@@ -1490,12 +1255,8 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
-	@echo ... install
-	@echo ... install/local
-	@echo ... install/strip
-	@echo ... list_install_components
 	@echo ... rebuild_cache
-	@echo ... VideoGame
+	@echo ... Luddite
 	@echo ... src/Assets.obj
 	@echo ... src/Assets.i
 	@echo ... src/Assets.s
@@ -1511,6 +1272,9 @@ help:
 	@echo ... src/L_Base.obj
 	@echo ... src/L_Base.i
 	@echo ... src/L_Base.s
+	@echo ... src/L_Game.obj
+	@echo ... src/L_Game.i
+	@echo ... src/L_Game.s
 	@echo ... src/L_MainMenu.obj
 	@echo ... src/L_MainMenu.i
 	@echo ... src/L_MainMenu.s
@@ -1520,12 +1284,12 @@ help:
 	@echo ... src/Layer.obj
 	@echo ... src/Layer.i
 	@echo ... src/Layer.s
-	@echo ... src/Locator.obj
-	@echo ... src/Locator.i
-	@echo ... src/Locator.s
 	@echo ... src/PacketDefinitions.obj
 	@echo ... src/PacketDefinitions.i
 	@echo ... src/PacketDefinitions.s
+	@echo ... src/R_Font.obj
+	@echo ... src/R_Font.i
+	@echo ... src/R_Font.s
 	@echo ... src/R_Json.obj
 	@echo ... src/R_Json.i
 	@echo ... src/R_Json.s
@@ -1586,6 +1350,9 @@ help:
 	@echo ... src/S_Tileset.obj
 	@echo ... src/S_Tileset.i
 	@echo ... src/S_Tileset.s
+	@echo ... src/Server.obj
+	@echo ... src/Server.i
+	@echo ... src/Server.s
 	@echo ... src/SpriteBatch.obj
 	@echo ... src/SpriteBatch.i
 	@echo ... src/SpriteBatch.s
@@ -1598,33 +1365,6 @@ help:
 	@echo ... src/TextureBatch.obj
 	@echo ... src/TextureBatch.i
 	@echo ... src/TextureBatch.s
-	@echo ... src/enet/callbacks.obj
-	@echo ... src/enet/callbacks.i
-	@echo ... src/enet/callbacks.s
-	@echo ... src/enet/compress.obj
-	@echo ... src/enet/compress.i
-	@echo ... src/enet/compress.s
-	@echo ... src/enet/host.obj
-	@echo ... src/enet/host.i
-	@echo ... src/enet/host.s
-	@echo ... src/enet/list.obj
-	@echo ... src/enet/list.i
-	@echo ... src/enet/list.s
-	@echo ... src/enet/packet.obj
-	@echo ... src/enet/packet.i
-	@echo ... src/enet/packet.s
-	@echo ... src/enet/peer.obj
-	@echo ... src/enet/peer.i
-	@echo ... src/enet/peer.s
-	@echo ... src/enet/protocol.obj
-	@echo ... src/enet/protocol.i
-	@echo ... src/enet/protocol.s
-	@echo ... src/enet/unix.obj
-	@echo ... src/enet/unix.i
-	@echo ... src/enet/unix.s
-	@echo ... src/enet/win32.obj
-	@echo ... src/enet/win32.i
-	@echo ... src/enet/win32.s
 	@echo ... src/game.obj
 	@echo ... src/game.i
 	@echo ... src/game.s

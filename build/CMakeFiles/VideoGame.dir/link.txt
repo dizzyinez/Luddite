@@ -1,3 +1,0 @@
-R:\Dev\applications\cmake\bin\cmake.exe -E rm -f CMakeFiles\VideoGame.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\VideoGame.dir/objects.a @CMakeFiles\VideoGame.dir\objects1.rsp
-C:\MinGW\bin\g++.exe  -static -Wl,--whole-archive CMakeFiles\VideoGame.dir/objects.a -Wl,--no-whole-archive -o VideoGame.exe -Wl,--out-implib,libVideoGame.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\VideoGame.dir\linklibs.rsp

@@ -9,23 +9,24 @@
 
 class Layer;
 
-class Game {
+class Game
+{
 public:
-bool running;
+        bool running;
 
-Game();
-~Game();
-bool Init(GLFWwindow* w);
-void Update(float deltaTime);
-void Render(float deltaTime);
-void Clean();
+        Game();
+        ~Game();
+        bool Init(GLFWwindow* w);
+        void Update(float deltaTime);
+        void Render(float alpha);
+        void Clean();
 
-void PushLayer(Layer* Layer);
-void PopLayer(Layer* layer);
+        void PushLayer(Layer* Layer);
+        void PopLayer(Layer* layer);
 
-GLFWwindow* window;
+        GLFWwindow* window;
 private:
-std::vector<Layer*> Layers;
+        std::vector<Layer*> Layers;
 };
 
 #endif

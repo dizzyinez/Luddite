@@ -1,22 +1,16 @@
 #pragma once
-#include "data/resources.hpp"
+
+#include "data/JsonAllocator.hpp"
 #include <string>
 #include <functional>
-
-extern "C"
-{
-  #include "lua/lua.h"
-  #include "lua/lauxlib.h"
-  #include "lua/lualib.h"
-}
-
+#include <lua.hpp>
 
 struct C_AnimationBehavior
 {
         C_AnimationBehavior(std::string json_file_path, std::string lua_file_path)
         {
                 lua_path = lua_file_path;
-                json = json_manager.Get(json_file_path);
+                json = JsonAllocator::Get(json_file_path);
         }
         ~C_AnimationBehavior()
         {

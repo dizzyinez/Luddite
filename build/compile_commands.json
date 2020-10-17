@@ -1,0 +1,207 @@
+[
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\Assets.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\Assets.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/Assets.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\C_NativeScript.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\C_NativeScript.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/C_NativeScript.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\Entity.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\Entity.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/Entity.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\Events.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\Events.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/Events.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\L_Base.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\L_Base.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/L_Base.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\L_Game.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\L_Game.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/L_Game.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\L_MainMenu.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\L_MainMenu.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/L_MainMenu.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\L_Networking.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\L_Networking.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/L_Networking.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\Layer.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\Layer.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/Layer.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\PacketDefinitions.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\PacketDefinitions.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/PacketDefinitions.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\R_Font.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\R_Font.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/R_Font.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\R_Json.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\R_Json.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/R_Json.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\R_Textures.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\R_Textures.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/R_Textures.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\Renderer.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\Renderer.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/Renderer.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\S_Animation.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\S_Animation.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/S_Animation.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\S_AnimationBehavior.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\S_AnimationBehavior.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/S_AnimationBehavior.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\S_Draw.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\S_Draw.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/S_Draw.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\S_Gui.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\S_Gui.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/S_Gui.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\S_LocalPlayerInput.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\S_LocalPlayerInput.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/S_LocalPlayerInput.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\S_Logging.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\S_Logging.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/S_Logging.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\S_Motion.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\S_Motion.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/S_Motion.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\S_Net_Client.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\S_Net_Client.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/S_Net_Client.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\S_Net_Host.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\S_Net_Host.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/S_Net_Host.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\S_Net_Send.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\S_Net_Send.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/S_Net_Send.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\S_Net_Update_Player.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\S_Net_Update_Player.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/S_Net_Update_Player.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\S_PlayerController.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\S_PlayerController.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/S_PlayerController.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\S_PlayerDirection.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\S_PlayerDirection.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/S_PlayerDirection.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\S_Projection.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\S_Projection.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/S_Projection.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\S_Scripts.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\S_Scripts.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/S_Scripts.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\S_Spawning.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\S_Spawning.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/S_Spawning.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\S_Tileset.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\S_Tileset.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/S_Tileset.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\Server.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\Server.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/Server.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\SpriteBatch.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\SpriteBatch.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/SpriteBatch.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\System.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\System.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/System.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\Texture.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\Texture.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/Texture.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\TextureBatch.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\TextureBatch.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/TextureBatch.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\game.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\game.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/game.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\gason.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\gason.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/gason.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\loadShader.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\loadShader.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/loadShader.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\main.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\main.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/main.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\shader.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\shader.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/shader.cpp"
+}
+]

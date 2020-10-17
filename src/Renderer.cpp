@@ -1,4 +1,5 @@
 #include "rendering/Renderer.hpp"
+#define GLEW_STATIC
 #include <GL/glew.h>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/transform.hpp>
@@ -36,6 +37,7 @@ void Renderer::Init()
         texture_batch->BeginBatch();
 
         sprite_batch = std::make_unique<SpriteBatch>();
+        sprite_batch->Init();
         sprite_batch->Init();
         sprite_batch->BeginBatch();
 

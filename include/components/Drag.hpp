@@ -1,5 +1,4 @@
-#ifndef C_Drag_hpp
-#define C_Drag_hpp
+#pragma once
 
 struct C_Drag
 {
@@ -14,5 +13,3 @@ struct C_Drag
                 return drag;
         }
 };
-
-#endif

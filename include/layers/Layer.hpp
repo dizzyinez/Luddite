@@ -28,9 +28,16 @@ public:
         {
                 return m_Registry.ctx<T>();
         }
+        template <typename T, typename ... Args>
+        T& SetContext(Args && ... args)
+        {
+                return m_Registry.set<T>(std::forward<Args>(args)...);
+        }
 
 protected:
         entt::registry m_Registry;
+        entt::registry last_frame;
+        entt::registry lerp_frame;
         SystemManager systems;
         friend class Entity;
 };

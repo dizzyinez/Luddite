@@ -5,7 +5,7 @@
 
 struct S_Draw : public System<S_Draw>
 {
-        void update(float deltaTime, entt::registry &reg) override;
+        void update(float deltaTime, entt::registry &reg);
 };
 
 #endif

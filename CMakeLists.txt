@@ -27,7 +27,7 @@ include_directories(
 "R:/Dev/Libraries/C++/enet-1.3.16/include"
 )
 
-macro(my_find_library)          
+macro(find_library_wrapper)          
     find_library(${ARGV0} ${ARGV1})    
     if (NOT ${ARGV0})
         message(FATAL_ERROR "-- couldn't find library ${ARGV1}")
@@ -46,15 +46,15 @@ SET(CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_PATH}
 "R:/Dev/Libraries/C++/enet-1.3.16/Lib"
 )
 
-my_find_library(glew libglew32.dll)
-my_find_library(GLFW glfw3)
-my_find_library(glu glu32)
-my_find_library(opengl opengl32)
-my_find_library(lua liblua)
-my_find_library(freetype libfreetype)
-my_find_library(enet libenet.a)
-my_find_library(winsock ws2_32)
-my_find_library(winmedia winmm)
+find_library_wrapper(glew libglew32.dll)
+find_library_wrapper(GLFW glfw3)
+find_library_wrapper(glu glu32)
+find_library_wrapper(opengl opengl32)
+find_library_wrapper(lua liblua)
+find_library_wrapper(freetype libfreetype)
+find_library_wrapper(enet libenet.a)
+find_library_wrapper(winsock ws2_32)
+find_library_wrapper(winmedia winmm)
 
 target_link_libraries(${PROJECT_NAME}
 ${GLFW}

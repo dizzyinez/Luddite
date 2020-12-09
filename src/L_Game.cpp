@@ -1,14 +1,18 @@
 #include "layers/L_Game.hpp"
 #include <iostream>
+#include "core/net.hpp"
 
 #include "ecs/Entity.hpp"
+#include "utils/cloning.hpp"
+#include "utils/spawning.hpp"
+#include <glm/gtx/compatibility.hpp>//lerp
+#include <glm/gtx/string_cast.hpp>
 
 #include "systems/Draw.hpp"
 #include "systems/Motion.hpp"
 #include "systems/Gui.hpp"
 #include "systems/Networking.hpp"
 #include "systems/PlayerController.hpp"
-#include "systems/Spawning.hpp"
 #include "systems/Scripts.hpp"
 #include "systems/Animation.hpp"
 #include "systems/AnimationBehavior.hpp"
@@ -25,8 +29,11 @@
 #include "components/PlayerKeymap.hpp"
 #include "components/NativeScript.hpp"
 #include "components/Texture.hpp"
+#include "components/Tileset.hpp"
 #include "components/Simulation.hpp"
 #include "components/Networking.hpp"
+#include "components/Animation.hpp"
+#include "components/AnimationBehavior.hpp"
 
 #include "events/Events.hpp"
 #include "events/Logging.hpp"
@@ -55,7 +62,6 @@ void L_Game::init()
         systems.add<S_Net_Update_Player>();
         systems.add<S_LocalPlayerInput>();
         systems.add<S_PlayerController>();
-        systems.add<S_Spawning>();
         systems.add<S_Tileset>();
         systems.add<S_Animation>();
         systems.add<S_AnimationBehavior>();
@@ -66,262 +72,206 @@ void L_Game::init()
         systems.configure(m_Registry, this);
 
 
-
-
-        // auto host = CreateEntity();
-        // host.AddComponent<C_Position>();
-        // host.AddComponent<C_Size>();
-        // host.AddComponent<C_DrawLayer>(DrawLayer::gui);
-        // host.AddComponent<C_Texture>(TextureAllocator::Get("../assets/textures/wall.jpg"));
-        // host.AddComponent<C_Gui>();
-        // host.AddComponent<C_Gui_Container>(
-        //         [](auto &Gui, auto &Gui_container) {
-        //         Gui_container.solver->addEditVariable(Gui.w, kiwi::strength::strong);
-        //         Gui_container.solver->addEditVariable(Gui.h, kiwi::strength::strong);
-        //         kiwi::Constraint constraints[] = {
-        //                 kiwi::Constraint {Gui.x == 0},
-        //                 kiwi::Constraint {Gui.y == 0},
-        //                 kiwi::Constraint {Gui.h <= 50},
-        //                 kiwi::Constraint {Gui.w <= 50}
-        //         };
-        //         for (auto& constraint : constraints)
-        //                 Gui_container.solver->addConstraint(constraint);
-        //         Gui_container.solver->updateVariables();
-        // },
-        //
-        //         [](auto &Gui, auto &Gui_container) {
-        //         Events::iterateAll<E_WindowResize>([&Gui, &Gui_container](auto e) {
-        //                 Gui_container.solver->suggestValue(Gui.w, e->width / 2);
-        //                 Gui_container.solver->suggestValue(Gui.h, e->height / 2);
-        //                 Gui_container.solver->updateVariables();
-        //                 return false;
-        //         });
-        // });
-        // host.AddComponent<C_Gui_Button>([]() {
-        //         Events::emit<E_Net_Host>(27015, 32);
-        // });
-
-
-        // auto createPlayer = CreateEntity();
-        // createPlayer.AddComponent<C_Position>();
-        // createPlayer.AddComponent<C_Size>();
-        // createPlayer.AddComponent<C_DrawLayer>(DrawLayer::gui);
-        // createPlayer.AddComponent<C_Texture>(TextureAllocator::Get("../assets/textures/wall.jpg"));
-        // createPlayer.AddComponent<C_Gui>();
-        // createPlayer.AddComponent<C_Gui_Container>(
-        //         [](auto &Gui, auto &Gui_container) {
-        //         Gui_container.solver->addEditVariable(Gui.w, kiwi::strength::strong);
-        //         Gui_container.solver->addEditVariable(Gui.h, kiwi::strength::strong);
-        //         kiwi::Constraint constraints[] = {
-        //                 kiwi::Constraint {Gui.x >= 110},
-        //                 kiwi::Constraint {Gui.y == 0},
-        //                 kiwi::Constraint {Gui.h <= 50},
-        //                 kiwi::Constraint {Gui.w <= 50}
-        //         };
-        //         for (auto& constraint : constraints)
-        //                 Gui_container.solver->addConstraint(constraint);
-        //         Gui_container.solver->updateVariables();
-        // },
-        //
-        //         [](auto &Gui, auto &Gui_container) {
-        //         Events::iterateAll<E_WindowResize>([&Gui, &Gui_container](auto e) {
-        //                 Gui_container.solver->suggestValue(Gui.w, e->width / 2);
-        //                 Gui_container.solver->suggestValue(Gui.h, e->height / 2);
-        //                 Gui_container.solver->updateVariables();
-        //                 return false;
-        //         });
-        // });
-        // createPlayer.AddComponent<C_Gui_Button>([]() {
-        //         Events::emit<E_SpawnPlayer>(1, 0, 0);
-        // });
-        //
-        // auto join = CreateEntity();
-        // join.AddComponent<C_Position>();
-        // join.AddComponent<C_Size>();
-        // join.AddComponent<C_DrawLayer>(DrawLayer::gui);
-        // join.AddComponent<C_Texture>(TextureAllocator::Get("../assets/textures/wall.jpg"));
-        // join.AddComponent<C_Gui>();
-        // join.AddComponent<C_Gui_Container>(
-        //         [](auto &Gui, auto &Gui_container) {
-        //         Gui_container.solver->addEditVariable(Gui.w, kiwi::strength::strong);
-        //         Gui_container.solver->addEditVariable(Gui.h, kiwi::strength::strong);
-        //         kiwi::Constraint constraints[] = {
-        //                 kiwi::Constraint {Gui.x >= 55},
-        //                 kiwi::Constraint {Gui.y == 0},
-        //                 kiwi::Constraint {Gui.h <= 50},
-        //                 kiwi::Constraint {Gui.w <= 50}
-        //         };
-        //         for (auto& constraint : constraints)
-        //                 Gui_container.solver->addConstraint(constraint);
-        //         Gui_container.solver->updateVariables();
-        // },
-        //
-        //         [](auto &Gui, auto &Gui_container) {
-        //         Events::iterateAll<E_WindowResize>([&Gui, &Gui_container](auto e) {
-        //                 Gui_container.solver->suggestValue(Gui.w, e->width / 2);
-        //                 Gui_container.solver->suggestValue(Gui.h, e->height / 2);
-        //                 Gui_container.solver->updateVariables();
-        //                 return false;
-        //         });
-        // });
-        // join.AddComponent<C_Gui_Button>([]() {
-        // Events::emit<E_Net_Connect>("73.14.41.127", 27015);
-        // });
-
+        if (server != nullptr)
+                SetContext<PlayerList*>(&server->player_list);
+        else if (client != nullptr)
+                SetContext<PlayerList*>(&client->player_list);
+        for (Player& player: *GetContext<PlayerList*>())
+        {
+                if (player.exists)
+                {
+                        player.entity = utils::SpawnPlayer(this, player.id, player.local);
+                }
+        }
 
         m_Registry.set<C_PlayerSlots>();
-        m_Registry.set<C_Net_Client>();
-        m_Registry.set<C_Net_Server>();
-
         m_Registry.set<C_StoredFrames>();
-
-
 
         FontAllocator::AddFakeUser("../assets/fonts/comic.ttf");
         TextureAllocator::AddFakeUser("../assets/textures/wall.jpg");
         auto e1 = CreateEntity();
         e1.AddComponent<C_Position>(-25.0f, 0.0f);
-        e1.AddComponent<C_Velocity>(0.0f, 0.0f);
+        e1.AddComponent<C_Velocity>(0.0f, 20.0f);
         e1.AddComponent<C_DrawLayer>(DrawLayer::sprite);
         e1.AddComponent<C_Size>(100.0f, 100.0f);
         // e1.AddComponent<C_Texture>(TextureAllocator::Get("../assets/textures/wall.jpg"));
         e1.AddComponent<C_Texture>(FontAllocator::Get("../assets/fonts/comic.ttf")->characters['S'].texture);
-        // auto e2 = CreateEntity();
-        // e2.AddComponent<C_Position>(25.0f, -50.0f);
-        // e2.AddComponent<C_Velocity>(0.0f, 50.0f);
-        // e2.AddComponent<C_DrawLayer>();
-        // e2.AddComponent<C_Size>(100.0f, 100.0f);
-        // e2.AddComponent<C_Texture>(TextureAllocator::Get("../assets/textures/wall.jpg"));
-        // auto e3 = CreateEntity();
-        // e3.AddComponent<C_Position>(400.0f, 100.0f);
-        // e3.AddComponent<C_Velocity>(50.0f, 50.0f);
-        // e3.AddComponent<C_DrawLayer>();
-        // e3.AddComponent<C_Size>(100.0f, 100.0f);
-        // e3.AddComponent<C_Texture>(TextureAllocator::Get("../assets/textures/wall.jpg"));
 
 
-        Events::emit<E_SpawnPlayer>(true);
-        // Events::emit<E_SpawnPlayer>(1, 0, 0);
-        // Entity test = CreateEntity();
-        // test.AddScript<PlayerScript>();
+        CopyGameState(m_Registry, m_Registry.ctx<C_StoredFrames>().frame_array.at(0));
 }
 
 void L_Game::handleEvents(float deltaTime)
 {
-        systems.update<S_Spawning>(deltaTime, m_Registry);
         systems.update<S_Gui_Input>(deltaTime, m_Registry);
-        systems.update<S_Net_Client>(deltaTime, m_Registry);
-        systems.update<S_Net_Host>(deltaTime, m_Registry);
         systems.update<S_LocalPlayerInput>(deltaTime, m_Registry);
+        m_Registry.view<C_PlayerInput>().each([](auto& Entity, C_PlayerInput& pi) {pi.net_validated = false;});
         systems.update<S_Scripts_Events>(deltaTime, m_Registry);
 }
 
 
-template<typename T>
-void clone(const entt::registry &from, entt::registry &to) {
-        const auto *data = from.data<T>();
-        const auto size = from.size<T>();
 
-        if constexpr (ENTT_IS_EMPTY(T)) {
-                to.insert<T>(data, data + size);
-        }
-        else
-        {
-                const auto *raw = from.raw<T>();
-                // to.assign(data, data + size);
-                to.insert<T>(data, data + size, raw, raw + size);
-        }
-}
 
 void L_Game::update(float deltaTime)
 {
-        systems.update<S_Gui>(deltaTime, m_Registry);
-        systems.update<S_PlayerController>(deltaTime, m_Registry);
-        systems.update<S_Animation>(deltaTime, m_Registry);
-        systems.update<S_Motion>(deltaTime, m_Registry);
-        systems.update<S_Scripts_Update>(deltaTime, m_Registry);
+        CopyRenderingComponents(m_Registry, last_frame);
+
+        C_StoredFrames& sf = m_Registry.ctx<C_StoredFrames>();
+        std::cout << "index: " << sf.index << std::endl;
+        CopyInputs(m_Registry, sf.frame_array.at(sf.index));
+        // CopyGameState(m_Registry, sf.frame_array[sf.index]);
 
 
+        //send player inputs over the network
+        //TODO: put this in a system (?)
+        m_Registry.view<C_Player>().each([this, &sf](auto Entity, C_Player &player) {
+                if (player.local_player)
+                {
+                        C_PlayerInput& pi = m_Registry.get<C_PlayerInput>(Entity);
+                        Message msg;
+                        msg.header.id = message_types::PLAYER_INPUT;
+                        msg << pi.buttons;
+                        msg << sf.current_frame_id();
+                        if (client != nullptr)
+                        {
+                                client->MessageServer(msg);
+                        }
+                        else if (server != nullptr)
+                        {
+                                msg << player.player_slot;
+                                server->MessageAllClients(msg);
+                        }
+                }
+        });
 
-        systems.update<S_Scripts_LateUpdate>(deltaTime, m_Registry);
-        systems.update<S_Net_Update_Player>(deltaTime, m_Registry);
-        systems.update<S_Net_Send>(deltaTime, m_Registry);
+        //populates server validated inputs (among other things)
+        if (server != nullptr)
+                server->Update();
+        else if (client != nullptr)
+                client->Update();
 
-        auto& sf = m_Registry.ctx<C_StoredFrames>();
-        entt::registry &reg = sf.frame_array[sf.index];
-        // std::cout << "index: " << sf.index << std::endl;
 
-        reg.clear<C_Position, C_Velocity, C_DrawLayer, C_Size, C_Texture, C_PlayerDirection, C_PlayerInput>();
+        bool all_inputs_valid = true;
+        int index = 0;
+        sf.frame_array.at(0).view<C_PlayerInput>().each([&all_inputs_valid](auto Entity, C_PlayerInput &pi) {
+                if (!pi.net_validated)
+                        all_inputs_valid = false;
+        });
+        // while (all_inputs_valid && index < sf.index)
+        // {
+        //         Step(deltaTime, sf.frame_array.at(0));
+        //         index++;
+        //         sf.frame_array.at(index).view<C_PlayerInput>().each([&sf, &all_inputs_valid](auto Entity, C_PlayerInput &pi) {
+        //                 //populate the inputs
+        //                 sf.frame_array.at(0).get<C_PlayerInput>(Entity) = pi;
+        //                 if (!pi.net_validated)
+        //                         all_inputs_valid = false;
+        //         });
+        // }
 
-        const auto* to_data = reg.data();
-        const auto to_size = reg.size();
-        reg.destroy(to_data, to_data + to_size);
+        // //move the vector back
+        // if (index > 0)
+        // {
+        //         for (int i = index + 1; i <= sf.index; i++)
+        //                 CopyInputs(sf.frame_array.at(i), sf.frame_array.at(i - index));
+        // }
+        // sf.index -= index;
+        // sf.start_frame_id += index;
 
-        const auto* from_data = m_Registry.data();
-        const auto from_size = m_Registry.size();
-        reg.assign(from_data, from_data + from_size);
-
-        clone<C_Position>            (m_Registry, reg);
-        clone<C_Velocity>            (m_Registry, reg);
-        clone<C_DrawLayer>           (m_Registry, reg);
-        clone<C_Size>                (m_Registry, reg);
-        clone<C_Texture>             (m_Registry, reg);
-        clone<C_PlayerDirection>     (m_Registry, reg);
-        clone<C_PlayerInput>         (m_Registry, reg);
+        CopyGameState(sf.frame_array.at(0), m_Registry);
+        while (index < sf.index)
+        {
+                Step(deltaTime, m_Registry);
+                index++;
+                sf.frame_array.at(index).view<C_PlayerInput>().each([this](auto Entity, C_PlayerInput &pi) {
+                        //populate the inputs
+                        m_Registry.get<C_PlayerInput>(Entity) = pi;
+                });
+        }
+        Step(deltaTime, m_Registry);
 
         sf.index++;
-        if (sf.index >= sf.max_frames)
-        {
-                // // std::cout << "max frames" << std::endl;
-                // // auto& sf = m_Registry.ctx<C_StoredFrames>();
-                // entt::registry &from = sf.frame_array[0];
-                //
-                //
-                // // const auto* to_data = m_Registry.data();
-                // // const auto to_size = m_Registry.size();
-                // // m_Registry.destroy(to_data, to_data + to_size);
-                // // const auto* from_data = m_Registry.data();
-                // // const auto from_size = m_Registry.size();
-                // // m_Registry.assign(from_data, from_data + from_size);
-                //
-                // m_Registry.clear<C_Position, C_Velocity, C_DrawLayer, C_Size, C_Texture, C_PlayerDirection, C_PlayerInput>();
-                //
-                // clone<C_Position>            (from, m_Registry);
-                // clone<C_Velocity>            (from, m_Registry);
-                // clone<C_DrawLayer>           (from, m_Registry);
-                // clone<C_Size>                (from, m_Registry);
-                // clone<C_Texture>             (from, m_Registry);
-                // clone<C_PlayerDirection>     (from, m_Registry);
-                // clone<C_PlayerInput>         (from, m_Registry);
-                // std::cout << "fuck" << std::endl;
-                sf.index = 0;
-        }
+        CopyRenderingComponents(m_Registry, lerp_frame);
+}
 
-        // using clone_fn_type = void (const entt::registry &, entt::registry &);
-        // std::unordered_map<entt::id_type, clone_fn_type *> clone_functions;
-
-        // clone<C_Position>(m_Registry, reg);
-        // clone_functions[entt::type_info<C_Position>::id()] = &clone<C_Position>;
-        // clone_functions[entt::type_info<C_Velocity>::id()] = &clone<C_Velocity>;
-        // clone_functions[entt::type_info<C_Position>::id()](m_Registry, reg);
-        // clone_functions[entt::type_info<C_Velocity>::id()](m_Registry, reg);
-
-        // std::cout << "ids:" << std::endl;
-        // m_Registry.visit([this, &clone_functions, &reg](const auto type_id) {
-        //         std::cout << "id:" << type_id << std::endl;
-        //         // clone_functions[type_id](m_Registry, reg);
-        // });
-        // std::cout << "end of ids:" << std::endl;
+void L_Game::Step(float deltaTime, entt::registry& reg)
+{
+        systems.update<S_Gui,
+                       S_PlayerController,
+                       S_Animation,
+                       S_Motion,
+                       S_Scripts_Update,
+                       S_Scripts_LateUpdate>
+                (deltaTime, m_Registry);
 }
 
 void L_Game::render(float alpha)
 {
-        // auto& sf = m_Registry.ctx<C_StoredFrames>();
-
-        systems.update<S_Tileset> (alpha, m_Registry);
-        systems.update<S_Draw>    (alpha, m_Registry);
-        // systems.update<S_Draw>(deltaTime, sf.frame_array[sf.index]);
+        lerp_frame.view<C_Position>().each([this, alpha](auto Entity, C_Position &pos)
+        {
+                if (last_frame.valid(Entity) && last_frame.has<C_Position>(Entity))
+                {
+                        const auto &last_pos = last_frame.get<C_Position>(Entity).position;
+                        const auto &curr_pos = m_Registry.get<C_Position>(Entity).position;
+                        pos.position = glm::lerp(last_pos, curr_pos, alpha);
+                }
+        });
+        lerp_frame.view<C_Size>().each([this, alpha](auto Entity, C_Size &size)
+        {
+                if (last_frame.valid(Entity) && last_frame.has<C_Size>(Entity))
+                {
+                        const auto &last_size = last_frame.get<C_Size>(Entity).size;
+                        const auto &curr_size = m_Registry.get<C_Size>(Entity).size;
+                        size.size = glm::lerp(last_size, curr_size, alpha);
+                }
+        });
+        systems.update<S_Tileset> (alpha, lerp_frame);
+        systems.update<S_Draw>    (alpha, lerp_frame);
 }
+
+
+void L_Game::CopyGameState(entt::registry& from, entt::registry& to)
+{
+        utils::clone_registry<C_Position,
+                              C_Velocity,
+                              C_DrawLayer,
+                              C_Size,
+                              C_Texture,
+                              C_Sprite,
+                              C_Tileset,
+                              C_Player,
+                              C_PlayerDirection,
+                              C_PlayerInput,
+                              C_PlayerKeymap,
+                              C_Simulation,
+                              C_NativeScript,
+                              C_Animation,
+                              C_AnimationBehavior
+                              >(from, to);
+}
+void L_Game::CopyInputs(entt::registry& from, entt::registry& to)
+{
+        // to.view<C_PlayerInput>().each([&from, &to](auto entity, C_PlayerInput& t) {
+        //         if (!from.valid(entity))
+        //                 to.destroy(entity);
+        // });
+        from.view<C_PlayerInput>().each([&to](auto entity, C_PlayerInput& pi) {
+                if (!to.valid(entity))
+                        to.emplace<C_PlayerInput>(to.create(entity));
+                to.get<C_PlayerInput>(entity) = pi;
+        });
+}
+void L_Game::CopyRenderingComponents(entt::registry& from, entt::registry& to)
+{
+        utils::clone_registry<C_Position,
+                              C_DrawLayer,
+                              C_Size,
+                              C_Texture,
+                              C_Sprite,
+                              C_Tileset
+                              >(from, to);
+}
+
 void L_Game::clean()
 {
 }

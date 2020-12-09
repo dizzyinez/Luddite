@@ -4,16 +4,6 @@
 #include "rendering/Renderer.hpp"
 #include "core/InputHandling.hpp"
 
-Game::Game() {
-}
-
-Game::~Game()
-{
-        for (Layer* layer : Layers)
-                delete layer;
-        //clear events
-}
-
 bool Game::Init(GLFWwindow* w)
 {
         window = w;
@@ -27,7 +17,8 @@ bool Game::Init(GLFWwindow* w)
 
 void Game::Update(float deltaTime)
 {
-        std::for_each(std::rbegin(Layers), std::rend(Layers), [deltaTime](Layer* layer) {
+        update_queue();
+        std::for_each(std::rbegin(Layers), std::rend(Layers), [deltaTime](Layer *layer) {
                 layer->handleEvents(deltaTime);
         });
 
@@ -48,18 +39,39 @@ void Game::Clean()
                 layer->clean();
 }
 
-void Game::PushLayer(Layer* Layer)
+void Game::PushLayer(Layer* layer)
 {
-        Layers.emplace_back(Layer);
-        Layer->init();
+        add_queue.emplace_back(layer);
 }
 
 void Game::PopLayer(Layer* layer)
+{
+        remove_queue.emplace_back(layer);
+}
+
+void Game::update_queue()
+{
+        for (Layer* layer : remove_queue)
+                pop_layer(layer);
+        for (Layer* layer : add_queue)
+                push_layer(layer);
+        remove_queue.clear();
+        add_queue.clear();
+}
+
+void Game::push_layer(Layer* layer)
+{
+        Layers.emplace_back(layer);
+        layer->init();
+}
+
+void Game::pop_layer(Layer* layer)
 {
         auto it = std::find(Layers.begin(), Layers.end(), layer);
         if (it != Layers.end())
         {
                 (*it)->clean();
+                delete *it;
                 Layers.erase(it);
         }
 }

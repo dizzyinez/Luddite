@@ -25,45 +25,44 @@
 #include "data/JsonAllocator.hpp"
 #include "data/TextureAllocator.hpp"
 
-void S_Spawning::update(float deltaTime, entt::registry &reg)
-{
-        Events::iterate<E_SpawnPlayer>([&reg, this](auto e) {
-                auto &slots = reg.ctx<C_PlayerSlots>();
-                if (slots.players[e->slot] == entt::null)
-                {
-                        auto player = CreateEntity();
-                        std::cout << "spawning | slot: " << static_cast<int>(e->slot) << std::endl;
-                        slots.players[e->slot] = player.GetId();
-                        player.AddComponent<C_Position>(e->xpos, e->ypos);
-                        player.AddComponent<C_Velocity>();
-                        // player.AddComponent<C_Drag>(0.8f);
-                        player.AddComponent<C_Size>(200.0f, 200.0f);
-                        player.AddComponent<C_DrawLayer>();
-                        // player.AddComponent<C_Sprite>(texture_allocator.Get("../assets/characters/character/character.png"), glm::uvec4(0xAAAABBFF, 0x555555FF, 0xAAAAAAFF, 0xFFFFFFFF)); //RGBA
-                        player.AddComponent<C_Sprite>(TextureAllocator::Get(Characters::GetTextureFilePath(Characters::eCharacter::character)), glm::uvec4(0xAAAABBFF, 0x555555FF, 0xAAAAAAFF, 0xFFFFFFFF)); //RGBA
-                        player.AddComponent<C_Tileset>(50, 16, 0);
-                        player.AddComponent<C_Animation>();
-                        player.AddComponent<C_Simulation>();
-                        player.AddComponent<C_AnimationBehavior>(Characters::GetAnimationFilePath(Characters::eCharacter::character), Characters::GetAnimationBehaviorFilePath(Characters::eCharacter::character));
-                        player.AddComponent<C_Player>(e->localPlayer, e->slot);
-                        player.AddComponent<C_PlayerDirection>();
-                        player.AddComponent<C_PlayerInput>();
-                        player.AddScript<PlayerScript>();
-                        if (e->localPlayer)
-                        {
-                                player.AddComponent<C_PlayerKeymap>();
-                        }
-                        else
-                        {
-                                // player.AddComponent<C_PlayerKeymap>();
-                                // player.AddComponent<C_Net_Position>(e->xpos, e->ypos);
-                        }
-                        std::cout << "player validity: " << reg.valid(player.GetId()) << std::endl;
-                }
-                else
-                {
-                        // reg.replace<C_Position>(player, e->xpos, e->ypos);
-                }
-                return true;
-        });
-}
+// void S_Spawning::update(float deltaTime, entt::registry &reg)
+// {
+//         Events::iterate<E_SpawnPlayer>([&reg, this](auto e) {
+//                 auto &slots = reg.ctx<C_PlayerSlots>();
+//                 if (slots.players[e->slot] == entt::null)
+//                 {
+//                         auto player = CreateEntity();
+//                         std::cout << "spawning | slot: " << static_cast<int>(e->slot) << std::endl;
+//                         slots.players[e->slot] = player.GetId();
+//                         player.AddComponent<C_Position>(e->xpos, e->ypos);
+//                         player.AddComponent<C_Velocity>();
+//                         // player.AddComponent<C_Drag>(0.8f);
+//                         player.AddComponent<C_Size>(200.0f, 200.0f);
+//                         player.AddComponent<C_DrawLayer>();
+//                         // player.AddComponent<C_Sprite>(texture_allocator.Get("../assets/characters/character/character.png"), glm::uvec4(0xAAAABBFF, 0x555555FF, 0xAAAAAAFF, 0xFFFFFFFF)); //RGBA
+//                         player.AddComponent<C_Sprite>(TextureAllocator::Get(Characters::GetTextureFilePath(Characters::eCharacter::character)), glm::uvec4(0xAAAABBFF, 0x555555FF, 0xAAAAAAFF, 0xFFFFFFFF)); //RGBA
+//                         player.AddComponent<C_Tileset>(50, 16, 0);
+//                         player.AddComponent<C_Animation>();
+//                         player.AddComponent<C_Simulation>();
+//                         player.AddComponent<C_AnimationBehavior>(Characters::GetAnimationFilePath(Characters::eCharacter::character), Characters::GetAnimationBehaviorFilePath(Characters::eCharacter::character));
+//                         player.AddComponent<C_Player>(e->localPlayer, e->slot);
+//                         player.AddComponent<C_PlayerDirection>();
+//                         player.AddComponent<C_PlayerInput>();
+//                         player.AddScript<PlayerScript>();
+//                         if (e->localPlayer)
+//                         {
+//                                 player.AddComponent<C_PlayerKeymap>();
+//                         }
+//                         else
+//                         {
+//                                 // player.AddComponent<C_PlayerKeymap>();
+//                                 // player.AddComponent<C_Net_Position>(e->xpos, e->ypos);
+//                         }
+//                 }
+//                 else
+//                 {
+//                         // reg.replace<C_Position>(player, e->xpos, e->ypos);
+//                 }
+//                 return true;
+//         });
+// }

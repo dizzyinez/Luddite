@@ -3,5 +3,5 @@
 
 struct S_LocalPlayerInput : public System<S_LocalPlayerInput>
 {
-        void update(float deltaTime, entt::registry &reg) override;
+        void update(float deltaTime, entt::registry &reg);
 };

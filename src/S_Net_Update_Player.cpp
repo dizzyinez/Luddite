@@ -24,12 +24,5 @@ std::string sstring_to_hex(const std::string& input)
 
 void S_Net_Update_Player::update(float deltaTime, entt::registry &reg)
 {
-        reg.view<C_Player>().each([&reg](auto Entity, auto &player) {
-                if (player.local_player)
-                {
-                        auto &player_input = reg.get<C_PlayerInput>(Entity);
-                        // p.player_slot = player.player_slot;
-                        // p.buttons = player_input.buttons;
-                }
-        });
+        // for (Player p)
 }

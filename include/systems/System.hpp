@@ -26,8 +26,8 @@ public:
         virtual void configure(entt::registry &reg) {
         }
 
-        virtual void update(float deltaTime, entt::registry &reg) {
-        }
+        // virtual void update(float deltaTime, entt::registry &reg) {
+        // }
 
         static SystemID systemID_counter;
         double start_time = 0;
@@ -87,13 +87,20 @@ public:
                 return t;
         }
 
-        template <typename T>
-        void update(float deltaTime, entt::registry &reg)
+        template <typename T, typename ... Args>
+        void update(Args && ... args)
         {
                 std::shared_ptr<T> t = get<T>();
                 t->start_time = glfwGetTime();
-                t->update(deltaTime, reg);
+                t->update(std::forward<Args>(args)...);
                 t->end_time = glfwGetTime();
+        }
+
+        template <typename T, typename Single, typename ... Ts, typename ... Args>
+        void update(Args && ... args)
+        {
+                update<T>(std::forward<Args>(args)...);
+                update<Single, Ts...>(std::forward<Args>(args)...);
         }
 
         void configure(entt::registry &reg, Layer* layer)

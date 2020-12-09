@@ -1,9 +1,9 @@
-#ifndef LayerMainMenu_hpp
-#define LayerMainMenu_hpp
+#pragma once
 
 #include "Layers/Layer.hpp"
-#include "core/net.hpp"
-#include <memory>
+
+class Client;
+class Server;
 
 class L_MainMenu : public Layer
 {
@@ -17,5 +17,3 @@ public:
         std::shared_ptr<Client> client;
         std::shared_ptr<Server> server;
 };
-
-#endif

@@ -11,8 +11,8 @@
 },
 {
   "directory": "R:/Dev/games/Luddite/Luddite/build",
-  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\Entity.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\Entity.cpp",
-  "file": "R:/Dev/games/Luddite/Luddite/src/Entity.cpp"
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\Client.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\Client.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/Client.cpp"
 },
 {
   "directory": "R:/Dev/games/Luddite/Luddite/build",
@@ -203,5 +203,10 @@
   "directory": "R:/Dev/games/Luddite/Luddite/build",
   "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\shader.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\shader.cpp",
   "file": "R:/Dev/games/Luddite/Luddite/src/shader.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\utils\\Spawning.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\utils\\Spawning.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/utils/Spawning.cpp"
 }
 ]

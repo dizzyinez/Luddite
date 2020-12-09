@@ -4,5 +4,5 @@
 
 struct S_PlayerDirection : public System<S_PlayerDirection>
 {
-        void update(float deltaTime, entt::registry &reg) override;
+        void update(float deltaTime, entt::registry &reg);
 };

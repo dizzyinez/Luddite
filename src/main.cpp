@@ -12,6 +12,7 @@
 #include "events/logging.hpp"
 #include "layers/L_Base.hpp"
 #include "layers/L_MainMenu.hpp"
+#include "layers/L_Game.hpp"
 #include <enet/enet.h>
 
 #include <glm/glm.hpp>
@@ -20,7 +21,6 @@
 #include "data/FontAllocator.hpp"
 
 using namespace glm;
-
 
 constexpr int UPDATE_RATE = 60;
 constexpr float SECONDS_PER_UPDATE = 1.0f / (float)UPDATE_RATE;
@@ -82,11 +82,11 @@ int main(int argc, char *argv[])
 
         FontAllocator::Initialize();
 
-        std::unique_ptr<Game> game(new Game()); //why is this a pointer????
-        if (game->Init(window))
+        // std::unique_ptr<Game> game(new Game()); //why is this a pointer????
+        if (Game::Init(window))
         {
-                game->PushLayer(new L_Base());
-                game->PushLayer(new L_MainMenu());
+                Game::PushLayer(new L_Base());
+                Game::PushLayer(new L_MainMenu());
 
                 // double time;
                 double accumulator = 0.0;
@@ -98,8 +98,8 @@ int main(int argc, char *argv[])
                 double min_frame_time = 1.0f / (double)max_fps;
                 std::cout << "min frame time: " << min_frame_time << std::endl;
                 // double deltaTime;
-                game->Update(SECONDS_PER_UPDATE);
-                while (game->running && !glfwWindowShouldClose(window))
+                // Game::Update(SECONDS_PER_UPDATE);
+                while (Game::running && !glfwWindowShouldClose(window))
                 {
                         double new_time = glfwGetTime();
                         double frame_time = new_time - current_time;
@@ -116,7 +116,7 @@ int main(int argc, char *argv[])
                                 // std::cout << "gamign" << std::endl;
                                 // std::cout << deltaTime << " > " << SECONDS_PER_UPDATE << " FPS: " <<int(1.0f / deltaTime) << std::endl;
                                 glfwPollEvents();
-                                game->Update(SECONDS_PER_UPDATE);
+                                Game::Update(SECONDS_PER_UPDATE);
                                 accumulator -= SECONDS_PER_UPDATE;
                         }
                         // std::cout << "render accum: " << render_accumulator << std::endl;
@@ -124,7 +124,7 @@ int main(int argc, char *argv[])
                         {
                                 // std::cout << "rendering" << std::endl;
                                 glClear(GL_COLOR_BUFFER_BIT);
-                                game->Render(accumulator / SECONDS_PER_UPDATE);
+                                Game::Render(accumulator / SECONDS_PER_UPDATE);
                                 glfwSwapBuffers(window);
 
                                 render_accumulator -= min_frame_time;
@@ -132,7 +132,7 @@ int main(int argc, char *argv[])
                                         render_accumulator -= min_frame_time;
                         }
                 }
-                game->Clean();
+                Game::Clean();
                 std::cout << "game exited" << std::endl;
         }
         else

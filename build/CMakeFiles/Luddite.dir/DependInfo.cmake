@@ -6,7 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "R:/Dev/games/Luddite/Luddite/src/Assets.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/Assets.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/C_NativeScript.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/C_NativeScript.cpp.obj"
-  "R:/Dev/games/Luddite/Luddite/src/Entity.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/Entity.cpp.obj"
+  "R:/Dev/games/Luddite/Luddite/src/Client.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/Client.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/Events.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/Events.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/L_Base.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/L_Base.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/L_Game.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/L_Game.cpp.obj"
@@ -45,6 +45,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "R:/Dev/games/Luddite/Luddite/src/loadShader.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/loadShader.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/main.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/main.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/shader.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/shader.cpp.obj"
+  "R:/Dev/games/Luddite/Luddite/src/utils/Spawning.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

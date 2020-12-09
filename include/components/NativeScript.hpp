@@ -10,12 +10,6 @@ struct NativeScript;
 // class Entity;
 struct C_NativeScript
 {
-        C_NativeScript()
-        {
-        }
-        ~C_NativeScript();
-
-
         NativeScript*(*InstantiateScript)();
         void (*DestroyScript)(C_NativeScript*);
         template <typename T>
@@ -28,7 +22,7 @@ struct C_NativeScript
         //         BindEntity(e, layer);
         //         return (T*)m_Script;
 
-        NativeScript* m_Script = nullptr;
+        NativeScript* m_Script;
 private:
         void BindEntity(entt::entity e, Layer* layer);
         // std::function<void()> DestroyInstanceFunction;

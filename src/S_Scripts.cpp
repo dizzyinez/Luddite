@@ -26,7 +26,7 @@ void S_Scripts_Update::update(float deltaTime, entt::registry &reg)
 void S_Scripts_LateUpdate::update(float deltaTime, entt::registry &reg)
 {
         reg.view<C_NativeScript>().each([deltaTime](auto entity, auto &nsc) {
-                if (nsc.m_Script)
+                if (nsc.m_Script != nullptr)
                         nsc.m_Script->OnLateUpdate(deltaTime);
         });
 }

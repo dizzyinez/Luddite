@@ -2,6 +2,9 @@
 
 #include "Layers/Layer.hpp"
 
+class Client;
+class Server;
+
 class L_Game : public Layer
 {
 public:
@@ -11,4 +14,12 @@ public:
         void render(float alpha);
         void clean();
         L_Game();
+        std::shared_ptr<Client> client;
+        std::shared_ptr<Server> server;
+private:
+        void Step(float deltaTime, entt::registry& reg);
+        void CopyGameState(entt::registry& from, entt::registry& to);
+        void CopyInputs(entt::registry& from, entt::registry& to);
+        void CopyRenderingComponents(entt::registry& from, entt::registry& to);
+        // std::array<Player, 256>* player_list;
 };

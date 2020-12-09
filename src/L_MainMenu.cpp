@@ -1,6 +1,8 @@
 #include "layers/L_MainMenu.hpp"
 #include "config.h"
 #include <iostream>
+#include "core/net.hpp"
+#include "core/game.hpp"
 
 #include "ecs/Entity.hpp"
 
@@ -32,6 +34,8 @@
 #include "data/TextureAllocator.hpp"
 #include "data/FontAllocator.hpp"
 
+#include "layers/L_Game.hpp"
+
 #include <iostream>
 
 
@@ -47,9 +51,6 @@ void L_MainMenu::init()
         systems.add<S_Scripts_Update>();
         systems.add<S_Scripts_LateUpdate>();
         systems.configure(m_Registry, this);
-
-
-
 
         auto join = CreateEntity();
         join.AddComponent<C_Position>();
@@ -82,6 +83,7 @@ void L_MainMenu::init()
         });
         join.AddComponent<C_Gui_Button>([this]() {
                 client = std::make_shared<Client>();
+                client->l_main_menu = (L_MainMenu*)this;
                 if (client->Connect())
                 {
                         Message msg;
@@ -129,7 +131,54 @@ void L_MainMenu::init()
         host.AddComponent<C_Gui_Button>([this]() {
                 server = std::make_shared<Server>();
                 server->Start();
+                server->l_main_menu = (L_MainMenu*)this;
+                server->AddLocalPlayer(short_string{"Game host"});
                 // Events::emit<E_Net_Host>(1234, 2);
+        });
+
+
+        auto start = CreateEntity();
+        start.AddComponent<C_Position>();
+        start.AddComponent<C_Size>();
+        start.AddComponent<C_DrawLayer>(DrawLayer::gui);
+        start.AddComponent<C_Texture>(TextureAllocator::Get("../assets/textures/wall.jpg"));
+        start.AddComponent<C_Gui>();
+        start.AddComponent<C_Gui_Container>(
+                [](auto &Gui, auto &Gui_container) {
+                Gui_container.solver->addEditVariable(Gui.w, kiwi::strength::strong);
+                Gui_container.solver->addEditVariable(Gui.h, kiwi::strength::strong);
+                kiwi::Constraint constraints[] = {
+                        kiwi::Constraint {Gui.x == 110},
+                        kiwi::Constraint {Gui.y == 0},
+                        kiwi::Constraint {Gui.h <= 50},
+                        kiwi::Constraint {Gui.w <= 50}
+                };
+                for (auto& constraint : constraints)
+                        Gui_container.solver->addConstraint(constraint);
+                Gui_container.solver->updateVariables();
+        },
+
+                [](auto &Gui, auto &Gui_container) {
+                Events::iterateAll<E_WindowResize>([&Gui, &Gui_container](auto e) {
+                        Gui_container.solver->suggestValue(Gui.w, e->width / 2);
+                        Gui_container.solver->suggestValue(Gui.h, e->height / 2);
+                        Gui_container.solver->updateVariables();
+                        return false;
+                });
+        });
+        start.AddComponent<C_Gui_Button>([this]() {
+                if (server != nullptr)
+                {
+                        Message msg;
+                        msg.header.id = message_types::START_GAME;
+                        server->MessageAllClients(msg);
+
+                        server->l_game = new L_Game();
+                        server->l_game->server = server; //pass server to game layer
+                        Game::PushLayer(server->l_game);
+                        Game::PopLayer(server->l_main_menu);
+                        // Events::emit<E_Net_Host>(1234, 2);
+                }
         });
 
         // FontAllocator::AddFakeUser("../assets/fonts/comic.ttf");
@@ -172,22 +221,19 @@ void L_MainMenu::update(float deltaTime)
         systems.update<S_Animation>(deltaTime, m_Registry);
         systems.update<S_Motion>(deltaTime, m_Registry);
         systems.update<S_Scripts_Update>(deltaTime, m_Registry);
+
+
+        systems.update<S_Scripts_LateUpdate>(deltaTime, m_Registry);
         if (server != nullptr)
                 server->Update();
         else if (client != nullptr)
                 client->Update();
-
-
-        systems.update<S_Scripts_LateUpdate>(deltaTime, m_Registry);
 }
 
 void L_MainMenu::render(float alpha)
 {
-        // auto& sf = m_Registry.ctx<C_StoredFrames>();
-
         systems.update<S_Tileset> (alpha, m_Registry);
         systems.update<S_Draw>    (alpha, m_Registry);
-        // systems.update<S_Draw>(deltaTime, sf.frame_array[sf.index]);
 }
 void L_MainMenu::clean()
 {

@@ -3,5 +3,5 @@
 
 struct S_Animation : public System<S_Animation>
 {
-        void update(float deltaTime, entt::registry &reg) override;
+        void update(float deltaTime, entt::registry &reg);
 };

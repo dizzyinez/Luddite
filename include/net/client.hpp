@@ -41,8 +41,40 @@ public:
                 return false;
         }
         void Disconnect() {}
-        bool IsConnected() {return true;}
-        void Update() {}
+        // bool IsConnected() {return true;}
+
+        void Update()
+        {
+                ENetEvent event;
+                while (enet_host_service(client, &event, 0) > 0)
+                {
+                        switch (event.type)
+                        {
+                        case ENET_EVENT_TYPE_CONNECT:
+                                std::cout << "Client connected" << std::endl;
+                                break;
+
+                        case ENET_EVENT_TYPE_RECEIVE:
+                        {
+                                message<T> msg;
+                                memcpy(&msg.header, event.packet->data, sizeof(message_header<T>));
+                                if (msg.header.body_size > 0)
+                                {
+                                        msg.body.resize(msg.header.body_size);
+                                        memcpy(msg.body.data(), event.packet->data + sizeof(message_header<T>), msg.header.body_size);
+                                }
+                                OnMessage(msg);
+                                enet_packet_destroy(event.packet);
+                        }
+                        break;
+
+                        case ENET_EVENT_TYPE_DISCONNECT:
+                                event.peer->data = NULL;
+                                break;
+                        }
+                }
+        }
+
         void MessageServer(const message<T>& msg)
         {
                 ENetPacket *packet = enet_packet_create(&msg.header, sizeof(message_header<T>), ENET_PACKET_FLAG_RELIABLE);
@@ -57,8 +89,8 @@ public:
         {
                 enet_host_flush(client);
         }
-
 private:
+        virtual void OnMessage(message<T>& msg) = 0;
         ENetHost* client;
         ENetAddress server_address;
         ENetPeer* server;

@@ -5,7 +5,7 @@
 
 struct S_Logging : public System<S_Logging>
 {
-        void update(float deltaTime, entt::registry &reg) override;
+        void update(float deltaTime, entt::registry &reg);
 };
 
 #endif

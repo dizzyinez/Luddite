@@ -195,32 +195,32 @@ src/C_NativeScript.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/C_NativeScript.cpp.s
 .PHONY : src/C_NativeScript.cpp.s
 
-src/Entity.obj: src/Entity.cpp.obj
+src/Client.obj: src/Client.cpp.obj
 
-.PHONY : src/Entity.obj
+.PHONY : src/Client.obj
 
 # target to build an object file
-src/Entity.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Entity.cpp.obj
-.PHONY : src/Entity.cpp.obj
+src/Client.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Client.cpp.obj
+.PHONY : src/Client.cpp.obj
 
-src/Entity.i: src/Entity.cpp.i
+src/Client.i: src/Client.cpp.i
 
-.PHONY : src/Entity.i
+.PHONY : src/Client.i
 
 # target to preprocess a source file
-src/Entity.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Entity.cpp.i
-.PHONY : src/Entity.cpp.i
+src/Client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Client.cpp.i
+.PHONY : src/Client.cpp.i
 
-src/Entity.s: src/Entity.cpp.s
+src/Client.s: src/Client.cpp.s
 
-.PHONY : src/Entity.s
+.PHONY : src/Client.s
 
 # target to generate assembly for a file
-src/Entity.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Entity.cpp.s
-.PHONY : src/Entity.cpp.s
+src/Client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/Client.cpp.s
+.PHONY : src/Client.cpp.s
 
 src/Events.obj: src/Events.cpp.obj
 
@@ -1248,6 +1248,33 @@ src/shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/shader.cpp.s
 .PHONY : src/shader.cpp.s
 
+src/utils/Spawning.obj: src/utils/Spawning.cpp.obj
+
+.PHONY : src/utils/Spawning.obj
+
+# target to build an object file
+src/utils/Spawning.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.obj
+.PHONY : src/utils/Spawning.cpp.obj
+
+src/utils/Spawning.i: src/utils/Spawning.cpp.i
+
+.PHONY : src/utils/Spawning.i
+
+# target to preprocess a source file
+src/utils/Spawning.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.i
+.PHONY : src/utils/Spawning.cpp.i
+
+src/utils/Spawning.s: src/utils/Spawning.cpp.s
+
+.PHONY : src/utils/Spawning.s
+
+# target to generate assembly for a file
+src/utils/Spawning.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.s
+.PHONY : src/utils/Spawning.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -1263,9 +1290,9 @@ help:
 	@echo ... src/C_NativeScript.obj
 	@echo ... src/C_NativeScript.i
 	@echo ... src/C_NativeScript.s
-	@echo ... src/Entity.obj
-	@echo ... src/Entity.i
-	@echo ... src/Entity.s
+	@echo ... src/Client.obj
+	@echo ... src/Client.i
+	@echo ... src/Client.s
 	@echo ... src/Events.obj
 	@echo ... src/Events.i
 	@echo ... src/Events.s
@@ -1380,6 +1407,9 @@ help:
 	@echo ... src/shader.obj
 	@echo ... src/shader.i
 	@echo ... src/shader.s
+	@echo ... src/utils/Spawning.obj
+	@echo ... src/utils/Spawning.i
+	@echo ... src/utils/Spawning.s
 .PHONY : help
 
 

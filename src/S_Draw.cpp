@@ -15,7 +15,6 @@
 #include "components/Size.hpp"
 #include "components/Texture.hpp"
 #include "components/Tileset.hpp"
-#include "components/Simulation.hpp"
 
 
 
@@ -34,24 +33,6 @@ void S_Draw::update(float alpha, entt::registry &reg)
 
         reg.group<C_DrawLayer>(entt::get<C_Position, C_Size>).each([&v, &reg, alpha](auto entity, auto &drawLayer, auto &pos, auto &size) {
                 //check if the registry has previous frames stored
-                auto *stored_frames = reg.try_ctx<C_StoredFrames>();
-                if (stored_frames)
-                {
-                        //check if the previous frame had this entity;
-                        auto& last_frame = stored_frames->last_frame();
-                        if (last_frame.valid(entity))
-                        {
-                                if (last_frame.has<C_DrawLayer, C_Position, C_Size>(entity))
-                                {
-                                        v[static_cast<int8_t>(drawLayer.layer)].push_back(std::make_pair(pos.getY() + size.getH(), entity));
-                                        // v[static_cast<int8_t>(drawLayer.layer)].push_back(std::make_pair(
-                                        //         glm::lerp(last_frame.get<C_Position>(entity).getY(), pos.getY(), alpha) +
-                                        //         glm::lerp(last_frame.get<C_Size>(entity).getH(), size.getH(), alpha),
-                                        //         entity));
-                                        return;
-                                }
-                        }
-                }
                 v[static_cast<int8_t>(drawLayer.layer)].push_back(std::make_pair(pos.getY() + size.getH(), entity));
         });
 
@@ -76,32 +57,16 @@ void S_Draw::update(float alpha, entt::registry &reg)
 
                 for (pair = layer->begin(); pair != layer->end(); ++pair)
                 {
-                        glm::vec3 object_position = reg.get<C_Position>(pair->second).position;
-                        glm::vec2 object_size = reg.get<C_Size>(pair->second).size;
+                        glm::vec3 &object_position = reg.get<C_Position>(pair->second).position;
+                        glm::vec2 &object_size = reg.get<C_Size>(pair->second).size;
                         // const auto [pos, size] = reg.get<C_Position, C_Size>(pair->second);
-
-                        auto *stored_frames = reg.try_ctx<C_StoredFrames>();
-                        if (stored_frames)
-                        {
-                                //check if the previous frame had this entity;
-                                auto& last_frame = stored_frames->last_frame();
-                                if (last_frame.valid(pair->second))
-                                {
-                                        if (last_frame.has<C_DrawLayer, C_Position, C_Size>(pair->second))
-                                        {
-                                                object_position = glm::lerp(last_frame.get<C_Position>(pair->second).position, object_position, alpha);
-                                                object_size = glm::lerp(last_frame.get<C_Size>(pair->second).size, object_size, alpha);
-                                        }
-                                }
-                        }
-
                         if (reg.has<C_Texture>(pair->second))
                         {
                                 // std::cout << "rendering texture" << std::endl;
                                 const auto tex = reg.get<C_Texture>(pair->second);
                                 Renderer::RenderTexture(object_position, object_size, tex.texture->texture_id, tex.tex_coords);
                         }
-                        if (reg.has<C_Sprite>(pair->second))
+                        else if (reg.has<C_Sprite>(pair->second))
                         {
                                 const auto sprite = reg.get<C_Sprite>(pair->second);
                                 Renderer::RenderSprite(object_position, object_size, sprite.texture->texture_id, sprite.tex_coords, sprite.colors);

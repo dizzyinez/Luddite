@@ -8,25 +8,36 @@ struct C_Simulation
 
 struct C_StoredFrames
 {
-        static constexpr uint8_t max_frames = 20;
+        static constexpr uint8_t max_frames = 120;
         std::array<entt::registry, max_frames> frame_array;
-        uint64_t start_frame = 0;
+        uint64_t start_frame_id = 0;
         int index = 0;
-        entt::registry& last_frame()
+        uint64_t current_frame_id() const
         {
-                if (index > 0)
-                {
-                        return frame_array[index - 1];
-                }
-                else
-                {
-                        return frame_array[max_frames - 1];
-                }
+                return start_frame_id + index;
         }
-        void increment_frame()
+        int frame_id_to_index(uint64_t frame) const
+        {
+                return frame - start_frame_id;
+        }
+        // entt::registry& last_frame()
+        // {
+        //         if (index > 0)
+        //         {
+        //                 return frame_array[index - 1];
+        //         }
+        //         else
+        //         {
+        //                 return frame_array[max_frames - 1];
+        //         }
+        // }
+        void increment_index()
         {
                 index++;
                 if (index >= max_frames)
-                        index = 0;
+                {
+                        index = max_frames - 1;
+                        std::cout << "ERROR: Maximum stored frames reached!" << std::endl;
+                }
         }
 };

@@ -9,7 +9,6 @@
 #include <glm/gtx/string_cast.hpp>
 struct C_Player
 {
-        C_Player() = default;
         C_Player(bool local_player_, uint8_t player_slot_)
                 : local_player(local_player_), player_slot(player_slot_)
         {
@@ -40,6 +39,7 @@ struct C_PlayerDirection
 struct C_PlayerInput
 {
         std::bitset<8> buttons;
+        bool net_validated = false;
         /*
          * 0 Is moving horizontally
          * 1 Is moving right
@@ -133,8 +133,6 @@ struct C_PlayerInput
                 }
                 return -1;
         }
-
-
 
 
         bool button1()

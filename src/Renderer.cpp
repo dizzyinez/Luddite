@@ -38,7 +38,6 @@ void Renderer::Init()
 
         sprite_batch = std::make_unique<SpriteBatch>();
         sprite_batch->Init();
-        sprite_batch->Init();
         sprite_batch->BeginBatch();
 
         // updateMatricies(1024, 768);

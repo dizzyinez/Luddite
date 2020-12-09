@@ -5,7 +5,7 @@
 
 struct S_PlayerController : public System<S_PlayerController>
 {
-        void update(float deltaTime, entt::registry &reg) override;
+        void update(float deltaTime, entt::registry &reg);
 };
 
 #endif

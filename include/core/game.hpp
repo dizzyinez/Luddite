@@ -12,21 +12,27 @@ class Layer;
 class Game
 {
 public:
-        bool running;
+        inline static bool running;
 
-        Game();
-        ~Game();
-        bool Init(GLFWwindow* w);
-        void Update(float deltaTime);
-        void Render(float alpha);
-        void Clean();
+        // Game();
+        // ~Game();
+        static bool Init(GLFWwindow* w);
+        static void Update(float deltaTime);
+        static void Render(float alpha);
+        static void Clean();
 
-        void PushLayer(Layer* Layer);
-        void PopLayer(Layer* layer);
+        static void PushLayer(Layer*layer);
+        static void PopLayer(Layer* layer);
 
-        GLFWwindow* window;
+        inline static GLFWwindow* window;
 private:
-        std::vector<Layer*> Layers;
+        static void push_layer(Layer* layer);
+        static void pop_layer(Layer* layer);
+        static void update_queue();
+
+        inline static std::vector<Layer*> Layers;
+        inline static std::vector<Layer*> add_queue;
+        inline static std::vector<Layer*> remove_queue;
 };
 
 #endif

@@ -5,7 +5,7 @@
 
 struct S_Spawning : public System<S_Spawning>
 {
-        void update(float deltaTime, entt::registry &reg) override;
+        void update(float deltaTime, entt::registry &reg);
 };
 
 #endif

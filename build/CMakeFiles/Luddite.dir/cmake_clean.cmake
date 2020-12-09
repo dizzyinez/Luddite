@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Luddite.dir/src/Assets.cpp.obj"
   "CMakeFiles/Luddite.dir/src/C_NativeScript.cpp.obj"
-  "CMakeFiles/Luddite.dir/src/Entity.cpp.obj"
+  "CMakeFiles/Luddite.dir/src/Client.cpp.obj"
   "CMakeFiles/Luddite.dir/src/Events.cpp.obj"
   "CMakeFiles/Luddite.dir/src/L_Base.cpp.obj"
   "CMakeFiles/Luddite.dir/src/L_Game.cpp.obj"
@@ -40,6 +40,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Luddite.dir/src/loadShader.cpp.obj"
   "CMakeFiles/Luddite.dir/src/main.cpp.obj"
   "CMakeFiles/Luddite.dir/src/shader.cpp.obj"
+  "CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.obj"
   "Luddite.exe"
   "Luddite.exe.manifest"
   "Luddite.pdb"

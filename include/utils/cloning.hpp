@@ -34,7 +34,7 @@ void clone_registry(const entt::registry &from, entt::registry &to)
                         to.destroy(entity);
                 });
 
-        //assign all the entities that are going to be cloned
+        //assign all the entities that are going to be clonedZ
         const auto *from_data = from.data();
         const auto from_size = from.size();
         to.assign(from_data, from_data + from_size);
@@ -66,17 +66,18 @@ void copy_registry(const entt::registry &from, entt::registry &to)
 
         clone_component<Ts...>(from, to);
 }
-// template <typename T>
-// void replace_single_component(const entt::registry &from, entt::registry &to)
-// {
-//         to.view<T>().each([&from, &to](auto entity, T& t) {
-//                         if (!from.valid(entity))
-//                                 to.destroy(entity);
-//                 });
-//         from.view<T>().each([&to](auto entity, T& t) {
-//                         if (!to.valid(entity))
-//                                 to.create(entity);
-//                 });
-//         utils::clone_component<T>(from, to);
-// }
+template <typename T>
+void replace_single_component(entt::registry &from, entt::registry &to)
+{
+        to.clear<T>();
+        to.view<T>().each([&from, &to](entt::entity entity, T& t) {
+                        if (!from.valid(entity))
+                                to.destroy(entity);
+                });
+        from.view<T>().each([&to](entt::entity entity, T& t) {
+                        if (!to.valid(entity))
+                                to.create(entity);
+                });
+        utils::clone_component<T>(from, to);
+}
 }

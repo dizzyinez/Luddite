@@ -27,7 +27,7 @@ public:
         // ~PlayerScript() {}
         void OnCreate()
         {
-                std::cout << "Player script instantiated" << std::endl;
+                // std::cout << "Player script instantiated" << std::endl;
                 // animation = json_manager.Get(Characters::GetAnimationFilePath(Characters::eCharacter::character));
                 // GetComponent<C_Animation>().PlayAnimation("Run");
         }
@@ -52,6 +52,6 @@ public:
         }
         void OnLateUpdate(float deltaTime)
         {
-                GetComponent<C_Animation>().direction = GetComponent<C_PlayerDirection>().movement_direction;
+                // GetComponent<C_Animation>().direction = GetComponent<C_PlayerDirection>().movement_direction;
         }
 };

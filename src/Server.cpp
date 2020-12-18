@@ -23,7 +23,7 @@ int Server::AddPlayer(short_string name, bool is_local)
         return -1;
 }
 
-void Server::AddPlayer(short_string name, ENetPeer* peer)
+int Server::AddPeerPlayer(short_string name, ENetPeer* peer)
 {
         int index = AddPlayer(name, false);
         if (index != -1)
@@ -31,6 +31,7 @@ void Server::AddPlayer(short_string name, ENetPeer* peer)
                 std::cout << "new player, index is " << index << std::endl;
                 GetData(peer)->index = index;
         }
+        return index;
 }
 
 bool Server::OnClientConnect(ENetPeer* peer)
@@ -65,7 +66,7 @@ void Server::OnMessage(Message& msg, ENetPeer* peer)
                                 {
                                         Message msg_player;
                                         msg_player.header.id = message_types::NEW_PLAYER;
-                                        msg_player << p.name << p.id;
+                                        msg_player << p.name << uint8_t(p.id);
                                         MessageClient(msg_player, peer);
                                 }
                         }
@@ -85,15 +86,22 @@ void Server::OnMessage(Message& msg, ENetPeer* peer)
                 short_string name;
                 msg >> name;
                 std::cout << "new player connected" << std::endl;
-                AddPlayer(name, peer);
+                int index = AddPeerPlayer(name, peer);
+                if (index != -1)
+                {
+                        //acknowledge the new player
+                        Message packet_acknowledge;
+                        packet_acknowledge.header.id = message_types::PLAYER_ACK;
+                        packet_acknowledge << name << GetData(peer)->index;
+                        MessageClient(packet_acknowledge, peer);
 
-                //acknowledge the new player
-                Message out;
-                out.header.id = message_types::PLAYER_ACK;
-                out << name << GetData(peer)->index;
-                MessageClient(out, peer);
 
-                //send new player to other clients
+                        //send new player to other clients
+                        Message packet_new_player;
+                        packet_new_player.header.id = message_types::NEW_PLAYER;
+                        packet_new_player << name << uint8_t(index);
+                        MessageAllClients(packet_new_player, peer);
+                }
         }
         break;
 
@@ -108,23 +116,27 @@ void Server::OnMessage(Message& msg, ENetPeer* peer)
                 if (player.exists)
                 {
                         auto& sf = l_game->GetContext<C_StoredFrames>();
-                        std::cout << "size:" << msg.body.size() << std::endl;
+                        // std::cout << "size:" << msg.body.size() << std::endl;
                         uint64_t input_frame;
                         msg >> input_frame;
                         int index = sf.frame_id_to_index(input_frame);
-                        if (index < 0 || index > sf.index)
+                        if (index < 0 || index >= sf.max_frames)
                         {
                                 std::cout << "invalid index" << std::endl;
                                 break;
                         }
                         if (sf.frame_array.at(index).valid(player.entity.GetId()))
-                                msg >> sf.frame_array.at(index).get<C_PlayerInput>(player.entity.GetId()).buttons;
-                        else
-                                std::cout << "FUCK" << std::endl;
+                        {
+                                auto& pi = sf.frame_array.at(index).get<C_PlayerInput>(player.entity.GetId());
+                                msg >> pi.buttons;
+                                pi.net_validated = true;
+                        }
 
                         out << GetData(peer)->index;
                         MessageAllClients(out);
                 }
+                else
+                        std::cout << "FUCK" << std::endl;
         }
         break;
         }

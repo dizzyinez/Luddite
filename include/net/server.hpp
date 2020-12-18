@@ -107,7 +107,9 @@ public:
                 }
                 for (int i = 0; i < server->connectedPeers; i++)
                 {
-                        enet_peer_send(&server->peers[i], 0, packet);
+                        ENetPeer* peer = &server->peers[i];
+                        if (peer != ignore)
+                                enet_peer_send(peer, 0, packet);
                 }
         }
 

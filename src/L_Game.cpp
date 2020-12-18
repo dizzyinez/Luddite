@@ -98,14 +98,23 @@ void L_Game::init()
         e1.AddComponent<C_Texture>(FontAllocator::Get("../assets/fonts/comic.ttf")->characters['S'].texture);
 
 
-        CopyGameState(m_Registry, m_Registry.ctx<C_StoredFrames>().frame_array.at(0));
+        auto& sf = m_Registry.ctx<C_StoredFrames>();
+        CopyGameState(m_Registry, sf.frame_array.at(0));
+        for (int i = 1; i < sf.max_frames; i++)
+                CopyInputs(m_Registry, sf.frame_array.at(i));
 }
 
 void L_Game::handleEvents(float deltaTime)
 {
         systems.update<S_Gui_Input>(deltaTime, m_Registry);
         systems.update<S_LocalPlayerInput>(deltaTime, m_Registry);
-        m_Registry.view<C_PlayerInput>().each([](auto& Entity, C_PlayerInput& pi) {pi.net_validated = false;});
+        //set net validation
+        m_Registry.view<C_Player, C_PlayerInput>().each([this](auto& Entity, C_Player& p, C_PlayerInput& pi) {
+                if (server != nullptr && p.local_player)
+                        pi.net_validated = true;
+                else
+                        pi.net_validated = false;
+        });
         systems.update<S_Scripts_Events>(deltaTime, m_Registry);
 }
 
@@ -117,10 +126,8 @@ void L_Game::update(float deltaTime)
         CopyRenderingComponents(m_Registry, last_frame);
 
         C_StoredFrames& sf = m_Registry.ctx<C_StoredFrames>();
-        std::cout << "index: " << sf.index << std::endl;
-        CopyInputs(m_Registry, sf.frame_array.at(sf.index));
-        // CopyGameState(m_Registry, sf.frame_array[sf.index]);
-
+        CopyInputs(m_Registry, sf.frame_array.at(sf.index), false);
+        // CopyGameState(m_Registry, sf.frame_array.at(0));
 
         //send player inputs over the network
         //TODO: put this in a system (?)
@@ -157,26 +164,26 @@ void L_Game::update(float deltaTime)
                 if (!pi.net_validated)
                         all_inputs_valid = false;
         });
-        // while (all_inputs_valid && index < sf.index)
-        // {
-        //         Step(deltaTime, sf.frame_array.at(0));
-        //         index++;
-        //         sf.frame_array.at(index).view<C_PlayerInput>().each([&sf, &all_inputs_valid](auto Entity, C_PlayerInput &pi) {
-        //                 //populate the inputs
-        //                 sf.frame_array.at(0).get<C_PlayerInput>(Entity) = pi;
-        //                 if (!pi.net_validated)
-        //                         all_inputs_valid = false;
-        //         });
-        // }
+        while (all_inputs_valid && index <= sf.index)
+        {
+                Step(deltaTime, sf.frame_array.at(0));
+                index++;
+                sf.frame_array.at(index).view<C_PlayerInput>().each([&sf, &all_inputs_valid](auto Entity, C_PlayerInput &pi) {
+                        //populate the inputs
+                        sf.frame_array.at(0).get<C_PlayerInput>(Entity) = pi;
+                        if (!pi.net_validated)
+                                all_inputs_valid = false;
+                });
+        }
 
-        // //move the vector back
-        // if (index > 0)
-        // {
-        //         for (int i = index + 1; i <= sf.index; i++)
-        //                 CopyInputs(sf.frame_array.at(i), sf.frame_array.at(i - index));
-        // }
-        // sf.index -= index;
-        // sf.start_frame_id += index;
+        //move the vector back
+        if (index > 0)
+        {
+                for (int i = index + 1; i < sf.max_frames; i++)
+                        CopyInputs(sf.frame_array.at(i), sf.frame_array.at(i - index));
+        }
+        sf.index -= index;
+        sf.start_frame_id += index;
 
         CopyGameState(sf.frame_array.at(0), m_Registry);
         while (index < sf.index)
@@ -191,7 +198,7 @@ void L_Game::update(float deltaTime)
         Step(deltaTime, m_Registry);
 
         sf.index++;
-        CopyRenderingComponents(m_Registry, lerp_frame);
+        CopyRenderingComponents(sf.frame_array.at(0), lerp_frame);
 }
 
 void L_Game::Step(float deltaTime, entt::registry& reg)
@@ -201,8 +208,8 @@ void L_Game::Step(float deltaTime, entt::registry& reg)
                        S_Animation,
                        S_Motion,
                        S_Scripts_Update,
-                       S_Scripts_LateUpdate>
-                (deltaTime, m_Registry);
+                       S_Scripts_LateUpdate
+                       >(deltaTime, reg);
 }
 
 void L_Game::render(float alpha)
@@ -232,34 +239,36 @@ void L_Game::render(float alpha)
 
 void L_Game::CopyGameState(entt::registry& from, entt::registry& to)
 {
-        utils::clone_registry<C_Position,
-                              C_Velocity,
-                              C_DrawLayer,
-                              C_Size,
-                              C_Texture,
-                              C_Sprite,
-                              C_Tileset,
-                              C_Player,
-                              C_PlayerDirection,
-                              C_PlayerInput,
-                              C_PlayerKeymap,
-                              C_Simulation,
-                              C_NativeScript,
-                              C_Animation,
-                              C_AnimationBehavior
-                              >(from, to);
+        utils::copy_registry<C_Position,
+                             C_Velocity,
+                             C_DrawLayer,
+                             C_Size,
+                             C_Texture,
+                             C_Sprite,
+                             C_Tileset,
+                             C_Player,
+                             C_PlayerInput,
+                             //      C_PlayerKeymap,
+                             C_Simulation,
+                             C_NativeScript,
+                             C_Animation,
+                             C_AnimationBehavior,
+                             C_AnimationBehaviorState
+                             >(from, to);
 }
-void L_Game::CopyInputs(entt::registry& from, entt::registry& to)
+void L_Game::CopyInputs(entt::registry& from, entt::registry& to, bool overwrite)
 {
-        // to.view<C_PlayerInput>().each([&from, &to](auto entity, C_PlayerInput& t) {
-        //         if (!from.valid(entity))
-        //                 to.destroy(entity);
-        // });
-        from.view<C_PlayerInput>().each([&to](auto entity, C_PlayerInput& pi) {
-                if (!to.valid(entity))
-                        to.emplace<C_PlayerInput>(to.create(entity));
-                to.get<C_PlayerInput>(entity) = pi;
-        });
+        if (overwrite)
+        {
+                utils::replace_single_component<C_PlayerInput>(from, to);
+        }
+        else
+        {
+                from.view<C_PlayerInput>().each([&to](auto Entity, C_PlayerInput& pi) {
+                        if (pi.net_validated)
+                                to.get<C_PlayerInput>(Entity) = pi;
+                });
+        }
 }
 void L_Game::CopyRenderingComponents(entt::registry& from, entt::registry& to)
 {

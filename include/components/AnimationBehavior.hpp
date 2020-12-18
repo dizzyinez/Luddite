@@ -30,7 +30,13 @@ struct C_AnimationBehavior
 
         std::string lua_path;
         lua_State* L = nullptr;
-        std::string current_animation;
         std::shared_ptr<Json> json;
         // int (*lua_test)(lua_State*);// = [](lua_State* L) {return 0;};
+};
+
+struct C_AnimationBehaviorState
+{
+        std::string current_animation;
+        bool rotates = true;
+        bool points_towards_mouse = false;
 };

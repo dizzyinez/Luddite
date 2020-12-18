@@ -843,33 +843,6 @@ src/S_PlayerController.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.s
 .PHONY : src/S_PlayerController.cpp.s
 
-src/S_PlayerDirection.obj: src/S_PlayerDirection.cpp.obj
-
-.PHONY : src/S_PlayerDirection.obj
-
-# target to build an object file
-src/S_PlayerDirection.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_PlayerDirection.cpp.obj
-.PHONY : src/S_PlayerDirection.cpp.obj
-
-src/S_PlayerDirection.i: src/S_PlayerDirection.cpp.i
-
-.PHONY : src/S_PlayerDirection.i
-
-# target to preprocess a source file
-src/S_PlayerDirection.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_PlayerDirection.cpp.i
-.PHONY : src/S_PlayerDirection.cpp.i
-
-src/S_PlayerDirection.s: src/S_PlayerDirection.cpp.s
-
-.PHONY : src/S_PlayerDirection.s
-
-# target to generate assembly for a file
-src/S_PlayerDirection.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_PlayerDirection.cpp.s
-.PHONY : src/S_PlayerDirection.cpp.s
-
 src/S_Projection.obj: src/S_Projection.cpp.obj
 
 .PHONY : src/S_Projection.obj
@@ -1362,9 +1335,6 @@ help:
 	@echo ... src/S_PlayerController.obj
 	@echo ... src/S_PlayerController.i
 	@echo ... src/S_PlayerController.s
-	@echo ... src/S_PlayerDirection.obj
-	@echo ... src/S_PlayerDirection.i
-	@echo ... src/S_PlayerDirection.s
 	@echo ... src/S_Projection.obj
 	@echo ... src/S_Projection.i
 	@echo ... src/S_Projection.s

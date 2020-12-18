@@ -75,7 +75,7 @@ void Client::OnMessage(Message& msg)
                         uint64_t input_frame;
                         msg >> input_frame;
                         int index = sf.frame_id_to_index(input_frame);
-                        if (index < 0 || index > sf.index)
+                        if (index < 0 || index >= sf.max_frames)
                         {
                                 std::cout << "invalid index" << std::endl;
                                 break;
@@ -87,9 +87,10 @@ void Client::OnMessage(Message& msg)
                                 msg >> pi.buttons;
                                 pi.net_validated = true;
                         }
-                        else
-                                std::cout << "FUCK" << std::endl;
                 }
+                else
+                        std::cout << "FUCK" << std::endl;
         }
+        break;
         }
 }

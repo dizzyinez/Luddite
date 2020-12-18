@@ -29,16 +29,18 @@ struct C_PlayerSlots
         entt::entity players[256];
 };
 
-struct C_PlayerDirection
-{
-        C_PlayerDirection() = default;
-        int8_t movement_direction = 0;
-        int8_t mouse_direction = 0;
-};
+// struct C_PlayerDirection
+// {
+//         C_PlayerDirection() = default;
+//         int8_t movement_direction = 0;
+//         int8_t mouse_direction = 0;
+// };
 
 struct C_PlayerInput
 {
         std::bitset<8> buttons;
+        int8_t mouse_direction = 0;
+        int8_t movement_direction = 0;
         bool net_validated = false;
         /*
          * 0 Is moving horizontally

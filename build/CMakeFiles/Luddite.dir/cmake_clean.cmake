@@ -25,7 +25,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Luddite.dir/src/S_Net_Send.cpp.obj"
   "CMakeFiles/Luddite.dir/src/S_Net_Update_Player.cpp.obj"
   "CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.obj"
-  "CMakeFiles/Luddite.dir/src/S_PlayerDirection.cpp.obj"
   "CMakeFiles/Luddite.dir/src/S_Projection.cpp.obj"
   "CMakeFiles/Luddite.dir/src/S_Scripts.cpp.obj"
   "CMakeFiles/Luddite.dir/src/S_Spawning.cpp.obj"

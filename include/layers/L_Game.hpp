@@ -19,7 +19,7 @@ public:
 private:
         void Step(float deltaTime, entt::registry& reg);
         void CopyGameState(entt::registry& from, entt::registry& to);
-        void CopyInputs(entt::registry& from, entt::registry& to);
+        void CopyInputs(entt::registry& from, entt::registry& to, bool overwrite = true);
         void CopyRenderingComponents(entt::registry& from, entt::registry& to);
         // std::array<Player, 256>* player_list;
 };

@@ -50,7 +50,7 @@ public:
 private:
         friend class L_Game;
         int AddPlayer(short_string name, bool is_local);
-        void AddPlayer(short_string name, ENetPeer* peer);
+        int AddPeerPlayer(short_string name, ENetPeer* peer);
         bool OnClientConnect(ENetPeer* peer);
         void OnClientDisconnect(ENetPeer* peer);
         void OnMessage(Message& msg, ENetPeer* peer);

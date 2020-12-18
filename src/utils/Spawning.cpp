@@ -35,8 +35,8 @@ Entity SpawnPlayer(Layer* L, uint8_t slot, bool local_player = false)
         player.AddComponent<C_Animation>();
         player.AddComponent<C_Simulation>();
         player.AddComponent<C_AnimationBehavior>(Characters::GetAnimationFilePath(Characters::eCharacter::character), Characters::GetAnimationBehaviorFilePath(Characters::eCharacter::character));
+        player.AddComponent<C_AnimationBehaviorState>();
         player.AddComponent<C_Player>(local_player, slot);
-        player.AddComponent<C_PlayerDirection>();
         player.AddComponent<C_PlayerInput>();
         player.AddScript<PlayerScript>();
         if (local_player)

@@ -5,11 +5,12 @@
 #include "ecs/Entity.hpp"
 #include "utils/cloning.hpp"
 #include "utils/spawning.hpp"
-#include <glm/gtx/compatibility.hpp>//lerp
 #include <glm/gtx/string_cast.hpp>
 
 #include "systems/Draw.hpp"
+#include "systems/TextRendering.hpp"
 #include "systems/Motion.hpp"
+#include "systems/TransformLerp.hpp"
 #include "systems/Gui.hpp"
 #include "systems/Networking.hpp"
 #include "systems/PlayerController.hpp"
@@ -19,21 +20,7 @@
 #include "systems/Tileset.hpp"
 #include "systems/LocalPlayerInput.hpp"
 
-#include "components/Position.hpp"
-#include "components/Velocity.hpp"
-#include "components/Drag.hpp"
-#include "components/Size.hpp"
-#include "components/DrawLayer.hpp"
-#include "components/Gui.hpp"
-#include "components/Player.hpp"
-#include "components/PlayerKeymap.hpp"
-#include "components/NativeScript.hpp"
-#include "components/Texture.hpp"
-#include "components/Tileset.hpp"
-#include "components/Simulation.hpp"
-#include "components/Networking.hpp"
-#include "components/Animation.hpp"
-#include "components/AnimationBehavior.hpp"
+#include "components/GameComponents.hpp"
 
 #include "events/Events.hpp"
 #include "events/Logging.hpp"
@@ -53,22 +40,24 @@
 
 void L_Game::init()
 {
-        systems.add<S_Motion>();
-        systems.add<S_Gui_Input>();
-        systems.add<S_Gui>();
-        systems.add<S_Net_Client>();
-        systems.add<S_Net_Host>();
-        systems.add<S_Net_Send>();
-        systems.add<S_Net_Update_Player>();
-        systems.add<S_LocalPlayerInput>();
-        systems.add<S_PlayerController>();
-        systems.add<S_Tileset>();
-        systems.add<S_Animation>();
-        systems.add<S_AnimationBehavior>();
-        systems.add<S_Draw>();
-        systems.add<S_Scripts_Events>();
-        systems.add<S_Scripts_Update>();
-        systems.add<S_Scripts_LateUpdate>();
+        systems.add<S_Motion,
+                    S_Transform_Lerp,
+                    S_Gui_Input,
+                    S_Gui,
+                    S_Net_Client,
+                    S_Net_Host,
+                    S_Net_Send,
+                    S_Net_Update_Player,
+                    S_LocalPlayerInput,
+                    S_PlayerController,
+                    S_Tileset,
+                    S_Animation,
+                    S_AnimationBehavior,
+                    S_Draw,
+                    S_Text_Rendering,
+                    S_Scripts_Events,
+                    S_Scripts_Update,
+                    S_Scripts_LateUpdate>();
         systems.configure(m_Registry, this);
 
 
@@ -87,15 +76,15 @@ void L_Game::init()
         m_Registry.set<C_PlayerSlots>();
         m_Registry.set<C_StoredFrames>();
 
-        FontAllocator::AddFakeUser("../assets/fonts/comic.ttf");
-        TextureAllocator::AddFakeUser("../assets/textures/wall.jpg");
-        auto e1 = CreateEntity();
-        e1.AddComponent<C_Position>(-25.0f, 0.0f);
-        e1.AddComponent<C_Velocity>(0.0f, 20.0f);
-        e1.AddComponent<C_DrawLayer>(DrawLayer::sprite);
-        e1.AddComponent<C_Size>(100.0f, 100.0f);
-        // e1.AddComponent<C_Texture>(TextureAllocator::Get("../assets/textures/wall.jpg"));
-        e1.AddComponent<C_Texture>(FontAllocator::Get("../assets/fonts/comic.ttf")->characters['S'].texture);
+        // FontAllocator::AddFakeUser("../assets/fonts/comic.ttf");
+        // TextureAllocator::AddFakeUser("../assets/textures/wall.jpg");
+        // auto e1 = CreateEntity();
+        // e1.AddComponent<C_Position>(-25.0f, 0.0f);
+        // e1.AddComponent<C_Velocity>(0.0f, 20.0f);
+        // e1.AddComponent<C_DrawLayer>(DrawLayer::sprite);
+        // e1.AddComponent<C_Size>(100.0f, 100.0f);
+        // // e1.AddComponent<C_Texture>(TextureAllocator::Get("../assets/textures/wall.jpg"));
+        // e1.AddComponent<C_Texture>(FontAllocator::Get("../assets/fonts/comic.ttf")->characters['S'].texture);
 
 
         auto& sf = m_Registry.ctx<C_StoredFrames>();
@@ -214,26 +203,10 @@ void L_Game::Step(float deltaTime, entt::registry& reg)
 
 void L_Game::render(float alpha)
 {
-        lerp_frame.view<C_Position>().each([this, alpha](auto Entity, C_Position &pos)
-        {
-                if (last_frame.valid(Entity) && last_frame.has<C_Position>(Entity))
-                {
-                        const auto &last_pos = last_frame.get<C_Position>(Entity).position;
-                        const auto &curr_pos = m_Registry.get<C_Position>(Entity).position;
-                        pos.position = glm::lerp(last_pos, curr_pos, alpha);
-                }
-        });
-        lerp_frame.view<C_Size>().each([this, alpha](auto Entity, C_Size &size)
-        {
-                if (last_frame.valid(Entity) && last_frame.has<C_Size>(Entity))
-                {
-                        const auto &last_size = last_frame.get<C_Size>(Entity).size;
-                        const auto &curr_size = m_Registry.get<C_Size>(Entity).size;
-                        size.size = glm::lerp(last_size, curr_size, alpha);
-                }
-        });
-        systems.update<S_Tileset> (alpha, lerp_frame);
-        systems.update<S_Draw>    (alpha, lerp_frame);
+        systems.update<S_Transform_Lerp> (last_frame, m_Registry, lerp_frame, alpha);
+        systems.update<S_Tileset>        (alpha, lerp_frame);
+        systems.update<S_Text_Rendering> (alpha, lerp_frame);
+        systems.update<S_Draw>           (alpha, lerp_frame);
 }
 
 
@@ -241,6 +214,7 @@ void L_Game::CopyGameState(entt::registry& from, entt::registry& to)
 {
         utils::copy_registry<C_Position,
                              C_Velocity,
+                             C_Child,
                              C_DrawLayer,
                              C_Size,
                              C_Texture,
@@ -248,6 +222,7 @@ void L_Game::CopyGameState(entt::registry& from, entt::registry& to)
                              C_Tileset,
                              C_Player,
                              C_PlayerInput,
+                             C_PlayerDirection,
                              //      C_PlayerKeymap,
                              C_Simulation,
                              C_NativeScript,

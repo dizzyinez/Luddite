@@ -7,6 +7,7 @@
 #include "ecs/Entity.hpp"
 
 #include "systems/Draw.hpp"
+#include "systems/TextRendering.hpp"
 #include "systems/Motion.hpp"
 #include "systems/Gui.hpp"
 #include "systems/Scripts.hpp"
@@ -23,6 +24,7 @@
 #include "components/PlayerKeymap.hpp"
 #include "components/NativeScript.hpp"
 #include "components/Texture.hpp"
+#include "components/text.hpp"
 
 #include "events/Events.hpp"
 #include "events/Logging.hpp"
@@ -38,50 +40,38 @@
 
 #include <iostream>
 
-
 void L_MainMenu::init()
 {
-        systems.add<S_Motion>();
-        systems.add<S_Gui_Input>();
-        systems.add<S_Gui>();
-        systems.add<S_Tileset>();
-        systems.add<S_Animation>();
-        systems.add<S_Draw>();
-        systems.add<S_Scripts_Events>();
-        systems.add<S_Scripts_Update>();
-        systems.add<S_Scripts_LateUpdate>();
+        systems.add<S_Motion,
+                    S_Gui_Input,
+                    S_Gui,
+                    S_Tileset,
+                    S_Animation,
+                    S_Draw,
+                    S_Text_Rendering,
+                    S_Scripts_Events,
+                    S_Scripts_Update,
+                    S_Scripts_LateUpdate>();
         systems.configure(m_Registry, this);
 
-        auto join = CreateEntity();
-        join.AddComponent<C_Position>();
-        join.AddComponent<C_Size>();
-        join.AddComponent<C_DrawLayer>(DrawLayer::gui);
-        join.AddComponent<C_Texture>(TextureAllocator::Get("../assets/textures/wall.jpg"));
-        join.AddComponent<C_Gui>();
-        join.AddComponent<C_Gui_Container>(
-                [](auto &Gui, auto &Gui_container) {
-                Gui_container.solver->addEditVariable(Gui.w, kiwi::strength::strong);
-                Gui_container.solver->addEditVariable(Gui.h, kiwi::strength::strong);
-                kiwi::Constraint constraints[] = {
-                        kiwi::Constraint {Gui.x == 55},
-                        kiwi::Constraint {Gui.y == 0},
-                        kiwi::Constraint {Gui.h <= 50},
-                        kiwi::Constraint {Gui.w <= 50}
-                };
-                for (auto& constraint : constraints)
-                        Gui_container.solver->addConstraint(constraint);
-                Gui_container.solver->updateVariables();
-        },
+        FontAllocator::AddFakeUser("../assets/fonts/ConcertOne-Regular.ttf");
 
-                [](auto &Gui, auto &Gui_container) {
-                Events::iterateAll<E_WindowResize>([&Gui, &Gui_container](auto e) {
-                        Gui_container.solver->suggestValue(Gui.w, e->width / 2);
-                        Gui_container.solver->suggestValue(Gui.h, e->height / 2);
-                        Gui_container.solver->updateVariables();
-                        return false;
-                });
-        });
-        join.AddComponent<C_Gui_Button>([this]() {
+        Entity join_button = CreateEntity();
+        join_button.AddComponent<C_Position>();
+        join_button.AddComponent<C_Size>();
+        join_button.AddComponent<C_DrawLayer>(DrawLayer::gui);
+        // join_button.AddComponent<C_Texture>(TextureAllocator::Get("../assets/textures/wall.jpg"));
+        join_button.AddComponent<C_Tint>(glm::vec4(1, 1, 0.5f, 1));
+        join_button.AddComponent<C_Gui>()
+        .set_text_scale(0.35, dimensions::HEIGHT)
+        .set_x(PercentConstriant(-0.1, dimensions::HEIGHT, edges::LEFT))
+        .set_y(PercentConstriant(0.4, dimensions::HEIGHT))
+        .set_w(PercentConstriant(0.3f, dimensions::HEIGHT))
+        .set_h(AspectConstraint(3.0f));
+        join_button.AddComponent<C_Gui_Clickable>()
+        .on_hover_over([](C_Gui& Gui, C_Gui_Clickable& Clickable) {Gui.transition(Transition(0.1f).set_x_offset(0.1f, dimensions::HEIGHT));})
+        .reset_on_hover_away(0.1f)
+        .on_click([this](C_Gui& Gui, C_Gui_Clickable& Clickable) {
                 client = std::make_shared<Client>();
                 client->l_main_menu = (L_MainMenu*)this;
                 if (client->Connect())
@@ -97,76 +87,51 @@ void L_MainMenu::init()
                 }
                 // Events::emit<E_Net_Host>(1234, 2);
         });
-
+        join_button.AddComponent<C_Text>("Join Game")
+        .set_alignment(text_align::RIGHT)
+        .set_vertical_alignment(text_align_vertical::CENTER);
 
         auto host = CreateEntity();
         host.AddComponent<C_Position>();
         host.AddComponent<C_Size>();
         host.AddComponent<C_DrawLayer>(DrawLayer::gui);
-        host.AddComponent<C_Texture>(TextureAllocator::Get("../assets/textures/wall.jpg"));
-        host.AddComponent<C_Gui>();
-        host.AddComponent<C_Gui_Container>(
-                [](auto &Gui, auto &Gui_container) {
-                Gui_container.solver->addEditVariable(Gui.w, kiwi::strength::strong);
-                Gui_container.solver->addEditVariable(Gui.h, kiwi::strength::strong);
-                kiwi::Constraint constraints[] = {
-                        kiwi::Constraint {Gui.x == 0},
-                        kiwi::Constraint {Gui.y == 0},
-                        kiwi::Constraint {Gui.h <= 50},
-                        kiwi::Constraint {Gui.w <= 50}
-                };
-                for (auto& constraint : constraints)
-                        Gui_container.solver->addConstraint(constraint);
-                Gui_container.solver->updateVariables();
-        },
-
-                [](auto &Gui, auto &Gui_container) {
-                Events::iterateAll<E_WindowResize>([&Gui, &Gui_container](auto e) {
-                        Gui_container.solver->suggestValue(Gui.w, e->width / 2);
-                        Gui_container.solver->suggestValue(Gui.h, e->height / 2);
-                        Gui_container.solver->updateVariables();
-                        return false;
-                });
-        });
-        host.AddComponent<C_Gui_Button>([this]() {
+        host.AddComponent<C_Tint>(glm::vec4(1, 1, 0.5f, 1));
+        host.AddComponent<C_Gui>()
+        .set_text_scale(0.35, dimensions::HEIGHT)
+        .set_x(PercentConstriant(-0.1, dimensions::HEIGHT, edges::LEFT))
+        .set_y(PercentConstriant(0.55, dimensions::HEIGHT))
+        .set_w(PercentConstriant(0.3f, dimensions::HEIGHT))
+        .set_h(AspectConstraint(3.0f));
+        host.AddComponent<C_Gui_Clickable>()
+        .on_hover_over([](C_Gui& Gui, C_Gui_Clickable& Clickable) {Gui.transition(Transition(0.1f).set_x_offset(0.1f, dimensions::HEIGHT));})
+        .reset_on_hover_away(0.1f)
+        .on_click([this](C_Gui& Gui, C_Gui_Clickable& Clickable) {
                 server = std::make_shared<Server>();
                 server->Start();
                 server->l_main_menu = (L_MainMenu*)this;
                 server->AddLocalPlayer(short_string{"Game host"});
                 // Events::emit<E_Net_Host>(1234, 2);
         });
+        host.AddComponent<C_Text>("Host Game")
+        .set_alignment(text_align::RIGHT)
+        .set_vertical_alignment(text_align_vertical::CENTER);
 
 
         auto start = CreateEntity();
         start.AddComponent<C_Position>();
         start.AddComponent<C_Size>();
         start.AddComponent<C_DrawLayer>(DrawLayer::gui);
-        start.AddComponent<C_Texture>(TextureAllocator::Get("../assets/textures/wall.jpg"));
-        start.AddComponent<C_Gui>();
-        start.AddComponent<C_Gui_Container>(
-                [](auto &Gui, auto &Gui_container) {
-                Gui_container.solver->addEditVariable(Gui.w, kiwi::strength::strong);
-                Gui_container.solver->addEditVariable(Gui.h, kiwi::strength::strong);
-                kiwi::Constraint constraints[] = {
-                        kiwi::Constraint {Gui.x == 110},
-                        kiwi::Constraint {Gui.y == 0},
-                        kiwi::Constraint {Gui.h <= 50},
-                        kiwi::Constraint {Gui.w <= 50}
-                };
-                for (auto& constraint : constraints)
-                        Gui_container.solver->addConstraint(constraint);
-                Gui_container.solver->updateVariables();
-        },
-
-                [](auto &Gui, auto &Gui_container) {
-                Events::iterateAll<E_WindowResize>([&Gui, &Gui_container](auto e) {
-                        Gui_container.solver->suggestValue(Gui.w, e->width / 2);
-                        Gui_container.solver->suggestValue(Gui.h, e->height / 2);
-                        Gui_container.solver->updateVariables();
-                        return false;
-                });
-        });
-        start.AddComponent<C_Gui_Button>([this]() {
+        start.AddComponent<C_Tint>(glm::vec4(1, 1, 0.5f, 1));
+        start.AddComponent<C_Gui>()
+        .set_text_scale(0.35, dimensions::HEIGHT)
+        .set_x(PercentConstriant(-0.1, dimensions::HEIGHT, edges::LEFT))
+        .set_y(PercentConstriant(0.7, dimensions::HEIGHT))
+        .set_w(PercentConstriant(0.3f, dimensions::HEIGHT))
+        .set_h(AspectConstraint(3.0f));
+        start.AddComponent<C_Gui_Clickable>()
+        .on_hover_over([](C_Gui& Gui, C_Gui_Clickable& Clickable) {Gui.transition(Transition(0.1f).set_x_offset(0.1f, dimensions::HEIGHT));})
+        .reset_on_hover_away(0.1f)
+        .on_click([this](C_Gui& Gui, C_Gui_Clickable& Clickable) {
                 if (server != nullptr)
                 {
                         Message msg;
@@ -180,39 +145,15 @@ void L_MainMenu::init()
                         // Events::emit<E_Net_Host>(1234, 2);
                 }
         });
-
-        // FontAllocator::AddFakeUser("../assets/fonts/comic.ttf");
-        TextureAllocator::AddFakeUser("../assets/textures/wall.jpg");
-        auto e1 = CreateEntity();
-        e1.AddComponent<C_Position>(-25.0f, 0.0f);
-        e1.AddComponent<C_Velocity>(0.0f, 0.0f);
-        e1.AddComponent<C_DrawLayer>(DrawLayer::sprite);
-        e1.AddComponent<C_Size>(100.0f, 100.0f);
-        // e1.AddComponent<C_Texture>(TextureAllocator::Get("../assets/textures/wall.jpg"));
-        e1.AddComponent<C_Texture>(FontAllocator::Get("../assets/fonts/comic.ttf")->characters['S'].texture);
+        start.AddComponent<C_Text>("Start Game")
+        .set_alignment(text_align::RIGHT)
+        .set_vertical_alignment(text_align_vertical::CENTER);
 }
 
 void L_MainMenu::handleEvents(float deltaTime)
 {
         systems.update<S_Gui_Input>(deltaTime, m_Registry);
         systems.update<S_Scripts_Events>(deltaTime, m_Registry);
-}
-
-
-template<typename T>
-void clone(const entt::registry &from, entt::registry &to) {
-        const auto *data = from.data<T>();
-        const auto size = from.size<T>();
-
-        if constexpr (ENTT_IS_EMPTY(T)) {
-                to.insert<T>(data, data + size);
-        }
-        else
-        {
-                const auto *raw = from.raw<T>();
-                // to.assign(data, data + size);
-                to.insert<T>(data, data + size, raw, raw + size);
-        }
 }
 
 void L_MainMenu::update(float deltaTime)
@@ -234,6 +175,7 @@ void L_MainMenu::render(float alpha)
 {
         systems.update<S_Tileset> (alpha, m_Registry);
         systems.update<S_Draw>    (alpha, m_Registry);
+        systems.update<S_Text_Rendering>(alpha, m_Registry);
 }
 void L_MainMenu::clean()
 {

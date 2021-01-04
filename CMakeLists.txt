@@ -7,8 +7,8 @@ include_directories(include)
 
 SET (CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-SET(CMAKE_MODULE_LINKER_FLAGS "-m32 -Wl,--disable-stdcall-fixup ${CMAKE_SHARED_LINKER_FLAGS}")
-#SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static")
+# SET(CMAKE_MODULE_LINKER_FLAGS "-m32 -Wl,--disable-stdcall-fixup ${CMAKE_SHARED_LINKER_FLAGS}")
+# SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fuse-ld=gold")
 set(CMAKE_CXX_STANDARD 17)
 
 file(GLOB_RECURSE SRC_FILES "src/*.c" "src/*.cc" "src/*.cpp")
@@ -55,6 +55,7 @@ find_library_wrapper(freetype libfreetype)
 find_library_wrapper(enet libenet.a)
 find_library_wrapper(winsock ws2_32)
 find_library_wrapper(winmedia winmm)
+
 
 target_link_libraries(${PROJECT_NAME}
 ${GLFW}

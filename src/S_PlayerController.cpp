@@ -11,7 +11,7 @@
 void S_PlayerController::update(float deltaTime, entt::registry &reg)
 {
         reg.view<C_Player>().each([&reg](auto Entity, auto &player) {
-                auto [input, vel] = reg.get<C_PlayerInput, C_Velocity>(Entity);
+                auto [input, player_dir, vel] = reg.get<C_PlayerInput, C_PlayerDirection, C_Velocity>(Entity);
                 //set the movement direction of the player based on input.
                 glm::vec2 dir = input.direction();
                 vel.velocity.x = dir.x * 450;
@@ -21,6 +21,6 @@ void S_PlayerController::update(float deltaTime, entt::registry &reg)
                 //set the integer direction of the player
                 auto anim_dir = input.animation_direction();
                 if (anim_dir != -1)
-                        input.movement_direction = anim_dir;
+                        player_dir.movement_direction = anim_dir;
         });
 }

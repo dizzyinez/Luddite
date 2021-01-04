@@ -10,7 +10,7 @@ struct C_Position
         C_Position() = default;
         C_Position(float x, float y) : position(x, y, 0.0f) {
         }
-        C_Position(glm::vec3 &pos) : position(pos) {
+        C_Position(glm::vec3 pos) : position(pos) {
         }
 
         float getX()

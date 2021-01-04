@@ -15,7 +15,7 @@ public:
                 {
                         if (!it->second.expired())
                         {
-                                std::cout << "resource already loaded at path: " << file_path << std::endl;
+                                // std::cout << "resource already loaded at path: " << file_path << std::endl;
                                 return std::shared_ptr<T>(it->second);
                         }
                         else

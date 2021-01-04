@@ -42,16 +42,16 @@ void Renderer::Init()
 
         // updateMatricies(1024, 768);
 }
-void Renderer::RenderSquare(const glm::vec2& position, const glm::vec2& size) //TODO: add color
+void Renderer::RenderRect(const glm::vec2& position, const glm::vec2& size, const glm::vec4& color) //TODO: add color
 {
         CheckGLError();
-        texture_batch->DrawQuad(position, size);
+        texture_batch->DrawQuad(position, size, color);
 }
 
-void Renderer::RenderTexture(const glm::vec2& position, const glm::vec2& size, uint32_t texture_id, const glm::vec4& tex_coords) //TODO: add color
+void Renderer::RenderTexture(const glm::vec2& position, const glm::vec2& size, uint32_t texture_id, const glm::vec4& tex_coords, const glm::vec4& color)
 {
         CheckGLError();
-        texture_batch->DrawQuad(position, size, texture_id, tex_coords);
+        texture_batch->DrawQuad(position, size, texture_id, tex_coords, color);
 }
 
 void Renderer::RenderSprite(const glm::vec2& position, const glm::vec2& size, uint32_t texture_id, const glm::vec4& tex_coords, const glm::uvec4& colors)

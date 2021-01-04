@@ -18,6 +18,7 @@ void FontAllocator::Initialize()
 template <>
 std::shared_ptr<Font> ResourceAllocator<Font>::Allocate(std::string file_path)
 {
+        std::cout << "rendering font at path: " << file_path << std::endl;
         Font font(file_path); //should set the name to the actual name not the path
         FT_Face face;
         if (FT_New_Face(ft, file_path.c_str(), 0, &face))
@@ -45,7 +46,7 @@ std::shared_ptr<Font> ResourceAllocator<Font>::Allocate(std::string file_path)
                 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
                 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
                 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-                GLint swizzle_mask[] = {GL_ZERO, GL_ZERO, GL_ZERO, GL_RED};
+                GLint swizzle_mask[] = {GL_ONE, GL_ONE, GL_ONE, GL_RED};
                 glTexParameteriv(GL_TEXTURE_2D, GL_TEXTURE_SWIZZLE_RGBA, swizzle_mask);
                 glTexImage2D(
                         GL_TEXTURE_2D,
@@ -81,6 +82,8 @@ std::shared_ptr<Font> ResourceAllocator<Font>::Allocate(std::string file_path)
                 font.characters.insert(std::make_pair(c, character));
         }
         glBindTexture(GL_TEXTURE_2D, 0);
+        FT_Done_Face(face);
+        // FT_Done_FreeType(ft);
 
         return std::make_shared<Font>(font);
 }

@@ -15,7 +15,7 @@ public:
         }
 
         template <typename T>
-        bool HasComponent()
+        bool HasComponent() const
         {
                 return m_Layer->m_Registry.has<T>(m_EntityId);
         }
@@ -25,7 +25,7 @@ public:
                 return m_Layer->m_Registry.emplace<T>(m_EntityId, std::forward<Args>(args)...);
         }
         template <typename T>
-        T& GetComponent()
+        T& GetComponent() const
         {
                 return m_Layer->m_Registry.get<T>(m_EntityId);
         }
@@ -35,7 +35,7 @@ public:
                 return m_Layer->m_Registry.remove<T>(m_EntityId);
         }
         template <typename T>
-        T& GetContext()
+        T& GetContext() const
         {
                 return m_Layer->m_Registry.ctx<T>();
         }

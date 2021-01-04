@@ -38,6 +38,7 @@ Entity SpawnPlayer(Layer* L, uint8_t slot, bool local_player = false)
         player.AddComponent<C_AnimationBehaviorState>();
         player.AddComponent<C_Player>(local_player, slot);
         player.AddComponent<C_PlayerInput>();
+        player.AddComponent<C_PlayerDirection>();
         player.AddScript<PlayerScript>();
         if (local_player)
         {

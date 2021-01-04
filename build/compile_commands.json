@@ -146,8 +146,18 @@
 },
 {
   "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\S_TextRendering.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\S_TextRendering.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/S_TextRendering.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
   "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\S_Tileset.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\S_Tileset.cpp",
   "file": "R:/Dev/games/Luddite/Luddite/src/S_Tileset.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\S_TransformLerp.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\S_TransformLerp.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/S_TransformLerp.cpp"
 },
 {
   "directory": "R:/Dev/games/Luddite/Luddite/build",
@@ -183,6 +193,11 @@
   "directory": "R:/Dev/games/Luddite/Luddite/build",
   "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\gason.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\gason.cpp",
   "file": "R:/Dev/games/Luddite/Luddite/src/gason.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\gui\\constraints.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\gui\\constraints.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/gui/constraints.cpp"
 },
 {
   "directory": "R:/Dev/games/Luddite/Luddite/build",

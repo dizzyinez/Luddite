@@ -79,12 +79,20 @@ public:
                 systems.emplace(T::systemID(), system);
         }
 
+
         template <typename T, typename ... Args>
         std::shared_ptr<T> add(Args && ... args)
         {
                 std::shared_ptr<T> t(new T(std::forward<Args>(args) ...));
                 add(t);
                 return t;
+        }
+
+        template <typename T, typename S, typename ... Ts, typename ... Args>
+        void add(Args && ... args)
+        {
+                add<T>(std::forward<Args>(args) ...);
+                add<S, Ts...>(std::forward<Args>(args) ...);
         }
 
         template <typename T, typename ... Args>

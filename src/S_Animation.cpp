@@ -129,12 +129,13 @@ void run_animation_behavior_increment(entt::registry& reg, entt::entity Entity)
                         if (reg.has<C_PlayerInput>(Entity))
                         {
                                 C_PlayerInput &pi = reg.get<C_PlayerInput>(Entity);
+                                C_PlayerDirection &pd = reg.get<C_PlayerDirection>(Entity);
                                 put_input_on_lua_stack(L, pi);
                                 if (abs.rotates)
                                         if (abs.points_towards_mouse)
                                                 anim.direction = pi.mouse_direction;
                                         else
-                                                anim.direction = pi.movement_direction;
+                                                anim.direction = pd.movement_direction;
                         }
                         if (CheckLua(L, lua_pcall(L, 0, 0, 0)))
                         {

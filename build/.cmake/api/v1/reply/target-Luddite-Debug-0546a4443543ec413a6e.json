@@ -35,7 +35,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 59,
+				"line" : 60,
 				"parent" : 0
 			},
 			{
@@ -138,7 +138,10 @@
 				37,
 				38,
 				39,
-				40
+				40,
+				41,
+				42,
+				43
 			]
 		}
 	],
@@ -260,16 +263,16 @@
 				37,
 				38,
 				39,
-				40
+				40,
+				41,
+				42,
+				43
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				41,
-				42,
-				43,
 				44,
 				45,
 				46,
@@ -393,7 +396,17 @@
 				164,
 				165,
 				166,
-				167
+				167,
+				168,
+				169,
+				170,
+				171,
+				172,
+				173,
+				174,
+				175,
+				176,
+				177
 			]
 		}
 	],
@@ -576,7 +589,19 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "src/S_TextRendering.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "src/S_Tileset.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/S_TransformLerp.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -619,6 +644,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/gason.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/gui/constraints.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -667,6 +698,16 @@
 		},
 		{
 			"backtrace" : 1,
+			"path" : "include/color.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/components/Ancestry.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
 			"path" : "include/components/Animation.hpp",
 			"sourceGroupIndex" : 1
 		},
@@ -683,6 +724,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "include/components/DrawLayer.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/components/GameComponents.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -853,6 +899,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "include/gason.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/gui/constraints.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -1257,7 +1308,17 @@
 		},
 		{
 			"backtrace" : 1,
+			"path" : "include/systems/TextRendering.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
 			"path" : "include/systems/Tileset.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/systems/TransformLerp.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -1268,6 +1329,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "include/utils/cloning.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/utils/lerp.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{

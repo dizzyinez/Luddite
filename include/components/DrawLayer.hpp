@@ -12,9 +12,10 @@ struct C_DrawLayer
 {
         DrawLayer layer {DrawLayer::sprite};
         C_DrawLayer() = default;
-        C_DrawLayer(DrawLayer l) : layer(l)
+        C_DrawLayer(DrawLayer l, int depth_ = 0) : layer(l), depth(depth_)
         {
         }
+        int depth;
 };
 
 #endif

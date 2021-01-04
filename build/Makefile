@@ -924,6 +924,33 @@ src/S_Spawning.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Spawning.cpp.s
 .PHONY : src/S_Spawning.cpp.s
 
+src/S_TextRendering.obj: src/S_TextRendering.cpp.obj
+
+.PHONY : src/S_TextRendering.obj
+
+# target to build an object file
+src/S_TextRendering.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_TextRendering.cpp.obj
+.PHONY : src/S_TextRendering.cpp.obj
+
+src/S_TextRendering.i: src/S_TextRendering.cpp.i
+
+.PHONY : src/S_TextRendering.i
+
+# target to preprocess a source file
+src/S_TextRendering.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_TextRendering.cpp.i
+.PHONY : src/S_TextRendering.cpp.i
+
+src/S_TextRendering.s: src/S_TextRendering.cpp.s
+
+.PHONY : src/S_TextRendering.s
+
+# target to generate assembly for a file
+src/S_TextRendering.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_TextRendering.cpp.s
+.PHONY : src/S_TextRendering.cpp.s
+
 src/S_Tileset.obj: src/S_Tileset.cpp.obj
 
 .PHONY : src/S_Tileset.obj
@@ -950,6 +977,33 @@ src/S_Tileset.s: src/S_Tileset.cpp.s
 src/S_Tileset.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_Tileset.cpp.s
 .PHONY : src/S_Tileset.cpp.s
+
+src/S_TransformLerp.obj: src/S_TransformLerp.cpp.obj
+
+.PHONY : src/S_TransformLerp.obj
+
+# target to build an object file
+src/S_TransformLerp.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_TransformLerp.cpp.obj
+.PHONY : src/S_TransformLerp.cpp.obj
+
+src/S_TransformLerp.i: src/S_TransformLerp.cpp.i
+
+.PHONY : src/S_TransformLerp.i
+
+# target to preprocess a source file
+src/S_TransformLerp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_TransformLerp.cpp.i
+.PHONY : src/S_TransformLerp.cpp.i
+
+src/S_TransformLerp.s: src/S_TransformLerp.cpp.s
+
+.PHONY : src/S_TransformLerp.s
+
+# target to generate assembly for a file
+src/S_TransformLerp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/S_TransformLerp.cpp.s
+.PHONY : src/S_TransformLerp.cpp.s
 
 src/Server.obj: src/Server.cpp.obj
 
@@ -1139,6 +1193,33 @@ src/gason.s: src/gason.cpp.s
 src/gason.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/gason.cpp.s
 .PHONY : src/gason.cpp.s
+
+src/gui/constraints.obj: src/gui/constraints.cpp.obj
+
+.PHONY : src/gui/constraints.obj
+
+# target to build an object file
+src/gui/constraints.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/gui/constraints.cpp.obj
+.PHONY : src/gui/constraints.cpp.obj
+
+src/gui/constraints.i: src/gui/constraints.cpp.i
+
+.PHONY : src/gui/constraints.i
+
+# target to preprocess a source file
+src/gui/constraints.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/gui/constraints.cpp.i
+.PHONY : src/gui/constraints.cpp.i
+
+src/gui/constraints.s: src/gui/constraints.cpp.s
+
+.PHONY : src/gui/constraints.s
+
+# target to generate assembly for a file
+src/gui/constraints.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/gui/constraints.cpp.s
+.PHONY : src/gui/constraints.cpp.s
 
 src/loadShader.obj: src/loadShader.cpp.obj
 
@@ -1344,9 +1425,15 @@ help:
 	@echo ... src/S_Spawning.obj
 	@echo ... src/S_Spawning.i
 	@echo ... src/S_Spawning.s
+	@echo ... src/S_TextRendering.obj
+	@echo ... src/S_TextRendering.i
+	@echo ... src/S_TextRendering.s
 	@echo ... src/S_Tileset.obj
 	@echo ... src/S_Tileset.i
 	@echo ... src/S_Tileset.s
+	@echo ... src/S_TransformLerp.obj
+	@echo ... src/S_TransformLerp.i
+	@echo ... src/S_TransformLerp.s
 	@echo ... src/Server.obj
 	@echo ... src/Server.i
 	@echo ... src/Server.s
@@ -1368,6 +1455,9 @@ help:
 	@echo ... src/gason.obj
 	@echo ... src/gason.i
 	@echo ... src/gason.s
+	@echo ... src/gui/constraints.obj
+	@echo ... src/gui/constraints.i
+	@echo ... src/gui/constraints.s
 	@echo ... src/loadShader.obj
 	@echo ... src/loadShader.i
 	@echo ... src/loadShader.s

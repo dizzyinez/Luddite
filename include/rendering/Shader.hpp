@@ -7,12 +7,13 @@
 class Shader
 {
 public:
-Shader();
-bool Load(const char *vertex_file_path, const char *fragment_file_path);
-unsigned int GetUniformLocation(const char* uniform);
-void Bind();
+        Shader();
+        bool Load(const char *vertex_file_path, const char *fragment_file_path);
+        unsigned int GetUniformLocation(const char* uniform);
+        void Bind();
+        bool Loaded() {return glID != 0;}
 private:
-unsigned int glID;
+        unsigned int glID = 0;
 };
 
 #endif

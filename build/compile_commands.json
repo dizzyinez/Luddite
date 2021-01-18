@@ -26,6 +26,11 @@
 },
 {
   "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\L_CharacterEditor.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\L_CharacterEditor.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/L_CharacterEditor.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
   "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\L_Game.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\L_Game.cpp",
   "file": "R:/Dev/games/Luddite/Luddite/src/L_Game.cpp"
 },
@@ -186,6 +191,11 @@
 },
 {
   "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\devtools\\CharacterRenderer.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\devtools\\CharacterRenderer.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/devtools/CharacterRenderer.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
   "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\game.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\game.cpp",
   "file": "R:/Dev/games/Luddite/Luddite/src/game.cpp"
 },
@@ -218,5 +228,10 @@
   "directory": "R:/Dev/games/Luddite/Luddite/build",
   "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\utils\\Spawning.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\utils\\Spawning.cpp",
   "file": "R:/Dev/games/Luddite/Luddite/src/utils/Spawning.cpp"
+},
+{
+  "directory": "R:/Dev/games/Luddite/Luddite/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE  @CMakeFiles/Luddite.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Luddite.dir\\src\\utils\\loading_screen.cpp.obj -c R:\\Dev\\games\\Luddite\\Luddite\\src\\utils\\loading_screen.cpp",
+  "file": "R:/Dev/games/Luddite/Luddite/src/utils/loading_screen.cpp"
 }
 ]

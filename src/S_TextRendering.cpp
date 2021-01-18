@@ -33,10 +33,13 @@ void S_Text_Rendering::update(float deltaTime, entt::registry &reg)
                         //instantiate new characters
                         for (auto c = text.text.begin(); c != text.text.end(); c++)
                         {
+                                Character character = font->characters[*c];
+                                auto char_entity = reg.create();
+                                reg.emplace<C_Size>(char_entity, character.Size.x * text.scale, character.Size.y * text.scale);
+                                reg.emplace<C_Position>(char_entity);
+                                reg.emplace<C_Child>(char_entity, Entity);
                                 if (*c != ' ')
                                 {
-                                        Character character = font->characters[*c];
-                                        auto char_entity = reg.create();
                                         reg.emplace<C_Texture>(char_entity, character.texture);
                                         //default black text
                                         reg.emplace<C_Tint>(char_entity, glm::vec4(0, 0, 0, 1));
@@ -44,21 +47,15 @@ void S_Text_Rendering::update(float deltaTime, entt::registry &reg)
                                         C_DrawLayer& parent_draw_layer = reg.get<C_DrawLayer>(Entity);
                                         //put the text on the same layer as it's parent and increase it's depth
                                         reg.emplace<C_DrawLayer>(char_entity, parent_draw_layer.layer, parent_draw_layer.depth + 1);
-                                        reg.emplace<C_Size>(char_entity, character.Size.x * text.scale, character.Size.y * text.scale);
-                                        reg.emplace<C_Position>(char_entity);
-                                        reg.emplace<C_Child>(char_entity, Entity);
-                                        text.character_entities.push_back(char_entity);
                                 }
-                                else
-                                {
-                                        text.character_entities.push_back(entt::null);
-                                }
+                                text.character_entities.push_back(char_entity);
                         }
                 }
                 if (text.recalculate_position_flag)
                 {
                         text.recalculate_position_flag = false;
                         glm::vec2 origin = glm::vec2(0.0f, LINE_SPACING * text.scale);
+                        text.line_start_character_indicies.clear();
 
                         std::vector<entt::entity> curr_line;
                         std::vector<entt::entity> curr_word;
@@ -71,28 +68,32 @@ void S_Text_Rendering::update(float deltaTime, entt::registry &reg)
                                 text.max_length = reg.get<C_Size>(Entity).getW();
 
                         //position all of the characters horizontally, and vertically (relative to eachother)
+                        if (text.text.size() > 0)
+                                text.line_start_character_indicies.push_back(0);
                         for (int i = 0; i < text.text.size(); i++)
                         {
                                 char c = text.text.at(i);
                                 Character& character = font->characters[c];
 
                                 entt::entity char_entity = text.character_entities.at(i);
-                                if (char_entity != entt::null)
+                                //recalculate the size and initial position of the character
+                                if (c == ' ')
                                 {
-                                        //recalculate the size and initial position of the character
-                                        reg.get<C_Size>(char_entity).size = glm::vec2(character.Size.x * text.scale, character.Size.y * text.scale);
-                                        reg.get<C_Child>(char_entity).offset = glm::vec3(
-                                                origin.x + character.Bearing.x * text.scale,
-                                                origin.y - character.Bearing.y * text.scale,
-                                                0.0f);
-
-                                        curr_line.push_back(char_entity);
-                                        curr_word.push_back(char_entity);
-                                        origin.x += (character.Advance >> 6) * text.scale;
+                                        reg.get<C_Size>(char_entity).size = glm::vec2((60.0f) * text.scale, character.Size.y * text.scale);
                                 }
                                 else
                                 {
-                                        origin.x += (character.Advance >> 6) * text.scale;
+                                        reg.get<C_Size>(char_entity).size = glm::vec2(character.Size.x * text.scale, character.Size.y * text.scale);
+                                }
+                                reg.get<C_Child>(char_entity).offset = glm::vec3(
+                                        origin.x + character.Bearing.x * text.scale,
+                                        origin.y - character.Bearing.y * text.scale,
+                                        0.0f);
+                                curr_line.push_back(char_entity);
+                                curr_word.push_back(char_entity);
+                                origin.x += (character.Advance >> 6) * text.scale;
+                                if (c == ' ')
+                                {
                                         //restart the word if there's a space
                                         word_start_origin = origin.x;
                                         curr_word.clear();
@@ -168,6 +169,7 @@ void S_Text_Rendering::update(float deltaTime, entt::registry &reg)
                                                 curr_line.push_back(character_in_word);
                                         }
                                         word_start_origin = origin.x;
+                                        text.line_start_character_indicies.push_back(i - curr_word.size() + 1);
                                         curr_word.clear();
                                 }
                         }
@@ -191,12 +193,46 @@ void S_Text_Rendering::update(float deltaTime, entt::registry &reg)
                                         vertical_offset = (reg.get<C_Size>(Entity).getH() - vertical_text_size) * 0.5f;
                                 break;
                         }
-
+                        text.vertical_offset = vertical_offset;
                         for (entt::entity character_entity : text.character_entities)
                         {
-                                if (character_entity != entt::null)
-                                        reg.get<C_Child>(character_entity).offset.y += vertical_offset;
+                                reg.get<C_Child>(character_entity).offset.y += vertical_offset;
+                                if (reg.has<C_Tint>(character_entity))
+                                        reg.get<C_Tint>(character_entity).tint = text.color;
                         }
+                }
+                if (text.can_edit && text.selected)
+                {
+                        reg.get<C_Size>(text.cursor).size = glm::vec2(std::max(0.05f * LINE_SPACING * text.scale, 3.0f), 0.9f * LINE_SPACING * text.scale);
+                        // reg.get<C_Size>(text.cursor).size = glm::vec2(2.0f, 0.85f * LINE_SPACING * text.scale);
+                        //get the line the cursor is on
+                        C_Child& cursor_child = reg.get<C_Child>(text.cursor);
+                        int line = -1;
+                        for (int index : text.line_start_character_indicies)
+                                if (text.cursor_position >= index)
+                                        line++;
+                                else
+                                        break;
+                        if (text.cursor_position == text.character_entities.size())
+                        {
+                                C_Child& character_child = reg.get<C_Child>(text.character_entities.back());
+                                C_Size& character_size = reg.get<C_Size>(text.character_entities.back());
+                                cursor_child.offset.x = character_child.offset.x + character_size.getW();
+                        }
+                        else
+                        {
+                                C_Child& character_child = reg.get<C_Child>(text.character_entities.at(text.cursor_position));
+                                cursor_child.offset.x = floor(character_child.offset.x);
+                        }
+                        cursor_child.offset.y = (LINE_SPACING * text.scale) * ((float)line + 0.15f) + text.vertical_offset;
+
+
+
+                        // reg.get<C_Position>.cursor
+                }
+                else
+                {
+                        reg.get<C_Size>(text.cursor).size = glm::vec2(0, 0);
                 }
         }
 }

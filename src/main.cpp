@@ -13,12 +13,15 @@
 #include "layers/L_Base.hpp"
 #include "layers/L_MainMenu.hpp"
 #include "layers/L_Game.hpp"
+#include "layers/L_CharacterEditor.hpp"
 #include <enet/enet.h>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
 #include "data/FontAllocator.hpp"
+
+#include "utils/loading_screen.hpp"
 
 using namespace glm;
 
@@ -79,6 +82,7 @@ int main(int argc, char *argv[])
         //init
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        utils::load_screen::initialize();
 
         // Dark blue background
         glClearColor(0.0f, 0.6f, 0.6f, 0.0f);
@@ -90,7 +94,8 @@ int main(int argc, char *argv[])
         if (Game::Init(window))
         {
                 Game::PushLayer(new L_Base());
-                Game::PushLayer(new L_MainMenu());
+                // Game::PushLayer(new L_MainMenu());
+                Game::PushLayer(new L_CharacterEditor());
 
                 // double time;
                 double accumulator = 0.0;
@@ -121,6 +126,7 @@ int main(int argc, char *argv[])
                                 // std::cout << deltaTime << " > " << SECONDS_PER_UPDATE << " FPS: " <<int(1.0f / deltaTime) << std::endl;
                                 glfwPollEvents();
                                 Game::Update(SECONDS_PER_UPDATE);
+                                glfwGetWindowSize(Game::window, &Game::window_width, &Game::window_height);
                                 accumulator -= SECONDS_PER_UPDATE;
                         }
                         // std::cout << "render accum: " << render_accumulator << std::endl;

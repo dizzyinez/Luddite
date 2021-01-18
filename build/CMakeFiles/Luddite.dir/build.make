@@ -145,10 +145,24 @@ CMakeFiles/Luddite.dir/src/L_Base.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luddite.dir/src/L_Base.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S R:\Dev\games\Luddite\Luddite\src\L_Base.cpp -o CMakeFiles\Luddite.dir\src\L_Base.cpp.s
 
+CMakeFiles/Luddite.dir/src/L_CharacterEditor.cpp.obj: CMakeFiles/Luddite.dir/flags.make
+CMakeFiles/Luddite.dir/src/L_CharacterEditor.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
+CMakeFiles/Luddite.dir/src/L_CharacterEditor.cpp.obj: ../src/L_CharacterEditor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Luddite.dir/src/L_CharacterEditor.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\L_CharacterEditor.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\L_CharacterEditor.cpp
+
+CMakeFiles/Luddite.dir/src/L_CharacterEditor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Luddite.dir/src/L_CharacterEditor.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E R:\Dev\games\Luddite\Luddite\src\L_CharacterEditor.cpp > CMakeFiles\Luddite.dir\src\L_CharacterEditor.cpp.i
+
+CMakeFiles/Luddite.dir/src/L_CharacterEditor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luddite.dir/src/L_CharacterEditor.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S R:\Dev\games\Luddite\Luddite\src\L_CharacterEditor.cpp -o CMakeFiles\Luddite.dir\src\L_CharacterEditor.cpp.s
+
 CMakeFiles/Luddite.dir/src/L_Game.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/L_Game.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/L_Game.cpp.obj: ../src/L_Game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Luddite.dir/src/L_Game.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Luddite.dir/src/L_Game.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\L_Game.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\L_Game.cpp
 
 CMakeFiles/Luddite.dir/src/L_Game.cpp.i: cmake_force
@@ -162,7 +176,7 @@ CMakeFiles/Luddite.dir/src/L_Game.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.obj: ../src/L_MainMenu.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\L_MainMenu.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\L_MainMenu.cpp
 
 CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.i: cmake_force
@@ -176,7 +190,7 @@ CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/L_Networking.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/L_Networking.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/L_Networking.cpp.obj: ../src/L_Networking.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Luddite.dir/src/L_Networking.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Luddite.dir/src/L_Networking.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\L_Networking.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\L_Networking.cpp
 
 CMakeFiles/Luddite.dir/src/L_Networking.cpp.i: cmake_force
@@ -190,7 +204,7 @@ CMakeFiles/Luddite.dir/src/L_Networking.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/Layer.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/Layer.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/Layer.cpp.obj: ../src/Layer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Luddite.dir/src/Layer.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Luddite.dir/src/Layer.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\Layer.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\Layer.cpp
 
 CMakeFiles/Luddite.dir/src/Layer.cpp.i: cmake_force
@@ -204,7 +218,7 @@ CMakeFiles/Luddite.dir/src/Layer.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/PacketDefinitions.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/PacketDefinitions.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/PacketDefinitions.cpp.obj: ../src/PacketDefinitions.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Luddite.dir/src/PacketDefinitions.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Luddite.dir/src/PacketDefinitions.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\PacketDefinitions.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\PacketDefinitions.cpp
 
 CMakeFiles/Luddite.dir/src/PacketDefinitions.cpp.i: cmake_force
@@ -218,7 +232,7 @@ CMakeFiles/Luddite.dir/src/PacketDefinitions.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/R_Font.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/R_Font.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/R_Font.cpp.obj: ../src/R_Font.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Luddite.dir/src/R_Font.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Luddite.dir/src/R_Font.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\R_Font.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\R_Font.cpp
 
 CMakeFiles/Luddite.dir/src/R_Font.cpp.i: cmake_force
@@ -232,7 +246,7 @@ CMakeFiles/Luddite.dir/src/R_Font.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/R_Json.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/R_Json.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/R_Json.cpp.obj: ../src/R_Json.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Luddite.dir/src/R_Json.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Luddite.dir/src/R_Json.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\R_Json.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\R_Json.cpp
 
 CMakeFiles/Luddite.dir/src/R_Json.cpp.i: cmake_force
@@ -246,7 +260,7 @@ CMakeFiles/Luddite.dir/src/R_Json.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/R_Textures.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/R_Textures.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/R_Textures.cpp.obj: ../src/R_Textures.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Luddite.dir/src/R_Textures.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Luddite.dir/src/R_Textures.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\R_Textures.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\R_Textures.cpp
 
 CMakeFiles/Luddite.dir/src/R_Textures.cpp.i: cmake_force
@@ -260,7 +274,7 @@ CMakeFiles/Luddite.dir/src/R_Textures.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/Renderer.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/Renderer.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/Renderer.cpp.obj: ../src/Renderer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Luddite.dir/src/Renderer.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Luddite.dir/src/Renderer.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\Renderer.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\Renderer.cpp
 
 CMakeFiles/Luddite.dir/src/Renderer.cpp.i: cmake_force
@@ -274,7 +288,7 @@ CMakeFiles/Luddite.dir/src/Renderer.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/S_Animation.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Animation.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/S_Animation.cpp.obj: ../src/S_Animation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Luddite.dir/src/S_Animation.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Luddite.dir/src/S_Animation.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\S_Animation.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\S_Animation.cpp
 
 CMakeFiles/Luddite.dir/src/S_Animation.cpp.i: cmake_force
@@ -288,7 +302,7 @@ CMakeFiles/Luddite.dir/src/S_Animation.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/S_AnimationBehavior.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_AnimationBehavior.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/S_AnimationBehavior.cpp.obj: ../src/S_AnimationBehavior.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Luddite.dir/src/S_AnimationBehavior.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Luddite.dir/src/S_AnimationBehavior.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\S_AnimationBehavior.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\S_AnimationBehavior.cpp
 
 CMakeFiles/Luddite.dir/src/S_AnimationBehavior.cpp.i: cmake_force
@@ -302,7 +316,7 @@ CMakeFiles/Luddite.dir/src/S_AnimationBehavior.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/S_Draw.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Draw.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/S_Draw.cpp.obj: ../src/S_Draw.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Luddite.dir/src/S_Draw.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Luddite.dir/src/S_Draw.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\S_Draw.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\S_Draw.cpp
 
 CMakeFiles/Luddite.dir/src/S_Draw.cpp.i: cmake_force
@@ -316,7 +330,7 @@ CMakeFiles/Luddite.dir/src/S_Draw.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/S_Gui.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Gui.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/S_Gui.cpp.obj: ../src/S_Gui.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Luddite.dir/src/S_Gui.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Luddite.dir/src/S_Gui.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\S_Gui.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\S_Gui.cpp
 
 CMakeFiles/Luddite.dir/src/S_Gui.cpp.i: cmake_force
@@ -330,7 +344,7 @@ CMakeFiles/Luddite.dir/src/S_Gui.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/S_LocalPlayerInput.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_LocalPlayerInput.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/S_LocalPlayerInput.cpp.obj: ../src/S_LocalPlayerInput.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Luddite.dir/src/S_LocalPlayerInput.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Luddite.dir/src/S_LocalPlayerInput.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\S_LocalPlayerInput.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\S_LocalPlayerInput.cpp
 
 CMakeFiles/Luddite.dir/src/S_LocalPlayerInput.cpp.i: cmake_force
@@ -344,7 +358,7 @@ CMakeFiles/Luddite.dir/src/S_LocalPlayerInput.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/S_Logging.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Logging.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/S_Logging.cpp.obj: ../src/S_Logging.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Luddite.dir/src/S_Logging.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Luddite.dir/src/S_Logging.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\S_Logging.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\S_Logging.cpp
 
 CMakeFiles/Luddite.dir/src/S_Logging.cpp.i: cmake_force
@@ -358,7 +372,7 @@ CMakeFiles/Luddite.dir/src/S_Logging.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/S_Motion.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Motion.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/S_Motion.cpp.obj: ../src/S_Motion.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Luddite.dir/src/S_Motion.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/Luddite.dir/src/S_Motion.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\S_Motion.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\S_Motion.cpp
 
 CMakeFiles/Luddite.dir/src/S_Motion.cpp.i: cmake_force
@@ -372,7 +386,7 @@ CMakeFiles/Luddite.dir/src/S_Motion.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/S_Net_Client.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Net_Client.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/S_Net_Client.cpp.obj: ../src/S_Net_Client.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/Luddite.dir/src/S_Net_Client.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/Luddite.dir/src/S_Net_Client.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\S_Net_Client.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\S_Net_Client.cpp
 
 CMakeFiles/Luddite.dir/src/S_Net_Client.cpp.i: cmake_force
@@ -386,7 +400,7 @@ CMakeFiles/Luddite.dir/src/S_Net_Client.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/S_Net_Host.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Net_Host.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/S_Net_Host.cpp.obj: ../src/S_Net_Host.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/Luddite.dir/src/S_Net_Host.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/Luddite.dir/src/S_Net_Host.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\S_Net_Host.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\S_Net_Host.cpp
 
 CMakeFiles/Luddite.dir/src/S_Net_Host.cpp.i: cmake_force
@@ -400,7 +414,7 @@ CMakeFiles/Luddite.dir/src/S_Net_Host.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/S_Net_Send.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Net_Send.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/S_Net_Send.cpp.obj: ../src/S_Net_Send.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/Luddite.dir/src/S_Net_Send.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/Luddite.dir/src/S_Net_Send.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\S_Net_Send.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\S_Net_Send.cpp
 
 CMakeFiles/Luddite.dir/src/S_Net_Send.cpp.i: cmake_force
@@ -414,7 +428,7 @@ CMakeFiles/Luddite.dir/src/S_Net_Send.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/S_Net_Update_Player.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Net_Update_Player.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/S_Net_Update_Player.cpp.obj: ../src/S_Net_Update_Player.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/Luddite.dir/src/S_Net_Update_Player.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/Luddite.dir/src/S_Net_Update_Player.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\S_Net_Update_Player.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\S_Net_Update_Player.cpp
 
 CMakeFiles/Luddite.dir/src/S_Net_Update_Player.cpp.i: cmake_force
@@ -428,7 +442,7 @@ CMakeFiles/Luddite.dir/src/S_Net_Update_Player.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.obj: ../src/S_PlayerController.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\S_PlayerController.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\S_PlayerController.cpp
 
 CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.i: cmake_force
@@ -442,7 +456,7 @@ CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/S_Projection.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Projection.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/S_Projection.cpp.obj: ../src/S_Projection.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/Luddite.dir/src/S_Projection.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/Luddite.dir/src/S_Projection.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\S_Projection.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\S_Projection.cpp
 
 CMakeFiles/Luddite.dir/src/S_Projection.cpp.i: cmake_force
@@ -456,7 +470,7 @@ CMakeFiles/Luddite.dir/src/S_Projection.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/S_Scripts.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Scripts.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/S_Scripts.cpp.obj: ../src/S_Scripts.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/Luddite.dir/src/S_Scripts.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/Luddite.dir/src/S_Scripts.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\S_Scripts.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\S_Scripts.cpp
 
 CMakeFiles/Luddite.dir/src/S_Scripts.cpp.i: cmake_force
@@ -470,7 +484,7 @@ CMakeFiles/Luddite.dir/src/S_Scripts.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/S_Spawning.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Spawning.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/S_Spawning.cpp.obj: ../src/S_Spawning.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/Luddite.dir/src/S_Spawning.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/Luddite.dir/src/S_Spawning.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\S_Spawning.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\S_Spawning.cpp
 
 CMakeFiles/Luddite.dir/src/S_Spawning.cpp.i: cmake_force
@@ -484,7 +498,7 @@ CMakeFiles/Luddite.dir/src/S_Spawning.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/S_TextRendering.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_TextRendering.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/S_TextRendering.cpp.obj: ../src/S_TextRendering.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/Luddite.dir/src/S_TextRendering.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/Luddite.dir/src/S_TextRendering.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\S_TextRendering.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\S_TextRendering.cpp
 
 CMakeFiles/Luddite.dir/src/S_TextRendering.cpp.i: cmake_force
@@ -498,7 +512,7 @@ CMakeFiles/Luddite.dir/src/S_TextRendering.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/S_Tileset.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Tileset.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/S_Tileset.cpp.obj: ../src/S_Tileset.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/Luddite.dir/src/S_Tileset.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/Luddite.dir/src/S_Tileset.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\S_Tileset.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\S_Tileset.cpp
 
 CMakeFiles/Luddite.dir/src/S_Tileset.cpp.i: cmake_force
@@ -512,7 +526,7 @@ CMakeFiles/Luddite.dir/src/S_Tileset.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/S_TransformLerp.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_TransformLerp.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/S_TransformLerp.cpp.obj: ../src/S_TransformLerp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/Luddite.dir/src/S_TransformLerp.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/Luddite.dir/src/S_TransformLerp.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\S_TransformLerp.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\S_TransformLerp.cpp
 
 CMakeFiles/Luddite.dir/src/S_TransformLerp.cpp.i: cmake_force
@@ -526,7 +540,7 @@ CMakeFiles/Luddite.dir/src/S_TransformLerp.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/Server.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/Server.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/Server.cpp.obj: ../src/Server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/Luddite.dir/src/Server.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/Luddite.dir/src/Server.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\Server.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\Server.cpp
 
 CMakeFiles/Luddite.dir/src/Server.cpp.i: cmake_force
@@ -540,7 +554,7 @@ CMakeFiles/Luddite.dir/src/Server.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/SpriteBatch.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/SpriteBatch.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/SpriteBatch.cpp.obj: ../src/SpriteBatch.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/Luddite.dir/src/SpriteBatch.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/Luddite.dir/src/SpriteBatch.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\SpriteBatch.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\SpriteBatch.cpp
 
 CMakeFiles/Luddite.dir/src/SpriteBatch.cpp.i: cmake_force
@@ -554,7 +568,7 @@ CMakeFiles/Luddite.dir/src/SpriteBatch.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/System.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/System.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/System.cpp.obj: ../src/System.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/Luddite.dir/src/System.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/Luddite.dir/src/System.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\System.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\System.cpp
 
 CMakeFiles/Luddite.dir/src/System.cpp.i: cmake_force
@@ -568,7 +582,7 @@ CMakeFiles/Luddite.dir/src/System.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/Texture.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/Texture.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/Texture.cpp.obj: ../src/Texture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/Luddite.dir/src/Texture.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/Luddite.dir/src/Texture.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\Texture.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\Texture.cpp
 
 CMakeFiles/Luddite.dir/src/Texture.cpp.i: cmake_force
@@ -582,7 +596,7 @@ CMakeFiles/Luddite.dir/src/Texture.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/TextureBatch.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/TextureBatch.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/TextureBatch.cpp.obj: ../src/TextureBatch.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/Luddite.dir/src/TextureBatch.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/Luddite.dir/src/TextureBatch.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\TextureBatch.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\TextureBatch.cpp
 
 CMakeFiles/Luddite.dir/src/TextureBatch.cpp.i: cmake_force
@@ -593,10 +607,24 @@ CMakeFiles/Luddite.dir/src/TextureBatch.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luddite.dir/src/TextureBatch.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S R:\Dev\games\Luddite\Luddite\src\TextureBatch.cpp -o CMakeFiles\Luddite.dir\src\TextureBatch.cpp.s
 
+CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.obj: CMakeFiles/Luddite.dir/flags.make
+CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
+CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.obj: ../src/devtools/CharacterRenderer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\devtools\CharacterRenderer.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\devtools\CharacterRenderer.cpp
+
+CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E R:\Dev\games\Luddite\Luddite\src\devtools\CharacterRenderer.cpp > CMakeFiles\Luddite.dir\src\devtools\CharacterRenderer.cpp.i
+
+CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S R:\Dev\games\Luddite\Luddite\src\devtools\CharacterRenderer.cpp -o CMakeFiles\Luddite.dir\src\devtools\CharacterRenderer.cpp.s
+
 CMakeFiles/Luddite.dir/src/game.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/game.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/game.cpp.obj: ../src/game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/Luddite.dir/src/game.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/Luddite.dir/src/game.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\game.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\game.cpp
 
 CMakeFiles/Luddite.dir/src/game.cpp.i: cmake_force
@@ -610,7 +638,7 @@ CMakeFiles/Luddite.dir/src/game.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/gason.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/gason.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/gason.cpp.obj: ../src/gason.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/Luddite.dir/src/gason.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/Luddite.dir/src/gason.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\gason.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\gason.cpp
 
 CMakeFiles/Luddite.dir/src/gason.cpp.i: cmake_force
@@ -624,7 +652,7 @@ CMakeFiles/Luddite.dir/src/gason.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/gui/constraints.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/gui/constraints.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/gui/constraints.cpp.obj: ../src/gui/constraints.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/Luddite.dir/src/gui/constraints.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/Luddite.dir/src/gui/constraints.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\gui\constraints.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\gui\constraints.cpp
 
 CMakeFiles/Luddite.dir/src/gui/constraints.cpp.i: cmake_force
@@ -638,7 +666,7 @@ CMakeFiles/Luddite.dir/src/gui/constraints.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/loadShader.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/loadShader.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/loadShader.cpp.obj: ../src/loadShader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/Luddite.dir/src/loadShader.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/Luddite.dir/src/loadShader.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\loadShader.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\loadShader.cpp
 
 CMakeFiles/Luddite.dir/src/loadShader.cpp.i: cmake_force
@@ -652,7 +680,7 @@ CMakeFiles/Luddite.dir/src/loadShader.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/main.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/main.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/main.cpp.obj: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/Luddite.dir/src/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/Luddite.dir/src/main.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\main.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\main.cpp
 
 CMakeFiles/Luddite.dir/src/main.cpp.i: cmake_force
@@ -666,7 +694,7 @@ CMakeFiles/Luddite.dir/src/main.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/shader.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/shader.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/shader.cpp.obj: ../src/shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/Luddite.dir/src/shader.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/Luddite.dir/src/shader.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\shader.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\shader.cpp
 
 CMakeFiles/Luddite.dir/src/shader.cpp.i: cmake_force
@@ -680,7 +708,7 @@ CMakeFiles/Luddite.dir/src/shader.cpp.s: cmake_force
 CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.obj: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
 CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.obj: ../src/utils/Spawning.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\utils\Spawning.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\utils\Spawning.cpp
 
 CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.i: cmake_force
@@ -691,6 +719,20 @@ CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S R:\Dev\games\Luddite\Luddite\src\utils\Spawning.cpp -o CMakeFiles\Luddite.dir\src\utils\Spawning.cpp.s
 
+CMakeFiles/Luddite.dir/src/utils/loading_screen.cpp.obj: CMakeFiles/Luddite.dir/flags.make
+CMakeFiles/Luddite.dir/src/utils/loading_screen.cpp.obj: CMakeFiles/Luddite.dir/includes_CXX.rsp
+CMakeFiles/Luddite.dir/src/utils/loading_screen.cpp.obj: ../src/utils/loading_screen.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/Luddite.dir/src/utils/loading_screen.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Luddite.dir\src\utils\loading_screen.cpp.obj -c R:\Dev\games\Luddite\Luddite\src\utils\loading_screen.cpp
+
+CMakeFiles/Luddite.dir/src/utils/loading_screen.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Luddite.dir/src/utils/loading_screen.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E R:\Dev\games\Luddite\Luddite\src\utils\loading_screen.cpp > CMakeFiles\Luddite.dir\src\utils\loading_screen.cpp.i
+
+CMakeFiles/Luddite.dir/src/utils/loading_screen.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luddite.dir/src/utils/loading_screen.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S R:\Dev\games\Luddite\Luddite\src\utils\loading_screen.cpp -o CMakeFiles\Luddite.dir\src\utils\loading_screen.cpp.s
+
 # Object files for target Luddite
 Luddite_OBJECTS = \
 "CMakeFiles/Luddite.dir/src/Assets.cpp.obj" \
@@ -698,6 +740,7 @@ Luddite_OBJECTS = \
 "CMakeFiles/Luddite.dir/src/Client.cpp.obj" \
 "CMakeFiles/Luddite.dir/src/Events.cpp.obj" \
 "CMakeFiles/Luddite.dir/src/L_Base.cpp.obj" \
+"CMakeFiles/Luddite.dir/src/L_CharacterEditor.cpp.obj" \
 "CMakeFiles/Luddite.dir/src/L_Game.cpp.obj" \
 "CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.obj" \
 "CMakeFiles/Luddite.dir/src/L_Networking.cpp.obj" \
@@ -730,13 +773,15 @@ Luddite_OBJECTS = \
 "CMakeFiles/Luddite.dir/src/System.cpp.obj" \
 "CMakeFiles/Luddite.dir/src/Texture.cpp.obj" \
 "CMakeFiles/Luddite.dir/src/TextureBatch.cpp.obj" \
+"CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.obj" \
 "CMakeFiles/Luddite.dir/src/game.cpp.obj" \
 "CMakeFiles/Luddite.dir/src/gason.cpp.obj" \
 "CMakeFiles/Luddite.dir/src/gui/constraints.cpp.obj" \
 "CMakeFiles/Luddite.dir/src/loadShader.cpp.obj" \
 "CMakeFiles/Luddite.dir/src/main.cpp.obj" \
 "CMakeFiles/Luddite.dir/src/shader.cpp.obj" \
-"CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.obj"
+"CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.obj" \
+"CMakeFiles/Luddite.dir/src/utils/loading_screen.cpp.obj"
 
 # External object files for target Luddite
 Luddite_EXTERNAL_OBJECTS =
@@ -746,6 +791,7 @@ Luddite.exe: CMakeFiles/Luddite.dir/src/C_NativeScript.cpp.obj
 Luddite.exe: CMakeFiles/Luddite.dir/src/Client.cpp.obj
 Luddite.exe: CMakeFiles/Luddite.dir/src/Events.cpp.obj
 Luddite.exe: CMakeFiles/Luddite.dir/src/L_Base.cpp.obj
+Luddite.exe: CMakeFiles/Luddite.dir/src/L_CharacterEditor.cpp.obj
 Luddite.exe: CMakeFiles/Luddite.dir/src/L_Game.cpp.obj
 Luddite.exe: CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.obj
 Luddite.exe: CMakeFiles/Luddite.dir/src/L_Networking.cpp.obj
@@ -778,6 +824,7 @@ Luddite.exe: CMakeFiles/Luddite.dir/src/SpriteBatch.cpp.obj
 Luddite.exe: CMakeFiles/Luddite.dir/src/System.cpp.obj
 Luddite.exe: CMakeFiles/Luddite.dir/src/Texture.cpp.obj
 Luddite.exe: CMakeFiles/Luddite.dir/src/TextureBatch.cpp.obj
+Luddite.exe: CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.obj
 Luddite.exe: CMakeFiles/Luddite.dir/src/game.cpp.obj
 Luddite.exe: CMakeFiles/Luddite.dir/src/gason.cpp.obj
 Luddite.exe: CMakeFiles/Luddite.dir/src/gui/constraints.cpp.obj
@@ -785,6 +832,7 @@ Luddite.exe: CMakeFiles/Luddite.dir/src/loadShader.cpp.obj
 Luddite.exe: CMakeFiles/Luddite.dir/src/main.cpp.obj
 Luddite.exe: CMakeFiles/Luddite.dir/src/shader.cpp.obj
 Luddite.exe: CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.obj
+Luddite.exe: CMakeFiles/Luddite.dir/src/utils/loading_screen.cpp.obj
 Luddite.exe: CMakeFiles/Luddite.dir/build.make
 Luddite.exe: R:/Dev/Libraries/C++/glfw-3.3.2/Lib/libglfw3.a
 Luddite.exe: R:/Dev/Libraries/C++/glew-2.1.0/lib/libglew32.dll.a
@@ -798,7 +846,7 @@ Luddite.exe: C:/Program\ Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw
 Luddite.exe: CMakeFiles/Luddite.dir/linklibs.rsp
 Luddite.exe: CMakeFiles/Luddite.dir/objects1.rsp
 Luddite.exe: CMakeFiles/Luddite.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Linking CXX executable Luddite.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=R:\Dev\games\Luddite\Luddite\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Linking CXX executable Luddite.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Luddite.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -276,6 +276,33 @@ src/L_Base.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/L_Base.cpp.s
 .PHONY : src/L_Base.cpp.s
 
+src/L_CharacterEditor.obj: src/L_CharacterEditor.cpp.obj
+
+.PHONY : src/L_CharacterEditor.obj
+
+# target to build an object file
+src/L_CharacterEditor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/L_CharacterEditor.cpp.obj
+.PHONY : src/L_CharacterEditor.cpp.obj
+
+src/L_CharacterEditor.i: src/L_CharacterEditor.cpp.i
+
+.PHONY : src/L_CharacterEditor.i
+
+# target to preprocess a source file
+src/L_CharacterEditor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/L_CharacterEditor.cpp.i
+.PHONY : src/L_CharacterEditor.cpp.i
+
+src/L_CharacterEditor.s: src/L_CharacterEditor.cpp.s
+
+.PHONY : src/L_CharacterEditor.s
+
+# target to generate assembly for a file
+src/L_CharacterEditor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/L_CharacterEditor.cpp.s
+.PHONY : src/L_CharacterEditor.cpp.s
+
 src/L_Game.obj: src/L_Game.cpp.obj
 
 .PHONY : src/L_Game.obj
@@ -1140,6 +1167,33 @@ src/TextureBatch.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/TextureBatch.cpp.s
 .PHONY : src/TextureBatch.cpp.s
 
+src/devtools/CharacterRenderer.obj: src/devtools/CharacterRenderer.cpp.obj
+
+.PHONY : src/devtools/CharacterRenderer.obj
+
+# target to build an object file
+src/devtools/CharacterRenderer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.obj
+.PHONY : src/devtools/CharacterRenderer.cpp.obj
+
+src/devtools/CharacterRenderer.i: src/devtools/CharacterRenderer.cpp.i
+
+.PHONY : src/devtools/CharacterRenderer.i
+
+# target to preprocess a source file
+src/devtools/CharacterRenderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.i
+.PHONY : src/devtools/CharacterRenderer.cpp.i
+
+src/devtools/CharacterRenderer.s: src/devtools/CharacterRenderer.cpp.s
+
+.PHONY : src/devtools/CharacterRenderer.s
+
+# target to generate assembly for a file
+src/devtools/CharacterRenderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.s
+.PHONY : src/devtools/CharacterRenderer.cpp.s
+
 src/game.obj: src/game.cpp.obj
 
 .PHONY : src/game.obj
@@ -1329,6 +1383,33 @@ src/utils/Spawning.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.s
 .PHONY : src/utils/Spawning.cpp.s
 
+src/utils/loading_screen.obj: src/utils/loading_screen.cpp.obj
+
+.PHONY : src/utils/loading_screen.obj
+
+# target to build an object file
+src/utils/loading_screen.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/utils/loading_screen.cpp.obj
+.PHONY : src/utils/loading_screen.cpp.obj
+
+src/utils/loading_screen.i: src/utils/loading_screen.cpp.i
+
+.PHONY : src/utils/loading_screen.i
+
+# target to preprocess a source file
+src/utils/loading_screen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/utils/loading_screen.cpp.i
+.PHONY : src/utils/loading_screen.cpp.i
+
+src/utils/loading_screen.s: src/utils/loading_screen.cpp.s
+
+.PHONY : src/utils/loading_screen.s
+
+# target to generate assembly for a file
+src/utils/loading_screen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Luddite.dir\build.make CMakeFiles/Luddite.dir/src/utils/loading_screen.cpp.s
+.PHONY : src/utils/loading_screen.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -1353,6 +1434,9 @@ help:
 	@echo ... src/L_Base.obj
 	@echo ... src/L_Base.i
 	@echo ... src/L_Base.s
+	@echo ... src/L_CharacterEditor.obj
+	@echo ... src/L_CharacterEditor.i
+	@echo ... src/L_CharacterEditor.s
 	@echo ... src/L_Game.obj
 	@echo ... src/L_Game.i
 	@echo ... src/L_Game.s
@@ -1449,6 +1533,9 @@ help:
 	@echo ... src/TextureBatch.obj
 	@echo ... src/TextureBatch.i
 	@echo ... src/TextureBatch.s
+	@echo ... src/devtools/CharacterRenderer.obj
+	@echo ... src/devtools/CharacterRenderer.i
+	@echo ... src/devtools/CharacterRenderer.s
 	@echo ... src/game.obj
 	@echo ... src/game.i
 	@echo ... src/game.s
@@ -1470,6 +1557,9 @@ help:
 	@echo ... src/utils/Spawning.obj
 	@echo ... src/utils/Spawning.i
 	@echo ... src/utils/Spawning.s
+	@echo ... src/utils/loading_screen.obj
+	@echo ... src/utils/loading_screen.i
+	@echo ... src/utils/loading_screen.s
 .PHONY : help
 
 

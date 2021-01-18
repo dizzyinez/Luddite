@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "R:/Dev/games/Luddite/Luddite/src/Client.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/Client.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/Events.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/Events.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/L_Base.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/L_Base.cpp.obj"
+  "R:/Dev/games/Luddite/Luddite/src/L_CharacterEditor.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/L_CharacterEditor.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/L_Game.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/L_Game.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/L_MainMenu.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/L_Networking.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/L_Networking.cpp.obj"
@@ -41,6 +42,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "R:/Dev/games/Luddite/Luddite/src/System.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/System.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/Texture.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/Texture.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/TextureBatch.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/TextureBatch.cpp.obj"
+  "R:/Dev/games/Luddite/Luddite/src/devtools/CharacterRenderer.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/game.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/game.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/gason.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/gason.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/gui/constraints.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/gui/constraints.cpp.obj"
@@ -48,6 +50,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "R:/Dev/games/Luddite/Luddite/src/main.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/main.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/shader.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/shader.cpp.obj"
   "R:/Dev/games/Luddite/Luddite/src/utils/Spawning.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.obj"
+  "R:/Dev/games/Luddite/Luddite/src/utils/loading_screen.cpp" "R:/Dev/games/Luddite/Luddite/build/CMakeFiles/Luddite.dir/src/utils/loading_screen.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

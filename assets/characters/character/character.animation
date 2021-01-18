@@ -2,40 +2,40 @@
   "Idle":
   {
     "line": 0,
-    "fps": 30,
+    "fps": 60,
     "framecount": 50,
     "frames": [
     {
-      "hitboxes": []
+      "hitboxes": [],
       "flags": []
     },
     {
-      "hitboxes": []
+      "hitboxes": [],
       "flags": []
     },
     {
-      "hitboxes": []
+      "hitboxes": [],
       "flags": []
-    }, ]
+    }]
   },
   "Run":
   {
     "line": 8,
-    "fps": 30,
+    "fps": 60,
     "framecount": 35,
     "frames": [
     {
-      "hitboxes": []
+      "hitboxes": [],
       "flags": []
     },
     {
-      "hitboxes": []
+      "hitboxes": [],
       "flags": []
     },
     {
-      "hitboxes": []
+      "hitboxes": [],
       "flags": []
-    }, ]
+    }]
   },
   "Light Attack":
   {
@@ -44,16 +44,16 @@
     "framecount": 20,
     "frames": [
     {
-      "hitboxes": []
+      "hitboxes": [],
       "flags": []
     },
     {
-      "hitboxes": []
+      "hitboxes": [],
       "flags": []
     },
     {
-      "hitboxes": []
+      "hitboxes": [],
       "flags": []
-    }, ]
+    }]
   }
 }

@@ -71,8 +71,7 @@ private:
 class SystemManager
 {
 public:
-        SystemManager() {
-        };
+        SystemManager() {}
         template <typename T>
         void add(std::shared_ptr<T> system)
         {

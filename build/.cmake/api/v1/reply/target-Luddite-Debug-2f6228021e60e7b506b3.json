@@ -141,7 +141,10 @@
 				40,
 				41,
 				42,
-				43
+				43,
+				44,
+				45,
+				46
 			]
 		}
 	],
@@ -266,16 +269,16 @@
 				40,
 				41,
 				42,
-				43
+				43,
+				44,
+				45,
+				46
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				44,
-				45,
-				46,
 				47,
 				48,
 				49,
@@ -406,7 +409,14 @@
 				174,
 				175,
 				176,
-				177
+				177,
+				178,
+				179,
+				180,
+				181,
+				182,
+				183,
+				184
 			]
 		}
 	],
@@ -440,6 +450,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/L_Base.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/L_CharacterEditor.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -637,6 +653,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "src/devtools/CharacterRenderer.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "src/game.cpp",
 			"sourceGroupIndex" : 0
 		},
@@ -678,6 +700,12 @@
 		},
 		{
 			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/utils/loading_screen.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
 			"path" : "include/CheckGLError.hpp",
 			"sourceGroupIndex" : 1
 		},
@@ -689,6 +717,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "include/Input.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/OBJ_Loader.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -853,6 +886,11 @@
 		},
 		{
 			"backtrace" : 1,
+			"path" : "include/devtools/CharacterRenderer.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
 			"path" : "include/ecs/Entity.hpp",
 			"sourceGroupIndex" : 1
 		},
@@ -1004,6 +1042,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "include/layers/L_Base.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/layers/L_CharacterEditor.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -1334,6 +1377,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "include/utils/lerp.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/utils/loading_screen.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{

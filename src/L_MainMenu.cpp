@@ -37,6 +37,7 @@
 #include "data/FontAllocator.hpp"
 
 #include "layers/L_Game.hpp"
+#include "layers/L_CharacterEditor.hpp"
 
 #include <iostream>
 
@@ -91,6 +92,22 @@ void L_MainMenu::init()
         .set_alignment(text_align::RIGHT)
         .set_vertical_alignment(text_align_vertical::CENTER);
 
+        auto start = CreateEntity();
+        start.AddComponent<C_Position>();
+        start.AddComponent<C_Size>();
+        start.AddComponent<C_DrawLayer>(DrawLayer::gui);
+        start.AddComponent<C_Tint>(glm::vec4(1, 1, 0.5f, 0.5f));
+        start.AddComponent<C_Gui>()
+        .set_text_scale(0.35, dimensions::HEIGHT)
+        .set_x(PercentConstriant(-0.1, dimensions::HEIGHT, edges::LEFT))
+        .set_y(PercentConstriant(0.62, dimensions::HEIGHT))
+        .set_w(PercentConstriant(0.3f, dimensions::HEIGHT))
+        .set_h(AspectConstraint(3.0f));
+        start.AddComponent<C_Text>("Start Game")
+        .set_alignment(text_align::RIGHT)
+        .set_alpha(0.5)
+        .set_vertical_alignment(text_align_vertical::CENTER);
+
         auto host = CreateEntity();
         host.AddComponent<C_Position>();
         host.AddComponent<C_Size>();
@@ -99,55 +116,64 @@ void L_MainMenu::init()
         host.AddComponent<C_Gui>()
         .set_text_scale(0.35, dimensions::HEIGHT)
         .set_x(PercentConstriant(-0.1, dimensions::HEIGHT, edges::LEFT))
-        .set_y(PercentConstriant(0.55, dimensions::HEIGHT))
+        .set_y(PercentConstriant(0.51, dimensions::HEIGHT))
         .set_w(PercentConstriant(0.3f, dimensions::HEIGHT))
         .set_h(AspectConstraint(3.0f));
         host.AddComponent<C_Gui_Clickable>()
         .on_hover_over([](C_Gui& Gui, C_Gui_Clickable& Clickable) {Gui.transition(Transition(0.1f).set_x_offset(0.1f, dimensions::HEIGHT));})
         .reset_on_hover_away(0.1f)
-        .on_click([this](C_Gui& Gui, C_Gui_Clickable& Clickable) {
+        .on_click([this, start](C_Gui& Gui, C_Gui_Clickable& Clickable) {
                 server = std::make_shared<Server>();
                 server->Start();
                 server->l_main_menu = (L_MainMenu*)this;
                 server->AddLocalPlayer(short_string{"Game host"});
                 // Events::emit<E_Net_Host>(1234, 2);
+
+                start.GetComponent<C_Tint>().tint.a = 1;
+                start.GetComponent<C_Text>().set_alpha(1);
+                start.AddComponent<C_Gui_Clickable>()
+                .on_hover_over([](C_Gui& Gui, C_Gui_Clickable& Clickable) {Gui.transition(Transition(0.1f).set_x_offset(0.1f, dimensions::HEIGHT));})
+                .reset_on_hover_away(0.1f)
+                .on_click([this](C_Gui& Gui, C_Gui_Clickable& Clickable) {
+                        if (server != nullptr)
+                        {
+                                Message msg;
+                                msg.header.id = message_types::START_GAME;
+                                server->MessageAllClients(msg);
+
+                                server->l_game = new L_Game();
+                                server->l_game->server = server; //pass server to game layer
+                                Game::PushLayer(server->l_game);
+                                Game::PopLayer(server->l_main_menu);
+                                // Events::emit<E_Net_Host>(1234, 2);
+                        }
+                });
         });
         host.AddComponent<C_Text>("Host Game")
         .set_alignment(text_align::RIGHT)
         .set_vertical_alignment(text_align_vertical::CENTER);
 
-
-        auto start = CreateEntity();
-        start.AddComponent<C_Position>();
-        start.AddComponent<C_Size>();
-        start.AddComponent<C_DrawLayer>(DrawLayer::gui);
-        start.AddComponent<C_Tint>(glm::vec4(1, 1, 0.5f, 1));
-        start.AddComponent<C_Gui>()
+        auto editor = CreateEntity();
+        editor.AddComponent<C_Position>();
+        editor.AddComponent<C_Size>();
+        editor.AddComponent<C_DrawLayer>(DrawLayer::gui);
+        editor.AddComponent<C_Tint>(glm::vec4(1, 1, 0.5f, 1));
+        editor.AddComponent<C_Gui>()
         .set_text_scale(0.35, dimensions::HEIGHT)
         .set_x(PercentConstriant(-0.1, dimensions::HEIGHT, edges::LEFT))
-        .set_y(PercentConstriant(0.7, dimensions::HEIGHT))
+        .set_y(PercentConstriant(0.73, dimensions::HEIGHT))
         .set_w(PercentConstriant(0.3f, dimensions::HEIGHT))
         .set_h(AspectConstraint(3.0f));
-        start.AddComponent<C_Gui_Clickable>()
+        editor.AddComponent<C_Text>("Character Editor")
+        .set_alignment(text_align::RIGHT)
+        .set_vertical_alignment(text_align_vertical::CENTER);
+        editor.AddComponent<C_Gui_Clickable>()
         .on_hover_over([](C_Gui& Gui, C_Gui_Clickable& Clickable) {Gui.transition(Transition(0.1f).set_x_offset(0.1f, dimensions::HEIGHT));})
         .reset_on_hover_away(0.1f)
         .on_click([this](C_Gui& Gui, C_Gui_Clickable& Clickable) {
-                if (server != nullptr)
-                {
-                        Message msg;
-                        msg.header.id = message_types::START_GAME;
-                        server->MessageAllClients(msg);
-
-                        server->l_game = new L_Game();
-                        server->l_game->server = server; //pass server to game layer
-                        Game::PushLayer(server->l_game);
-                        Game::PopLayer(server->l_main_menu);
-                        // Events::emit<E_Net_Host>(1234, 2);
-                }
+                Game::PushLayer(new L_CharacterEditor());
+                Game::PopLayer(this);
         });
-        start.AddComponent<C_Text>("Start Game")
-        .set_alignment(text_align::RIGHT)
-        .set_vertical_alignment(text_align_vertical::CENTER);
 }
 
 void L_MainMenu::handleEvents(float deltaTime)
@@ -160,6 +186,7 @@ void L_MainMenu::update(float deltaTime)
 {
         systems.update<S_Gui>(deltaTime, m_Registry);
         systems.update<S_Animation>(deltaTime, m_Registry);
+        systems.update<S_Text_Rendering>(deltaTime, m_Registry);
         systems.update<S_Motion>(deltaTime, m_Registry);
         systems.update<S_Scripts_Update>(deltaTime, m_Registry);
 
@@ -175,7 +202,6 @@ void L_MainMenu::render(float alpha)
 {
         systems.update<S_Tileset> (alpha, m_Registry);
         systems.update<S_Draw>    (alpha, m_Registry);
-        systems.update<S_Text_Rendering>(alpha, m_Registry);
 }
 void L_MainMenu::clean()
 {

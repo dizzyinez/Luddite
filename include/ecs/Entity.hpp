@@ -20,7 +20,7 @@ public:
                 return m_Layer->m_Registry.has<T>(m_EntityId);
         }
         template <typename T, typename ... Args>
-        T& AddComponent(Args&&... args)
+        T& AddComponent(Args&&... args) const
         {
                 return m_Layer->m_Registry.emplace<T>(m_EntityId, std::forward<Args>(args)...);
         }
@@ -30,7 +30,7 @@ public:
                 return m_Layer->m_Registry.get<T>(m_EntityId);
         }
         template <typename T>
-        void RemoveComponent()
+        void RemoveComponent() const
         {
                 return m_Layer->m_Registry.remove<T>(m_EntityId);
         }

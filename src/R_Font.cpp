@@ -61,20 +61,8 @@ std::shared_ptr<Font> ResourceAllocator<Font>::Allocate(std::string file_path)
                         );
                 glBindTexture(GL_TEXTURE_2D, 0);
 
-
-                // Character character = {
-                //         Texture(2, face->glyph->bitmap.width, face->glyph->bitmap.rows),
-                //         glm::ivec2(face->glyph->bitmap.width, face->glyph->bitmap.rows),
-                //         glm::ivec2(face->glyph->bitmap_left, face->glyph->bitmap_top),
-                //         face->glyph->advance.x
-                // };
-                // Texture tex(texture, face->glyph->bitmap.width, face->glyph->bitmap.rows);
                 Character character = {
-                        // texture,
-                        // tex,
-
                         std::make_shared<Texture>(texture, face->glyph->bitmap.width, face->glyph->bitmap.rows),
-                        // Texture(3, 2, 2),
                         glm::ivec2(face->glyph->bitmap.width, face->glyph->bitmap.rows),
                         glm::ivec2(face->glyph->bitmap_left, face->glyph->bitmap_top),
                         face->glyph->advance.x

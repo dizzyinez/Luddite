@@ -33,7 +33,6 @@ struct Transition
 
 struct C_Gui
 {
-public:
         kiwi::Variable x = ("x_position");
         kiwi::Variable y = ("y_position");
         kiwi::Variable w = ("width");
@@ -90,7 +89,6 @@ public:
 
 struct C_Gui_Container
 {
-public:
         C_Gui_Container()
         {
         }
@@ -130,7 +128,6 @@ public:
 
 struct C_Gui_Clickable
 {
-public:
         C_Gui_Clickable() = default;
         C_Gui_Clickable& on_hover_over(std::function<void(C_Gui&, C_Gui_Clickable&)> onHoverOver_)
         {
@@ -154,4 +151,10 @@ public:
         std::function<void(C_Gui&, C_Gui_Clickable&)> onHoverAway = [](auto &Gui, auto &Gui_clickable) {};
         std::function<void(C_Gui&, C_Gui_Clickable&)> onClick = [](auto &Gui, auto &Gui_clickable) {};
         bool hovering = false;
+};
+
+struct C_Gui_Textbox
+{
+        bool highlighted = false;
+        uint32_t text_position = 0;
 };

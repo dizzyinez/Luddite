@@ -65,7 +65,7 @@ void TextureBatch::Init()
 
         glCreateBuffers(1, &QuadVB);
         glBindBuffer(GL_ARRAY_BUFFER, QuadVB);
-        glBufferData(GL_ARRAY_BUFFER, MaxVertexCount * sizeof(TextureBatch::Vertex), nullptr, GL_DYNAMIC_DRAW);
+        glBufferData(GL_ARRAY_BUFFER, MaxVertexCount, nullptr, GL_DYNAMIC_DRAW);
 
         glEnableVertexArrayAttrib(QuadVA, 0);
         glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(TextureBatch::Vertex), (const void*)offsetof(TextureBatch::Vertex, position));

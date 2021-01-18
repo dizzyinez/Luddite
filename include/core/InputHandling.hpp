@@ -25,7 +25,8 @@ private:
                 //this is kinda memory innificient but since events are cleared every frame,
                 //the overhead is tiny, so it's worth the extra ease while programming
                 Events::emit<E_Keyboard>(key, scancode, action, mods);
-                switch (action) {
+                switch (action)
+                {
                         // case GLFW_PRESS:
                         //         Events::emit<E_KeyPress>(key, scancode, mods);
                         //         Events::emit<E_KeyPressAndRepeat>(key, scancode, mods);
@@ -38,6 +39,9 @@ private:
                         //         Events::emit<E_KeyPressAndRepeat>(key, scancode, mods);
                         //         break;
                 }
+        }
+        static void character_callback(GLFWwindow* window, unsigned int codepoint)
+        {
         }
 
         static void cursor_position_callback(GLFWwindow* window, double xpos, double ypos)
@@ -64,6 +68,5 @@ private:
                 //         break;
                 // }
         }
-
 };
 #endif

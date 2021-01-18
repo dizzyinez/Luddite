@@ -23,6 +23,8 @@ public:
 
         static void PushLayer(Layer*layer);
         static void PopLayer(Layer* layer);
+        static inline int window_width;
+        static inline int window_height;
 
         inline static GLFWwindow* window;
 private:

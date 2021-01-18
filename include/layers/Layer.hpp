@@ -40,6 +40,7 @@ protected:
         entt::registry lerp_frame;
         SystemManager systems;
         friend class Entity;
+        friend class load_screen;
 };
 
 #endif

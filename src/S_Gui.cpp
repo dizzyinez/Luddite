@@ -4,28 +4,44 @@
 #include "components/Size.hpp"
 #include "components/Texture.hpp"
 #include "components/Text.hpp"
+#include "components/DrawLayer.hpp"
+#include "components/Ancestry.hpp"
 #include "events/Events.hpp"
 #include "events/Input.hpp"
 #include "entt.hpp"
 #include "utils/lerp.hpp"
+#include "core/game.hpp"
 
 #include <iostream>
 #include <GLFW/glfw3.h>
 
-void on_gui_container_create(entt::registry &Reg, entt::entity Entity)
+void on_gui_container_create(entt::registry &reg, entt::entity Entity)
 {
-        Reg.get<C_Gui_Container>(Entity).onBirth(Reg.get<C_Gui>(Entity), Reg.get<C_Gui_Container>(Entity));
+        reg.get<C_Gui_Container>(Entity).onBirth(reg.get<C_Gui>(Entity), reg.get<C_Gui_Container>(Entity));
 }
 
-void S_Gui::on_gui_create(entt::registry &Reg, entt::entity Entity)
+void S_Gui::on_gui_create(entt::registry &reg, entt::entity Entity)
 {
         //set the Gui parent to the window if it doesn't have a parent
-        Reg.get<C_Gui>(Entity).parent = window_entity;
+        reg.get<C_Gui>(Entity).parent = window_entity;
+}
+
+void on_text_create(entt::registry &reg, entt::entity Entity)
+{
+        C_Text& text = reg.get<C_Text>(Entity);
+        text.cursor = reg.create();
+        reg.emplace<C_Position>(text.cursor);
+        reg.emplace<C_Size>(text.cursor);
+        reg.emplace<C_Child>(text.cursor, Entity);
+        reg.emplace<C_Tint>(text.cursor, glm::vec4(0, 0, 0, 1));
+        C_DrawLayer& drawlayer = reg.get<C_DrawLayer>(Entity);
+        reg.emplace<C_DrawLayer>(text.cursor, drawlayer.layer, drawlayer.depth + 1);
 }
 
 void S_Gui::configure(entt::registry &reg)
 {
         reg.on_construct<C_Gui_Container>().connect<&on_gui_container_create>();
+        reg.on_construct<C_Text>().connect<&on_text_create>();
 
         window_entity = reg.create();
         reg.emplace<C_Position>(window_entity, 0, 0);
@@ -37,6 +53,8 @@ void S_Gui::configure(entt::registry &reg)
                 Gui_container.solver->addConstraint({Gui.x == 0});
                 Gui_container.solver->addConstraint({Gui.y == 0});
                 Gui_container.solver->updateVariables();
+                Gui_container.solver->suggestValue(Gui.w, Game::window_width);
+                Gui_container.solver->suggestValue(Gui.h, Game::window_height);
         })
         .on_input([] (auto &Gui, auto &Gui_container) {
                 Events::iterateAll<E_WindowResize>([&Gui, &Gui_container](auto e) {
@@ -174,6 +192,7 @@ void S_Gui_Input::update(float deltaTime, entt::registry &reg)
 
         if (Events::get<E_WindowResize>()->size() > 0)
         {
+                std::cout << "window size changed" << std::endl;
                 reg.view<C_Gui>().each([](auto Entity, C_Gui& Gui) {
                         Gui.dirty_text_scale = true;
                 });
@@ -184,6 +203,7 @@ void S_Gui_Input::update(float deltaTime, entt::registry &reg)
 
         Events::iterate<E_MouseButton>([&reg](auto &e) {
                 if (e->button == GLFW_MOUSE_BUTTON_1 && e->action == GLFW_RELEASE)
+                {
                         for (auto Entity : reg.view<C_Gui_Clickable>())
                         {
                                 auto [clickable, gui] = reg.get<C_Gui_Clickable, C_Gui>(Entity);
@@ -193,6 +213,85 @@ void S_Gui_Input::update(float deltaTime, entt::registry &reg)
                                         return true;
                                 }
                         }
+                        // reg.group<C_Text>(entt::get<C_Gui>).each([&reg](auto Entity, C_Text & text, C_Gui & gui)
+                        for (auto Entity : reg.group<C_Text>(entt::get<C_Gui>))
+                        {
+                                auto [text, gui] = reg.get<C_Text, C_Gui>(Entity);
+                                if (gui.x.value() <= e->xpos &&
+                                    gui.y.value() <= e->ypos &&
+                                    gui.x.value() + gui.w.value() >= e->xpos &&
+                                    gui.y.value() + gui.h.value() >= e->ypos)
+                                {
+                                        if (text.can_edit)
+                                        {
+                                                //set cursor position
+                                                C_Position& position = reg.get<C_Position>(Entity);
+                                                float adjusted_mouse_x_pos = (float)e->xpos - position.getX();
+                                                float adjusted_mouse_y_pos = (float)e->ypos - position.getY() - text.vertical_offset;
+
+                                                int line = floor(adjusted_mouse_y_pos / (128.0f * text.scale));
+                                                // check if the line the cursor is on actually exists
+                                                if (line < text.line_start_character_indicies.size())
+                                                {
+                                                        text.selected = true;
+                                                        //if it's the last line
+                                                        if (line + 1 == text.line_start_character_indicies.size())
+                                                        {
+                                                                C_Child& last_character_child = reg.get<C_Child>(text.character_entities.back());
+                                                                C_Size& last_character_size = reg.get<C_Size>(text.character_entities.back());
+                                                                float closest_distance = abs(adjusted_mouse_x_pos - (last_character_child.offset.x + last_character_size.getW()));
+                                                                int closest = text.character_entities.size();
+                                                                for (int i = closest - 1; i >= text.line_start_character_indicies.at(line); i--)
+                                                                {
+                                                                        C_Child& child = reg.get<C_Child>(text.character_entities.at(i));
+                                                                        float distance = abs(adjusted_mouse_x_pos - child.offset.x);
+                                                                        if (distance < closest_distance)
+                                                                        {
+                                                                                closest_distance = distance;
+                                                                                closest = i;
+                                                                        }
+                                                                }
+                                                                text.cursor_position = closest;
+                                                                std::cout << "selected: " << text.cursor_position << std::endl;
+                                                        }
+                                                        else
+                                                        {
+                                                                C_Child& last_character_child = reg.get<C_Child>(text.character_entities.at(text.line_start_character_indicies.at(line + 1) - 1));
+                                                                float closest_distance = abs(adjusted_mouse_x_pos - last_character_child.offset.x);
+                                                                int closest = text.line_start_character_indicies.at(line + 1) - 1;
+                                                                for (int i = closest - 1; i >= text.line_start_character_indicies.at(line); i--)
+                                                                {
+                                                                        C_Child& child = reg.get<C_Child>(text.character_entities.at(i));
+                                                                        float distance = abs(adjusted_mouse_x_pos - child.offset.x);
+                                                                        if (distance < closest_distance)
+                                                                        {
+                                                                                closest_distance = distance;
+                                                                                closest = i;
+                                                                        }
+                                                                }
+                                                                text.cursor_position = closest;
+                                                                std::cout << "selected: " << text.cursor_position << std::endl;
+                                                        }
+                                                        return true;
+                                                }
+                                                // C_Child& child = reg.get<C_Child>(text.character_entities.at(i));
+                                                // C_Size& size = reg.get<C_Size>(text.character_entities.at(i));
+                                                // float x_distance = child.offset.x - adjusted_mouse_x_pos;
+                                                // float y_distance = child.offset.y + (size.getH() / 2.0f) - adjusted_mouse_y_pos;
+                                                // float distance_squared = x_distance * x_distance + y_distance * y_distance;
+                                                // if (distance_squared < closest_distance_squared)
+                                                // {
+                                                //         closest_distance_squared = distance_squared;
+                                                //         closest = i;
+                                                // }
+                                        }
+                                }
+                                else
+                                {
+                                        text.selected = false;
+                                }
+                        }
+                }
                 return false;
         });
 }

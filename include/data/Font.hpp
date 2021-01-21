@@ -11,7 +11,7 @@ struct Character
         std::shared_ptr<Texture> texture;
         glm::ivec2 Size;
         glm::ivec2 Bearing;
-        unsigned int Advance;
+        long int Advance;
         // glm::vec2 tex_coords;
 };
 

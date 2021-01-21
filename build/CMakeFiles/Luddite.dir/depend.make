@@ -471,7 +471,6 @@ CMakeFiles/Luddite.dir/src/L_CharacterEditor.cpp.obj: R:/Dev/Libraries/C++/glm/g
 CMakeFiles/Luddite.dir/src/L_CharacterEditor.cpp.obj: R:/Dev/Libraries/C++/glm/glm/vector_relational.hpp
 CMakeFiles/Luddite.dir/src/L_CharacterEditor.cpp.obj: ../src/L_CharacterEditor.cpp
 
-CMakeFiles/Luddite.dir/src/L_Game.cpp.obj: ../include/Layers/Layer.hpp
 CMakeFiles/Luddite.dir/src/L_Game.cpp.obj: ../include/components/Ancestry.hpp
 CMakeFiles/Luddite.dir/src/L_Game.cpp.obj: ../include/components/Animation.hpp
 CMakeFiles/Luddite.dir/src/L_Game.cpp.obj: ../include/components/AnimationBehavior.hpp
@@ -526,6 +525,7 @@ CMakeFiles/Luddite.dir/src/L_Game.cpp.obj: ../include/kiwi/util.h
 CMakeFiles/Luddite.dir/src/L_Game.cpp.obj: ../include/kiwi/variable.h
 CMakeFiles/Luddite.dir/src/L_Game.cpp.obj: ../include/kiwi/version.h
 CMakeFiles/Luddite.dir/src/L_Game.cpp.obj: ../include/layers/L_Game.hpp
+CMakeFiles/Luddite.dir/src/L_Game.cpp.obj: ../include/layers/Layer.hpp
 CMakeFiles/Luddite.dir/src/L_Game.cpp.obj: ../include/net/client.hpp
 CMakeFiles/Luddite.dir/src/L_Game.cpp.obj: ../include/net/common.hpp
 CMakeFiles/Luddite.dir/src/L_Game.cpp.obj: ../include/net/message.hpp
@@ -904,7 +904,6 @@ CMakeFiles/Luddite.dir/src/L_Game.cpp.obj: R:/Dev/Libraries/C++/lua-5.4.1/includ
 CMakeFiles/Luddite.dir/src/L_Game.cpp.obj: R:/Dev/Libraries/C++/lua-5.4.1/include/lualib.h
 CMakeFiles/Luddite.dir/src/L_Game.cpp.obj: ../src/L_Game.cpp
 
-CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.obj: ../include/Layers/Layer.hpp
 CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.obj: ../include/OBJ_Loader.h
 CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.obj: ../include/components/Animation.hpp
 CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.obj: ../include/components/Drag.hpp
@@ -961,6 +960,7 @@ CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.obj: ../include/kiwi/version.h
 CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.obj: ../include/layers/L_CharacterEditor.hpp
 CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.obj: ../include/layers/L_Game.hpp
 CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.obj: ../include/layers/L_MainMenu.hpp
+CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.obj: ../include/layers/Layer.hpp
 CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.obj: ../include/net/client.hpp
 CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.obj: ../include/net/common.hpp
 CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.obj: ../include/net/message.hpp
@@ -2447,8 +2447,8 @@ CMakeFiles/Luddite.dir/src/S_Gui.cpp.obj: ../include/components/DrawLayer.hpp
 CMakeFiles/Luddite.dir/src/S_Gui.cpp.obj: ../include/components/Gui.hpp
 CMakeFiles/Luddite.dir/src/S_Gui.cpp.obj: ../include/components/Position.hpp
 CMakeFiles/Luddite.dir/src/S_Gui.cpp.obj: ../include/components/Size.hpp
-CMakeFiles/Luddite.dir/src/S_Gui.cpp.obj: ../include/components/Text.hpp
 CMakeFiles/Luddite.dir/src/S_Gui.cpp.obj: ../include/components/Texture.hpp
+CMakeFiles/Luddite.dir/src/S_Gui.cpp.obj: ../include/components/text.hpp
 CMakeFiles/Luddite.dir/src/S_Gui.cpp.obj: ../include/core/game.hpp
 CMakeFiles/Luddite.dir/src/S_Gui.cpp.obj: ../include/data/Font.hpp
 CMakeFiles/Luddite.dir/src/S_Gui.cpp.obj: ../include/data/FontAllocator.hpp
@@ -5914,7 +5914,6 @@ CMakeFiles/Luddite.dir/src/loadShader.cpp.obj: ../include/rendering/loadShader.h
 CMakeFiles/Luddite.dir/src/loadShader.cpp.obj: R:/Dev/Libraries/C++/glew-2.1.0/include/GL/glew.h
 CMakeFiles/Luddite.dir/src/loadShader.cpp.obj: ../src/loadShader.cpp
 
-CMakeFiles/Luddite.dir/src/main.cpp.obj: ../include/Layers/Layer.hpp
 CMakeFiles/Luddite.dir/src/main.cpp.obj: ../include/OBJ_Loader.h
 CMakeFiles/Luddite.dir/src/main.cpp.obj: ../include/core/game.hpp
 CMakeFiles/Luddite.dir/src/main.cpp.obj: ../include/data/Font.hpp
@@ -5930,6 +5929,7 @@ CMakeFiles/Luddite.dir/src/main.cpp.obj: ../include/layers/L_Base.hpp
 CMakeFiles/Luddite.dir/src/main.cpp.obj: ../include/layers/L_CharacterEditor.hpp
 CMakeFiles/Luddite.dir/src/main.cpp.obj: ../include/layers/L_Game.hpp
 CMakeFiles/Luddite.dir/src/main.cpp.obj: ../include/layers/L_MainMenu.hpp
+CMakeFiles/Luddite.dir/src/main.cpp.obj: ../include/layers/Layer.hpp
 CMakeFiles/Luddite.dir/src/main.cpp.obj: ../include/rendering/Shader.hpp
 CMakeFiles/Luddite.dir/src/main.cpp.obj: ../include/rendering/loadShader.hpp
 CMakeFiles/Luddite.dir/src/main.cpp.obj: ../include/systems/System.hpp
@@ -6111,7 +6111,6 @@ CMakeFiles/Luddite.dir/src/shader.cpp.obj: R:/Dev/Libraries/C++/glew-2.1.0/inclu
 CMakeFiles/Luddite.dir/src/shader.cpp.obj: R:/Dev/Libraries/C++/glfw-3.3.2.bin.WIN32/include/GLFW/glfw3.h
 CMakeFiles/Luddite.dir/src/shader.cpp.obj: ../src/shader.cpp
 
-CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.obj: ../include/Layers/Layer.hpp
 CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.obj: ../include/components/Animation.hpp
 CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.obj: ../include/components/AnimationBehavior.hpp
 CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.obj: ../include/components/Drag.hpp
@@ -6141,6 +6140,7 @@ CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.obj: ../include/events/Events.hpp
 CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.obj: ../include/events/Input.hpp
 CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.obj: ../include/events/Logging.hpp
 CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.obj: ../include/gason.hpp
+CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.obj: ../include/layers/Layer.hpp
 CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.obj: ../include/net/client.hpp
 CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.obj: ../include/net/common.hpp
 CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.obj: ../include/net/message.hpp

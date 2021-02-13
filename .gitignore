@@ -1,3 +1,7 @@
 CmakeFiles/
 Build/CmakeFiles/
 Build/.cmake/
+Makefile
+**.cmake
+Build/CMakeCache.txt
+Build/compile_commands.json

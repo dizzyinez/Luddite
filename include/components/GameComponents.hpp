@@ -14,3 +14,6 @@
 #include "components/Networking.hpp"
 #include "components/Animation.hpp"
 #include "components/AnimationBehavior.hpp"
+#include "components/Origin.hpp"
+#include "components/CircleCollider.hpp"
+#include "components/Hitbox.hpp"

@@ -21,7 +21,7 @@ public:
         void Flush(); //virtual?
 private:
         void addQuadToBuffer(const glm::vec2& position, const glm::vec2& size, float texIndex, const glm::vec4& tex_coords, const glm::vec4& color);
-        static const size_t MaxTextures = 32;
+        static const size_t MaxTextures = 16;
         std::array<uint32_t, MaxTextures> TextureSlots;
         uint32_t TextureSlotIndex = 1;
 

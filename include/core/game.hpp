@@ -25,6 +25,8 @@ public:
         static void PopLayer(Layer* layer);
         static inline int window_width;
         static inline int window_height;
+        static inline double cursor_x;
+        static inline double cursor_y;
 
         inline static GLFWwindow* window;
 private:

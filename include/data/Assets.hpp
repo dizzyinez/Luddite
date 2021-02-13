@@ -4,6 +4,7 @@
 
 #define CHARACTER_TYPES_DECLARE \
         CHARACTER_TYPE_DECLARATION(character) \
+        CHARACTER_TYPE_DECLARATION(ping_pong) \
 
 struct Characters
 {

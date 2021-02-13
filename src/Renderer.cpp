@@ -32,47 +32,58 @@ void Renderer::Init()
         // glBindTexture(GL_TEXTURE_2D, 0);
         // stbi_image_free(data);
 
-        texture_batch = std::make_unique<TextureBatch>();
-        texture_batch->Init();
-        texture_batch->BeginBatch();
+        // texture_batch = std::make_unique<TextureBatch>();
+        texture_batch.Init();
+        texture_batch.BeginBatch();
 
-        sprite_batch = std::make_unique<SpriteBatch>();
-        sprite_batch->Init();
-        sprite_batch->BeginBatch();
+        // sprite_batch = std::make_unique<SpriteBatch>();
+        sprite_batch.Init();
+        sprite_batch.BeginBatch();
 
         // updateMatricies(1024, 768);
 }
 void Renderer::RenderRect(const glm::vec2& position, const glm::vec2& size, const glm::vec4& color) //TODO: add color
 {
         CheckGLError();
-        texture_batch->DrawQuad(position, size, color);
+        texture_batch.DrawQuad(position, size, color);
 }
 
 void Renderer::RenderTexture(const glm::vec2& position, const glm::vec2& size, uint32_t texture_id, const glm::vec4& tex_coords, const glm::vec4& color)
 {
         CheckGLError();
-        texture_batch->DrawQuad(position, size, texture_id, tex_coords, color);
+        texture_batch.DrawQuad(position, size, texture_id, tex_coords, color);
 }
 
 void Renderer::RenderSprite(const glm::vec2& position, const glm::vec2& size, uint32_t texture_id, const glm::vec4& tex_coords, const glm::uvec4& colors)
 {
         CheckGLError();
-        sprite_batch->DrawQuad(position, size, texture_id, tex_coords, colors);
+        sprite_batch.DrawQuad(position, size, texture_id, tex_coords, colors);
+}
+
+void Renderer::RenderLine(glm::vec2 point1, glm::vec2 point2, glm::vec4 color)
+{
+        CheckGLError();
+        line_batch.DrawLine(point1, point2, color);
 }
 
 void Renderer::flushTextureBatch()
 {
-        texture_batch->EndBatch();
-        texture_batch->Flush();
-        texture_batch->BeginBatch();
+        texture_batch.EndBatch();
+        texture_batch.Flush();
+        texture_batch.BeginBatch();
 }
 
 void Renderer::flushSpriteBatch()
 {
-        sprite_batch->EndBatch();
-        sprite_batch->Flush();
-        sprite_batch->BeginBatch();
+        sprite_batch.EndBatch();
+        sprite_batch.Flush();
+        sprite_batch.BeginBatch();
 }
+
+void Renderer::flushLineBatch()
+{
+}
+
 void Renderer::updateMatricies(int w, int h)
 {
 //TODO: make a maximum aspect ratio so ultra-massive-wide-screen (or just a big vertical shrink) won't make insane viewing distances possible
@@ -85,7 +96,7 @@ void Renderer::updateMatricies(int w, int h)
         glm::mat4 projection = glm::ortho(-half_width, half_width, 500.0f, -500.0f);
         glm::mat4 vp = projection * view;
         worldOrthoMatrix = vp;
-        sprite_batch->SetViewMatrix(vp);
+        sprite_batch.SetViewMatrix(vp);
         glViewport(0, 0, width, height);
 
         projection = glm::ortho(0.0f, width, height, 0.0f); //reminder: this function only likes floats and seems to fail with integers
@@ -95,14 +106,16 @@ void Renderer::updateMatricies(int w, int h)
 
 void Renderer::setProjectionWorld()
 {
-        sprite_batch->SetViewMatrix(worldOrthoMatrix);
-        texture_batch->SetViewMatrix(worldOrthoMatrix);
+        sprite_batch.SetViewMatrix(worldOrthoMatrix);
+        texture_batch.SetViewMatrix(worldOrthoMatrix);
+        line_batch.SetViewMatrix(worldOrthoMatrix);
 }
 
 void Renderer::setProjectionScreen()
 {
-        sprite_batch->SetViewMatrix(screenOrthoMatrix);
-        texture_batch->SetViewMatrix(screenOrthoMatrix);
+        sprite_batch.SetViewMatrix(screenOrthoMatrix);
+        texture_batch.SetViewMatrix(screenOrthoMatrix);
+        line_batch.SetViewMatrix(screenOrthoMatrix);
 }
 
 glm::vec2 Renderer::screenToWorld(glm::vec2 position)

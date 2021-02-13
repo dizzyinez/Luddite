@@ -8,7 +8,7 @@ void clone_component(const entt::registry &from, entt::registry &to) {
         const auto *data = from.data<T>();
         const auto size = from.size<T>();
 
-        if constexpr (ENTT_IS_EMPTY(T)) {
+        if constexpr (std::is_empty<T>::value) {
                 to.insert<T>(data, data + size);
         }
         else
@@ -37,7 +37,7 @@ void clone_registry(const entt::registry &from, entt::registry &to)
         //assign all the entities that are going to be clonedZ
         const auto *from_data = from.data();
         const auto from_size = from.size();
-        to.assign(from_data, from_data + from_size);
+        to.assign(from_data, from_data + from_size, entt::null);
 
         //copy components to the registry
         clone_component<Ts...>(from, to);

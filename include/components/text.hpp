@@ -1,8 +1,10 @@
 #pragma once
 #include <string>
 // #include <ft2build.h>
+#include <memory>
 #include "data/FontAllocator.hpp"
 #include "entt.hpp"
+#include "core/basic_includes.hpp"
 
 enum class text_align : uint8_t
 {
@@ -22,10 +24,14 @@ enum class text_align_vertical : uint8_t
 struct C_Text
 {
         C_Text() = default;
-        C_Text(const std::string& text_) : text(text_) {}
-        C_Text(char* text_) : text(text_) {}
+        C_Text(const String& text_) : text(text_) {}
+        C_Text(FontFamily font_family_) : font_family(font_family_) {}
+        C_Text(const String& text_, FontFamily font_family_) : text(text_), font_family(font_family_) {}
+        // C_Text(char* text_) : text(text_) {}
 
-        std::string text = "";
+
+        String text;
+        FontFamily font_family = FontFamily::BODY;
         std::vector<entt::entity> character_entities;
         entt::entity cursor = entt::null;
         std::vector<int> line_start_character_indicies;
@@ -43,7 +49,7 @@ struct C_Text
         bool show_cursor = false;
         bool selected = false;
 
-        void change_text(const std::string& text_) {text = text_; dirty = true; recalculate_position_flag = true;}
+        void change_text(const String& text_) {text = text_; dirty = true; recalculate_position_flag = true;}
         C_Text& set_editable(bool editable = true) {can_edit = editable; return *this;}
         C_Text& set_alignment(text_align a) {align = a; recalculate_position_flag = true; return *this;}
         C_Text& set_vertical_alignment(text_align_vertical av) {align_vertical = av; recalculate_position_flag = true; return *this;}
@@ -53,6 +59,7 @@ struct C_Text
         C_Text& set_alpha(float a) {color.a = a; recalculate_position_flag = true; return *this;}
 };
 
-// struct C_Character
-// {
-// };
+struct C_Character
+{
+        std::shared_ptr<Character> character;
+};

@@ -15,7 +15,6 @@ void S_Text_Rendering::update(float deltaTime, entt::registry &reg)
         {
                 auto &text = view.get<C_Text>(Entity);
                 //get the font from the allocator
-                std::shared_ptr<Font> font = FontAllocator::Get("../assets/fonts/ConcertOne-Regular.ttf");
                 if (text.dirty)
                 {
                         text.dirty = false;
@@ -28,19 +27,50 @@ void S_Text_Rendering::update(float deltaTime, entt::registry &reg)
                         }
 
                         //reserve the exact amount of space the vector needs so there's only one heap allocation
-                        text.character_entities.reserve(text.text.size());
+                        // text.character_entities.reserve(text.text.size());
 
                         //instantiate new characters
                         for (auto c = text.text.begin(); c != text.text.end(); c++)
                         {
-                                Character character = font->characters[*c];
+                                // Character character;
+                                // std::shared_ptr<Font> font;
+                                std::shared_ptr<Character> character;
+                                int i = 0;
+                                for (auto font : Font::GetFamily(text.font_family))
+                                {
+                                        std::shared_ptr<Character> temp_character = font->GetCharacter(*c);
+                                        if (temp_character == nullptr)
+                                        {
+                                                temp_character = font->RenderCharacter(*c);
+                                                if (temp_character != nullptr)
+                                                        if (!temp_character->missing)
+                                                        {
+                                                                character = temp_character;
+                                                                break;
+                                                        }
+                                        }
+                                        else if (!temp_character->missing)
+                                        {
+                                                character = temp_character;
+                                                break;
+                                        }
+                                        std::cout << "i: " << i << std::endl;
+                                        i++;
+                                }
+                                if (character == nullptr)
+                                {
+                                        //make it the box character
+                                        character = Font::GetFamily(text.font_family).at(0)->RenderCharacter(0x0001F533);
+                                }
+
                                 auto char_entity = reg.create();
-                                reg.emplace<C_Size>(char_entity, character.Size.x * text.scale, character.Size.y * text.scale);
+                                reg.emplace<C_Character>(char_entity, C_Character{character});
+                                reg.emplace<C_Size>(char_entity, character->Size.x * text.scale, character->Size.y * text.scale);
                                 reg.emplace<C_Position>(char_entity);
                                 reg.emplace<C_Child>(char_entity, Entity);
-                                if (*c != ' ')
+                                if (*c != U' ')
                                 {
-                                        reg.emplace<C_Texture>(char_entity, character.texture);
+                                        reg.emplace<C_Texture>(char_entity, character->texture);
                                         //default black text
                                         reg.emplace<C_Tint>(char_entity, glm::vec4(0, 0, 0, 1));
                                         //put the text on the same draw layer as it's parent
@@ -72,14 +102,13 @@ void S_Text_Rendering::update(float deltaTime, entt::registry &reg)
                                 text.line_start_character_indicies.push_back(0);
                         for (int i = 0; i < text.text.size(); i++)
                         {
-                                char c = text.text.at(i);
-                                Character& character = font->characters[c];
-
                                 entt::entity char_entity = text.character_entities.at(i);
+                                char32_t c = text.text.at(i);
+                                Character& character = *reg.get<C_Character>(char_entity).character;
                                 //recalculate the size and initial position of the character
                                 if (c == ' ')
                                 {
-                                        reg.get<C_Size>(char_entity).size = glm::vec2((60.0f) * text.scale, character.Size.y * text.scale);
+                                        reg.get<C_Size>(char_entity).size = glm::vec2((character.Advance >> 6) * text.scale, character.Size.y * text.scale);
                                 }
                                 else
                                 {
@@ -104,23 +133,22 @@ void S_Text_Rendering::update(float deltaTime, entt::registry &reg)
                                         lines++;
                                         //reset the origin and move it down a line
                                         origin.y += LINE_SPACING * text.scale;
+                                        if (curr_line.size() <= curr_word.size())
+                                        {
+                                                word_start_origin = origin.x - (character.Advance >> 6) * text.scale;
+                                                curr_word.clear();
+                                                curr_word.push_back(char_entity);
+                                        }
                                         glm::vec3 line_offset(-word_start_origin, LINE_SPACING * text.scale, 0.0f);
 
-                                        if (curr_line.size() > curr_word.size())
-                                        {
-                                                origin.x -= word_start_origin;
-                                                //remove the current word from the line
-                                                curr_line.erase(curr_line.begin() + (curr_line.size() - curr_word.size()), curr_line.begin() + curr_line.size());
+                                        origin.x -= word_start_origin;
+                                        //remove the current word from the line
+                                        curr_line.erase(curr_line.begin() + (curr_line.size() - curr_word.size()), curr_line.begin() + curr_line.size());
 
-                                                //recalculate the letters of the current word onto the new line
-                                                for (entt::entity character_in_word : curr_word)
-                                                {
-                                                        reg.get<C_Child>(character_in_word).offset += line_offset;
-                                                }
-                                        }
-                                        else
+                                        //recalculate the letters of the current word onto the new line
+                                        for (entt::entity character_in_word : curr_word)
                                         {
-                                                origin.x = 0;
+                                                reg.get<C_Child>(character_in_word).offset += line_offset;
                                         }
                                 }
 
@@ -198,7 +226,10 @@ void S_Text_Rendering::update(float deltaTime, entt::registry &reg)
                         {
                                 reg.get<C_Child>(character_entity).offset.y += vertical_offset;
                                 if (reg.has<C_Tint>(character_entity))
-                                        reg.get<C_Tint>(character_entity).tint = text.color;
+                                        if (reg.get<C_Character>(character_entity).character->colored)
+                                                reg.get<C_Tint>(character_entity).tint = glm::vec4(1, 1, 1, 1);
+                                        else
+                                                reg.get<C_Tint>(character_entity).tint = text.color;
                         }
                 }
                 if (text.can_edit && text.selected)
@@ -208,21 +239,45 @@ void S_Text_Rendering::update(float deltaTime, entt::registry &reg)
                         //get the line the cursor is on
                         C_Child& cursor_child = reg.get<C_Child>(text.cursor);
                         int line = -1;
-                        for (int index : text.line_start_character_indicies)
-                                if (text.cursor_position >= index)
-                                        line++;
-                                else
-                                        break;
-                        if (text.cursor_position == text.character_entities.size())
+                        bool at_end = false;
+                        if (text.text.size() == 0)
                         {
-                                C_Child& character_child = reg.get<C_Child>(text.character_entities.back());
-                                C_Size& character_size = reg.get<C_Size>(text.character_entities.back());
-                                cursor_child.offset.x = character_child.offset.x + character_size.getW();
+                                cursor_child.offset.x = 0;
+                                line = 0;
                         }
                         else
                         {
-                                C_Child& character_child = reg.get<C_Child>(text.character_entities.at(text.cursor_position));
-                                cursor_child.offset.x = floor(character_child.offset.x);
+                                for (int index : text.line_start_character_indicies)
+                                        if (text.cursor_position >= index)
+                                                if (text.cursor_position == index && line >= 0)
+                                                {
+                                                        at_end = true;
+                                                        break;
+                                                }
+                                                else
+                                                        line++;
+                                        else
+                                                break;
+                                if (text.cursor_position == text.character_entities.size())
+                                {
+                                        C_Child& character_child = reg.get<C_Child>(text.character_entities.back());
+                                        C_Size& character_size = reg.get<C_Size>(text.character_entities.back());
+                                        cursor_child.offset.x = character_child.offset.x + character_size.getW();
+                                }
+                                else
+                                {
+                                        if (at_end)
+                                        {
+                                                C_Child& character_child = reg.get<C_Child>(text.character_entities.at(text.cursor_position - 1));
+                                                C_Size& character_size = reg.get<C_Size>(text.character_entities.at(text.cursor_position - 1));
+                                                cursor_child.offset.x = character_child.offset.x + character_size.getW();
+                                        }
+                                        else
+                                        {
+                                                C_Child& character_child = reg.get<C_Child>(text.character_entities.at(text.cursor_position));
+                                                cursor_child.offset.x = floor(character_child.offset.x);
+                                        }
+                                }
                         }
                         cursor_child.offset.y = (LINE_SPACING * text.scale) * ((float)line + 0.15f) + text.vertical_offset;
 

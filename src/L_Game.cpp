@@ -10,10 +10,12 @@
 #include "systems/Draw.hpp"
 #include "systems/TextRendering.hpp"
 #include "systems/Motion.hpp"
+
 #include "systems/TransformLerp.hpp"
 #include "systems/Gui.hpp"
 #include "systems/Networking.hpp"
 #include "systems/PlayerController.hpp"
+#include "systems/Hitboxes.hpp"
 #include "systems/Scripts.hpp"
 #include "systems/Animation.hpp"
 #include "systems/AnimationBehavior.hpp"
@@ -53,6 +55,7 @@ void L_Game::init()
                     S_Tileset,
                     S_Animation,
                     S_AnimationBehavior,
+                    S_Hitboxes,
                     S_Draw,
                     S_Text_Rendering,
                     S_Scripts_Events,
@@ -87,6 +90,12 @@ void L_Game::init()
         // e1.AddComponent<C_Texture>(FontAllocator::Get("../assets/fonts/comic.ttf")->characters['S'].texture);
 
 
+        Entity test_hitbox = CreateEntity();
+        test_hitbox.AddComponent<C_Position>(0.0f, 0.0f);
+        test_hitbox.AddComponent<C_Origin>(0.0f, 0.0f);
+        test_hitbox.AddComponent<C_CircleCollider>(100.0f);
+        test_hitbox.AddComponent<C_Hitbox>(500.0f, 0.0f, 0.0f);
+
         auto& sf = m_Registry.ctx<C_StoredFrames>();
         CopyGameState(m_Registry, sf.frame_array.at(0));
         for (int i = 1; i < sf.max_frames; i++)
@@ -98,9 +107,11 @@ void L_Game::handleEvents(float deltaTime)
         systems.update<S_Gui_Input>(deltaTime, m_Registry);
         systems.update<S_LocalPlayerInput>(deltaTime, m_Registry);
         //set net validation
-        m_Registry.view<C_Player, C_PlayerInput>().each([this](auto& Entity, C_Player& p, C_PlayerInput& pi) {
+        m_Registry.view<C_Player, C_PlayerInput>().each([this](auto Entity, C_Player& p, C_PlayerInput& pi) {
                 if (server != nullptr && p.local_player)
+                {
                         pi.net_validated = true;
+                }
                 else
                         pi.net_validated = false;
         });
@@ -115,22 +126,26 @@ void L_Game::update(float deltaTime)
         CopyRenderingComponents(m_Registry, last_frame);
 
         C_StoredFrames& sf = m_Registry.ctx<C_StoredFrames>();
-        CopyInputs(m_Registry, sf.frame_array.at(sf.index), false);
-        // CopyGameState(m_Registry, sf.frame_array.at(0));
+        m_Registry.view<C_PlayerInput>().each([&sf, this](auto Entity, C_PlayerInput& pi) {
+                if (m_Registry.get<C_Player>(Entity).local_player)
+                        sf.frame_array.at(sf.index).get<C_PlayerInput>(Entity) = pi;
+        });
 
         //send player inputs over the network
         //TODO: put this in a system (?)
-        m_Registry.view<C_Player>().each([this, &sf](auto Entity, C_Player &player) {
+        m_Registry.view<C_Player>().each([this, &sf](auto Entity, C_Player & player) {
                 if (player.local_player)
                 {
                         C_PlayerInput& pi = m_Registry.get<C_PlayerInput>(Entity);
                         Message msg;
                         msg.header.id = message_types::PLAYER_INPUT;
                         msg << pi.buttons;
+                        msg << pi.mouse_direction;
                         msg << sf.current_frame_id();
                         if (client != nullptr)
                         {
                                 client->MessageServer(msg);
+                                std::cout << pi.button1() << std::endl;
                         }
                         else if (server != nullptr)
                         {
@@ -148,53 +163,62 @@ void L_Game::update(float deltaTime)
 
 
         bool all_inputs_valid = true;
-        int index = 0;
-        sf.frame_array.at(0).view<C_PlayerInput>().each([&all_inputs_valid](auto Entity, C_PlayerInput &pi) {
+        int index = 1;
+        sf.frame_array.at(1).view<C_PlayerInput>().each([&all_inputs_valid](auto Entity, C_PlayerInput &pi) {
                 if (!pi.net_validated)
                         all_inputs_valid = false;
         });
         while (all_inputs_valid && index <= sf.index)
         {
+                sf.frame_array.at(index).view<C_PlayerInput>().each([&sf](auto Entity, C_PlayerInput &pi) {
+                        sf.frame_array.at(0).get<C_PlayerInput>(Entity) = pi;
+                });
                 Step(deltaTime, sf.frame_array.at(0));
                 index++;
                 sf.frame_array.at(index).view<C_PlayerInput>().each([&sf, &all_inputs_valid](auto Entity, C_PlayerInput &pi) {
-                        //populate the inputs
-                        sf.frame_array.at(0).get<C_PlayerInput>(Entity) = pi;
                         if (!pi.net_validated)
                                 all_inputs_valid = false;
                 });
         }
+        CopyGameState(sf.frame_array.at(0), m_Registry);
 
         //move the vector back
-        if (index > 0)
+        if (index > 1)
         {
-                for (int i = index + 1; i < sf.max_frames; i++)
-                        CopyInputs(sf.frame_array.at(i), sf.frame_array.at(i - index));
+                // sf.frame_array.at(index).view<C_PlayerInput>().each([&sf](auto Entity, C_PlayerInput &pi) {
+                //         sf.frame_array.at(0).get<C_PlayerInput>(Entity) = pi;
+                // });
+                for (int i = index; i < sf.max_frames; i++)
+                        sf.frame_array.at(i).view<C_PlayerInput>().each([i, index, &sf](auto Entity, C_PlayerInput &pi) {
+                                sf.frame_array.at(i - index + 1).get<C_PlayerInput>(Entity) = pi;
+                        });
         }
+        index--;
         sf.index -= index;
         sf.start_frame_id += index;
+        index = 0;
 
-        CopyGameState(sf.frame_array.at(0), m_Registry);
         while (index < sf.index)
         {
                 Step(deltaTime, m_Registry);
                 index++;
-                sf.frame_array.at(index).view<C_PlayerInput>().each([this](auto Entity, C_PlayerInput &pi) {
-                        //populate the inputs
-                        m_Registry.get<C_PlayerInput>(Entity) = pi;
+                sf.frame_array.at(index).view<C_PlayerInput>().each([this](auto Entity, C_PlayerInput& pi) {
+                        if (pi.net_validated)
+                                m_Registry.get<C_PlayerInput>(Entity) = pi;
                 });
         }
-        Step(deltaTime, m_Registry);
 
         sf.index++;
-        CopyRenderingComponents(sf.frame_array.at(0), lerp_frame);
+        CopyRenderingComponents(m_Registry, lerp_frame);
+        // CopyRenderingComponents(sf.frame_array.at(0), lerp_frame);
 }
 
 void L_Game::Step(float deltaTime, entt::registry& reg)
 {
         systems.update<S_Gui,
-                       S_PlayerController,
                        S_Animation,
+                       S_PlayerController,
+                       S_Hitboxes,
                        S_Motion,
                        S_Scripts_Update,
                        S_Scripts_LateUpdate
@@ -214,6 +238,9 @@ void L_Game::CopyGameState(entt::registry& from, entt::registry& to)
 {
         utils::copy_registry<C_Position,
                              C_Velocity,
+                             C_Origin,
+                             C_CircleCollider,
+                             C_Hitbox,
                              C_Child,
                              C_DrawLayer,
                              C_Size,

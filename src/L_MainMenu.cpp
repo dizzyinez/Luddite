@@ -88,7 +88,7 @@ void L_MainMenu::init()
                 }
                 // Events::emit<E_Net_Host>(1234, 2);
         });
-        join_button.AddComponent<C_Text>("Join Game")
+        join_button.AddComponent<C_Text>(U"Join Game")
         .set_alignment(text_align::RIGHT)
         .set_vertical_alignment(text_align_vertical::CENTER);
 
@@ -103,7 +103,7 @@ void L_MainMenu::init()
         .set_y(PercentConstriant(0.62, dimensions::HEIGHT))
         .set_w(PercentConstriant(0.3f, dimensions::HEIGHT))
         .set_h(AspectConstraint(3.0f));
-        start.AddComponent<C_Text>("Start Game")
+        start.AddComponent<C_Text>(U"Start Game")
         .set_alignment(text_align::RIGHT)
         .set_alpha(0.5)
         .set_vertical_alignment(text_align_vertical::CENTER);
@@ -149,7 +149,7 @@ void L_MainMenu::init()
                         }
                 });
         });
-        host.AddComponent<C_Text>("Host Game")
+        host.AddComponent<C_Text>(U"Host Game")
         .set_alignment(text_align::RIGHT)
         .set_vertical_alignment(text_align_vertical::CENTER);
 
@@ -164,7 +164,7 @@ void L_MainMenu::init()
         .set_y(PercentConstriant(0.73, dimensions::HEIGHT))
         .set_w(PercentConstriant(0.3f, dimensions::HEIGHT))
         .set_h(AspectConstraint(3.0f));
-        editor.AddComponent<C_Text>("Character Editor")
+        editor.AddComponent<C_Text>(U"Character Editor")
         .set_alignment(text_align::RIGHT)
         .set_vertical_alignment(text_align_vertical::CENTER);
         editor.AddComponent<C_Gui_Clickable>()

@@ -3,6 +3,7 @@
 #include "components/PlayerKeymap.hpp"
 #include "components/Position.hpp"
 #include "components/Velocity.hpp"
+#include "components/AnimationBehavior.hpp"
 #include "events/Events.hpp"
 #include "events/Input.hpp"
 #include <GLFW/glfw3.h>
@@ -11,11 +12,16 @@
 void S_PlayerController::update(float deltaTime, entt::registry &reg)
 {
         reg.view<C_Player>().each([&reg](auto Entity, auto &player) {
-                auto [input, player_dir, vel] = reg.get<C_PlayerInput, C_PlayerDirection, C_Velocity>(Entity);
-                //set the movement direction of the player based on input.
+                auto &&[input, player_dir, vel, abs] = reg.get<C_PlayerInput, C_PlayerDirection, C_Velocity, C_AnimationBehaviorState>(Entity);
+                //set the movement doirection of the player based on input.
+                float speed;
+                if (abs.motion_lock)
+                        speed = 0;
+                else
+                        speed = 450;
                 glm::vec2 dir = input.direction();
-                vel.velocity.x = dir.x * 450;
-                vel.velocity.y = dir.y * 450;
+                vel.velocity.x = dir.x * speed;
+                vel.velocity.y = dir.y * speed;
 
 
                 //set the integer direction of the player

@@ -115,12 +115,12 @@ void TextureBatch::Init()
         shader.Load("../assets/shaders/basicvert.vshader", "../assets/shaders/basicfrag.fshader");
         shader.Bind();
         glUniformMatrix4fv(shader.GetUniformLocation("ortho"), 1, GL_FALSE, &viewMatrix[0][0]);
-        int samplers[32];
-        for (int i = 0; i < 32; i++)//figure out how to use maxTextures
+        int samplers[MaxTextures];
+        for (int i = 0; i < MaxTextures; i++)//figure out how to use maxTextures
         {
                 samplers[i] = i;
         }
-        glUniform1iv(shader.GetUniformLocation("u_Textures"), 32, samplers);
+        glUniform1iv(shader.GetUniformLocation("u_Textures"), 16, samplers);
 }
 
 
@@ -158,6 +158,13 @@ void TextureBatch::DrawQuad(const glm::vec2& position, const glm::vec2& size, ui
 
         if (textureIndex == 0.0f)//TODO: check if above maximum textures
         {
+                //check if the textures are already maxed
+                if (TextureSlotIndex == MaxTextures - 1)
+                {
+                        EndBatch();
+                        Flush();
+                        BeginBatch();
+                }
                 textureIndex = (float)TextureSlotIndex;
                 TextureSlots[TextureSlotIndex] = textureID;
                 TextureSlotIndex++;
@@ -186,8 +193,16 @@ void TextureBatch::DrawQuad(const glm::vec2& position, const glm::vec2& size, ui
                 }
         }
 
-        if (textureIndex == 0.0f)//TODO: check if above maximum textures
+        //the texture isn't loaded yet
+        if (textureIndex == 0.0f)
         {
+                //check if the textures are already maxed
+                if (TextureSlotIndex >= MaxTextures - 1)
+                {
+                        EndBatch();
+                        Flush();
+                        BeginBatch();
+                }
                 textureIndex = (float)TextureSlotIndex;
                 TextureSlots[TextureSlotIndex] = textureID;
                 TextureSlotIndex++;

@@ -37,7 +37,7 @@ public:
         }
         void OnEvents(float deltaTime)
         {
-                // Events::iterate<E_CusrsorMotion>([this](auto &e) {
+                // Events::iterate<E_CursorMotion>([this](auto &e) {
                 //         glm::vec2 position = Renderer::screenToWorld(glm::vec2(e->xpos, e->ypos));
                 //         // std::cout << glm::to_string(position) << std::endl;
                 //         GetComponent<C_Position>().position.x = position.x - GetComponent<C_Size>().size.x / 2;

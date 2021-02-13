@@ -17,6 +17,7 @@ public:
                 glfwSetCursorPosCallback(window, cursor_position_callback);
                 glfwSetWindowSizeCallback(window, window_size_callback);
                 glfwSetMouseButtonCallback(window, mouse_button_callback);
+                glfwSetCharCallback(window, character_callback);
         }
 
 private:
@@ -42,11 +43,12 @@ private:
         }
         static void character_callback(GLFWwindow* window, unsigned int codepoint)
         {
+                Events::emit<E_Typed>(codepoint);
         }
 
         static void cursor_position_callback(GLFWwindow* window, double xpos, double ypos)
         {
-                Events::emit<E_CusrsorMotion>(xpos, ypos);
+                Events::emit<E_CursorMotion>(xpos, ypos);
                 Mouse_xpos = xpos;
                 Mouse_ypos = ypos;
         }
@@ -67,6 +69,11 @@ private:
                 //         Events::emit<E_MouseButtonRelease>(button, mods);
                 //         break;
                 // }
+        }
+
+        static void char_callback(GLFWwindow* window, unsigned int codepoint)
+        {
+                Events::emit<E_Typed>(codepoint);
         }
 };
 #endif

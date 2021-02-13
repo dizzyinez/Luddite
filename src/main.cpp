@@ -94,8 +94,8 @@ int main(int argc, char *argv[])
         if (Game::Init(window))
         {
                 Game::PushLayer(new L_Base());
-                // Game::PushLayer(new L_MainMenu());
-                Game::PushLayer(new L_CharacterEditor());
+                Game::PushLayer(new L_MainMenu());
+                // Game::PushLayer(new L_CharacterEditor());
 
                 // double time;
                 double accumulator = 0.0;
@@ -127,6 +127,7 @@ int main(int argc, char *argv[])
                                 glfwPollEvents();
                                 Game::Update(SECONDS_PER_UPDATE);
                                 glfwGetWindowSize(Game::window, &Game::window_width, &Game::window_height);
+                                glfwGetCursorPos(Game::window, &Game::cursor_x, &Game::cursor_y);
                                 accumulator -= SECONDS_PER_UPDATE;
                         }
                         // std::cout << "render accum: " << render_accumulator << std::endl;

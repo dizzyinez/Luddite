@@ -20,6 +20,10 @@ struct C_StoredFrames
         {
                 return frame - start_frame_id;
         }
+        int frame_index_to_id(uint8_t index) const
+        {
+                return start_frame_id + index;
+        }
         // entt::registry& last_frame()
         // {
         //         if (index > 0)

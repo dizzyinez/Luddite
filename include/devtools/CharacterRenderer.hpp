@@ -51,6 +51,7 @@ public:
         CharacterRenderer();
         std::shared_ptr<Texture> RenderAnimation(const std::string& character_name, const std::string& animation_name);
         void ExportCharacter(const std::string& character_name);
+        void LoadCharacter(const std::string& character_name);
 
 private:
         // objl::Loader loader;
@@ -58,6 +59,7 @@ private:
         // glm::mat4 mvp;
         std::unordered_map<std::string, Character> characters;
         Character& GetCharacter(const std::string& character_name);
+
 
         struct Vertex
         {

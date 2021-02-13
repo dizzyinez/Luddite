@@ -122,14 +122,16 @@ void Server::OnMessage(Message& msg, ENetPeer* peer)
                         int index = sf.frame_id_to_index(input_frame);
                         if (index < 0 || index >= sf.max_frames)
                         {
-                                std::cout << "invalid index" << std::endl;
+                                std::cout << "invalid index: " << index << " frame: " << input_frame << std::endl <<
+                                        "Current frame start: " << sf.start_frame_id << std::endl;
                                 break;
                         }
                         if (sf.frame_array.at(index).valid(player.entity.GetId()))
                         {
                                 auto& pi = sf.frame_array.at(index).get<C_PlayerInput>(player.entity.GetId());
-                                msg >> pi.buttons;
+                                msg >> pi.mouse_direction >> pi.buttons;
                                 pi.net_validated = true;
+                                // std::cout << "mouse dir: " << (int)pi.mouse_direction << std::endl;
                         }
 
                         out << GetData(peer)->index;

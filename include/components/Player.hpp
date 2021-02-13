@@ -37,8 +37,8 @@ struct C_PlayerDirection
 
 struct C_PlayerInput
 {
-        std::bitset<8> buttons;
-        int8_t mouse_direction = 0;
+        std::bitset<8> buttons{0x00};
+        int8_t mouse_direction = 2;
         bool net_validated = false;
         /*
          * 0 Is moving horizontally
@@ -76,62 +76,13 @@ struct C_PlayerInput
         }
         int8_t animation_direction()
         {
-                int8_t x = buttons[0] ? (buttons[1] ? 1.0 : -1.0) : 0.0;
-                int8_t y = buttons[2] ? (buttons[3] ? 1.0 : -1.0) : 0.0;
-                switch (x)
-                {
-                case 1:
-                        switch (y)
-                        {
-                        case -1:
-                                return 3;
-                                break;
-
-                        case 0:
-                                return 2;
-                                break;
-
-                        case 1:
-                                return 1;
-                                break;
-                        }
-                        break;
-
-                case 0:
-                        switch (y)
-                        {
-                        case -1:
-                                return 4;
-                                break;
-
-                        case 0:
-                                return -1;
-                                break;
-
-                        case 1:
-                                return 0;
-                                break;
-                        }
-                        break;
-
-                case -1:
-                        switch (y)
-                        {
-                        case -1:
-                                return 5;
-                                break;
-
-                        case 0:
-                                return 6;
-                                break;
-
-                        case 1:
-                                return 7;
-                                break;
-                        }
-                        break;
-                }
-                return -1;
+                constexpr int8_t directions[3][3] = {
+                        {5, 6, 7},
+                        {4, -1, 0},
+                        {3, 2, 1}};
+                int x = buttons[0] ? (buttons[1] ? 2 : 0) : 1;
+                int y = buttons[2] ? (buttons[3] ? 2 : 0) : 1;
+                return(directions[x][y]);
         }
 
 

@@ -55,7 +55,9 @@
         "thread": "cpp",
         "cinttypes": "cpp",
         "typeinfo": "cpp",
-        "codecvt": "cpp"
+        "codecvt": "cpp",
+        "unordered_set": "cpp",
+        "set": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled",
     "editor.fontFamily": "consolas, 'Courier New', monospace",

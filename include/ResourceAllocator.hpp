@@ -112,7 +112,8 @@ public:
         }
 private:
         int currentID;
-        std::unordered_map<std::string, std::tuple<int, int, std::shared_ptr<T> > > resources = {{"wow", std::make_tuple(0, 1, nullptr)}}; //id, users, resource
+        // std::unordered_map<std::string, std::tuple<int, int, std::shared_ptr<T> > > resources = {{"wow", std::make_tuple(0, 1, nullptr)}}; //id, users, resource
+        inline std::unordered_map<std::string, std::tuple<int, int, std::shared_ptr<T> > > resources; //id, users, resource
         virtual std::shared_ptr<T> getResource(const std::string& filepath) = 0;
         virtual void removeResource(std::shared_ptr<T> resource) = 0;
 };

@@ -6,72 +6,19 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
-static FT_Library ft;
 void FontAllocator::Initialize()
 {
-        if (FT_Init_FreeType(&ft))
+        if (FT_Init_FreeType(&Font::ft))
         {
                 std::cout << "Failed to Init FreeType Lib" << std::endl;
         }
+        Font::initialize_fonts();
 }
 
 template <>
 std::shared_ptr<Font> ResourceAllocator<Font>::Allocate(std::string file_path)
 {
         std::cout << "rendering font at path: " << file_path << std::endl;
-        Font font(file_path); //should set the name to the actual name not the path
-        FT_Face face;
-        if (FT_New_Face(ft, file_path.c_str(), 0, &face))
-        {
-                std::cout << "Unable to load font from " << file_path << std::endl;
-                return nullptr;
-        }
-        FT_Set_Pixel_Sizes(face, 0, 128);
-
-        uint32_t textures[128];
-        //generate textures
-        glCreateTextures(GL_TEXTURE_2D, 100, textures);
-        for (int c = 0; c < 128; c++)
-        {
-                uint32_t& texture = textures[c];
-                //load character glyph
-                if (FT_Load_Char(face, c, FT_LOAD_RENDER))
-                {
-                        std::cout << "FreeType: Failed to load Glyph" << std::endl;
-                        continue;
-                }
-                glGenTextures(1, &texture);
-                glBindTexture(GL_TEXTURE_2D, texture);
-                glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-                glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-                glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-                glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-                GLint swizzle_mask[] = {GL_ONE, GL_ONE, GL_ONE, GL_RED};
-                glTexParameteriv(GL_TEXTURE_2D, GL_TEXTURE_SWIZZLE_RGBA, swizzle_mask);
-                glTexImage2D(
-                        GL_TEXTURE_2D,
-                        0,
-                        GL_RGBA,
-                        face->glyph->bitmap.width,
-                        face->glyph->bitmap.rows,
-                        0,
-                        GL_RED,
-                        GL_UNSIGNED_BYTE,
-                        face->glyph->bitmap.buffer
-                        );
-                glBindTexture(GL_TEXTURE_2D, 0);
-
-                Character character = {
-                        std::make_shared<Texture>(texture, face->glyph->bitmap.width, face->glyph->bitmap.rows),
-                        glm::ivec2(face->glyph->bitmap.width, face->glyph->bitmap.rows),
-                        glm::ivec2(face->glyph->bitmap_left, face->glyph->bitmap_top),
-                        face->glyph->advance.x
-                };
-                font.characters.insert(std::make_pair(c, character));
-        }
-        glBindTexture(GL_TEXTURE_2D, 0);
-        FT_Done_Face(face);
-        // FT_Done_FreeType(ft);
-
-        return std::make_shared<Font>(font);
+        // Font new_font(file_path);
+        return std::make_shared<Font>(file_path);
 }

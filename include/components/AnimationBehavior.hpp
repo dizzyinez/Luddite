@@ -37,6 +37,9 @@ struct C_AnimationBehavior
 struct C_AnimationBehaviorState
 {
         std::string current_animation;
-        bool rotates = true;
         bool points_towards_mouse = false;
+        bool rotation_lock = false;
+        uint16_t rotation_lock_timer = 0;
+        bool motion_lock = false;
+        uint16_t motion_lock_timer = 0;
 };

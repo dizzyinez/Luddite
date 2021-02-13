@@ -147,10 +147,10 @@ struct C_Gui_Clickable
         }
 
 
+        bool hovering = false;
         std::function<void(C_Gui&, C_Gui_Clickable&)> onHoverOver = [](auto &Gui, auto &Gui_clickable) {};
         std::function<void(C_Gui&, C_Gui_Clickable&)> onHoverAway = [](auto &Gui, auto &Gui_clickable) {};
         std::function<void(C_Gui&, C_Gui_Clickable&)> onClick = [](auto &Gui, auto &Gui_clickable) {};
-        bool hovering = false;
 };
 
 struct C_Gui_Textbox

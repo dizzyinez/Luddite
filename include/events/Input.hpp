@@ -1,67 +1,69 @@
 #ifndef Input_hpp
 #define Input_hpp
-
 #include "events/Events.hpp"
 
 /* ----------  Keyboard  ----------  */
 
 struct E_Keyboard : public Event<E_Keyboard>
 {
-        E_Keyboard(int key_, int scancode_, int action_, int mods_) : key(key_), scancode(scancode_), action(action_), mods(mods_)
-        {
-        }
+        E_Keyboard(int key_, int scancode_, int action_, int mods_)
+                : key(key_), scancode(scancode_), action(action_), mods(mods_) {}
         uint16_t key;
         uint16_t scancode;
         uint16_t action;
         uint16_t mods;
 };
 
-struct E_KeyPress : public Event<E_KeyPress>
-{
-        E_KeyPress(int key_, int scancode_, int mods_) : key(key_), scancode(scancode_), mods(mods_)
-        {
-        }
-        int key;
-        int scancode;
-        int mods;
-};
-
-struct E_KeyRelease : public Event<E_KeyRelease>
-{
-        E_KeyRelease(int key_, int scancode_, int mods_) : key(key_), scancode(scancode_), mods(mods_)
-        {
-        }
-        int key;
-        int scancode;
-        int mods;
-};
-
-struct E_KeyRepeat : public Event<E_KeyRepeat>
-{
-        E_KeyRepeat(int key_, int scancode_, int mods_) : key(key_), scancode(scancode_), mods(mods_)
-        {
-        }
-        int key;
-        int scancode;
-        int mods;
-};
+/*
+ * struct E_KeyPress : public Event<E_KeyPress>
+ * {
+ *      E_KeyPress(int key_, int scancode_, int mods_)
+ *              : key(key_), scancode(scancode_), mods(mods_) {}
+ *      int key;
+ *      int scancode;
+ *      int mods;
+ * };
+ *
+ * struct E_KeyRelease : public Event<E_KeyRelease>
+ * {
+ *      E_KeyRelease(int key_, int scancode_, int mods_)
+ *              : key(key_), scancode(scancode_), mods(mods_) {}
+ *      int key;
+ *      int scancode;
+ *      int mods;
+ * };
+ *
+ * struct E_KeyRepeat : public Event<E_KeyRepeat>
+ * {
+ *      E_KeyRepeat(int key_, int scancode_, int mods_)
+ *              : key(key_), scancode(scancode_), mods(mods_) {}
+ *      int key;
+ *      int scancode;
+ *      int mods;
+ * };
+ */
 
 struct E_KeyPressAndRepeat : public Event<E_KeyPressAndRepeat>
 {
-        E_KeyPressAndRepeat(int key_, int scancode_, int mods_) : key(key_), scancode(scancode_), mods(mods_)
-        {
-        }
+        E_KeyPressAndRepeat(int key_, int scancode_, int mods_)
+                : key(key_), scancode(scancode_), mods(mods_) {}
         int key;
         int scancode;
         int mods;
 };
 
+struct E_Typed : public Event<E_Typed>
+{
+        E_Typed(unsigned int codepoint_)
+                : codepoint(codepoint_) {}
+        unsigned int codepoint;
+};
 
 
 /* ----------  Mouse  ----------  */
-struct E_CusrsorMotion : public Event<E_CusrsorMotion>
+struct E_CursorMotion : public Event<E_CursorMotion>
 {
-        E_CusrsorMotion(double &xpos_, double &ypos_) : xpos(xpos_), ypos(ypos_)
+        E_CursorMotion(double &xpos_, double &ypos_) : xpos(xpos_), ypos(ypos_)
         {
         }
         double xpos;
@@ -81,23 +83,23 @@ struct E_MouseButton : public Event<E_MouseButton>
         double ypos;
 };
 
-struct E_MouseButtonPress : public Event<E_MouseButtonPress>
-{
-        E_MouseButtonPress(int button_, int mods_) : button(button_), mods(mods_)
-        {
-        }
-        int button;
-        int mods;
-};
+// struct E_MouseButtonPress : public Event<E_MouseButtonPress>
+// {
+//         E_MouseButtonPress(int button_, int mods_) : button(button_), mods(mods_)
+//         {
+//         }
+//         int button;
+//         int mods;
+// };
 
-struct E_MouseButtonRelease : public Event<E_MouseButtonRelease>
-{
-        E_MouseButtonRelease(int button_, int mods_) : button(button_), mods(mods_)
-        {
-        }
-        int button;
-        int mods;
-};
+// struct E_MouseButtonRelease : public Event<E_MouseButtonRelease>
+// {
+//         E_MouseButtonRelease(int button_, int mods_) : button(button_), mods(mods_)
+//         {
+//         }
+//         int button;
+//         int mods;
+// };
 
 
 

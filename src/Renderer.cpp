@@ -106,9 +106,11 @@ void Renderer::updateMatricies(int w, int h)
 
 void Renderer::setProjectionWorld()
 {
-        sprite_batch.SetViewMatrix(worldOrthoMatrix);
-        texture_batch.SetViewMatrix(worldOrthoMatrix);
-        line_batch.SetViewMatrix(worldOrthoMatrix);
+        glm::mat4 worldMatrix = worldOrthoMatrix * worldPositionMatrix;
+        // std::cout << "BEFORE" << glm::to_string(worldOrthoMatrix) << " AFTER: " << glm::to_string(worldMatrix) << std::endl;
+        sprite_batch.SetViewMatrix(worldMatrix);
+        texture_batch.SetViewMatrix(worldMatrix);
+        line_batch.SetViewMatrix(worldMatrix);
 }
 
 void Renderer::setProjectionScreen()
@@ -118,7 +120,14 @@ void Renderer::setProjectionScreen()
         line_batch.SetViewMatrix(screenOrthoMatrix);
 }
 
+void Renderer::setCameraPosition(glm::vec2 position)
+{
+        worldCamPosition = position;
+        // worldPositionMatrix = glm::translate(glm::mat4(1.f), glm::vec3(position, 0.f));
+        worldPositionMatrix = glm::translate(glm::vec3(-position, 0.0f));
+}
+
 glm::vec2 Renderer::screenToWorld(glm::vec2 position)
 {
-        return (screenOrthoMatrix * glm::vec4(position.x, position.y, 0.0f, 1.0f)) / worldOrthoMatrix;
+        return glm::vec2(glm::inverse(worldPositionMatrix) * (screenOrthoMatrix * glm::vec4(position.x, position.y, 0.0f, 1.0f) * glm::inverse(worldOrthoMatrix)));
 }

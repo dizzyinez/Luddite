@@ -10,6 +10,7 @@
 #include "systems/Draw.hpp"
 #include "systems/TextRendering.hpp"
 #include "systems/Motion.hpp"
+#include "systems/Camera.hpp"
 
 #include "systems/TransformLerp.hpp"
 #include "systems/Gui.hpp"
@@ -21,6 +22,7 @@
 #include "systems/AnimationBehavior.hpp"
 #include "systems/Tileset.hpp"
 #include "systems/LocalPlayerInput.hpp"
+#include "systems/Trauma.hpp"
 
 #include "components/GameComponents.hpp"
 
@@ -56,6 +58,8 @@ void L_Game::init()
                     S_Animation,
                     S_AnimationBehavior,
                     S_Hitboxes,
+                    S_Trauma,
+                    S_Camera,
                     S_Draw,
                     S_Text_Rendering,
                     S_Scripts_Events,
@@ -78,6 +82,7 @@ void L_Game::init()
 
         m_Registry.set<C_PlayerSlots>();
         m_Registry.set<C_StoredFrames>();
+        m_Registry.set<C_Camera>();
 
         // FontAllocator::AddFakeUser("../assets/fonts/comic.ttf");
         // TextureAllocator::AddFakeUser("../assets/textures/wall.jpg");
@@ -92,9 +97,14 @@ void L_Game::init()
 
         Entity test_hitbox = CreateEntity();
         test_hitbox.AddComponent<C_Position>(0.0f, 0.0f);
-        test_hitbox.AddComponent<C_Origin>(0.0f, 0.0f);
+        test_hitbox.AddComponent<C_Origin>(100.0f, 100.0f);
         test_hitbox.AddComponent<C_CircleCollider>(100.0f);
-        test_hitbox.AddComponent<C_Hitbox>(500.0f, 0.0f, 0.0f);
+        test_hitbox.AddComponent<C_Hitbox>(500.0f, 0.0f, 0.0f).enabled = true;
+        test_hitbox.AddComponent<C_Team>(Team::ENEMY);
+        test_hitbox.AddComponent<C_Size>(200.f, 200.f);
+        test_hitbox.AddComponent<C_Texture>(TextureAllocator::Get("../assets/textures/circle.png"));
+        test_hitbox.AddComponent<C_Tint>(glm::vec4(1.0f, 0.4f, 0.4f, 0.6f));
+        test_hitbox.AddComponent<C_DrawLayer>(DrawLayer::sprite);
 
         auto& sf = m_Registry.ctx<C_StoredFrames>();
         CopyGameState(m_Registry, sf.frame_array.at(0));
@@ -145,7 +155,6 @@ void L_Game::update(float deltaTime)
                         if (client != nullptr)
                         {
                                 client->MessageServer(msg);
-                                std::cout << pi.button1() << std::endl;
                         }
                         else if (server != nullptr)
                         {
@@ -221,16 +230,18 @@ void L_Game::Step(float deltaTime, entt::registry& reg)
                        S_Hitboxes,
                        S_Motion,
                        S_Scripts_Update,
-                       S_Scripts_LateUpdate
+                       S_Scripts_LateUpdate,
+                       S_Trauma
                        >(deltaTime, reg);
 }
 
-void L_Game::render(float alpha)
+void L_Game::render(float alpha, float deltaTime)
 {
         systems.update<S_Transform_Lerp> (last_frame, m_Registry, lerp_frame, alpha);
-        systems.update<S_Tileset>        (alpha, lerp_frame);
-        systems.update<S_Text_Rendering> (alpha, lerp_frame);
-        systems.update<S_Draw>           (alpha, lerp_frame);
+        systems.update<S_Tileset>(alpha, lerp_frame);
+        systems.update<S_Text_Rendering>(alpha, lerp_frame);
+        systems.update<S_Camera>(alpha, deltaTime, lerp_frame, m_Registry);
+        systems.update<S_Draw>(alpha, lerp_frame);
 }
 
 
@@ -251,8 +262,9 @@ void L_Game::CopyGameState(entt::registry& from, entt::registry& to)
                              C_PlayerInput,
                              C_PlayerDirection,
                              //      C_PlayerKeymap,
-                             C_Simulation,
+                             //      C_Simulation,
                              C_NativeScript,
+                             C_Team,
                              C_Animation,
                              C_AnimationBehavior,
                              C_AnimationBehaviorState
@@ -275,6 +287,7 @@ void L_Game::CopyInputs(entt::registry& from, entt::registry& to, bool overwrite
 void L_Game::CopyRenderingComponents(entt::registry& from, entt::registry& to)
 {
         utils::clone_registry<C_Position,
+                              C_Player,
                               C_DrawLayer,
                               C_Size,
                               C_Texture,

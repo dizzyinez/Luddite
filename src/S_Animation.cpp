@@ -1,8 +1,12 @@
 #include "systems/Animation.hpp"
-#include "components/Animation.hpp"
-#include "components/Tileset.hpp"
-#include "components/AnimationBehavior.hpp"
-#include "components/Player.hpp"
+#include "components/GameComponents.hpp"
+#include "data/TextureAllocator.hpp"
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtx/transform.hpp>
+// #include "components/Animation.hpp"
+// #include "components/Tileset.hpp"
+// #include "components/AnimationBehavior.hpp"
+// #include "components/Player.hpp"
 
 #include <string>
 
@@ -276,6 +280,32 @@ void run_animation_behavior_increment(entt::registry& reg, entt::entity Entity)
                                                 abs.motion_lock = false;
                                 }
                         }
+                        gason::JsonValue hitboxes_json = ab.json->root(abs.current_animation.c_str())("Hitboxes").at(0).at(anim.current_frame);
+                        // ab.json->root.child
+                        if (hitboxes_json("enabled").toBool())
+                        {
+                                constexpr float SCALE_COEFFICIENT = 30.f;
+                                constexpr float KNOCKBACK_COEFFICIENT = 10.f;
+                                reg.get<C_Size>(abs.hitboxes.at(0)).size = glm::vec2(hitboxes_json("scale").toNumber() * SCALE_COEFFICIENT, hitboxes_json("scale").toNumber() * SCALE_COEFFICIENT);
+                                reg.get<C_Origin>(abs.hitboxes.at(0)).origin = glm::vec2(hitboxes_json("scale").toNumber() * SCALE_COEFFICIENT * 0.5f, hitboxes_json("scale").toNumber() * SCALE_COEFFICIENT * 0.5f);
+                                reg.get<C_CircleCollider>(abs.hitboxes.at(0)).radius = hitboxes_json("scale").toNumber() * SCALE_COEFFICIENT;
+                                glm::mat4 rotation = glm::rotate(glm::pi<float>() * (anim.direction * 0.25f), glm::vec3(0.f, 0.f, 1.f));
+                                C_Child& child = reg.get<C_Child>(abs.hitboxes.at(0));
+                                child.offset = glm::vec3(reg.get<C_Origin>(child.parent).origin, 0.f) +
+                                               glm::vec3(hitboxes_json("scale").toNumber() * SCALE_COEFFICIENT * -0.5f, hitboxes_json("scale").toNumber() * SCALE_COEFFICIENT * -0.5f, 0.f) +
+                                               glm::vec3(rotation * glm::vec4(hitboxes_json("x").toNumber() * SCALE_COEFFICIENT, hitboxes_json("y").toNumber() * SCALE_COEFFICIENT, 0.f, 1.f));
+                                //STORE THE ROTATE VECTOR AND USE IT TO CHANGE THE KB DIR
+                                C_Hitbox& hitbox = reg.get<C_Hitbox>(abs.hitboxes.at(0));
+                                hitbox.enabled = true;
+                                hitbox.damage = hitboxes_json("damage").toNumber();
+                                hitbox.kb_dir = -glm::vec2(rotation * glm::vec4(hitboxes_json("x_dir").toNumber() * SCALE_COEFFICIENT * KNOCKBACK_COEFFICIENT, hitboxes_json("y_dir").toNumber() * SCALE_COEFFICIENT * KNOCKBACK_COEFFICIENT, 0.f, 1.f));
+                        }
+                        else
+                        {
+                                C_Hitbox& hitbox = reg.get<C_Hitbox>(abs.hitboxes.at(0));
+                                hitbox.enabled = false;
+                                reg.get<C_Size>(abs.hitboxes.at(0)).size = glm::vec2(0.f, 0.f);
+                        }
                 }
                 else
                 {
@@ -283,7 +313,6 @@ void run_animation_behavior_increment(entt::registry& reg, entt::entity Entity)
                 }
         }
 }
-
 
 
 void S_Animation::update(float dt, entt::registry &reg)
@@ -294,6 +323,30 @@ void S_Animation::update(float dt, entt::registry &reg)
                 // lua_animation = &reg.get<C_Animation>(Entity);
                 // C_Animation& anim = reg.get<C_Animation>(Entity);
                 C_AnimationBehaviorState& abs = reg.get<C_AnimationBehaviorState>(Entity);
+
+                //create the hitboxes if they don't exist yet
+                if (abs.hitboxes.at(0) == entt::null)
+                {
+                        for (int i = 0; i < abs.hitboxes.size(); i++)
+                        {
+                                entt::entity hitbox = reg.create();
+                                reg.emplace<C_Position>(hitbox);
+                                reg.emplace<C_Hitbox>(hitbox);
+                                reg.emplace<C_Origin>(hitbox);
+                                reg.emplace<C_CircleCollider>(hitbox, 0.f);
+                                reg.emplace<C_Child>(hitbox, Entity);
+                                // if (reg.had<C_Team>(Entity))
+                                reg.emplace<C_Team>(hitbox, reg.get<C_Team>(Entity).team);
+
+                                //for debug rendering
+                                reg.emplace<C_Size>(hitbox, 0.f, 0.f);
+                                reg.emplace<C_Texture>(hitbox, TextureAllocator::Get("../assets/textures/circle.png"));
+                                reg.emplace<C_Tint>(hitbox, glm::vec4(1.0f, 0.4f, 0.4f, 0.6f));
+                                reg.emplace<C_DrawLayer>(hitbox, DrawLayer::sprite);
+                                abs.hitboxes.at(i) = hitbox;
+                        }
+                }
+
                 auto& L = ab.L;
                 if (L == nullptr)
                 {

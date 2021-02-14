@@ -28,6 +28,7 @@ public:
         static void setProjectionWorld();
         static void setProjectionScreen();
 
+        static void setCameraPosition(glm::vec2 position);
         static glm::vec2 screenToWorld(glm::vec2 position);
 private:
         inline static uint32_t texture;
@@ -36,7 +37,8 @@ private:
         inline static SpriteBatch sprite_batch;
         inline static LineBatch line_batch;
 
-
+        inline static glm::vec2 worldCamPosition;
+        inline static glm::mat4 worldPositionMatrix;
         inline static glm::mat4 worldOrthoMatrix;
         inline static glm::mat4 screenOrthoMatrix;
         inline static unsigned int orthoMatrixID;

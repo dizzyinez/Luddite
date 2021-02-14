@@ -1,3 +1,4 @@
+#pragma once
 #include "components/Position.hpp"
 #include "components/Velocity.hpp"
 #include "components/Ancestry.hpp"
@@ -17,3 +18,5 @@
 #include "components/Origin.hpp"
 #include "components/CircleCollider.hpp"
 #include "components/Hitbox.hpp"
+#include "components/Team.hpp"
+#include "components/Camera.hpp"

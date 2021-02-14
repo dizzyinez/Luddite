@@ -18,7 +18,7 @@ public:
         virtual void init() {}
         virtual void handleEvents(float deltaTime) {}
         virtual void update(float deltaTime) {}
-        virtual void render(float alpha) {}
+        virtual void render(float alpha, float deltaTime) {}
         virtual void clean() {}
 
         Entity CreateEntity();

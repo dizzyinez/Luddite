@@ -198,7 +198,7 @@ void L_MainMenu::update(float deltaTime)
                 client->Update();
 }
 
-void L_MainMenu::render(float alpha)
+void L_MainMenu::render(float alpha, float deltaTime)
 {
         systems.update<S_Tileset> (alpha, m_Registry);
         systems.update<S_Draw>    (alpha, m_Registry);

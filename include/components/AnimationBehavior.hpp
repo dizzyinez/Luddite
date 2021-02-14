@@ -4,6 +4,7 @@
 #include <string>
 #include <functional>
 #include <lua.hpp>
+#include <array>
 
 struct C_AnimationBehavior
 {
@@ -36,10 +37,15 @@ struct C_AnimationBehavior
 
 struct C_AnimationBehaviorState
 {
+        C_AnimationBehaviorState()
+        {
+                hitboxes.fill(entt::null);
+        }
         std::string current_animation;
         bool points_towards_mouse = false;
         bool rotation_lock = false;
         uint16_t rotation_lock_timer = 0;
         bool motion_lock = false;
         uint16_t motion_lock_timer = 0;
+        std::array<entt::entity, 5> hitboxes;
 };

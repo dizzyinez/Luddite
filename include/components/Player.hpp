@@ -15,6 +15,7 @@ struct C_Player
         }
         bool local_player = false;
         uint8_t player_slot = 0;
+        float trauma = 0.f;
 };
 
 struct C_PlayerSlots
@@ -84,7 +85,6 @@ struct C_PlayerInput
                 int y = buttons[2] ? (buttons[3] ? 2 : 0) : 1;
                 return(directions[x][y]);
         }
-
 
         bool button1()
         {

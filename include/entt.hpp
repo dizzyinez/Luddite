@@ -15129,7 +15129,7 @@ public:
      * @param hint A desired entity identifier.
      * @return A valid entity identifier.
      */
-    [[nodiscard]] entity_type create(const entity_type hint) {
+    /*[[nodiscard]]*/ entity_type create(const entity_type hint) {
         ENTT_ASSERT(hint != null);
         entity_type entt;
 

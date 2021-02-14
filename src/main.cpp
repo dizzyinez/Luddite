@@ -20,6 +20,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 #include "data/FontAllocator.hpp"
+#include "core/AudioPlayer.hpp"
 
 #include "utils/loading_screen.hpp"
 
@@ -89,6 +90,7 @@ int main(int argc, char *argv[])
         glfwSwapInterval(0); //v-sync off
 
         FontAllocator::Initialize();
+        AudioPlayer::Initialize();
 
         // std::unique_ptr<Game> game(new Game()); //why is this a pointer????
         if (Game::Init(window))
@@ -135,7 +137,7 @@ int main(int argc, char *argv[])
                         {
                                 // std::cout << "rendering" << std::endl;
                                 glClear(GL_COLOR_BUFFER_BIT);
-                                Game::Render(accumulator / SECONDS_PER_UPDATE);
+                                Game::Render(accumulator / SECONDS_PER_UPDATE, min_frame_time);
                                 glfwSwapBuffers(window);
 
                                 render_accumulator -= min_frame_time;

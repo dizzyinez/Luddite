@@ -8,7 +8,7 @@ public:
         void init();
         void handleEvents(float deltaTime);
         void update(float deltaTime);
-        void render(float alpha);
+        void render(float alpha, float deltaTime);
         void clean();
         L_CharacterEditor();
 private:

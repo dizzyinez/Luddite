@@ -1,19 +1,7 @@
 #include "utils/spawning.hpp"
 
-#include "components/Player.hpp"
-#include "components/Position.hpp"
-#include "components/Origin.hpp"
-#include "components/Velocity.hpp"
-#include "components/Drag.hpp"
-#include "components/Size.hpp"
-#include "components/DrawLayer.hpp"
-#include "components/PlayerKeymap.hpp"
-#include "components/Texture.hpp"
-#include "components/Tileset.hpp"
-#include "components/Animation.hpp"
-#include "components/AnimationBehavior.hpp"
-#include "components/CircleCollider.hpp"
-#include "components/Simulation.hpp"
+#include "components/GameComponents.hpp"
+
 #include "ecs/Entity.hpp"
 #include "script/PlayerScript.hpp"
 #include "data/assets.hpp"
@@ -41,6 +29,7 @@ Entity SpawnPlayer(Layer* L, uint8_t slot, bool local_player = false)
         player.AddComponent<C_Tileset>(ab.json->root("rows").toNumber(), ab.json->root("lines").toNumber(), 0);
         player.AddComponent<C_Animation>();
         player.AddComponent<C_Player>(local_player, slot);
+        player.AddComponent<C_Team>(Team::PLAYER);
         player.AddComponent<C_PlayerInput>();
         player.AddComponent<C_PlayerDirection>();
         player.AddScript<PlayerScript>();

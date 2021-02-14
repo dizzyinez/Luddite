@@ -310,19 +310,22 @@ void Character::Export()
                 .startArray();
                 for (int i = 0; i < animation.frames.size(); i++)
                 {
+                        json.startObject();
                         if (frame_data->root("1")[i]("scale").toNumber() > 0)
                         {
-                                json.startObject()
-                                .addValue("frame", i)
+                                json.addValue("enabled", true)
                                 .addValue("scale", frame_data->root("1")[i]("scale").toNumber())
                                 .addValue("x", frame_data->root("1")[i]("x").toNumber())
                                 .addValue("y", frame_data->root("1")[i]("y").toNumber())
                                 .addValue("x_dir", frame_data->root("1")[i]("x_dir").toNumber())
                                 .addValue("y_dir", frame_data->root("1")[i]("y_dir").toNumber())
-                                .addValue("damage", frame_data->root("1")[i]("damage").toNumber())
-                                .endObject()
-                                ;
+                                .addValue("damage", frame_data->root("1")[i]("damage").toNumber());
                         }
+                        else
+                        {
+                                json.addValue("enabled", false);
+                        }
+                        json.endObject();
                 }
                 json.endArray()
                 .endArray()

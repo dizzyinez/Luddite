@@ -18,7 +18,7 @@ public:
         // ~Game();
         static bool Init(GLFWwindow* w);
         static void Update(float deltaTime);
-        static void Render(float alpha);
+        static void Render(float alpha, float deltaTime);
         static void Clean();
 
         static void PushLayer(Layer*layer);

@@ -85,8 +85,6 @@ void Client::OnMessage(Message& msg)
                         {
                                 auto& pi = sf.frame_array.at(index).get<C_PlayerInput>(player.entity.GetId());
                                 msg >> pi.mouse_direction >> pi.buttons;
-                                if (player.local)
-                                        std::cout << "button 1 " << pi.button1() << std::endl;
                                 pi.net_validated = true;
                         }
                 }

@@ -27,10 +27,10 @@ void Game::Update(float deltaTime)
         Events::flushAll();
 }
 
-void Game::Render(float alpha)
+void Game::Render(float alpha, float deltaTime)
 {
         for (Layer* layer : Layers)
-                layer->render(alpha);
+                layer->render(alpha, deltaTime);
 }
 
 void Game::Clean()

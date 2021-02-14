@@ -152,7 +152,7 @@ void L_CharacterEditor::update(float deltaTime)
         systems.update<S_Motion>(deltaTime, m_Registry);
 }
 
-void L_CharacterEditor::render(float alpha)
+void L_CharacterEditor::render(float alpha, float deltaTime)
 {
         systems.update<S_Tileset> (alpha, m_Registry);
         systems.update<S_Draw>    (alpha, m_Registry);

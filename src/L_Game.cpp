@@ -10,17 +10,19 @@
 #include "systems/Draw.hpp"
 #include "systems/TextRendering.hpp"
 #include "systems/Motion.hpp"
-#include "systems/Camera.hpp"
-
+#include "systems/Ancestry.hpp"
 #include "systems/TransformLerp.hpp"
+#include "systems/Scripts.hpp"
 #include "systems/Gui.hpp"
+#include "systems/Animation.hpp"
+#include "systems/Tileset.hpp"
+
+#include "systems/DrawLevel.hpp"
+#include "systems/Camera.hpp"
 #include "systems/Networking.hpp"
 #include "systems/PlayerController.hpp"
 #include "systems/Hitboxes.hpp"
-#include "systems/Scripts.hpp"
-#include "systems/Animation.hpp"
 #include "systems/AnimationBehavior.hpp"
-#include "systems/Tileset.hpp"
 #include "systems/LocalPlayerInput.hpp"
 #include "systems/Trauma.hpp"
 
@@ -40,11 +42,15 @@
 
 #include "events/Gameworld.hpp"
 
+#include "level/LevelGenerator.hpp"
+#include "rendering/LevelRenderer.hpp"
 
+Level level;
 
 void L_Game::init()
 {
         systems.add<S_Motion,
+                    S_Ancestry,
                     S_Transform_Lerp,
                     S_Gui_Input,
                     S_Gui,
@@ -61,12 +67,16 @@ void L_Game::init()
                     S_Trauma,
                     S_Camera,
                     S_Draw,
+                    S_DrawLevel,
                     S_Text_Rendering,
                     S_Scripts_Events,
                     S_Scripts_Update,
                     S_Scripts_LateUpdate>();
         systems.configure(m_Registry, this);
 
+        m_Registry.set<C_PlayerSlots>();
+        m_Registry.set<C_StoredFrames>();
+        m_Registry.set<C_Camera>();
 
         if (server != nullptr)
                 SetContext<PlayerList*>(&server->player_list);
@@ -80,31 +90,27 @@ void L_Game::init()
                 }
         }
 
-        m_Registry.set<C_PlayerSlots>();
-        m_Registry.set<C_StoredFrames>();
-        m_Registry.set<C_Camera>();
-
-        // FontAllocator::AddFakeUser("../assets/fonts/comic.ttf");
-        // TextureAllocator::AddFakeUser("../assets/textures/wall.jpg");
-        // auto e1 = CreateEntity();
-        // e1.AddComponent<C_Position>(-25.0f, 0.0f);
-        // e1.AddComponent<C_Velocity>(0.0f, 20.0f);
-        // e1.AddComponent<C_DrawLayer>(DrawLayer::sprite);
-        // e1.AddComponent<C_Size>(100.0f, 100.0f);
-        // // e1.AddComponent<C_Texture>(TextureAllocator::Get("../assets/textures/wall.jpg"));
-        // e1.AddComponent<C_Texture>(FontAllocator::Get("../assets/fonts/comic.ttf")->characters['S'].texture);
+        // utils::SpawnNpc(this, Npcs::eNpc::lizard);
 
 
-        Entity test_hitbox = CreateEntity();
-        test_hitbox.AddComponent<C_Position>(0.0f, 0.0f);
-        test_hitbox.AddComponent<C_Origin>(100.0f, 100.0f);
-        test_hitbox.AddComponent<C_CircleCollider>(100.0f);
-        test_hitbox.AddComponent<C_Hitbox>(500.0f, 0.0f, 0.0f).enabled = true;
-        test_hitbox.AddComponent<C_Team>(Team::ENEMY);
-        test_hitbox.AddComponent<C_Size>(200.f, 200.f);
-        test_hitbox.AddComponent<C_Texture>(TextureAllocator::Get("../assets/textures/circle.png"));
-        test_hitbox.AddComponent<C_Tint>(glm::vec4(1.0f, 0.4f, 0.4f, 0.6f));
-        test_hitbox.AddComponent<C_DrawLayer>(DrawLayer::sprite);
+        level = LevelGenerator::Generate(0);
+        Renderer::SetLevel(level);
+        // LevelRenderer::Init();
+        // LevelRenderer::SetLevel(level);
+
+
+
+        // Entity test_hitbox = CreateEntity();
+        // test_hitbox.AddComponent<C_Position>(0.0f, 0.0f);
+        // test_hitbox.AddComponent<C_Origin>(100.0f, 100.0f);
+        // test_hitbox.AddComponent<C_CircleCollider>(100.0f);
+        // test_hitbox.AddComponent<C_Hitbox>(500.0f, 0.0f, 0.0f).enabled = true;
+        // test_hitbox.AddComponent<C_Team>(Team::ENEMY);
+        // test_hitbox.AddComponent<C_Size>(200.f, 200.f);
+        // test_hitbox.AddComponent<C_Texture>(TextureAllocator::Get("../assets/textures/circle.png"), glm::vec2(100.f, 100.f));
+        // test_hitbox.AddComponent<C_Tint>(glm::vec4(1.0f, 0.4f, 0.4f, 0.6f));
+        // test_hitbox.AddComponent<C_DrawLayer>(DrawLayer::sprite);
+
 
         auto& sf = m_Registry.ctx<C_StoredFrames>();
         CopyGameState(m_Registry, sf.frame_array.at(0));
@@ -227,6 +233,7 @@ void L_Game::Step(float deltaTime, entt::registry& reg)
         systems.update<S_Gui,
                        S_Animation,
                        S_PlayerController,
+                       S_Ancestry,
                        S_Hitboxes,
                        S_Motion,
                        S_Scripts_Update,
@@ -237,10 +244,12 @@ void L_Game::Step(float deltaTime, entt::registry& reg)
 
 void L_Game::render(float alpha, float deltaTime)
 {
+        // LevelRenderer::Render();
         systems.update<S_Transform_Lerp> (last_frame, m_Registry, lerp_frame, alpha);
         systems.update<S_Tileset>(alpha, lerp_frame);
         systems.update<S_Text_Rendering>(alpha, lerp_frame);
         systems.update<S_Camera>(alpha, deltaTime, lerp_frame, m_Registry);
+        systems.update<S_DrawLevel>(alpha, lerp_frame);
         systems.update<S_Draw>(alpha, lerp_frame);
 }
 
@@ -249,7 +258,6 @@ void L_Game::CopyGameState(entt::registry& from, entt::registry& to)
 {
         utils::copy_registry<C_Position,
                              C_Velocity,
-                             C_Origin,
                              C_CircleCollider,
                              C_Hitbox,
                              C_Child,

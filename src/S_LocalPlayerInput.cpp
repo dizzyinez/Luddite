@@ -2,7 +2,6 @@
 #include "components/player.hpp"
 #include "components/playerkeymap.hpp"
 #include "components/Position.hpp"
-#include "components/Origin.hpp"
 #include "components/Size.hpp"
 #include "events/Events.hpp"
 #include "events/Input.hpp"
@@ -14,8 +13,8 @@ void S_LocalPlayerInput::update(float deltaTime, entt::registry &reg)
         auto view = reg.view<C_PlayerKeymap>();
         for (auto entity : view)
         {
-                auto &&[keymap, position, origin, input] = reg.get<C_PlayerKeymap, C_Position, C_Origin, C_PlayerInput>(entity);
-                glm::vec2 char_pos = glm::vec2(position.position) + origin.origin;
+                auto &&[keymap, position, input] = reg.get<C_PlayerKeymap, C_Position, C_PlayerInput>(entity);
+                glm::vec2 char_pos = glm::vec2(position.position);
                 keymap.motion->update(char_pos.x, char_pos.y);
                 keymap.look->update(char_pos.x, char_pos.y);
 

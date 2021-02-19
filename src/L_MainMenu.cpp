@@ -9,6 +9,7 @@
 #include "systems/Draw.hpp"
 #include "systems/TextRendering.hpp"
 #include "systems/Motion.hpp"
+#include "systems/Ancestry.hpp"
 #include "systems/Gui.hpp"
 #include "systems/Scripts.hpp"
 #include "systems/Animation.hpp"
@@ -44,6 +45,7 @@
 void L_MainMenu::init()
 {
         systems.add<S_Motion,
+                    S_Ancestry,
                     S_Gui_Input,
                     S_Gui,
                     S_Tileset,
@@ -187,6 +189,7 @@ void L_MainMenu::update(float deltaTime)
         systems.update<S_Gui>(deltaTime, m_Registry);
         systems.update<S_Animation>(deltaTime, m_Registry);
         systems.update<S_Text_Rendering>(deltaTime, m_Registry);
+        systems.update<S_Ancestry>(deltaTime, m_Registry);
         systems.update<S_Motion>(deltaTime, m_Registry);
         systems.update<S_Scripts_Update>(deltaTime, m_Registry);
 

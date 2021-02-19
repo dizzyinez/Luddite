@@ -28,6 +28,9 @@ include_directories(
 "R:/Dev/Libraries/C++/openal-soft/include"
 "R:/Dev/Libraries/C++/dr_libs/include"
 "R:/Dev/Libraries/C++/stb"
+"R:/Dev/Libraries/C++/poisson-disk-sampling/thinks/poisson_disk_sampling"
+"R:/Dev/Libraries/C++/delaunator-cpp/include"
+"R:/Dev/Libraries/C++/jc_voronoi/include"
 )
 
 macro(find_library_wrapper)          

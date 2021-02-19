@@ -47,7 +47,7 @@ void TextureBatch::Flush()
 
 void TextureBatch::Init()
 {
-        MaxQuadCount = 5000;
+        MaxQuadCount = 3000;
         MaxVertexCount = MaxQuadCount * 4;
         MaxIndexCount = MaxQuadCount * 6;
 
@@ -58,7 +58,7 @@ void TextureBatch::Init()
                 return;
         }
 
-        QuadBuffer = new Vertex[MaxQuadCount];
+        QuadBuffer = new Vertex[MaxVertexCount];
 
         glCreateVertexArrays(1, &QuadVA);
         glBindVertexArray(QuadVA);
@@ -108,6 +108,8 @@ void TextureBatch::Init()
         uint32_t color = 0xffffffff;
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, 1, 1, 0, GL_RGBA, GL_UNSIGNED_BYTE, &color);
 
+
+
         TextureSlots[0] = WhiteTexture;
         for (size_t i = 1; i < MaxTextures; i++)
                 TextureSlots[i] = 0;
@@ -120,7 +122,7 @@ void TextureBatch::Init()
         {
                 samplers[i] = i;
         }
-        glUniform1iv(shader.GetUniformLocation("u_Textures"), 16, samplers);
+        glUniform1iv(shader.GetUniformLocation("u_Textures"), MaxTextures, samplers);
 }
 
 

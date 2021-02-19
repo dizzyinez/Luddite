@@ -26,10 +26,9 @@ private:
         uint32_t TextureSlotIndex = 1;
 
         unsigned int WhiteTexture = 0;
-        uint32_t WhiteTextureSlot = 0;
 
-        unsigned int texture;
-        unsigned int texture_n;
+        // unsigned int texture;
+        // unsigned int texture_n;
 
         struct Vertex
         {

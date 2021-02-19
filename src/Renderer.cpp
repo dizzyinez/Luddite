@@ -15,7 +15,7 @@
 
 void Renderer::Init()
 {
-        std::cout << "id is: " << Assets::Sprite::Get(Assets::Sprite::player) << std::endl;
+        // std::cout << "id is: " << Assets::Sprite::Get(Assets::Sprite::player) << std::endl;
         // glEnable(GL_BLEND);
         // glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         // stbi_set_flip_vertically_on_load(false);
@@ -39,6 +39,8 @@ void Renderer::Init()
         // sprite_batch = std::make_unique<SpriteBatch>();
         sprite_batch.Init();
         sprite_batch.BeginBatch();
+
+        level_renderer.Init();
 
         // updateMatricies(1024, 768);
 }
@@ -64,6 +66,16 @@ void Renderer::RenderLine(glm::vec2 point1, glm::vec2 point2, glm::vec4 color)
 {
         CheckGLError();
         line_batch.DrawLine(point1, point2, color);
+}
+
+void Renderer::RenderLevel()
+{
+        level_renderer.Render();
+}
+
+void Renderer::SetLevel(const Level& level)
+{
+        level_renderer.SetLevel(level);
 }
 
 void Renderer::flushTextureBatch()
@@ -111,6 +123,7 @@ void Renderer::setProjectionWorld()
         sprite_batch.SetViewMatrix(worldMatrix);
         texture_batch.SetViewMatrix(worldMatrix);
         line_batch.SetViewMatrix(worldMatrix);
+        level_renderer.SetViewMatrix(worldMatrix);
 }
 
 void Renderer::setProjectionScreen()
@@ -118,6 +131,7 @@ void Renderer::setProjectionScreen()
         sprite_batch.SetViewMatrix(screenOrthoMatrix);
         texture_batch.SetViewMatrix(screenOrthoMatrix);
         line_batch.SetViewMatrix(screenOrthoMatrix);
+        // level_renderer.SetViewMatrix(screenOrthoMatrix);
 }
 
 void Renderer::setCameraPosition(glm::vec2 position)

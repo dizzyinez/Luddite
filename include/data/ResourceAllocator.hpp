@@ -20,7 +20,7 @@ public:
                         }
                         else
                         {
-                                std::cout << "resource expired at path: " << id << std::endl;
+                                std::cout << "resource expired: " << id << std::endl;
                                 std::shared_ptr<T> resource = Allocate(id);
                                 it->second = resource;
                                 return resource;

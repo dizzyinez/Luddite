@@ -55,7 +55,7 @@ void SpriteBatch::Init()
                 //TODO: assert or crash or whatever
         }
 
-        QuadBuffer = new Vertex[MaxQuadCount];
+        QuadBuffer = new Vertex[MaxVertexCount];
 
         glCreateVertexArrays(1, &QuadVA);
         glBindVertexArray(QuadVA);
@@ -128,7 +128,7 @@ void SpriteBatch::DrawQuad(const glm::vec2& position, const glm::vec2& size) // 
         // addQuadToBuffer(position, size, 0.0f);
 }
 
-void SpriteBatch::DrawQuad(const glm::vec2& position, const glm::vec2& size, uint32_t textureID,  const glm::vec4& tex_coords, const glm::uvec4& colors)
+void SpriteBatch::DrawQuad(const glm::vec2& position, const glm::vec2& size, uint32_t textureID, const glm::vec4& tex_coords, const glm::uvec4& colors)
 {
         if (IndexCount >= MaxIndexCount)
         {
@@ -168,28 +168,28 @@ void SpriteBatch::addQuadToBuffer(const glm::vec2& position, const glm::vec2& si
         QuadBufferPtr->texCoords = {tex_coords.x, tex_coords.y};
         QuadBufferPtr->tex_index = tex_index;
         QuadBufferPtr->colors = colors;
-        QuadBufferPtr->world_position = {position.x + size.x/2, position.y + size.y/2, 0.0f};
+        QuadBufferPtr->world_position = {position.x + size.x / 2, position.y + size.y / 2, 0.0f};
         QuadBufferPtr++;
 
         QuadBufferPtr->position = {position.x + size.x, position.y, 0.0f};
         QuadBufferPtr->texCoords = {tex_coords.x + tex_coords.z, tex_coords.y};
         QuadBufferPtr->tex_index = tex_index;
         QuadBufferPtr->colors = colors;
-        QuadBufferPtr->world_position = {position.x + size.x/2, position.y + size.y/2, 0.0f};
+        QuadBufferPtr->world_position = {position.x + size.x / 2, position.y + size.y / 2, 0.0f};
         QuadBufferPtr++;
 
         QuadBufferPtr->position = {position.x + size.x, position.y + size.y, 0.0f};
         QuadBufferPtr->texCoords = {tex_coords.x + tex_coords.z, tex_coords.y + tex_coords.w};
         QuadBufferPtr->tex_index = tex_index;
         QuadBufferPtr->colors = colors;
-        QuadBufferPtr->world_position = {position.x + size.x/2, position.y + size.y/2, 0.0f};
+        QuadBufferPtr->world_position = {position.x + size.x / 2, position.y + size.y / 2, 0.0f};
         QuadBufferPtr++;
 
         QuadBufferPtr->position = {position.x, position.y + size.y, 0.0f};
         QuadBufferPtr->texCoords = {tex_coords.x, tex_coords.y + tex_coords.w};
         QuadBufferPtr->tex_index = tex_index;
         QuadBufferPtr->colors = colors;
-        QuadBufferPtr->world_position = {position.x + size.x/2, position.y + size.y/2, 0.0f};
+        QuadBufferPtr->world_position = {position.x + size.x / 2, position.y + size.y / 2, 0.0f};
         // std::cout << QuadBufferPtr->colors.x << std::endl;
         QuadBufferPtr++;
 

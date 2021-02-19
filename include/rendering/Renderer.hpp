@@ -7,6 +7,7 @@
 #include "rendering/TextureBatch.hpp"
 #include "rendering/SpriteBatch.hpp"
 #include "rendering/LineBatch.hpp"
+#include "rendering/LevelRenderer.hpp"
 
 class Renderer
 {
@@ -20,6 +21,8 @@ public:
         static void RenderTexture(const glm::vec2& position, const glm::vec2& size, uint32_t texture_id, const glm::vec4& tex_coords, const glm::vec4& color = {1.0f, 1.0f, 1.0f, 1.0f});
         static void RenderSprite(const glm::vec2& position, const glm::vec2& size, uint32_t texture_id, const glm::vec4& tex_coords, const glm::uvec4& colors);
         static void RenderLine(glm::vec2 point1, glm::vec2 point2, glm::vec4 color = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f));
+        static void RenderLevel();
+        static void SetLevel(const Level& level);
         static void flushTextureBatch();
         static void flushSpriteBatch();
         static void flushLineBatch();
@@ -36,6 +39,7 @@ private:
         inline static TextureBatch texture_batch;
         inline static SpriteBatch sprite_batch;
         inline static LineBatch line_batch;
+        inline static LevelRenderer level_renderer;
 
         inline static glm::vec2 worldCamPosition;
         inline static glm::mat4 worldPositionMatrix;

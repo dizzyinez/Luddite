@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <string>
+#include "utils/StringFormat.hpp"
 
 #define CHARACTER_TYPES_DECLARE \
         CHARACTER_TYPE_DECLARATION(character) \
@@ -15,7 +16,6 @@ struct Characters
         #undef CHARACTER_TYPE_DECLARATION
         };
 
-
         inline static const std::string Character_Ids[] =
         {
         #define CHARACTER_TYPE_DECLARATION(name) #name,
@@ -23,40 +23,48 @@ struct Characters
         #undef CHARACTER_TYPE_DECLARATION
         };
 
-        static std::string GetTextureFilePath(eCharacter c)
+        #define GET_FILE_PATH_FUNCTION(FUNCTION_NAME, FILE_TYPE) \
+        static std::string FUNCTION_NAME(eCharacter c) \
+        { \
+                auto id = static_cast<uint32_t>(c); \
+                return string_format("../assets/characters/%s/%s.%s", Character_Ids[id].c_str(), Character_Ids[id].c_str(), #FILE_TYPE); \
+        };
+        GET_FILE_PATH_FUNCTION(GetTextureFilePath, png)
+        GET_FILE_PATH_FUNCTION(GetAnimationFilePath, animation)
+        GET_FILE_PATH_FUNCTION(GetAnimationBehaviorFilePath, lua)
+        #undef GET_FILE_PATH_FUNCTION
+};
+
+
+#define NPC_TYPES_DECLARE \
+        NPC_TYPE_DECLARATION(lizard) \
+
+struct Npcs
+{
+        enum class eNpc
         {
-                auto id = static_cast<uint32_t>(c);
-                std::string buffer = "../assets/characters/";
-                buffer += Character_Ids[id];
-                buffer += "/";
-                buffer += Character_Ids[id];
-                buffer += ".png";
-                return buffer;
-                // return "../assets/characters/" + Character_Ids[id] + "/" + Character_Ids[id] + ".png";
+        #define NPC_TYPE_DECLARATION(name) name,
+                NPC_TYPES_DECLARE
+        #undef NPC_TYPE_DECLARATION
         };
 
-        static std::string GetAnimationFilePath(eCharacter c)
+        inline static const std::string Npc_Ids[] =
         {
-                auto id = static_cast<uint32_t>(c);
-                std::string buffer = "../assets/characters/";
-                buffer += Character_Ids[id];
-                buffer += "/";
-                buffer += Character_Ids[id];
-                buffer += ".animation";
-                return buffer;
-                // return "../assets/characters/" + Character_Ids[id] + "/" + Character_Ids[id] + ".png";
+        #define NPC_TYPE_DECLARATION(name) #name,
+                NPC_TYPES_DECLARE
+        #undef NPC_TYPE_DECLARATION
         };
-        static std::string GetAnimationBehaviorFilePath(eCharacter c)
-        {
-                auto id = static_cast<uint32_t>(c);
-                std::string buffer = "../assets/characters/";
-                buffer += Character_Ids[id];
-                buffer += "/";
-                buffer += Character_Ids[id];
-                buffer += ".lua";
-                return buffer;
-                // return "../assets/characters/" + Character_Ids[id] + "/" + Character_Ids[id] + ".png";
+
+        #define GET_FILE_PATH_FUNCTION(FUNCTION_NAME, FILE_TYPE) \
+        static std::string FUNCTION_NAME(eNpc c) \
+        { \
+                auto id = static_cast<uint32_t>(c); \
+                return string_format("../assets/npc/%s/%s.%s", Npc_Ids[id].c_str(), Npc_Ids[id].c_str(), #FILE_TYPE); \
         };
+        GET_FILE_PATH_FUNCTION(GetTextureFilePath, png)
+        GET_FILE_PATH_FUNCTION(GetAnimationFilePath, animation)
+        GET_FILE_PATH_FUNCTION(GetAnimationBehaviorFilePath, lua)
+        #undef GET_FILE_PATH_FUNCTION
 };
 
 
@@ -64,40 +72,38 @@ struct Characters
 
 
 
-
-
-using AssetID = std::uint16_t;
-namespace Assets
-{
-namespace Sprite
-{
-constexpr const AssetID player = 0;
-constexpr const AssetID untitled = 1;
-constexpr const int count = 2;
-
-//couldn't find a fucking way to constexpr vectors and whatnot (even though that's supposed to be in c++20) so this is the retardation we get
-struct data
-{
-        data(std::string file_path_, std::vector<uint8_t> animation_frames_) //we won't need more than 8 seconds for an animation (256frames/30fps)
-                : file_path(file_path_), animation_frames(animation_frames_)
-        {
-        }
-        std::string file_path;
-        std::vector<uint8_t> animation_frames;
-};
-const data Data[] = {
-        data("../assets/textures/anim.png", std::vector<uint8_t>(50)),
-        data("../assets/textures/untitled.png", std::vector<uint8_t>(50))
-};
-
-inline uint32_t texture_slots[count];
-uint32_t Get(AssetID id);
-
-//
-// constexpr char* file_names[] =
+// using AssetID = std::uint16_t;
+// namespace Assets
 // {
-//         "../assets/textures/player.png",
-//         "../assets/textures/untitled.png"
+// namespace Sprite
+// {
+// constexpr const AssetID player = 0;
+// constexpr const AssetID untitled = 1;
+// constexpr const int count = 2;
+
+// //couldn't find a fucking way to constexpr vectors and whatnot (even though that's supposed to be in c++20) so this is the retardation we get
+// struct data
+// {
+//         data(std::string file_path_, std::vector<uint8_t> animation_frames_) //we won't need more than 8 seconds for an animation (256frames/30fps)
+//                 : file_path(file_path_), animation_frames(animation_frames_)
+//         {
+//         }
+//         std::string file_path;
+//         std::vector<uint8_t> animation_frames;
 // };
-}
-}
+// const data Data[] = {
+//         data("../assets/textures/anim.png", std::vector<uint8_t>(50)),
+//         data("../assets/textures/untitled.png", std::vector<uint8_t>(50))
+// };
+
+// inline uint32_t texture_slots[count];
+// uint32_t Get(AssetID id);
+
+// //
+// // constexpr char* file_names[] =
+// // {
+// //         "../assets/textures/player.png",
+// //         "../assets/textures/untitled.png"
+// // };
+// }
+// }

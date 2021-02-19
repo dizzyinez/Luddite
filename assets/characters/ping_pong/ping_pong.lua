@@ -51,6 +51,10 @@ function Clap_0()
   LockMotion(2)
 end
 
+function Clap_17()
+  UnlockMotion()
+end
+
 function Clap_End()
   UnlockRotation()
   UnlockMotion()

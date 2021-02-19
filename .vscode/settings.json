@@ -57,7 +57,8 @@
         "typeinfo": "cpp",
         "codecvt": "cpp",
         "unordered_set": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "numeric": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled",
     "editor.fontFamily": "consolas, 'Courier New', monospace",

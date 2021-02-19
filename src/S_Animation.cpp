@@ -284,16 +284,14 @@ void run_animation_behavior_increment(entt::registry& reg, entt::entity Entity)
                         // ab.json->root.child
                         if (hitboxes_json("enabled").toBool())
                         {
-                                constexpr float SCALE_COEFFICIENT = 30.f;
+                                constexpr float SCALE_COEFFICIENT = 25.f;
                                 constexpr float KNOCKBACK_COEFFICIENT = 10.f;
-                                reg.get<C_Size>(abs.hitboxes.at(0)).size = glm::vec2(hitboxes_json("scale").toNumber() * SCALE_COEFFICIENT, hitboxes_json("scale").toNumber() * SCALE_COEFFICIENT);
-                                reg.get<C_Origin>(abs.hitboxes.at(0)).origin = glm::vec2(hitboxes_json("scale").toNumber() * SCALE_COEFFICIENT * 0.5f, hitboxes_json("scale").toNumber() * SCALE_COEFFICIENT * 0.5f);
+                                // reg.get<C_Size>(abs.hitboxes.at(0)).size = glm::vec2(hitboxes_json("scale").toNumber() * SCALE_COEFFICIENT, hitboxes_json("scale").toNumber() * SCALE_COEFFICIENT);
+                                // reg.get<C_Origin>(abs.hitboxes.at(0)).origin = glm::vec2(hitboxes_json("scale").toNumber() * SCALE_COEFFICIENT * 0.5f, hitboxes_json("scale").toNumber() * SCALE_COEFFICIENT * 0.5f);
                                 reg.get<C_CircleCollider>(abs.hitboxes.at(0)).radius = hitboxes_json("scale").toNumber() * SCALE_COEFFICIENT;
                                 glm::mat4 rotation = glm::rotate(glm::pi<float>() * (anim.direction * 0.25f), glm::vec3(0.f, 0.f, 1.f));
                                 C_Child& child = reg.get<C_Child>(abs.hitboxes.at(0));
-                                child.offset = glm::vec3(reg.get<C_Origin>(child.parent).origin, 0.f) +
-                                               glm::vec3(hitboxes_json("scale").toNumber() * SCALE_COEFFICIENT * -0.5f, hitboxes_json("scale").toNumber() * SCALE_COEFFICIENT * -0.5f, 0.f) +
-                                               glm::vec3(rotation * glm::vec4(hitboxes_json("x").toNumber() * SCALE_COEFFICIENT, hitboxes_json("y").toNumber() * SCALE_COEFFICIENT, 0.f, 1.f));
+                                child.offset = glm::vec3(rotation * glm::vec4(hitboxes_json("x").toNumber() * SCALE_COEFFICIENT, hitboxes_json("y").toNumber() * SCALE_COEFFICIENT, 0.f, 1.f));
                                 //STORE THE ROTATE VECTOR AND USE IT TO CHANGE THE KB DIR
                                 C_Hitbox& hitbox = reg.get<C_Hitbox>(abs.hitboxes.at(0));
                                 hitbox.enabled = true;
@@ -304,7 +302,7 @@ void run_animation_behavior_increment(entt::registry& reg, entt::entity Entity)
                         {
                                 C_Hitbox& hitbox = reg.get<C_Hitbox>(abs.hitboxes.at(0));
                                 hitbox.enabled = false;
-                                reg.get<C_Size>(abs.hitboxes.at(0)).size = glm::vec2(0.f, 0.f);
+                                // reg.get<C_Size>(abs.hitboxes.at(0)).size = glm::vec2(0.f, 0.f);
                         }
                 }
                 else
@@ -332,17 +330,16 @@ void S_Animation::update(float dt, entt::registry &reg)
                                 entt::entity hitbox = reg.create();
                                 reg.emplace<C_Position>(hitbox);
                                 reg.emplace<C_Hitbox>(hitbox);
-                                reg.emplace<C_Origin>(hitbox);
                                 reg.emplace<C_CircleCollider>(hitbox, 0.f);
                                 reg.emplace<C_Child>(hitbox, Entity);
                                 // if (reg.had<C_Team>(Entity))
                                 reg.emplace<C_Team>(hitbox, reg.get<C_Team>(Entity).team);
 
                                 //for debug rendering
-                                reg.emplace<C_Size>(hitbox, 0.f, 0.f);
-                                reg.emplace<C_Texture>(hitbox, TextureAllocator::Get("../assets/textures/circle.png"));
-                                reg.emplace<C_Tint>(hitbox, glm::vec4(1.0f, 0.4f, 0.4f, 0.6f));
-                                reg.emplace<C_DrawLayer>(hitbox, DrawLayer::sprite);
+                                // reg.emplace<C_Size>(hitbox, 0.f, 0.f);
+                                // reg.emplace<C_Texture>(hitbox, TextureAllocator::Get("../assets/textures/circle.png"));
+                                // reg.emplace<C_Tint>(hitbox, glm::vec4(1.0f, 0.4f, 0.4f, 0.6f));
+                                // reg.emplace<C_DrawLayer>(hitbox, DrawLayer::sprite);
                                 abs.hitboxes.at(i) = hitbox;
                         }
                 }

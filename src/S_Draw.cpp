@@ -36,10 +36,10 @@ void S_Draw::update(float alpha, entt::registry &reg)
         //vector of vector of pairs of entities and their depth positions
         std::vector<std::vector<std::pair<int, entt::entity> > > v(static_cast<int8_t>(DrawLayer::count));
 
-        reg.group<C_DrawLayer>(entt::get<C_Position, C_Size>).each([&v, &reg, alpha](auto entity, C_DrawLayer &drawLayer, auto &pos, auto &size) {
+        reg.group<C_DrawLayer>(entt::get<C_Position, C_Size>).each([&v, &reg, alpha](auto entity, C_DrawLayer& drawLayer, auto& pos, auto& size) {
                 int depth = 0;
                 if (drawLayer.layer == DrawLayer::sprite)
-                        depth = pos.getY() + size.getH();
+                        depth = pos.getY();
                 //TODO ^^^^ add z ???
                 if (drawLayer.layer == DrawLayer::gui)
                         depth = drawLayer.depth;
@@ -75,6 +75,7 @@ void S_Draw::update(float alpha, entt::registry &reg)
                         {
                                 // std::cout << "rendering texture" << std::endl;
                                 const auto tex = reg.get<C_Texture>(pair->second);
+                                object_position -= glm::vec3(tex.origin, 0.f);
                                 if (reg.has<C_Tint>(pair->second))
                                         Renderer::RenderTexture(object_position, object_size, tex.texture->texture_id, tex.tex_coords, reg.get<C_Tint>(pair->second).tint);
                                 else
@@ -83,6 +84,7 @@ void S_Draw::update(float alpha, entt::registry &reg)
                         else if (reg.has<C_Sprite>(pair->second))
                         {
                                 const auto sprite = reg.get<C_Sprite>(pair->second);
+                                object_position -= glm::vec3(sprite.origin, 0.f);
                                 Renderer::RenderSprite(object_position, object_size, sprite.texture->texture_id, sprite.tex_coords, sprite.colors);
                         }
                         else

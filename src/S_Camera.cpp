@@ -7,7 +7,7 @@
 
 constexpr float CAMERA_SHAKE_COEFFICIENT = 35.0f;
 constexpr float CAMERA_SHAKE_TIME_DILATION_COEFFICIENT = 2.5f;
-constexpr float CAMERA_LERP_COEFFICIENT = 2.0f;
+constexpr float CAMERA_LERP_COEFFICIENT = 3.0f;
 
 void S_Camera::update(float alpha, float deltaTime, entt::registry& lerp_reg, entt::registry& reg)
 {
@@ -19,7 +19,7 @@ void S_Camera::update(float alpha, float deltaTime, entt::registry& lerp_reg, en
                 if (player.local_player)
                 {
                         trauma += player.trauma;
-                        average_player_position += glm::vec2(reg.get<C_Position>(Entity).position) + reg.get<C_Origin>(Entity).origin;
+                        average_player_position += glm::vec2(reg.get<C_Position>(Entity).position);
                         count += 1.f;
                 }
         }

@@ -1,9 +1,9 @@
 #pragma once
 #include <AL/al.h>
 #include <AL/alc.h>
-#include <data/Sound.hpp>
-
-#include <data/SoundAllocator.hpp>
+#include "data/Sound.hpp"
+#include "data/SoundAllocator.hpp"
+#include <vector>
 
 struct AudioPlayer
 {
@@ -31,18 +31,40 @@ struct AudioPlayer
                         0.f, 1.f, 0.f
                 };
                 alListenerfv(AL_ORIENTATION, forward_and_up_vectors);
+        }
 
-                alGenSources(1, &stereo_source);
+        static void Update()
+        {
+                ALenum state;
+                // for (SoundSource s : current_sounds)
+                for (auto it = current_sounds.rbegin(); it != current_sounds.rend(); it++)
+                {
+                        alGetSourcei((*it).source_id, AL_SOURCE_STATE, &state);
+                        if (state != AL_PLAYING)
+                        {
+                                current_sounds.erase(std::next(it).base());
+                        }
+                }
+        }
+
+        static void PlaySound(std::shared_ptr<Sound> sound)
+        {
+                unsigned int sound_source;
+                alGenSources(1, &sound_source);
                 // alSource3f(stereo_source, AL_POSITION, 1.f, 0.f, 0.f);
                 // alSource3f(stereo_source, AL_VELOCITY, 0.f, 0.f, 0.f);
-                alSourcef(stereo_source, AL_PITCH, 1.f);
-                alSourcef(stereo_source, AL_GAIN, 1.f);
-                alSourcei(stereo_source, AL_LOOPING, AL_FALSE);
-                alSourcei(stereo_source, AL_BUFFER, SoundAllocator::Get("../assets/sounds/Geothermal.wav")->sound_id);
-
-                // alSourcePlay(stereo_source);
+                alSourcef(sound_source, AL_PITCH, 1.f);
+                alSourcef(sound_source, AL_GAIN, 1.f);
+                alSourcei(sound_source, AL_LOOPING, AL_FALSE);
+                alSourcei(sound_source, AL_BUFFER, sound->sound_id);
+                alSourcePlay(sound_source);
         }
 private:
         inline static ALCcontext* context;
-        inline static ALuint stereo_source;
+        struct SoundSource
+        {
+                std::shared_ptr<Sound> sound;
+                unsigned int source_id;
+        };
+        inline static std::vector<SoundSource> current_sounds;
 };

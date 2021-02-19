@@ -305,32 +305,36 @@ void Character::Export()
                 sprintf(dir, "../dev/characters/%s/animations/%s/frame_data.json", name.c_str(), animation_name.c_str());
                 std::shared_ptr<Json> frame_data = JsonAllocator::Get(dir);
 
-                json.startObject(animation_name.c_str())
-                .startArray("Hitboxes")
-                .startArray();
-                for (int i = 0; i < animation.frames.size(); i++)
+                json.startObject(animation_name.c_str());
+                if (frame_data->parsed)
                 {
-                        json.startObject();
-                        if (frame_data->root("1")[i]("scale").toNumber() > 0)
-                        {
-                                json.addValue("enabled", true)
-                                .addValue("scale", frame_data->root("1")[i]("scale").toNumber())
-                                .addValue("x", frame_data->root("1")[i]("x").toNumber())
-                                .addValue("y", frame_data->root("1")[i]("y").toNumber())
-                                .addValue("x_dir", frame_data->root("1")[i]("x_dir").toNumber())
-                                .addValue("y_dir", frame_data->root("1")[i]("y_dir").toNumber())
-                                .addValue("damage", frame_data->root("1")[i]("damage").toNumber());
-                        }
-                        else
-                        {
-                                json.addValue("enabled", false);
-                        }
-                        json.endObject();
-                }
-                json.endArray()
-                .endArray()
+                        json.startArray("Hitboxes")
+                        .startArray();
 
-                .addValue("framecount", animation.frames.size())
+                        for (int i = 0; i < animation.frames.size(); i++)
+                        {
+                                json.startObject();
+                                if (frame_data->root("1")[i]("scale").toNumber() > 0)
+                                {
+                                        json.addValue("enabled", true)
+                                        .addValue("scale", frame_data->root("1")[i]("scale").toNumber())
+                                        .addValue("x", frame_data->root("1")[i]("x").toNumber())
+                                        .addValue("y", frame_data->root("1")[i]("y").toNumber())
+                                        .addValue("x_dir", frame_data->root("1")[i]("x_dir").toNumber())
+                                        .addValue("y_dir", frame_data->root("1")[i]("y_dir").toNumber())
+                                        .addValue("damage", frame_data->root("1")[i]("damage").toNumber());
+                                }
+                                else
+                                {
+                                        json.addValue("enabled", false);
+                                }
+                                json.endObject();
+                        }
+                        json.endArray()
+                        .endArray();
+                }
+
+                json.addValue("framecount", animation.frames.size())
                 .addValue("fps", 60)
                 .addValue("line", animations_counted * 8);
                 // .startArray("frames");

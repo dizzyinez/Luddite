@@ -22,12 +22,13 @@
 
 using namespace CR;
 
+constexpr int TOTAL_DIRECTIONS = 32;
+
 CharacterRenderer::CharacterRenderer()
 {
         // if (!shader.Loaded())
         //         shader.Load("../assets/shaders/bakevert.vshader", "../assets/shaders/bakefrag.fshader");
         // shader.Bind();
-        // glUniformMatrix4fv(shader.GetUniformLocation("mvp"), 1, GL_FALSE, &mvp[0][0]);
         glUseProgram(0);
 }
 
@@ -68,7 +69,7 @@ std::shared_ptr<Texture>  CharacterRenderer::RenderAnimation(const std::string& 
         glBindTexture(GL_TEXTURE_2D, screen_texture);
         //GL_RGBA8
         // uint32_t color = 0xffffff00;
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, frame_size * frame_amount, frame_size * 8, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, frame_size * frame_amount, frame_size * TOTAL_DIRECTIONS, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
         glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, screen_texture, 0);
@@ -77,7 +78,7 @@ std::shared_ptr<Texture>  CharacterRenderer::RenderAnimation(const std::string& 
         uint32_t depth_render_buffer;
         glGenRenderbuffers(1, &depth_render_buffer);
         glBindRenderbuffer(GL_RENDERBUFFER, depth_render_buffer);
-        glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT24, frame_size * frame_amount, frame_size * 8);
+        glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT24, frame_size * frame_amount, frame_size * TOTAL_DIRECTIONS);
         glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, depth_render_buffer);
         glBindRenderbuffer(GL_RENDERBUFFER, 0);
         // glBindFramebuffer(GL_FRAMEBUFFER, 0);
@@ -114,17 +115,23 @@ std::shared_ptr<Texture>  CharacterRenderer::RenderAnimation(const std::string& 
         // glm::mat4 projection = glm::perspective(glm::quarter_pi<float>() / 2.0f, 1.0f, 0.1f, 20.0f);
         glm::mat4 view = glm::lookAt(glm::vec3(0.0f, 0.0f, -5.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
-        glm::mat4 mvp = projection * view;
+        glm::mat4 vp = projection * view;
         GLint m_viewport[4];
         glGetIntegerv(GL_VIEWPORT, m_viewport);
 
 
 
+        char dir[character_name.size() + animation_name.size() + 40];
+        sprintf(dir, "../dev/characters/%s/animations/%s/frame_data.json", character_name.c_str(), animation_name.c_str());
+        std::shared_ptr<Json> frame_data = JsonAllocator::Get(dir);
+
+        // .addValue("x_dir", frame_data->root("1")[i]("x_dir").toNumber())
+        // .addValue("y_dir", frame_data->root("1")[i]("y_dir").toNumber())
 
         Shader shader;
         shader.Load("../assets/shaders/bakevert.vshader", "../assets/shaders/bakefrag.fshader");
         shader.Bind();
-        glUniformMatrix4fv(shader.GetUniformLocation("mvp"), 1, GL_FALSE, glm::value_ptr(mvp));
+        glUniformMatrix4fv(shader.GetUniformLocation("vp"), 1, GL_FALSE, glm::value_ptr(vp));
 
         Animation& animation = character.GetAnimation(animation_name);
 
@@ -138,9 +145,15 @@ std::shared_ptr<Texture>  CharacterRenderer::RenderAnimation(const std::string& 
                 sprintf(file_name, "../dev/characters/%s/animations/%s/a_%06d.obj", character_name.c_str(), animation_name.c_str(), i);
                 objl::Loader loader;
                 loader.LoadFile(file_name);
-                for (int j = 0; j < 8; j++)
+                for (int j = 0; j < TOTAL_DIRECTIONS; j++)
                 {
-                        glm::mat4 model = glm::translate(glm::vec3(0.0f, 3.0f, 0.0f)) * glm::rotate(glm::pi<float>() * (1.0f / 4.0f), glm::vec3(1.0f, 0.0f, 0.0f)) * glm::rotate(glm::pi<float>() * (1.0f - ((float)j / 4.0f)), glm::vec3(0.0f, 1.0f, 0.0f));
+                        // glm::mat4 model = glm::rotate(glm::pi<float>() * (1.0f / 4.0f), glm::vec3(1.0f, 0.0f, 0.0f)) * glm::rotate(glm::pi<float>() * (1.0f - ((float)j * 2 / (float)TOTAL_DIRECTIONS)), glm::vec3(0.0f, 1.0f, 0.0f)) * glm::translate(glm::vec3(frame_data->root("1")[i]("x_origin").toNumber(), 3.0f, frame_data->root("1")[i]("y_origin").toNumber()));
+                        glm::mat4 model = glm::rotate(glm::pi<float>() * (1.0f / 4.0f), glm::vec3(1.0f, 0.0f, 0.0f)) * glm::rotate(glm::pi<float>() * (1.0f - ((float)j * 2 / (float)TOTAL_DIRECTIONS)), glm::vec3(0.0f, 1.0f, 0.0f));
+                        model *= glm::translate(glm::vec3(-frame_data->root("Origin")[i]("x").toNumber(), 3.0f, -frame_data->root("Origin")[i]("y").toNumber()));
+                        // std::cout << "FACTOR: " << glm::to_string(glm::vec4(0.0f, 0.f, 0.f, 1.f) / (vp * model)) << std::endl;
+                        // glm::vec2 unit = vp * glm::vec4(1.f, 0.f, 0.f, 0.f);
+                        // std::cout << "(0,0): " << glm::to_string(vp * model * glm::vec4(0.f, 0.f, 0.f, 1.f)) << std::endl;
+                        // std::cout << "unit: " << glm::length(unit) << std::endl;
                         glm::mat4 normalMatrix = glm::transpose(glm::inverse(view * model));
                         glUniformMatrix4fv(shader.GetUniformLocation("model"), 1, GL_FALSE, glm::value_ptr(model));
                         glUniformMatrix4fv(shader.GetUniformLocation("normalMatrix"), 1, GL_FALSE, glm::value_ptr(normalMatrix));
@@ -212,12 +225,12 @@ std::shared_ptr<Texture>  CharacterRenderer::RenderAnimation(const std::string& 
         // glClear(GL_COLOR_BUFFER_BIT);
 
         //Save
-        unsigned char* image_buffer = (unsigned char *)malloc((int)(frame_size * frame_amount * frame_size * 8 * 4));
-        glReadPixels(0, 0, frame_size * frame_amount, frame_size * 8, GL_RGBA, GL_UNSIGNED_BYTE, image_buffer);
+        unsigned char* image_buffer = (unsigned char *)malloc((int)(frame_size * frame_amount * frame_size * TOTAL_DIRECTIONS * 4));
+        glReadPixels(0, 0, frame_size * frame_amount, frame_size * TOTAL_DIRECTIONS, GL_RGBA, GL_UNSIGNED_BYTE, image_buffer);
         char out[character_name.size() + animation_name.size() + 40];
         sprintf(out, "../dev/characters/%s/animations/%s/output.png", character_name.c_str(), animation_name.c_str());
         std::cout << "saving image to " << out << std::endl;
-        stbi_write_png(out, frame_size * frame_amount, frame_size * 8, 4, image_buffer, 4 * frame_size * frame_amount);
+        stbi_write_png(out, frame_size * frame_amount, frame_size * TOTAL_DIRECTIONS, 4, image_buffer, 4 * frame_size * frame_amount);
         free(image_buffer);
 
         //reset opengl
@@ -237,7 +250,7 @@ std::shared_ptr<Texture>  CharacterRenderer::RenderAnimation(const std::string& 
         glClearColor(color_clear_value[0], color_clear_value[1], color_clear_value[2], color_clear_value[3]);
 
 
-        return std::make_shared<Texture>(screen_texture, frame_size * frame_amount, frame_size * 8);
+        return std::make_shared<Texture>(screen_texture, frame_size * frame_amount, frame_size * TOTAL_DIRECTIONS);
 }
 
 void CharacterRenderer::ExportCharacter(const std::string& character_name)
@@ -248,8 +261,8 @@ void CharacterRenderer::ExportCharacter(const std::string& character_name)
 
 void Character::Export()
 {
-        char json_buffer[(1024 * 10) + 1] = {0};
-        gason::JSonBuilder json(json_buffer, 1024 * 10);
+        char json_buffer[(1024 * 500) + 1] = {0};
+        gason::JSonBuilder json(json_buffer, 1024 * 500);
         json.startObject();
 
         //find widest animation;
@@ -257,10 +270,10 @@ void Character::Export()
         for (const auto & [name, animation] : animations)
                 width = (animation.frames.size() > width) ? animation.frames.size() : width;
         //allocate megatexture;
-        unsigned char* image_buffer = (unsigned char *)malloc((int)(frame_size * width * frame_size * 8 * 4 * animations.size()));
+        unsigned char* image_buffer = (unsigned char *)malloc((int)(frame_size * width * frame_size * TOTAL_DIRECTIONS * 4 * animations.size()));
 
         json.addValue("rows", width);
-        json.addValue("lines", animations.size() * 8);
+        json.addValue("lines", animations.size() * TOTAL_DIRECTIONS);
         json.addValue("animation_count", animations.size());
         json.startArray("animation_names");
         for (const auto & [animation_name, animation] : animations)
@@ -283,7 +296,7 @@ void Character::Export()
                         std::cout << "image couldn't load" << std::endl;
                         continue;
                 }
-                if (w != frame_size * animation.frames.size() || h != frame_size * 8)
+                if (w != frame_size * animation.frames.size() || h != frame_size * TOTAL_DIRECTIONS)
                 {
                         std::cout << "invalid image" << std::endl;
                         continue;
@@ -291,14 +304,13 @@ void Character::Export()
                 //add the texture to the megatexture
                 for (/*each line*/ int i = 0; i < h; i++)
                 {
-                        memcpy(&image_buffer[(width * frame_size * animations_counted * frame_size * 8 * 4) + width * frame_size * i * 4], &image_data[w * 4 * i], w * 4);
+                        memcpy(&image_buffer[(width * frame_size * animations_counted * frame_size * TOTAL_DIRECTIONS * 4) + width * frame_size * i * 4], &image_data[w * 4 * i], w * 4);
                 }
                 //free the loaded texture
                 stbi_image_free(image_data);
 
 
 
-                // stbi_write_png(out, frame_size * frame_amount, frame_size * 8, 4, image_buffer, 4 * frame_size * frame_amount);
 
                 // stbi_load()
                 //read frame data
@@ -308,6 +320,29 @@ void Character::Export()
                 json.startObject(animation_name.c_str());
                 if (frame_data->parsed)
                 {
+                        json.startArray("Origin");
+                        for (int i = 0; i < animation.frames.size(); i++)
+                        {
+                                double x = frame_data->root("Origin")[i]("x").toNumber();
+                                double y = frame_data->root("Origin")[i]("y").toNumber();
+                                json.startObject()
+                                .addValue("x", x)
+                                .addValue("y", y);
+                                if (i > 0)
+                                {
+                                        json
+                                        .addValue("dx", x - frame_data->root("Origin")[i - 1]("x").toNumber())
+                                        .addValue("dy", y - frame_data->root("Origin")[i - 1]("y").toNumber());
+                                }
+                                else
+                                {
+                                        json
+                                        .addValue("dx", x)
+                                        .addValue("dy", y);
+                                }
+                                json.endObject();
+                        }
+                        json.endArray();
                         json.startArray("Hitboxes")
                         .startArray();
 
@@ -336,7 +371,7 @@ void Character::Export()
 
                 json.addValue("framecount", animation.frames.size())
                 .addValue("fps", 60)
-                .addValue("line", animations_counted * 8);
+                .addValue("line", animations_counted * TOTAL_DIRECTIONS);
                 // .startArray("frames");
                 // for (Frame frame : animation.frames)
                 // {
@@ -350,7 +385,7 @@ void Character::Export()
         //save the megatexture
         char out[name.size() + 40];
         sprintf(out, "../dev/characters/%s/%s/%s.png", name.c_str(), name.c_str(), name.c_str());
-        stbi_write_png(out, frame_size * width, frame_size * 8 * animations.size(), 4, image_buffer, 4 * frame_size * width);
+        stbi_write_png(out, frame_size * width, frame_size * TOTAL_DIRECTIONS * animations.size(), 4, image_buffer, 4 * frame_size * width);
         std::cout << "saved image" << std::endl;
         free(image_buffer);
 
@@ -384,11 +419,11 @@ void CharacterRenderer::LoadCharacter(const std::string& character_name)
         char dir[character_name.size() + 40];
         sprintf(dir, "../dev/characters/%s/%s/%s.animation", character_name.c_str(), character_name.c_str(), character_name.c_str());
         std::shared_ptr<Json> animation_data = JsonAllocator::Get(dir);
-        std::cout << "loading character" << character_name << std::endl;
+        std::cout << "loading character " << character_name << std::endl;
         for (int i = 0; i < animation_data->root("animation_count").toNumber(); i++)
         {
                 std::string animation_name(animation_data->root("animation_names").at(i).toString());
-                std::cout << "loading animation" << animation_name << std::endl;
+                std::cout << "loading animation " << animation_name << std::endl;
                 // character.animations.emplace(name);
                 auto& anim = character.GetAnimation(animation_name);
                 for (int i = 0; i < round(animation_data->root(animation_name.c_str())("framecount").toNumber()); i++)

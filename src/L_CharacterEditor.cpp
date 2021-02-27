@@ -10,6 +10,7 @@
 #include "components/DrawLayer.hpp"
 
 #include "systems/Draw.hpp"
+#include "systems/Ancestry.hpp"
 #include "systems/TextRendering.hpp"
 #include "systems/Motion.hpp"
 #include "systems/Gui.hpp"
@@ -24,6 +25,7 @@ void L_CharacterEditor::init()
                     S_Gui,
                     S_Tileset,
                     S_Animation,
+                    S_Ancestry,
                     S_Draw,
                     S_Text_Rendering>();
         systems.configure(m_Registry, this);
@@ -149,6 +151,7 @@ void L_CharacterEditor::update(float deltaTime)
         systems.update<S_Gui>(deltaTime, m_Registry);
         systems.update<S_Animation>(deltaTime, m_Registry);
         systems.update<S_Text_Rendering>(deltaTime, m_Registry);
+        systems.update<S_Ancestry>(deltaTime, m_Registry);
         systems.update<S_Motion>(deltaTime, m_Registry);
 }
 

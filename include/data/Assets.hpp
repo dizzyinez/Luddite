@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <array>
 #include <string>
 #include "utils/StringFormat.hpp"
 
@@ -9,7 +10,7 @@
 
 struct Characters
 {
-        enum class eCharacter
+        enum class eCharacter : uint32_t
         {
         #define CHARACTER_TYPE_DECLARATION(name) name,
                 CHARACTER_TYPES_DECLARE
@@ -41,7 +42,7 @@ struct Characters
 
 struct Npcs
 {
-        enum class eNpc
+        enum class eNpc : uint32_t
         {
         #define NPC_TYPE_DECLARATION(name) name,
                 NPC_TYPES_DECLARE
@@ -65,6 +66,40 @@ struct Npcs
         GET_FILE_PATH_FUNCTION(GetAnimationFilePath, animation)
         GET_FILE_PATH_FUNCTION(GetAnimationBehaviorFilePath, lua)
         #undef GET_FILE_PATH_FUNCTION
+};
+
+
+#define SOUNDS_DECLARE \
+        SOUND_DECLARATION(whoosh1) \
+        SOUND_DECLARATION(whoosh2) \
+
+struct Sounds
+{
+        enum class eSound : uint32_t
+        {
+        #define SOUND_DECLARATION(name) name,
+                SOUNDS_DECLARE
+        #undef SOUND_DECLARATION
+        };
+
+        inline static const std::vector<std::string> Sound_Ids = //std::string Sound_Ids[] =
+        {
+        #define SOUND_DECLARATION(name) #name,
+                SOUNDS_DECLARE
+        #undef SOUND_DECLARATION
+        };
+
+        inline static const std::vector<std::string> Sound_File_Locations =
+        {
+        #define SOUND_DECLARATION(name) "../assets/sounds/" #name ".wav",
+                SOUNDS_DECLARE
+        #undef SOUND_DECLARATION
+        };
+        static std::string GetFilePath(eSound s)
+        {
+                auto id = static_cast<uint32_t>(s);
+                return Sound_File_Locations[id];
+        }
 };
 
 

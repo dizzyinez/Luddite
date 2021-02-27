@@ -12,6 +12,8 @@
 #include "core/game.hpp"
 
 
+constexpr int TOTAL_DIRECTIONS = 32;
+
 Keyboard_Input_Direction::Keyboard_Input_Direction()
 {
         move_up = glfwGetKeyScancode(GLFW_KEY_W);
@@ -101,7 +103,7 @@ int8_t Keyboard_Input_Direction::direction()
         std::bitset<4> buttons = direction_buttons();
         int x = buttons[0] ? (buttons[1] ? 2 : 0) : 1;
         int y = buttons[2] ? (buttons[3] ? 2 : 0) : 1;
-        return(directions[x][y]);
+        return(directions[x][y] * (TOTAL_DIRECTIONS / 8));
 }
 
 
@@ -109,7 +111,7 @@ void Mouse_Input_Direction::update(float character_x, float character_y)
 {
         glm::vec2 mouse_world_pos = Renderer::screenToWorld(glm::vec2(Game::cursor_x, Game::cursor_y));
         glm::vec2 mouse_dir = glm::vec2(character_x, character_y) - mouse_world_pos;
-        mouse_direction = int(glm::round(((glm::atan(-mouse_dir.x, mouse_dir.y) / glm::pi<float>()) + 1) * 4) + 4) % 8;
+        mouse_direction = int(glm::round(((glm::atan(-mouse_dir.x, mouse_dir.y) / glm::pi<float>()) + 1) * (TOTAL_DIRECTIONS / 2)) + (TOTAL_DIRECTIONS / 2)) % TOTAL_DIRECTIONS;
 }
 
 int8_t Mouse_Input_Direction::direction()
@@ -130,5 +132,5 @@ std::bitset<4> Mouse_Input_Direction::direction_buttons()
                 0b0001,
                 0b1101
         };
-        return button_combos[mouse_direction + 1];
+        return button_combos[(mouse_direction + 1) / (TOTAL_DIRECTIONS / 8)];
 }

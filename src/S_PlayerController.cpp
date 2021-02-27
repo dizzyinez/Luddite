@@ -9,6 +9,8 @@
 #include <GLFW/glfw3.h>
 
 #include <glm/gtx/string_cast.hpp>
+
+constexpr float BASE_MOVE_SPEED = 6.f;
 void S_PlayerController::update(float deltaTime, entt::registry &reg)
 {
         reg.view<C_Player>().each([&reg](auto Entity, auto &player) {
@@ -18,15 +20,13 @@ void S_PlayerController::update(float deltaTime, entt::registry &reg)
                 if (abs.motion_lock)
                         speed = 0;
                 else
-                        speed = 450;
+                        speed = BASE_MOVE_SPEED * abs.movement_speed;
                 glm::vec2 dir = input.direction();
-                vel.velocity.x = dir.x * speed;
-                vel.velocity.y = dir.y * speed;
-
-
+                vel.velocity.x = (dir.x * speed) + abs.anim_vel_x;
+                vel.velocity.y = (dir.y * speed) + abs.anim_vel_y;
                 //set the integer direction of the player
                 auto anim_dir = input.animation_direction();
-                if (anim_dir != -1)
+                if (anim_dir >= 0)
                         player_dir.movement_direction = anim_dir;
         });
 }

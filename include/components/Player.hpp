@@ -7,6 +7,8 @@
 #include <glm/glm.hpp>
 
 #include <glm/gtx/string_cast.hpp>
+constexpr int TOTAL_DIRECTIONS = 32;
+
 struct C_Player
 {
         C_Player(bool local_player_, uint8_t player_slot_)
@@ -83,7 +85,7 @@ struct C_PlayerInput
                         {3, 2, 1}};
                 int x = buttons[0] ? (buttons[1] ? 2 : 0) : 1;
                 int y = buttons[2] ? (buttons[3] ? 2 : 0) : 1;
-                return(directions[x][y]);
+                return(directions[x][y] * (TOTAL_DIRECTIONS / 8));
         }
 
         bool button1()

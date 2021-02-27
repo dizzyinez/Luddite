@@ -47,5 +47,11 @@ struct C_AnimationBehaviorState
         uint16_t rotation_lock_timer = 0;
         bool motion_lock = false;
         uint16_t motion_lock_timer = 0;
+        float movement_speed = 1.f;
         std::array<entt::entity, 5> hitboxes;
+        // glm::vec2 anim_velocity = glm::vec2(0.0f, 0.0f);
+        float anim_vel_x = 0.0f;
+        float anim_vel_y = 0.0f;
+        float anim_vel_carried_motion_x = 0.0f;
+        float anim_vel_carried_motion_y = 0.0f;
 };

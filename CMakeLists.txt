@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 3.10)
-project (Luddite VERSION 0.1)
+project (Luddite VERSION 0.200227)
 
 configure_file(include/Config.h.in ${CMAKE_SOURCE_DIR}/include/Config.h)
 
@@ -31,6 +31,7 @@ include_directories(
 "R:/Dev/Libraries/C++/poisson-disk-sampling/thinks/poisson_disk_sampling"
 "R:/Dev/Libraries/C++/delaunator-cpp/include"
 "R:/Dev/Libraries/C++/jc_voronoi/include"
+"R:/Dev/Libraries/C++/soloud20200207/include"
 )
 
 macro(find_library_wrapper)          
@@ -38,8 +39,6 @@ macro(find_library_wrapper)
     if (NOT ${ARGV0})
         message(FATAL_ERROR "-- couldn't find library ${ARGV1}")
     endif(NOT ${ARGV0})
-	if (DEFINED CMAKEDEBUG)
-	endif()
     message("-- Library ${ARGV1} found as ${${ARGV0}}")   
 endmacro()
 
@@ -51,6 +50,7 @@ SET(CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_PATH}
 "C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/lib"
 "R:/Dev/Libraries/C++/enet-1.3.16/Lib"
 "R:/Dev/Libraries/C++/openal-soft/build/Debug"
+"R:/Dev/Libraries/C++/soloud20200207/lib"
 )
 
 find_library_wrapper(glew libglew32.dll)
@@ -63,6 +63,7 @@ find_library_wrapper(enet libenet.a)
 find_library_wrapper(winsock ws2_32)
 find_library_wrapper(winmedia winmm)
 find_library_wrapper(OpenAL OpenAL32)
+find_library_wrapper(soloud libsoloud)
 
 
 target_link_libraries(${PROJECT_NAME}
@@ -76,4 +77,5 @@ ${enet}
 ${winsock}
 ${winmedia}
 ${OpenAL}
+${soloud}
 )

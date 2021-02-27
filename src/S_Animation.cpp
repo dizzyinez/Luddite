@@ -3,12 +3,17 @@
 #include "data/TextureAllocator.hpp"
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/transform.hpp>
+#include "script/LuaAssets.hpp"
+#include "script/LuaInput.hpp"
+#include "script/LuaData.hpp"
+#include "core/AudioPlayer.hpp"
 // #include "components/Animation.hpp"
 // #include "components/Tileset.hpp"
 // #include "components/AnimationBehavior.hpp"
 // #include "components/Player.hpp"
 
 #include <string>
+// constexpr int TOTAL_DIRECTIONS = 32;
 
 bool CheckLua(lua_State* L, int r)
 {
@@ -23,20 +28,25 @@ bool CheckLua(lua_State* L, int r)
         }
 };
 
-
-
 // C_Animation* lua_animation;
 // C_AnimationBehavior* lua_anim_behavior;
 entt::entity lua_entity;
 entt::registry* lua_reg;
 
-void PlayAnimation(const std::string& name)
+void PlayAnimation(const std::string& name, bool continue_motion)
 {
         // std::cout << "animation to play: " << name << std::endl;
         auto &lua_animation = lua_reg->get<C_Animation>(lua_entity);
         auto &lua_anim_behavior = lua_reg->get<C_AnimationBehavior>(lua_entity);
         auto &lua_anim_behavior_state = lua_reg->get<C_AnimationBehaviorState>(lua_entity);
         lua_State*& L = lua_anim_behavior.L;
+
+
+        if (continue_motion)
+        {
+                lua_anim_behavior_state.anim_vel_carried_motion_x = lua_anim_behavior.json->root(lua_anim_behavior_state.current_animation.c_str())("Origin").at(lua_animation.current_frame)("x").toNumber();
+                lua_anim_behavior_state.anim_vel_carried_motion_y = lua_anim_behavior.json->root(lua_anim_behavior_state.current_animation.c_str())("Origin").at(lua_animation.current_frame)("y").toNumber();
+        }
 
         //lua end function
         char str[100];
@@ -77,7 +87,14 @@ int lua_PlayAnimation(lua_State* L)
         if (lua_isstring(L, 1))
         {
                 std::string name = lua_tostring(L, 1);
-                PlayAnimation(name);
+                if (lua_isboolean(L, 2))
+                {
+                        PlayAnimation(name, lua_toboolean(L, 2));
+                }
+                else
+                {
+                        PlayAnimation(name, false);
+                }
         }
         else
         {
@@ -176,38 +193,55 @@ void UnlockMotion()
 
 int lua_UnlockMotion(lua_State* L) {UnlockMotion(); return 0;}
 
-void put_input_on_lua_stack(lua_State* L, C_PlayerInput& pi, bool create = false)
+void SetMovementSpeed(float mul)
 {
-        if (create)
-                lua_newtable(L);
+        auto &lua_anim_behavior_state = lua_reg->get<C_AnimationBehaviorState>(lua_entity);
+        lua_anim_behavior_state.movement_speed = mul;
+}
+
+int lua_SetMovementSpeed(lua_State* L)
+{
+        if (lua_isnumber(L, 1))
+        {
+                SetMovementSpeed(lua_tonumber(L, 1));
+        }
         else
-                lua_getglobal(L, "Input");
+        {
+                SetMovementSpeed(1.0f);
+        }
+        return 0;
+}
 
-        lua_pushstring(L, "moveX");
-        lua_pushnumber(L, pi.moveX());
-        lua_settable(L, -3);
+void AddTrauma(float t)
+{
+        lua_reg->get<C_Player>(lua_entity).trauma += t;
+}
 
-        lua_pushstring(L, "moveY");
-        lua_pushnumber(L, pi.moveY());
-        lua_settable(L, -3);
+int lua_AddTrauma(lua_State* L)
+{
+        if (lua_isnumber(L, 1))
+        {
+                AddTrauma(lua_tonumber(L, 1));
+        }
+        else
+        {
+                AddTrauma(1.0f);
+        }
+        return 0;
+}
 
-        lua_pushstring(L, "button1");
-        lua_pushboolean(L, pi.button1());
-        lua_settable(L, -3);
+void PlaySound(uint32_t sound_id)
+{
+        AudioPlayer::PlaySound(SoundAllocator::Get(Sounds::Sound_File_Locations.at(sound_id)));
+}
 
-        lua_pushstring(L, "button2");
-        lua_pushboolean(L, pi.button2());
-        lua_settable(L, -3);
-
-        lua_pushstring(L, "button3");
-        lua_pushboolean(L, pi.button3());
-        lua_settable(L, -3);
-
-        lua_pushstring(L, "button4");
-        lua_pushboolean(L, pi.button4());
-        lua_settable(L, -3);
-
-        lua_setglobal(L, "Input");
+int lua_PlaySound(lua_State* L)
+{
+        if (lua_isnumber(L, 1))
+        {
+                PlaySound(lua_tonumber(L, 1));
+        }
+        return 0;
 }
 
 void run_animation_behavior_increment(entt::registry& reg, entt::entity Entity)
@@ -224,6 +258,7 @@ void run_animation_behavior_increment(entt::registry& reg, entt::entity Entity)
                 lua_getglobal(L, abs.current_animation.c_str());//ab.current_animation.c_str());
                 if (lua_isfunction(L, -1))
                 {
+                        put_data_on_lua_stack(L, anim);
                         if (reg.has<C_PlayerInput>(Entity))
                         {
                                 C_PlayerInput &pi = reg.get<C_PlayerInput>(Entity);
@@ -257,7 +292,6 @@ void run_animation_behavior_increment(entt::registry& reg, entt::entity Entity)
                         {
                                 C_PlayerInput &pi = reg.get<C_PlayerInput>(Entity);
                                 C_PlayerDirection &pd = reg.get<C_PlayerDirection>(Entity);
-                                put_input_on_lua_stack(L, pi);
                                 if (!abs.rotation_lock)
                                         if (abs.points_towards_mouse)
                                                 anim.direction = pi.mouse_direction;
@@ -282,14 +316,16 @@ void run_animation_behavior_increment(entt::registry& reg, entt::entity Entity)
                         }
                         gason::JsonValue hitboxes_json = ab.json->root(abs.current_animation.c_str())("Hitboxes").at(0).at(anim.current_frame);
                         // ab.json->root.child
+                        constexpr float SCALE_COEFFICIENT = 25.f;
+                        constexpr float KNOCKBACK_COEFFICIENT = 10.f;
+                        // glm::mat4 rotation = glm::rotate(glm::pi<float>() * (anim.direction * (2 / TOTAL_DIRECTIONS)), glm::vec3(0.f, 0.f, 1.f));
+                        glm::mat4 rotation = glm::rotate(glm::pi<float>() * ((float)anim.direction * (2.f / (float)TOTAL_DIRECTIONS)), glm::vec3(0.f, 0.f, 1.f));
+                        // std::cout << (int)anim.direction << " " << glm::to_string(rotation) << std::endl;
                         if (hitboxes_json("enabled").toBool())
                         {
-                                constexpr float SCALE_COEFFICIENT = 25.f;
-                                constexpr float KNOCKBACK_COEFFICIENT = 10.f;
                                 // reg.get<C_Size>(abs.hitboxes.at(0)).size = glm::vec2(hitboxes_json("scale").toNumber() * SCALE_COEFFICIENT, hitboxes_json("scale").toNumber() * SCALE_COEFFICIENT);
                                 // reg.get<C_Origin>(abs.hitboxes.at(0)).origin = glm::vec2(hitboxes_json("scale").toNumber() * SCALE_COEFFICIENT * 0.5f, hitboxes_json("scale").toNumber() * SCALE_COEFFICIENT * 0.5f);
                                 reg.get<C_CircleCollider>(abs.hitboxes.at(0)).radius = hitboxes_json("scale").toNumber() * SCALE_COEFFICIENT;
-                                glm::mat4 rotation = glm::rotate(glm::pi<float>() * (anim.direction * 0.25f), glm::vec3(0.f, 0.f, 1.f));
                                 C_Child& child = reg.get<C_Child>(abs.hitboxes.at(0));
                                 child.offset = glm::vec3(rotation * glm::vec4(hitboxes_json("x").toNumber() * SCALE_COEFFICIENT, hitboxes_json("y").toNumber() * SCALE_COEFFICIENT, 0.f, 1.f));
                                 //STORE THE ROTATE VECTOR AND USE IT TO CHANGE THE KB DIR
@@ -304,6 +340,16 @@ void run_animation_behavior_increment(entt::registry& reg, entt::entity Entity)
                                 hitbox.enabled = false;
                                 // reg.get<C_Size>(abs.hitboxes.at(0)).size = glm::vec2(0.f, 0.f);
                         }
+                        // std::cout << (int)anim.direction << std::endl;
+                        auto new_vel = rotation * glm::vec4(
+                                (ab.json->root(abs.current_animation.c_str())("Origin").at(anim.current_frame)("dx").toNumber() - abs.anim_vel_carried_motion_x) * SCALE_COEFFICIENT,
+                                (ab.json->root(abs.current_animation.c_str())("Origin").at(anim.current_frame)("dy").toNumber() - abs.anim_vel_carried_motion_y) * SCALE_COEFFICIENT,
+                                0.f, 1.f);
+                        abs.anim_vel_x = new_vel.x;
+                        abs.anim_vel_y = new_vel.y;
+                        abs.anim_vel_carried_motion_x = 0.0f;
+                        abs.anim_vel_carried_motion_y = 0.0f;
+                        // std::cout << abs.anim_vel_x << ", " << abs.anim_vel_y << std::endl;
                 }
                 else
                 {
@@ -357,12 +403,17 @@ void S_Animation::update(float dt, entt::registry &reg)
                         lua_register(L, "UnlockRotation", lua_UnlockRotation);
                         lua_register(L, "LockMotion", lua_LockMotion);
                         lua_register(L, "UnlockMotion", lua_UnlockMotion);
+                        lua_register(L, "SetMovementSpeed", lua_SetMovementSpeed);
+                        lua_register(L, "AddTrauma", lua_AddTrauma);
+                        lua_register(L, "PlaySound", lua_PlaySound);
 
+                        put_assets_on_stack(L);
                         if (reg.has<C_PlayerInput>(Entity))
                         {
                                 C_PlayerInput &pi = reg.get<C_PlayerInput>(Entity);
                                 put_input_on_lua_stack(L, pi, true);
                         }
+                        put_data_on_lua_stack(L, reg.get<C_Animation>(Entity), true);
 
                         if (CheckLua(L, luaL_dofile(L, ab.lua_path.c_str())))
                         {
@@ -375,31 +426,32 @@ void S_Animation::update(float dt, entt::registry &reg)
                                 }
                         }
                 }
-        });
+        }
+                );
         reg.view<C_Animation>().each([&reg, dt](auto Entity, C_Animation &animation) {
                 if (animation.animating)
                 {
                         auto &tileset = reg.get<C_Tileset>(Entity);
-                        animation.timer += dt;
-                        if (animation.timer >= animation.seconds_per_frame)
+                        // animation.timer += dt;
+                        // if (animation.timer >= animation.seconds_per_frame)
+                        // {
+                        //         animation.timer -= animation.seconds_per_frame;
+                        if (animation.current_frame < animation.frames - 1)
                         {
-                                animation.timer -= animation.seconds_per_frame;
-                                if (animation.current_frame < animation.frames - 1)
-                                {
-                                        animation.current_frame++;
-                                        run_animation_behavior_increment(reg, Entity);
-                                }
-                                else if (animation.repeat)
-                                {
-                                        animation.current_frame = 0;
-                                        run_animation_behavior_increment(reg, Entity);
-                                }
-                                else
-                                {
-                                        animation.animating = false;
-                                        animation.timer = 0.0;
-                                }
+                                animation.current_frame++;
+                                run_animation_behavior_increment(reg, Entity);
                         }
+                        else if (animation.repeat)
+                        {
+                                animation.current_frame = 0;
+                                run_animation_behavior_increment(reg, Entity);
+                        }
+                        else
+                        {
+                                animation.animating = false;
+                                animation.timer = 0.0;
+                        }
+                        // }
                         tileset.index = tileset.tiles_width * (animation.animation_line + animation.direction) + animation.current_frame;
                 }
         });

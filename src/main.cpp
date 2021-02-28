@@ -130,7 +130,7 @@ int main(int argc, char *argv[])
                                 Game::Update(SECONDS_PER_UPDATE);
                                 glfwGetWindowSize(Game::window, &Game::window_width, &Game::window_height);
                                 glfwGetCursorPos(Game::window, &Game::cursor_x, &Game::cursor_y);
-                                AudioPlayer::Update();
+                                // AudioPlayer::Update();
                                 accumulator -= SECONDS_PER_UPDATE;
                         }
                         // std::cout << "render accum: " << render_accumulator << std::endl;
@@ -147,6 +147,7 @@ int main(int argc, char *argv[])
                         }
                 }
                 Game::Clean();
+                AudioPlayer::Clean();
                 std::cout << "game exited" << std::endl;
         }
         else

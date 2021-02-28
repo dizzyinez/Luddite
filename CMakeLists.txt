@@ -32,6 +32,7 @@ include_directories(
 "R:/Dev/Libraries/C++/delaunator-cpp/include"
 "R:/Dev/Libraries/C++/jc_voronoi/include"
 "R:/Dev/Libraries/C++/soloud20200207/include"
+"R:/Dev/Libraries/C++/SDL2-2.0.10/include/SDL2"
 )
 
 macro(find_library_wrapper)          
@@ -50,7 +51,7 @@ SET(CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_PATH}
 "C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/lib"
 "R:/Dev/Libraries/C++/enet-1.3.16/Lib"
 "R:/Dev/Libraries/C++/openal-soft/build/Debug"
-"R:/Dev/Libraries/C++/soloud20200207/lib"
+"R:/Dev/Libraries/C++/SDL2-2.0.10/lib/x86"
 )
 
 find_library_wrapper(glew libglew32.dll)
@@ -63,7 +64,9 @@ find_library_wrapper(enet libenet.a)
 find_library_wrapper(winsock ws2_32)
 find_library_wrapper(winmedia winmm)
 find_library_wrapper(OpenAL OpenAL32)
-find_library_wrapper(soloud libsoloud)
+find_library_wrapper(sdl2main SDL2main)
+find_library_wrapper(sdl2 SDL2)
+find_library_wrapper(sdl2mixer SDL2_mixer)
 
 
 target_link_libraries(${PROJECT_NAME}
@@ -77,5 +80,8 @@ ${enet}
 ${winsock}
 ${winmedia}
 ${OpenAL}
+${sdl2main}
+${sdl2}
+${sdl2mixer}
 ${soloud}
 )

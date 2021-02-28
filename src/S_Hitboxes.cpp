@@ -20,7 +20,7 @@ void S_Hitboxes::update(float deltaTime, entt::registry &reg)
                                         float distance_squared = (distance_vector.x * distance_vector.x) + (distance_vector.y * distance_vector.y);
                                         if (distance_squared <= radius_sum_squared)
                                         {
-                                                AudioPlayer::PlaySound(SoundAllocator::Get("../assets/sounds/hit1.wav"));
+                                                // AudioPlayer::PlaySound(SoundAllocator::Get("../assets/sounds/hit1.wav"));
                                                 // C_Velocity& vel = reg.get<C_Velocity>(p_entity);
                                                 // p_vel.velocity += glm::vec3(hitbox.kb_dir, 0.0f);
                                                 if (reg.has<C_Player>(p_entity))

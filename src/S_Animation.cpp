@@ -232,7 +232,8 @@ int lua_AddTrauma(lua_State* L)
 
 void PlaySound(uint32_t sound_id)
 {
-        AudioPlayer::PlaySound(SoundAllocator::Get(Sounds::Sound_File_Locations.at(sound_id)));
+        // AudioPlayer::PlaySound(SoundAllocator::Get(Sounds::Sound_File_Locations.at(sound_id)));
+        AudioPlayer::PlaySound();
 }
 
 int lua_PlaySound(lua_State* L)

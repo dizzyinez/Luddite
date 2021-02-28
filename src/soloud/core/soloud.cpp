@@ -22,7 +22,7 @@
  * distribution.
  */
 
-#define WITH_OPENAL
+#define WITH_WINMM
 #include <string.h>
 #include <stdlib.h>
 #include <math.h> // sin

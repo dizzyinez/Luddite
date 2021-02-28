@@ -37,6 +37,8 @@
 #include "script/PlayerScript.hpp"
 #include "data/TextureAllocator.hpp"
 #include "data/FontAllocator.hpp"
+#include "data/SoundAllocator.hpp"
+#include "core/AudioPlayer.hpp"
 
 #include <iostream>
 
@@ -98,7 +100,10 @@ void L_Game::init()
         // LevelRenderer::Init();
         // LevelRenderer::SetLevel(level);
 
-
+        SoundAllocator::AddFakeUser(Sounds::GetFilePath(Sounds::eSound::whoosh1));
+        SoundAllocator::AddFakeUser(Sounds::GetFilePath(Sounds::eSound::whoosh2));
+        SoundAllocator::AddFakeUser(Sounds::GetFilePath(Sounds::eSound::mus_test));
+        AudioPlayer::PlaySound(SoundAllocator::Get(Sounds::GetFilePath(Sounds::eSound::mus_test)));
 
         // Entity test_hitbox = CreateEntity();
         // test_hitbox.AddComponent<C_Position>(0.0f, 0.0f);

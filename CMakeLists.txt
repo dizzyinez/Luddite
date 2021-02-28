@@ -83,5 +83,4 @@ ${OpenAL}
 ${sdl2main}
 ${sdl2}
 ${sdl2mixer}
-${soloud}
 )

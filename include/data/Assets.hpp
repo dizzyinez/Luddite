@@ -72,6 +72,7 @@ struct Npcs
 #define SOUNDS_DECLARE \
         SOUND_DECLARATION(whoosh1) \
         SOUND_DECLARATION(whoosh2) \
+        SOUND_DECLARATION(mus_test) \
 
 struct Sounds
 {
@@ -91,7 +92,7 @@ struct Sounds
 
         inline static const std::vector<std::string> Sound_File_Locations =
         {
-        #define SOUND_DECLARATION(name) "../assets/sounds/" #name ".wav",
+        #define SOUND_DECLARATION(name) "../assets/sounds/" #name ".ogg",
                 SOUNDS_DECLARE
         #undef SOUND_DECLARATION
         };

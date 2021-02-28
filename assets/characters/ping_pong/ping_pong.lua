@@ -40,6 +40,8 @@ end
 
 function Run_Start()
   LookAtMotion()
+  UnlockMotion()
+  UnlockRotation()
 end
 
 
@@ -55,14 +57,12 @@ function Forehand_End()
 end
 function Forehand_Last()
   UnlockMotion()
-  UnlockRotation()
   PlayAnimation("Idle")
 end
 function Forehand_17()
   if (Input.button2) then
     PlayAnimation("Backhand", true)
-  end
-  if (Input.button1) then
+  elseif (Input.button1) then
     PlayAnimation("Push", true)
   end
 end
@@ -79,13 +79,9 @@ function Backhand()
   end
 end
 function Backhand_Start()
-  LockMotion()
-  LookAtMouse()
-  LockRotation()
 end
 function Backhand_End()
   UnlockMotion()
-  UnlockRotation()
 end
 function Backhand_Last()
   PlayAnimation("Idle")
@@ -98,15 +94,14 @@ end
 
 
 function Push()
+  if (Data.frame >= 26) then 
+    MoveCancel()
+  end
 end
 function Push_Start()
-  LockMotion()
-  LookAtMouse()
-  LockRotation()
 end
 function Push_End()
   UnlockMotion()
-  UnlockRotation()
 end
 function Push_Last()
   PlayAnimation("Idle")

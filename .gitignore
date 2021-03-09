@@ -6,3 +6,4 @@ Makefile
 Build/CMakeCache.txt
 Build/compile_commands.json
 **.obj
+**.mtl

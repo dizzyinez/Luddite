@@ -51,6 +51,6 @@ public:
         }
         void OnLateUpdate(float deltaTime)
         {
-                // GetComponent<C_Animation>().direction = GetComponent<C_PlayerDirection>().movement_direction;
+                // GetComponent<C_Animation>().direction = GetComponent<C_PlayerDeterministicInput>().movement_direction;
         }
 };

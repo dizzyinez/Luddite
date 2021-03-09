@@ -14,7 +14,15 @@ constexpr float BASE_MOVE_SPEED = 6.f;
 void S_PlayerController::update(float deltaTime, entt::registry &reg)
 {
         reg.view<C_Player>().each([&reg](auto Entity, auto &player) {
-                auto &&[input, player_dir, vel, abs] = reg.get<C_PlayerInput, C_PlayerDirection, C_Velocity, C_AnimationBehaviorState>(Entity);
+                auto &&[input, d_input, vel, abs] = reg.get<C_PlayerInput, C_PlayerDeterministicInput, C_Velocity, C_AnimationBehaviorState>(Entity);
+
+                //dash
+                if (d_input.button3_release_age <= 8 && player.state.dash_timer == 0)
+                {
+                        player.state.dash_timer = 10;
+                }
+
+
                 //set the movement doirection of the player based on input.
                 float speed;
                 if (abs.motion_lock)
@@ -27,6 +35,6 @@ void S_PlayerController::update(float deltaTime, entt::registry &reg)
                 //set the integer direction of the player
                 auto anim_dir = input.animation_direction();
                 if (anim_dir >= 0)
-                        player_dir.movement_direction = anim_dir;
+                        d_input.movement_direction = anim_dir;
         });
 }

@@ -4,6 +4,7 @@
 #include "components/Simulation.hpp"
 #include "layers/L_MainMenu.hpp"
 #include "layers/L_Game.hpp"
+#include <memory>
 
 void Client::OnMessage(Message& msg)
 {

@@ -7,7 +7,7 @@
 #include <glm/glm.hpp>
 
 #include <glm/gtx/string_cast.hpp>
-constexpr int TOTAL_DIRECTIONS = 32;
+#include "core/defines.h"
 
 struct C_Player
 {
@@ -18,6 +18,10 @@ struct C_Player
         bool local_player = false;
         uint8_t player_slot = 0;
         float trauma = 0.f;
+        struct State
+        {
+                uint32_t dash_timer;
+        } state;
 };
 
 struct C_PlayerSlots
@@ -32,10 +36,19 @@ struct C_PlayerSlots
         entt::entity players[256];
 };
 
-struct C_PlayerDirection
+struct C_PlayerDeterministicInput
 {
-        C_PlayerDirection() = default;
+        C_PlayerDeterministicInput() = default;
         int8_t movement_direction = 0;
+        std::bitset<8> buttons_previous{0x00};
+        uint32_t button1_press_age = 9999;
+        uint32_t button2_press_age = 9999;
+        uint32_t button3_press_age = 9999;
+        uint32_t button4_press_age = 9999;
+        uint32_t button1_release_age = 9999;
+        uint32_t button2_release_age = 9999;
+        uint32_t button3_release_age = 9999;
+        uint32_t button4_release_age = 9999;
 };
 
 struct C_PlayerInput

@@ -70,9 +70,11 @@ int main(int argc, char *argv[])
 
         std::cout << "Renderer: " << glGetString(GL_RENDERER) << std::endl;
         std::cout << "OpenGL Version supported:  " << glGetString(GL_VERSION) << std::endl;
-        int tu = 0;
-        glGetIntegerv(GL_MAX_TEXTURE_IMAGE_UNITS, &tu);
-        std::cout << "Maximum Texture Units: " << tu << std::endl;
+        int iv = 0;
+        glGetIntegerv(GL_MAX_TEXTURE_IMAGE_UNITS, &iv);
+        std::cout << "Maximum Texture Units: " << iv << std::endl;
+        glGetIntegerv(GL_MAX_TEXTURE_SIZE, &iv);
+        std::cout << "Maximum Texture Size: " << iv << std::endl;
 
         if (enet_initialize() != 0)
         {

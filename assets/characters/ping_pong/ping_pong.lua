@@ -8,12 +8,18 @@ function MoveCancel()
   end
 end
 
-
+  
 function Idle()
+<<<<<<< Updated upstream
 
   Print(tostring(Input.button2)))
   if (Input.button1) then
+=======
+  if (Input.button1_press_age <= 10) then
+>>>>>>> Stashed changes
     PlayAnimation("Forehand")
+  elseif (Input.button2_press_age <= 10) then
+    PlayAnimation("Slam")
   end
   if Input.moveX ~= 0 or Input.moveY ~= 0 then
     PlayAnimation("Run")
@@ -31,8 +37,10 @@ end
 
 
 function Run()
-  if (Input.button1) then
+  if (Input.button1_press_age <= 10) then
     PlayAnimation("Forehand")
+  elseif (Input.button2_press_age <= 10) then
+    PlayAnimation("Slam")
   end
   if Input.moveX == 0 and Input.moveY == 0 then
     PlayAnimation("Idle")
@@ -45,9 +53,20 @@ function Run_Start()
   UnlockRotation()
 end
 
+function Run_22()
+  PlaySound(Sounds.step)
+end
+
+function Run_47()
+  PlaySound(Sounds.step)
+end
+
 
 
 function Forehand()
+  if (Data.frame >= 24) then
+    MoveCancel()
+  end
 end
 function Forehand_Start()
   LockMotion()
@@ -61,9 +80,9 @@ function Forehand_Last()
   PlayAnimation("Idle")
 end
 function Forehand_17()
-  if (Input.button2) then
+  if (Input.button2_press_age <= 15) then
     PlayAnimation("Backhand", true)
-  elseif (Input.button1) then
+  elseif (Input.button1_press_age <= 15) then
     PlayAnimation("Push", true)
   end
 end
@@ -112,6 +131,22 @@ function Push_7()
   AddTrauma(0.3)
 end
 
+function Slam()
+  LockRotation()
+  LookAtMouse()
+  LockMotion()
+end
+function Slam_Last()
+    PlayAnimation("Idle")
+end
+
+function Slam_27()
+  PlaySound(Sounds.whoosh2)
+end
+
+function Slam_36()
+  AddTrauma(1.0)
+end
 
 -- function Clap()
 --   if Data.frame >= 20 then

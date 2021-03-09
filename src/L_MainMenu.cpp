@@ -47,7 +47,7 @@ void L_MainMenu::init()
                     S_Ancestry,
                     S_Gui_Input,
                     S_Gui,
-                    S_Tileset,
+                    S_Tilemap,
                     S_Animation,
                     S_Draw,
                     S_Text_Rendering,
@@ -202,7 +202,7 @@ void L_MainMenu::update(float deltaTime)
 
 void L_MainMenu::render(float alpha, float deltaTime)
 {
-        systems.update<S_Tileset> (alpha, m_Registry);
+        systems.update<S_Tilemap> (alpha, m_Registry);
         systems.update<S_Draw>    (alpha, m_Registry);
 }
 void L_MainMenu::clean()

@@ -1,6 +1,7 @@
 #pragma once
 #include "core/soloudincl.h"
-#include "soloud_bassboostfilter.h"
+// #include "soloud_bassboostfilter.h"
+#include "soloud_freeverbfilter.h"
 #include "data/Assets.hpp"
 #include "data/Sound.hpp"
 #include "data/SoundAllocator.hpp"
@@ -11,9 +12,9 @@ struct AudioPlayer
         static void Initialize()
         {
                 soloud.init();
-                static SoLoud::BassboostFilter bass_boost;
-                bass_boost.setParams(11.0f);
-                soloud.setGlobalFilter(0, &bass_boost);
+                // static SoLoud::FreeverbFilter reverb;
+                // reverb.setParams(0, 0.5f, 0.5f, 1);
+                // soloud.setGlobalFilter(0, &reverb);
         }
         static void Clean()
         {

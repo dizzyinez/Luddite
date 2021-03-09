@@ -67,7 +67,7 @@ if (dot(normal, light_dir) > 0)
   //inverse square law
   spec *= dist_factor;
 
-float ambient = 0.5;
+float ambient = 0.7;
 // float light = max(spec + diff, ambient);
 
   // color = vec4(tex_color.rgb * diff, tex_color.a);

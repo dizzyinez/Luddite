@@ -22,7 +22,7 @@
 
 using namespace CR;
 
-constexpr int TOTAL_DIRECTIONS = 32;
+constexpr float RENDER_SCALE = 4.0f;
 
 CharacterRenderer::CharacterRenderer()
 {
@@ -69,7 +69,7 @@ std::shared_ptr<Texture>  CharacterRenderer::RenderAnimation(const std::string& 
         glBindTexture(GL_TEXTURE_2D, screen_texture);
         //GL_RGBA8
         // uint32_t color = 0xffffff00;
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, frame_size * frame_amount, frame_size * TOTAL_DIRECTIONS, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, frame_size * TOTAL_DIRECTIONS, frame_size * frame_amount, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
         glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, screen_texture, 0);
@@ -78,17 +78,10 @@ std::shared_ptr<Texture>  CharacterRenderer::RenderAnimation(const std::string& 
         uint32_t depth_render_buffer;
         glGenRenderbuffers(1, &depth_render_buffer);
         glBindRenderbuffer(GL_RENDERBUFFER, depth_render_buffer);
-        glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT24, frame_size * frame_amount, frame_size * TOTAL_DIRECTIONS);
+        glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT24, frame_size * TOTAL_DIRECTIONS, frame_size * frame_amount);
         glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, depth_render_buffer);
         glBindRenderbuffer(GL_RENDERBUFFER, 0);
-        // glBindFramebuffer(GL_FRAMEBUFFER, 0);
-        // GLenum DrawBuffers[1] = {GL_COLOR_ATTACHMENT0};
-        // glDrawBuffers(1, DrawBuffers);
 
-        // glBindTexture(GL_TEXTURE_2D, 0);
-        // glEnable(GL_TEXTURE_2D);
-
-        // glBindFramebuffer(GL_FRAMEBUFFER, frame_buffer);
         glClearDepth(1.0f);
         GLfloat color_clear_value[4];
         glGetFloatv(GL_COLOR_CLEAR_VALUE, color_clear_value);
@@ -96,11 +89,6 @@ std::shared_ptr<Texture>  CharacterRenderer::RenderAnimation(const std::string& 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glBlendFunc(GL_ONE, GL_CONSTANT_COLOR);
 
-        // glDisable(GL_BLEND);
-        // glDepthFunc(GL_LEQUAL);
-        // glDisable(GL_CULL_FACE);
-        // glEnable(GL_CULL_FACE);
-        // glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 
 
@@ -110,9 +98,7 @@ std::shared_ptr<Texture>  CharacterRenderer::RenderAnimation(const std::string& 
         if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
                 std::cout << "buffer error" << std::endl;
         float half_frame_size = (float)frame_size / 1.0f;
-        float scale = 4.0f;
-        glm::mat4 projection = glm::ortho(-scale, scale, -scale, scale, 0.1f, 30.0f);
-        // glm::mat4 projection = glm::perspective(glm::quarter_pi<float>() / 2.0f, 1.0f, 0.1f, 20.0f);
+        glm::mat4 projection = glm::ortho(-RENDER_SCALE, RENDER_SCALE, -RENDER_SCALE, RENDER_SCALE, 0.1f, 30.0f);
         glm::mat4 view = glm::lookAt(glm::vec3(0.0f, 0.0f, -5.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
         glm::mat4 vp = projection * view;
@@ -124,9 +110,6 @@ std::shared_ptr<Texture>  CharacterRenderer::RenderAnimation(const std::string& 
         char dir[character_name.size() + animation_name.size() + 40];
         sprintf(dir, "../dev/characters/%s/animations/%s/frame_data.json", character_name.c_str(), animation_name.c_str());
         std::shared_ptr<Json> frame_data = JsonAllocator::Get(dir);
-
-        // .addValue("x_dir", frame_data->root("1")[i]("x_dir").toNumber())
-        // .addValue("y_dir", frame_data->root("1")[i]("y_dir").toNumber())
 
         Shader shader;
         shader.Load("../assets/shaders/bakevert.vshader", "../assets/shaders/bakefrag.fshader");
@@ -158,7 +141,7 @@ std::shared_ptr<Texture>  CharacterRenderer::RenderAnimation(const std::string& 
                         glUniformMatrix4fv(shader.GetUniformLocation("model"), 1, GL_FALSE, glm::value_ptr(model));
                         glUniformMatrix4fv(shader.GetUniformLocation("normalMatrix"), 1, GL_FALSE, glm::value_ptr(normalMatrix));
 
-                        glViewport(frame_size * i, frame_size * j, frame_size, frame_size);
+                        glViewport(frame_size * j, frame_size * i, frame_size, frame_size);
                         for (objl::Mesh mesh : loader.LoadedMeshes)
                         {
                                 std::vector<CharacterRenderer::Vertex> vertecies;
@@ -225,12 +208,13 @@ std::shared_ptr<Texture>  CharacterRenderer::RenderAnimation(const std::string& 
         // glClear(GL_COLOR_BUFFER_BIT);
 
         //Save
-        unsigned char* image_buffer = (unsigned char *)malloc((int)(frame_size * frame_amount * frame_size * TOTAL_DIRECTIONS * 4));
-        glReadPixels(0, 0, frame_size * frame_amount, frame_size * TOTAL_DIRECTIONS, GL_RGBA, GL_UNSIGNED_BYTE, image_buffer);
+        unsigned char* image_buffer = (unsigned char *)malloc((int)(frame_size * TOTAL_DIRECTIONS * frame_size * frame_amount * 4));
+        glReadPixels(0, 0, frame_size * TOTAL_DIRECTIONS, frame_size * frame_amount, GL_RGBA, GL_UNSIGNED_BYTE, image_buffer);
         char out[character_name.size() + animation_name.size() + 40];
         sprintf(out, "../dev/characters/%s/animations/%s/output.png", character_name.c_str(), animation_name.c_str());
         std::cout << "saving image to " << out << std::endl;
-        stbi_write_png(out, frame_size * frame_amount, frame_size * TOTAL_DIRECTIONS, 4, image_buffer, 4 * frame_size * frame_amount);
+        stbi_write_png(out, frame_size * TOTAL_DIRECTIONS, frame_size * frame_amount, 4, image_buffer, 4 * frame_size * TOTAL_DIRECTIONS);
+        std::cout << "image saved" << std::endl;
         free(image_buffer);
 
         //reset opengl
@@ -250,7 +234,7 @@ std::shared_ptr<Texture>  CharacterRenderer::RenderAnimation(const std::string& 
         glClearColor(color_clear_value[0], color_clear_value[1], color_clear_value[2], color_clear_value[3]);
 
 
-        return std::make_shared<Texture>(screen_texture, frame_size * frame_amount, frame_size * TOTAL_DIRECTIONS);
+        return std::make_shared<Texture>(screen_texture, frame_size * TOTAL_DIRECTIONS, frame_size * frame_amount);
 }
 
 void CharacterRenderer::ExportCharacter(const std::string& character_name)
@@ -265,15 +249,7 @@ void Character::Export()
         gason::JSonBuilder json(json_buffer, 1024 * 500);
         json.startObject();
 
-        //find widest animation;
-        int width = 0;
-        for (const auto & [name, animation] : animations)
-                width = (animation.frames.size() > width) ? animation.frames.size() : width;
-        //allocate megatexture;
-        unsigned char* image_buffer = (unsigned char *)malloc((int)(frame_size * width * frame_size * TOTAL_DIRECTIONS * 4 * animations.size()));
-
-        json.addValue("rows", width);
-        json.addValue("lines", animations.size() * TOTAL_DIRECTIONS);
+        json.addValue("rows", TOTAL_DIRECTIONS);
         json.addValue("animation_count", animations.size());
         json.startArray("animation_names");
         for (const auto & [animation_name, animation] : animations)
@@ -282,8 +258,18 @@ void Character::Export()
         }
         json.endArray();
 
-        int animations_counted = 0;
-        for (const auto & [animation_name, animation] : animations)
+        int total_frames = 0;
+        for (const auto & [name, animation] : animations)
+        {
+                total_frames += animation.frames.size();
+        }
+        // char* tilemap_buffer = (char *)malloc(total_frames * TOTAL_DIRECTIONS * 12);
+        std::vector<uint16_t> tilemap_buffer;
+        tilemap_buffer.reserve(total_frames * TOTAL_DIRECTIONS * 6);
+
+        int counted_frames = 0;
+        int current_height = 0;
+        for (auto & [animation_name, animation] : animations)
         {
                 //read texture
                 char dir[name.size() + animation_name.size() + 40];
@@ -296,23 +282,145 @@ void Character::Export()
                         std::cout << "image couldn't load" << std::endl;
                         continue;
                 }
-                if (w != frame_size * animation.frames.size() || h != frame_size * TOTAL_DIRECTIONS)
+                if (w != frame_size * TOTAL_DIRECTIONS || h != frame_size * animation.frames.size())
                 {
                         std::cout << "invalid image" << std::endl;
                         continue;
                 }
-                //add the texture to the megatexture
-                for (/*each line*/ int i = 0; i < h; i++)
+
+                //trim transparent edges
+                for (int j = 0; j < animation.frames.size(); j++)
                 {
-                        memcpy(&image_buffer[(width * frame_size * animations_counted * frame_size * TOTAL_DIRECTIONS * 4) + width * frame_size * i * 4], &image_data[w * 4 * i], w * 4);
+                        for (int i = 0; i < TOTAL_DIRECTIONS; i++)
+                        {
+                                int margin_top, margin_bot, margin_left, margin_right;
+                                margin_top = margin_bot = margin_left = margin_right = 0;
+                                //find top margin
+                                for (int y = 0; y < frame_size; y++)
+                                {
+                                        bool all_transparent = true;
+                                        for (int x = 0; x < frame_size; x++)
+                                        {
+                                                if (image_data[(i * frame_size + frame_size * TOTAL_DIRECTIONS * (frame_size * j + y) + x) * 4 + 3] != (char)0x00)
+                                                {
+                                                        all_transparent = false;
+                                                        break;
+                                                }
+                                        }
+                                        if (all_transparent)
+                                                margin_top++;
+                                        else
+                                                break;
+                                }
+                                //find bottom margin
+                                for (int y = frame_size - 1; y >= 0; y--)
+                                {
+                                        bool all_transparent = true;
+                                        for (int x = 0; x < frame_size; x++)
+                                        {
+                                                if (image_data[(i * frame_size + frame_size * TOTAL_DIRECTIONS * (frame_size * j + y) + x) * 4 + 3] != (char)0x00)
+                                                {
+                                                        all_transparent = false;
+                                                        break;
+                                                }
+                                        }
+                                        if (all_transparent)
+                                                margin_bot++;
+                                        else
+                                                break;
+                                }
+                                //find left margin
+                                for (int x = 0; x < frame_size; x++)
+                                {
+                                        bool all_transparent = true;
+                                        for (int y = margin_top; y < frame_size - margin_bot; y++)
+                                        {
+                                                if (image_data[(i * frame_size + frame_size * TOTAL_DIRECTIONS * (frame_size * j + y) + x) * 4 + 3] != (char)0x00)
+                                                {
+                                                        all_transparent = false;
+                                                        break;
+                                                }
+                                        }
+                                        if (all_transparent)
+                                                margin_left++;
+                                        else
+                                                break;
+                                }
+                                //find right margin
+                                for (int x = frame_size - 1; x >= 0; x--)
+                                {
+                                        bool all_transparent = true;
+                                        for (int y = margin_top; y < frame_size - margin_bot; y++)
+                                        {
+                                                if (image_data[(i * frame_size + frame_size * TOTAL_DIRECTIONS * (frame_size * j + y) + x) * 4 + 3] != (char)0x00)
+                                                {
+                                                        all_transparent = false;
+                                                        break;
+                                                }
+                                        }
+                                        if (all_transparent)
+                                                margin_right++;
+                                        else
+                                                break;
+                                }
+                                animation.frames.at(j).from_tiles.at(i).pos = glm::ivec2(i * frame_size + margin_left, j * frame_size + margin_top);
+                                animation.frames.at(j).from_tiles.at(i).size = glm::ivec2(frame_size - margin_left - margin_right, frame_size - margin_top - margin_bot);
+                                animation.frames.at(j).from_tiles.at(i).origin = glm::ivec2(int(frame_size * 0.5f) - margin_left, int(frame_size * 0.8f) - margin_top);
+                        }
                 }
-                //free the loaded texture
+                //pack animations
+                glm::ivec2 offset = glm::ivec2(0.f);
+                int width = 0;
+                for (int i = 0; i < animation.frames.size(); i++)
+                {
+                        int max_height = 0;
+                        offset.x = 0;
+                        for (int j = 0; j < TOTAL_DIRECTIONS; j++)
+                        {
+                                animation.frames.at(i).tiles.at(j).pos = offset;
+                                animation.frames.at(i).tiles.at(j).size = animation.frames.at(i).from_tiles.at(j).size;
+                                animation.frames.at(i).tiles.at(j).origin = animation.frames.at(i).from_tiles.at(j).origin;
+                                offset.x += animation.frames.at(i).from_tiles.at(j).size.x + 1;
+                                int height = animation.frames.at(i).from_tiles.at(j).size.y;
+                                if (height > max_height)
+                                        max_height = height;
+                        }
+                        offset.y += max_height + 1;
+                        if (offset.x > width)
+                                width = offset.x;
+                }
+                int height = offset.y;
+                animation.image_width = width;
+                animation.image_height = height;
+                //allocate animation texture;
+                animation.animation_image_buffer = (unsigned char *)malloc(width * height * 4);
+                //blit the animation texture
+
+                for (int i = 0; i < animation.frames.size(); i++)
+                {
+                        for (int j = 0; j < TOTAL_DIRECTIONS; j++)
+                        {
+                                const Tile& tile = animation.frames.at(i).tiles.at(j);
+                                const Tile& from_tile = animation.frames.at(i).from_tiles.at(j);
+                                for (int y = 0; y < animation.frames.at(i).tiles.at(j).size.y; y++)
+                                {
+                                        memcpy(&animation.animation_image_buffer[(width * (tile.pos.y + y) + tile.pos.x) * 4],
+                                                &image_data[(w * (from_tile.pos.y + y) + from_tile.pos.x) * 4],
+                                                tile.size.x * 4);
+                                }
+                        }
+                }
+
+
+
                 stbi_image_free(image_data);
+                std::cout << "animation packed: " << animation.name << std::endl;
 
+                // //save the animation texture (for debug)
+                // sprintf(dir, "../dev/characters/%s/animations/%s/packed.png", name.c_str(), animation_name.c_str());
+                // std::cout << "saving packed texture..." << std::endl;
+                // stbi_write_png(dir, width, height, 4, animation.animation_image_buffer, width * 4);
 
-
-
-                // stbi_load()
                 //read frame data
                 sprintf(dir, "../dev/characters/%s/animations/%s/frame_data.json", name.c_str(), animation_name.c_str());
                 std::shared_ptr<Json> frame_data = JsonAllocator::Get(dir);
@@ -368,28 +476,71 @@ void Character::Export()
                         json.endArray()
                         .endArray();
                 }
-
-                json.addValue("framecount", animation.frames.size())
+                json.addValue("Tilemap Start Index", counted_frames * TOTAL_DIRECTIONS)
+                .addValue("framecount", animation.frames.size())
                 .addValue("fps", 60)
-                .addValue("line", animations_counted * TOTAL_DIRECTIONS);
-                // .startArray("frames");
-                // for (Frame frame : animation.frames)
-                // {
-                //         json.startObject();
-                // }
-                json.endObject();
-                animations_counted++;
+                .endObject();
+                counted_frames += animation.frames.size();
         }
-        json.endObject();
+
+
+
+
+
+        //find width & height
+        int width = 0;
+        int height = 0;
+        for (const auto & [name, animation] : animations)
+        {
+                height += animation.image_height;
+                if (animation.image_width > width)
+                        width = animation.image_width;
+        }
+
+        //allocate megatexture;
+        unsigned char* image_buffer = (unsigned char *)malloc(width * height * 4);
+        int height_offset = 0;
+        for (auto & [animation_name, animation] : animations)
+        {
+                //add the texture to the megatexture
+                for (int y = 0; y < animation.image_height; y++)
+                        memcpy(&image_buffer[width * (height_offset + y) * 4], &animation.animation_image_buffer[animation.image_width * y * 4], animation.image_width * 4);
+                //free the loaded texture
+                for (int i = 0; i < animation.frames.size(); i++)
+                {
+                        for (int j = 0; j < TOTAL_DIRECTIONS; j++)
+                        {
+                                Tile& tile = animation.frames.at(i).tiles.at(j);
+                                tile.pos.y += height_offset;
+                                tilemap_buffer.emplace_back(uint16_t(tile.pos.x));
+                                tilemap_buffer.emplace_back(uint16_t(tile.pos.y));
+                                tilemap_buffer.emplace_back(uint16_t(tile.size.x));
+                                tilemap_buffer.emplace_back(uint16_t(tile.size.y));
+                                tilemap_buffer.emplace_back(uint16_t(tile.origin.x));
+                                tilemap_buffer.emplace_back(uint16_t(tile.origin.y));
+                        }
+                }
+                height_offset += animation.image_height;
+        }
+
 
         //save the megatexture
         char out[name.size() + 40];
         sprintf(out, "../dev/characters/%s/%s/%s.png", name.c_str(), name.c_str(), name.c_str());
-        stbi_write_png(out, frame_size * width, frame_size * TOTAL_DIRECTIONS * animations.size(), 4, image_buffer, 4 * frame_size * width);
-        std::cout << "saved image" << std::endl;
+        std::cout << "saving megatexture..." << std::endl;
+        stbi_write_png(out, width, height, 4, image_buffer, width * 4);
+        std::cout << "saved megatexture" << std::endl;
         free(image_buffer);
 
+        //save the tilemap
+        sprintf(out, "../dev/characters/%s/%s/%s.tilemap", name.c_str(), name.c_str(), name.c_str());
+        std::ofstream tilemap_file(out, std::ios::binary);
+        tilemap_file.write((char*)tilemap_buffer.data(), tilemap_buffer.size() * 2);
+        tilemap_file.close();
+
         //save the json
+        json.addValue("lines", height);
+        json.endObject();
         sprintf(out, "../dev/characters/%s/%s/%s.animation", name.c_str(), name.c_str(), name.c_str());
         std::ofstream json_file;
         json_file.open(out);

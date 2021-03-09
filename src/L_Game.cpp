@@ -24,6 +24,7 @@
 #include "systems/Hitboxes.hpp"
 #include "systems/AnimationBehavior.hpp"
 #include "systems/LocalPlayerInput.hpp"
+#include "systems/PlayerDeterministicInput.hpp"
 #include "systems/Trauma.hpp"
 
 #include "components/GameComponents.hpp"
@@ -58,8 +59,9 @@ void L_Game::init()
                     S_Net_Send,
                     S_Net_Update_Player,
                     S_LocalPlayerInput,
+                    S_PlayerDeterministicInput,
                     S_PlayerController,
-                    S_Tileset,
+                    S_Tilemap,
                     S_Animation,
                     S_AnimationBehavior,
                     S_Hitboxes,
@@ -100,7 +102,8 @@ void L_Game::init()
         SoundAllocator::AddFakeUser(Sounds::GetFilePath(Sounds::eSound::whoosh1));
         SoundAllocator::AddFakeUser(Sounds::GetFilePath(Sounds::eSound::whoosh2));
         SoundAllocator::AddFakeUser(Sounds::GetFilePath(Sounds::eSound::mus_test));
-        AudioPlayer::PlaySound(SoundAllocator::Get(Sounds::GetFilePath(Sounds::eSound::mus_test)));
+        SoundAllocator::AddFakeUser(Sounds::GetFilePath(Sounds::eSound::step));
+        // AudioPlayer::PlaySound(SoundAllocator::Get(Sounds::GetFilePath(Sounds::eSound::mus_test)));
 
         // Entity test_hitbox = CreateEntity();
         // test_hitbox.AddComponent<C_Position>(0.0f, 0.0f);
@@ -233,6 +236,7 @@ void L_Game::update(float deltaTime)
 void L_Game::Step(float deltaTime, entt::registry& reg)
 {
         systems.update<S_Gui,
+                       S_PlayerDeterministicInput,
                        S_Animation,
                        S_PlayerController,
                        S_Ancestry,
@@ -248,7 +252,7 @@ void L_Game::render(float alpha, float deltaTime)
 {
         // LevelRenderer::Render();
         systems.update<S_Transform_Lerp> (last_frame, m_Registry, lerp_frame, alpha);
-        systems.update<S_Tileset>(alpha, lerp_frame);
+        systems.update<S_Tilemap>(alpha, lerp_frame);
         systems.update<S_Text_Rendering>(alpha, lerp_frame);
         systems.update<S_Camera>(alpha, deltaTime, lerp_frame, m_Registry);
         systems.update<S_DrawLevel>(alpha, lerp_frame);
@@ -267,10 +271,10 @@ void L_Game::CopyGameState(entt::registry& from, entt::registry& to)
                              C_Size,
                              C_Texture,
                              C_Sprite,
-                             C_Tileset,
+                             C_Tilemap,
                              C_Player,
                              C_PlayerInput,
-                             C_PlayerDirection,
+                             C_PlayerDeterministicInput,
                              //      C_PlayerKeymap,
                              //      C_Simulation,
                              C_NativeScript,
@@ -302,7 +306,7 @@ void L_Game::CopyRenderingComponents(entt::registry& from, entt::registry& to)
                               C_Size,
                               C_Texture,
                               C_Sprite,
-                              C_Tileset
+                              C_Tilemap
                               >(from, to);
 }
 

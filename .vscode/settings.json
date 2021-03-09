@@ -66,8 +66,9 @@
         "ranges": "cpp",
         "stop_token": "cpp"
     },
-    "C_Cpp.errorSquiggles": "Disabled",
-    "editor.fontFamily": "consolas, 'Courier New', monospace",
+    "C_Cpp.errorSquiggles": "Enabled",
     "editor.fontLigatures": true,
-    "editor.defaultFormatter": "LaurentTreguier.uncrustify"
+    "editor.defaultFormatter": "LaurentTreguier.uncrustify",
+    "cmake.generator": "MinGW Makefiles",
+    "font-switcher.enableLivePreview": true
 }

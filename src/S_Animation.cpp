@@ -13,6 +13,7 @@
 // #include "components/Player.hpp"
 
 #include <string>
+#include <fstream>
 // constexpr int TOTAL_DIRECTIONS = 32;
 
 bool CheckLua(lua_State* L, int r)
@@ -61,7 +62,9 @@ void PlayAnimation(const std::string& name, bool continue_motion)
 
         // // auto [lua_animation, lua_anim_behavior] = lua_reg->get<C_Animation, C_AnimationBehavior>(lua_entity);
 
-        lua_animation.animation_line = lua_anim_behavior.json->root(name.c_str())("line").toNumber();
+        // lua_animation.animation_line = lua_anim_behavior.json->root(name.c_str())("line").toNumber();
+        lua_animation.tilemap_start_index = lua_anim_behavior.json->root(name.c_str())("Tilemap Start Index").toNumber();
+
         // lua_animation.frames = 50;//lua_anim_behavior.json->root(name.c_str())("framecount").toNumber();
         // std::cout << "animation: " << lua_anim_behavior.json->root("Idle")("framecount").toNumber() << std::endl;
         lua_animation.frames = lua_anim_behavior.json->root(name.c_str())("framecount").toNumber();
@@ -98,7 +101,7 @@ int lua_PlayAnimation(lua_State* L)
         }
         else
         {
-                std::cout << "[LUA] | PlayAnimation() requires a string!";
+                std::cout << "[LUA] | PlayAnimation() requires a string!\n";
         }
         return 0;
 }
@@ -117,7 +120,7 @@ int lua_Print(lua_State* L)
         }
         else
         {
-                std::cout << "[LUA] | PlayAnimation() requires a string!";
+                std::cout << "[LUA] | Print() requires a string!\n";
         }
         return 0;
 }
@@ -263,8 +266,8 @@ void run_animation_behavior_increment(entt::registry& reg, entt::entity Entity)
                         if (reg.has<C_PlayerInput>(Entity))
                         {
                                 C_PlayerInput &pi = reg.get<C_PlayerInput>(Entity);
-                                C_PlayerDirection &pd = reg.get<C_PlayerDirection>(Entity);
-                                put_input_on_lua_stack(L, pi);
+                                C_PlayerDeterministicInput &pdi = reg.get<C_PlayerDeterministicInput>(Entity);
+                                put_input_on_lua_stack(L, pi, pdi);
                         }
                         if (CheckLua(L, lua_pcall(L, 0, 0, 0)))
                         {
@@ -292,12 +295,12 @@ void run_animation_behavior_increment(entt::registry& reg, entt::entity Entity)
                         if (reg.has<C_PlayerInput>(Entity))
                         {
                                 C_PlayerInput &pi = reg.get<C_PlayerInput>(Entity);
-                                C_PlayerDirection &pd = reg.get<C_PlayerDirection>(Entity);
+                                C_PlayerDeterministicInput &pdi = reg.get<C_PlayerDeterministicInput>(Entity);
                                 if (!abs.rotation_lock)
                                         if (abs.points_towards_mouse)
                                                 anim.direction = pi.mouse_direction;
                                         else
-                                                anim.direction = pd.movement_direction;
+                                                anim.direction = pdi.movement_direction;
                                 if (abs.rotation_lock_timer > 0)
                                 {
                                         abs.rotation_lock_timer--;
@@ -412,7 +415,8 @@ void S_Animation::update(float dt, entt::registry &reg)
                         if (reg.has<C_PlayerInput>(Entity))
                         {
                                 C_PlayerInput &pi = reg.get<C_PlayerInput>(Entity);
-                                put_input_on_lua_stack(L, pi, true);
+                                C_PlayerDeterministicInput& pdi = reg.get<C_PlayerDeterministicInput>(Entity);
+                                put_input_on_lua_stack(L, pi, pdi, true);
                         }
                         put_data_on_lua_stack(L, reg.get<C_Animation>(Entity), true);
 
@@ -432,7 +436,7 @@ void S_Animation::update(float dt, entt::registry &reg)
         reg.view<C_Animation>().each([&reg, dt](auto Entity, C_Animation &animation) {
                 if (animation.animating)
                 {
-                        auto &tileset = reg.get<C_Tileset>(Entity);
+                        C_Tilemap &tilemap = reg.get<C_Tilemap>(Entity);
                         // animation.timer += dt;
                         // if (animation.timer >= animation.seconds_per_frame)
                         // {
@@ -452,8 +456,8 @@ void S_Animation::update(float dt, entt::registry &reg)
                                 animation.animating = false;
                                 animation.timer = 0.0;
                         }
-                        // }
-                        tileset.index = tileset.tiles_width * (animation.animation_line + animation.direction) + animation.current_frame;
+                        tilemap.index = animation.tilemap_start_index + animation.current_frame * TOTAL_DIRECTIONS + animation.direction;
+                        // tileset.index = tileset.tiles_width * (animation.animation_line + animation.direction) + animation.current_frame;
                 }
         });
 }

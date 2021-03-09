@@ -16,7 +16,7 @@ struct C_Animation
 
         double seconds_per_frame;
         double timer = 0.0;
-        uint16_t animation_line = 0;
+        uint16_t tilemap_start_index = 0;
         uint16_t frames = 0;
         uint16_t current_frame = 0;
         uint8_t direction = 0;

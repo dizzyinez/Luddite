@@ -23,7 +23,7 @@ void L_CharacterEditor::init()
         systems.add<S_Motion,
                     S_Gui_Input,
                     S_Gui,
-                    S_Tileset,
+                    S_Tilemap,
                     S_Animation,
                     S_Ancestry,
                     S_Draw,
@@ -157,7 +157,7 @@ void L_CharacterEditor::update(float deltaTime)
 
 void L_CharacterEditor::render(float alpha, float deltaTime)
 {
-        systems.update<S_Tileset> (alpha, m_Registry);
+        systems.update<S_Tilemap> (alpha, m_Registry);
         systems.update<S_Draw>    (alpha, m_Registry);
         // character_renderer.RenderAnimation("ping_pong", "Idle");
 }

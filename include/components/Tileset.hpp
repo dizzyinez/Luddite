@@ -1,11 +1,8 @@
 #pragma once
-struct C_Tileset
+#include "data/TilemapAllocator.hpp"
+struct C_Tilemap
 {
-        C_Tileset(uint16_t tiles_width_, uint16_t tiles_height_, uint32_t index_)
-                : tiles_width(tiles_width_), tiles_height(tiles_height_), index(index_)
-        {
-        }
-        uint16_t tiles_width;
-        uint16_t tiles_height;
+        C_Tilemap(std::shared_ptr<Tilemap> tilemap_) : tilemap(tilemap_) {}
+        std::shared_ptr<Tilemap> tilemap;
         uint32_t index;
 };

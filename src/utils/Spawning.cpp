@@ -22,16 +22,15 @@ Entity SpawnPlayer(Layer* L, uint8_t slot, bool local_player = false)
         player.AddComponent<C_CircleCollider>(20);
         player.AddComponent<C_DrawLayer>(DrawLayer::sprite);
         player.AddComponent<C_Sprite>(TextureAllocator::Get(Characters::GetTextureFilePath(Characters::eCharacter::ping_pong)), glm::uvec4(0xA38F8BFF, 0x545563FF, 0xDFBEABFF, 0xE77664FF), size.size * glm::vec2(0.5f, 0.8f));
-        // player.AddComponent<C_Texture>(FontAllocator::Get("../assets/fonts/comic.ttf")->characters['P'].texture);
         player.AddComponent<C_Simulation>();
         C_AnimationBehavior& ab = player.AddComponent<C_AnimationBehavior>(Characters::GetAnimationFilePath(Characters::eCharacter::ping_pong), Characters::GetAnimationBehaviorFilePath(Characters::eCharacter::ping_pong));
         player.AddComponent<C_AnimationBehaviorState>();
-        player.AddComponent<C_Tileset>(ab.json->root("rows").toNumber(), ab.json->root("lines").toNumber(), 0);
+        player.AddComponent<C_Tilemap>(TilemapAllocator::Get(Characters::GetTilemapFilePath(Characters::eCharacter::ping_pong)));
         player.AddComponent<C_Animation>();
         player.AddComponent<C_Player>(local_player, slot);
         player.AddComponent<C_Team>(Team::PLAYER);
         player.AddComponent<C_PlayerInput>();
-        player.AddComponent<C_PlayerDirection>();
+        player.AddComponent<C_PlayerDeterministicInput>();
         player.AddScript<PlayerScript>();
         if (local_player)
         {
@@ -49,11 +48,10 @@ Entity SpawnNpc(Layer* L, Npcs::eNpc npc_type, glm::vec2 position)
         npc.AddComponent<C_CircleCollider>(20);
         npc.AddComponent<C_DrawLayer>(DrawLayer::sprite);
         npc.AddComponent<C_Sprite>(TextureAllocator::Get(Npcs::GetTextureFilePath(npc_type)), glm::uvec4(0xA38F8BFF, 0x545563FF, 0xDFBEABFF, 0xE77664FF), size.size * glm::vec2(0.5f, 0.8f));
-        // player.AddComponent<C_Texture>(FontAllocator::Get("../assets/fonts/comic.ttf")->characters['P'].texture);
         npc.AddComponent<C_Simulation>();
         C_AnimationBehavior& ab = npc.AddComponent<C_AnimationBehavior>(Npcs::GetAnimationFilePath(npc_type), Npcs::GetAnimationBehaviorFilePath(npc_type));
         npc.AddComponent<C_AnimationBehaviorState>();
-        npc.AddComponent<C_Tileset>(ab.json->root("rows").toNumber(), ab.json->root("lines").toNumber(), 0);
+        // npc.AddComponent<C_Tilemap>(ab.json->root("rows").toNumber(), ab.json->root("lines").toNumber(), 0);
         npc.AddComponent<C_Animation>();
         npc.AddComponent<C_Team>(Team::ENEMY);
         return npc;

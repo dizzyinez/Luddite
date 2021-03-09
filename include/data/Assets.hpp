@@ -33,6 +33,7 @@ struct Characters
         GET_FILE_PATH_FUNCTION(GetTextureFilePath, png)
         GET_FILE_PATH_FUNCTION(GetAnimationFilePath, animation)
         GET_FILE_PATH_FUNCTION(GetAnimationBehaviorFilePath, lua)
+        GET_FILE_PATH_FUNCTION(GetTilemapFilePath, tilemap)
         #undef GET_FILE_PATH_FUNCTION
 };
 
@@ -73,6 +74,7 @@ struct Npcs
         SOUND_DECLARATION(whoosh1) \
         SOUND_DECLARATION(whoosh2) \
         SOUND_DECLARATION(mus_test) \
+        SOUND_DECLARATION(step) \
 
 struct Sounds
 {

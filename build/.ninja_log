@@ -1,0 +1,22 @@
+# ninja log v5
+15	4809	6366036696897334	CMakeFiles/Luddite.dir/src/Font.cpp.obj	d0337b11146eb233
+23	1586	6366036665323413	CMakeFiles/Luddite.dir/src/Events.cpp.obj	c5ba11ab63b56465
+3262	5838	6366036707546784	CMakeFiles/Luddite.dir/src/Layer.cpp.obj	7a416c86a406b27
+19	3547	6366036684556953	CMakeFiles/Luddite.dir/src/C_PlayerKeymap.cpp.obj	31d5b9395e768ef0
+10	1602	6366036665453063	CMakeFiles/Luddite.dir/src/Assets.cpp.obj	1861f6adfbffa7e4
+32	3261	6366036682056851	CMakeFiles/Luddite.dir/src/L_Base.cpp.obj	39b2a8f397b9411e
+7857	10595	6366036756005887	CMakeFiles/Luddite.dir/src/S_Ancestry.cpp.obj	5870c14cc2235649
+1603	5237	6366036701347009	CMakeFiles/Luddite.dir/src/LevelGenerator.cpp.obj	4d0d1db1e4135451
+47	8685	6366036736047077	CMakeFiles/Luddite.dir/src/L_Networking.cpp.obj	513e7937db1d64f4
+3549	5290	6366036702197009	CMakeFiles/Luddite.dir/src/LineBatch.cpp.obj	baf97731b183c369
+5	7087	6366036720296993	CMakeFiles/Luddite.dir/src/C_NativeScript.cpp.obj	b2f06787c7d40f7b
+4810	7358	6366036722667018	CMakeFiles/Luddite.dir/src/R_Font.cpp.obj	a8e7223795debb7f
+7091	9363	6366036743006876	CMakeFiles/Luddite.dir/src/R_Tilemap.cpp.obj	9917e96e80427ec0
+5291	7769	6366036727217027	CMakeFiles/Luddite.dir/src/LevelRenderer.cpp.obj	a1f04a6e8c9b74e4
+5839	7856	6366036727327038	CMakeFiles/Luddite.dir/src/R_Sound.cpp.obj	4a9898e641415206
+7358	9459	6366036743726913	CMakeFiles/Luddite.dir/src/R_Json.cpp.obj	6ae340439fee05e3
+7769	9683	6366036746846841	CMakeFiles/Luddite.dir/src/R_Textures.cpp.obj	bd08612fd3d17abe
+41	10372	6366036753666785	CMakeFiles/Luddite.dir/src/L_CharacterEditor.cpp.obj	bbe14ed4ada46a4d
+5238	10828	6366036758347005	CMakeFiles/Luddite.dir/src/PacketDefinitions.cpp.obj	c31cfc9bd82b9001
+1588	13759	6366036787535303	CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.obj	7b97e8543a2dd059
+36	18067	6366036830461282	CMakeFiles/Luddite.dir/src/L_Game.cpp.obj	12cde2a90685d0fb

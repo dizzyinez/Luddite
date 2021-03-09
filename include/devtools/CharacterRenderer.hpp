@@ -9,6 +9,7 @@
 #include <memory>
 #include <unordered_map>
 
+#include "core/defines.h"
 namespace CR
 {
 struct Hitbox
@@ -16,10 +17,19 @@ struct Hitbox
         std::array<glm::vec3, 8> positions;
 };
 
+struct Tile
+{
+        glm::ivec2 pos;
+        glm::ivec2 size;
+        glm::ivec2 origin;
+};
+
 struct Frame
 {
         Frame() = default;
         std::vector<Hitbox> hitboxes;
+        std::array<Tile, TOTAL_DIRECTIONS> from_tiles;
+        std::array<Tile, TOTAL_DIRECTIONS> tiles;
 };
 
 struct Animation
@@ -30,6 +40,9 @@ struct Animation
         unsigned int fps;
         // unsigned int total_frames;
         std::vector<Frame> frames;
+        unsigned char* animation_image_buffer;
+        int image_width;
+        int image_height;
 };
 
 struct Character

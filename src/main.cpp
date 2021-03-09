@@ -7,9 +7,9 @@
 
 // #include "CheckGLError.hpp"
 #include "core/game.hpp"
-#include "events/events.hpp"
-#include "events/input.hpp"
-#include "events/logging.hpp"
+#include "events/Events.hpp"
+#include "events/Input.hpp"
+#include "events/Logging.hpp"
 #include "layers/L_Base.hpp"
 #include "layers/L_MainMenu.hpp"
 #include "layers/L_Game.hpp"
@@ -29,6 +29,12 @@ using namespace glm;
 constexpr int UPDATE_RATE = 60;
 constexpr float SECONDS_PER_UPDATE = 1.0f / (float)UPDATE_RATE;
 // std::unique_ptr<Game> *game = nullptr;
+
+void glfw_error_callback(int error, const char* description)
+{
+    fprintf(stderr, "[GLFW] Error: %s\n", description);
+}
+
 int main(int argc, char *argv[])
 {
         glewExperimental = true;
@@ -39,17 +45,18 @@ int main(int argc, char *argv[])
         }
 
         glfwWindowHint(GLFW_SAMPLES, 1); // no antialiasing
-        glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-        glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
-        glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // To make MacOS happy; should not be needed
-        glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // We don't want the old OpenGL
+        // glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+        // glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
+        // glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // To make MacOS happy; should not be needed
+        // glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // We don't want the old OpenGL
+        glfwSetErrorCallback(glfw_error_callback);
 
         GLFWwindow* window = glfwCreateWindow(1024, 768, "VideoGame", NULL, NULL);
         if (!window)
         {
                 std::cout << "Failed to open GLFW window." << std::endl;
                 glfwTerminate();
-                return 1;
+                return 0;
         }
         glfwMakeContextCurrent(window); // Initialize GLEW
         glewExperimental = true; // Needed in core profile

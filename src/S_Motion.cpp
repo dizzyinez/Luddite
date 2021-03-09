@@ -7,7 +7,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtx/compatibility.hpp>
 
-#include "events/events.hpp"
+#include "events/Events.hpp"
 
 #include <iostream>
 

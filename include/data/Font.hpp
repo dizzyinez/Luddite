@@ -3,7 +3,7 @@
 #include "core/basic_includes.hpp"
 #include "glm/glm.hpp"
 #include "data/Texture.hpp"
-#include <ft2build.h>
+#include <freetype2/ft2build.h>
 #include FT_FREETYPE_H
 #include "data/ResourceAllocator.hpp"
 #include <map>

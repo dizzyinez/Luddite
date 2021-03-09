@@ -1,7 +1,7 @@
 #ifndef LayerBase_hpp
 #define LayerBase_hpp
 
-#include "Layers/Layer.hpp"
+#include "layers/Layer.hpp"
 
 class L_Base : public Layer
 {

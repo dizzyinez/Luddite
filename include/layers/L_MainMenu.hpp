@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Layers/Layer.hpp"
+#include "layers/Layer.hpp"
 
 class Client;
 class Server;

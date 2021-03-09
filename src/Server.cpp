@@ -1,5 +1,5 @@
 #include "core/net.hpp"
-#include "config.h"
+#include "Config.h"
 #include "components/Player.hpp"
 #include "components/Simulation.hpp"
 #include "layers/L_MainMenu.hpp"

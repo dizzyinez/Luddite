@@ -1,7 +1,7 @@
 #pragma once
-#include "ecs/Entity.hpp"
+#include "ecs/entity.hpp"
 #include "layers/Layer.hpp"
-#include "data/assets.hpp"
+#include "data/Assets.hpp"
 #include "glm/glm.hpp"
 
 

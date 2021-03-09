@@ -1,5 +1,5 @@
 #include "layers/Layer.hpp"
-#include "ecs/Entity.hpp"
+#include "ecs/entity.hpp"
 
 Entity Layer::CreateEntity()
 {

@@ -22,7 +22,7 @@
  * distribution.
  */
 
-#define WITH_WINMM
+#define WITH_MINIAUDIO
 #include <string.h>
 #include <stdlib.h>
 #include <math.h> // sin

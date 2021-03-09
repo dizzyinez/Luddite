@@ -1,5 +1,5 @@
 #include "systems/TextRendering.hpp"
-#include "components/text.hpp"
+#include "components/Text.hpp"
 #include "components/Position.hpp"
 #include "components/Size.hpp"
 #include "components/DrawLayer.hpp"

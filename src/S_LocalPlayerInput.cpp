@@ -1,6 +1,6 @@
 #include "systems/LocalPlayerInput.hpp"
-#include "components/player.hpp"
-#include "components/playerkeymap.hpp"
+#include "components/Player.hpp"
+#include "components/PlayerKeymap.hpp"
 #include "components/Position.hpp"
 #include "components/Size.hpp"
 #include "events/Events.hpp"

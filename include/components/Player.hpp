@@ -1,7 +1,7 @@
 #ifndef C_Player_hpp
 #define C_Player_hpp
 #include <iostream>
-#include "ecs/Entity.hpp"
+#include "ecs/entity.hpp"
 #include <bitset>
 #include <glm/vec2.hpp>
 #include <glm/glm.hpp>

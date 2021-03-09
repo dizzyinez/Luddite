@@ -1,5 +1,6 @@
 #pragma once
 #include "net/common.hpp"
+#include <cstring>
 
 namespace net
 {

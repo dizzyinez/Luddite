@@ -2,7 +2,7 @@
 #include <iostream>
 #include "core/net.hpp"
 
-#include "ecs/Entity.hpp"
+#include "ecs/entity.hpp"
 #include "utils/cloning.hpp"
 #include "utils/spawning.hpp"
 #include <glm/gtx/string_cast.hpp>
@@ -31,7 +31,6 @@
 #include "events/Events.hpp"
 #include "events/Logging.hpp"
 #include "events/Input.hpp"
-#include "events/Networking.hpp"
 
 #include "script/NativeScript.hpp"
 #include "script/PlayerScript.hpp"
@@ -41,8 +40,6 @@
 #include "core/AudioPlayer.hpp"
 
 #include <iostream>
-
-#include "events/Gameworld.hpp"
 
 #include "level/LevelGenerator.hpp"
 #include "rendering/LevelRenderer.hpp"

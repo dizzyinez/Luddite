@@ -1,11 +1,11 @@
 #include "layers/L_CharacterEditor.hpp"
 
-#include "ecs/Entity.hpp"
+#include "ecs/entity.hpp"
 
 #include "components/Position.hpp"
 #include "components/Size.hpp"
 #include "components/Gui.hpp"
-#include "components/text.hpp"
+#include "components/Text.hpp"
 #include "components/Texture.hpp"
 #include "components/DrawLayer.hpp"
 

@@ -1,0 +1,512 @@
+[
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/Assets.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/Assets.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/Assets.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/C_NativeScript.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/C_NativeScript.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/C_NativeScript.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/C_PlayerKeymap.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/C_PlayerKeymap.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/C_PlayerKeymap.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/Client.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/Client.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/Client.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/Events.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/Events.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/Events.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/Font.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/Font.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/Font.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/L_Base.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/L_Base.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/L_Base.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/L_CharacterEditor.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/L_CharacterEditor.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/L_CharacterEditor.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/L_Game.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/L_Game.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/L_Game.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/L_MainMenu.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/L_MainMenu.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/Layer.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/Layer.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/Layer.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/LevelGenerator.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/LevelGenerator.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/LevelGenerator.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/LevelRenderer.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/LevelRenderer.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/LevelRenderer.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/LineBatch.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/LineBatch.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/LineBatch.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/R_Font.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/R_Font.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/R_Font.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/R_Json.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/R_Json.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/R_Json.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/R_Sound.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/R_Sound.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/R_Sound.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/R_Textures.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/R_Textures.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/R_Textures.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/Renderer.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/Renderer.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/Renderer.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/S_Ancestry.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Ancestry.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Ancestry.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/S_Animation.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Animation.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Animation.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/S_AnimationBehavior.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_AnimationBehavior.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_AnimationBehavior.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/S_Camera.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Camera.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Camera.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/S_Draw.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Draw.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Draw.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/S_DrawLevel.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_DrawLevel.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_DrawLevel.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/S_Gui.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Gui.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Gui.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/S_Hitboxes.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Hitboxes.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Hitboxes.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/S_LocalPlayerInput.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_LocalPlayerInput.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_LocalPlayerInput.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/S_Logging.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Logging.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Logging.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/S_Motion.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Motion.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Motion.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_PlayerController.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_PlayerController.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/S_Projection.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Projection.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Projection.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/S_Scripts.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Scripts.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Scripts.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/S_TextRendering.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_TextRendering.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_TextRendering.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/S_Tileset.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Tileset.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Tileset.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/S_TransformLerp.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_TransformLerp.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_TransformLerp.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/S_Trauma.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Trauma.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Trauma.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/Server.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/Server.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/Server.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/SpriteBatch.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/SpriteBatch.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/SpriteBatch.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/System.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/System.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/System.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/Texture.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/Texture.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/Texture.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/TextureBatch.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/TextureBatch.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/TextureBatch.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/devtools/CharacterRenderer.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/devtools/CharacterRenderer.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/game.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/game.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/game.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/gason.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/gason.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/gason.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/gui/constraints.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/gui/constraints.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/gui/constraints.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/loadShader.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/loadShader.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/loadShader.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/main.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/main.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/main.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/shader.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/shader.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/shader.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/audiosource/monotone/soloud_monotone.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/monotone/soloud_monotone.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/monotone/soloud_monotone.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/audiosource/noise/soloud_noise.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/noise/soloud_noise.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/noise/soloud_noise.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/audiosource/openmpt/soloud_openmpt.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/openmpt/soloud_openmpt.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/openmpt/soloud_openmpt.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-10  -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -o CMakeFiles/Luddite.dir/src/soloud/audiosource/openmpt/soloud_openmpt_dll.c.o   -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/openmpt/soloud_openmpt_dll.c",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/openmpt/soloud_openmpt_dll.c"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/audiosource/sfxr/soloud_sfxr.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/sfxr/soloud_sfxr.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/sfxr/soloud_sfxr.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/darray.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/speech/darray.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/speech/darray.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/klatt.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/speech/klatt.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/speech/klatt.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/resonator.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/speech/resonator.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/speech/resonator.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/soloud_speech.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/speech/soloud_speech.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/speech/soloud_speech.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/tts.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/speech/tts.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/speech/tts.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/audiosource/tedsid/sid.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/tedsid/sid.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/tedsid/sid.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/audiosource/tedsid/soloud_tedsid.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/tedsid/soloud_tedsid.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/tedsid/soloud_tedsid.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/audiosource/tedsid/ted.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/tedsid/ted.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/tedsid/ted.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/audiosource/vic/soloud_vic.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/vic/soloud_vic.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/vic/soloud_vic.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/audiosource/vizsn/soloud_vizsn.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/vizsn/soloud_vizsn.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/vizsn/soloud_vizsn.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/dr_impl.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/wav/dr_impl.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/wav/dr_impl.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/soloud_wav.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/wav/soloud_wav.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/wav/soloud_wav.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/soloud_wavstream.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/wav/soloud_wavstream.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/wav/soloud_wavstream.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-10  -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -o CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/stb_vorbis.c.o   -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/wav/stb_vorbis.c",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/wav/stb_vorbis.c"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/backend/miniaudio/soloud_miniaudio.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/backend/miniaudio/soloud_miniaudio.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/backend/miniaudio/soloud_miniaudio.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/c_api/soloud_c.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/c_api/soloud_c.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/c_api/soloud_c.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/core/soloud.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_audiosource.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_audiosource.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_audiosource.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_bus.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_bus.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_bus.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_3d.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_core_3d.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_core_3d.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_basicops.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_core_basicops.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_core_basicops.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_faderops.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_core_faderops.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_core_faderops.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_filterops.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_core_filterops.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_core_filterops.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_getters.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_core_getters.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_core_getters.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_setters.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_core_setters.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_core_setters.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_voicegroup.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_core_voicegroup.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_core_voicegroup.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_voiceops.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_core_voiceops.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_core_voiceops.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_fader.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_fader.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_fader.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_fft.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_fft.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_fft.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_fft_lut.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_fft_lut.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_fft_lut.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_file.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_file.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_file.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_filter.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_filter.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_filter.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_misc.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_misc.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_misc.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_queue.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_queue.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_queue.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_thread.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_thread.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_thread.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/filter/soloud_bassboostfilter.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_bassboostfilter.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_bassboostfilter.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/filter/soloud_biquadresonantfilter.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_biquadresonantfilter.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_biquadresonantfilter.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/filter/soloud_dcremovalfilter.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_dcremovalfilter.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_dcremovalfilter.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/filter/soloud_echofilter.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_echofilter.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_echofilter.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/filter/soloud_fftfilter.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_fftfilter.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_fftfilter.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/filter/soloud_flangerfilter.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_flangerfilter.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_flangerfilter.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/filter/soloud_freeverbfilter.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_freeverbfilter.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_freeverbfilter.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/filter/soloud_lofifilter.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_lofifilter.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_lofifilter.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/filter/soloud_robotizefilter.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_robotizefilter.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_robotizefilter.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/soloud/filter/soloud_waveshaperfilter.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_waveshaperfilter.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_waveshaperfilter.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-10  -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -o CMakeFiles/Luddite.dir/src/stb_impl.c.o   -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/stb_impl.c",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/stb_impl.c"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/utils/Spawning.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/utils/Spawning.cpp"
+},
+{
+  "directory": "/home/evan/Documents/Dev/Games/Luddite/Luddite/build",
+  "command": "/bin/x86_64-linux-gnu-g++-10   -I/home/evan/Documents/Dev/Games/Luddite/Luddite/include -I/usr/include/freetype2 -I/usr/include/soloud/include  -g   -std=gnu++17 -o CMakeFiles/Luddite.dir/src/utils/loading_screen.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/utils/loading_screen.cpp",
+  "file": "/home/evan/Documents/Dev/Games/Luddite/Luddite/src/utils/loading_screen.cpp"
+}
+]

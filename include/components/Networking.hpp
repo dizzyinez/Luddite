@@ -1,6 +1,6 @@
 #pragma once
 #include "entt.hpp"
-#include "events/logging.hpp"
+#include "events/Logging.hpp"
 #include "core/net.hpp"
 // #include <bitset>
 

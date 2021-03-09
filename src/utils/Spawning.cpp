@@ -2,9 +2,9 @@
 
 #include "components/GameComponents.hpp"
 
-#include "ecs/Entity.hpp"
+#include "ecs/entity.hpp"
 #include "script/PlayerScript.hpp"
-#include "data/assets.hpp"
+#include "data/Assets.hpp"
 #include "data/JsonAllocator.hpp"
 #include "data/TextureAllocator.hpp"
 

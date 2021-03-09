@@ -1,5 +1,5 @@
 #include "systems/System.hpp"
-#include "ecs/Entity.hpp"
+#include "ecs/entity.hpp"
 #include "layers/Layer.hpp"
 
 SystemID BaseSystem::systemID_counter;

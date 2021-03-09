@@ -2,7 +2,7 @@
 #include "net/message.hpp"
 #include "net/server.hpp"
 #include "net/client.hpp"
-#include "ecs/Entity.hpp"
+#include "ecs/entity.hpp"
 // #include "layers/L_MainMenu.hpp"
 // #include "layers/L_Game.hpp"
 

@@ -1,5 +1,5 @@
 #pragma once
-#include "Level/LevelGenerator.hpp"
+#include "level/LevelGenerator.hpp"
 #include "rendering/Shader.hpp"
 #include <array>
 #include <vector>

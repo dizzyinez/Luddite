@@ -1,10 +1,10 @@
 #include "layers/L_MainMenu.hpp"
-#include "config.h"
+#include "Config.h"
 #include <iostream>
 #include "core/net.hpp"
 #include "core/game.hpp"
 
-#include "ecs/Entity.hpp"
+#include "ecs/entity.hpp"
 
 #include "systems/Draw.hpp"
 #include "systems/TextRendering.hpp"
@@ -25,12 +25,11 @@
 #include "components/PlayerKeymap.hpp"
 #include "components/NativeScript.hpp"
 #include "components/Texture.hpp"
-#include "components/text.hpp"
+#include "components/Text.hpp"
 
 #include "events/Events.hpp"
 #include "events/Logging.hpp"
 #include "events/Input.hpp"
-#include "events/Networking.hpp"
 
 #include "script/NativeScript.hpp"
 #include "script/PlayerScript.hpp"

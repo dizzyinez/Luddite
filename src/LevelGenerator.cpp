@@ -1,15 +1,15 @@
 #include "level/LevelGenerator.hpp"
 #include <iostream>
-#include <poisson_disk_sampling.h>
-#include <delaunator.hpp>
+#include <thinks/poisson_disk_sampling.h>
+// #include <delaunator.hpp>
 #include <bitset>
 #include <limits>
 #include <glm/gtx/perpendicular.hpp>
 #include <glm/gtx/vector_angle.hpp>
 #include <glm/gtx/string_cast.hpp>
 #define JC_VORONOI_IMPLEMENTATION
-#include <jc_voronoi.h>
-#include <jc_voronoi_clip.h>
+#include <jc_voronoi/jc_voronoi.h>
+#include <jc_voronoi/jc_voronoi_clip.h>
 
 
 //TODO: template this function for total types
@@ -159,7 +159,7 @@ Level LevelGenerator::Generate(uint32_t seed)
                         bool uncollapsed_point = false;
                         bool undefined_point = false;
                         int total_uncollapsed = 0;
-                        int total_entropy;
+                        int total_entropy = 0;
                         for (uint32_t i = 0; i < propogator.size(); i++)
                         {
                                 uint8_t entropy = propogator[i].possible_types.count();

@@ -11,7 +11,7 @@
 // #define STB_IMAGE_IMPLEMENTATION
 // #include "stb/stb_image.h"
 #include "rendering/loadShader.hpp"
-#include "data/assets.hpp"
+#include "data/Assets.hpp"
 
 void Renderer::Init()
 {

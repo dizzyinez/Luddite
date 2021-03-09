@@ -1,7 +1,6 @@
 #pragma once
 #include "script/NativeScript.hpp"
-#include "events/events.hpp"
-// #include "components/Networking.hpp"
+#include "events/Events.hpp"
 #include "glm/ext.hpp"
 #include "glm/gtx/string_cast.hpp"
 
@@ -13,10 +12,10 @@
 #include "components/Tileset.hpp"
 #include "components/Animation.hpp"
 
-#include "rendering/renderer.hpp"
+#include "rendering/Renderer.hpp"
 #include "events/Input.hpp"
 #include "data/JsonAllocator.hpp"
-#include "data/assets.hpp"
+#include "data/Assets.hpp"
 
 
 

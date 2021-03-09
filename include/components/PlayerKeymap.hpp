@@ -71,7 +71,7 @@ struct C_PlayerKeymap
                 motion = std::unique_ptr<Keyboard_Input_Direction>(new Keyboard_Input_Direction());
                 look = std::unique_ptr<Mouse_Input_Direction>(new Mouse_Input_Direction());
                 binds[0] = {Input_Devices::MOUSE, GLFW_MOUSE_BUTTON_LEFT};
-                binds[1] = {Input_Devices::MOUSE, GLFW_MOUSE_BUTTON_RIGHT};
+                binds[1] = {Input_Devices::MOUSE, 1};
                 binds[2] = {Input_Devices::KEYBOARD, glfwGetKeyScancode(GLFW_KEY_LEFT_SHIFT)};
                 binds[3] = {Input_Devices::KEYBOARD, glfwGetKeyScancode(GLFW_KEY_SPACE)};
         }

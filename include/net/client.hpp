@@ -1,7 +1,7 @@
 #pragma once
 #include "net/common.hpp"
 #include "net/message.hpp"
-
+#include <cstring> //memcpy
 #include <enet/enet.h>
 namespace net
 {

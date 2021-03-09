@@ -10,7 +10,8 @@ end
 
 
 function Idle()
-  -- Print(Input.moveX)
+
+  Print(tostring(Input.button2)))
   if (Input.button1) then
     PlayAnimation("Forehand")
   end

@@ -16,7 +16,7 @@ void S_PlayerController::update(float deltaTime, entt::registry &reg)
 
                 //dash
                 if (d_input.button4_release_age <= 8 && player.state.dash_timer == 0)
-                { 
+                {
                         player.state.dash_timer = 10 + 1;
                 }
                 glm::vec2 dash_dir = glm::vec2(0);
@@ -24,14 +24,14 @@ void S_PlayerController::update(float deltaTime, entt::registry &reg)
                 {
                         player.state.dash_timer--;
                         dash_dir = input.direction() * 12.f;
-                        
+
                         //create ghosts
-                        if (player.state.dash_timer % 5 == 0)
+                        if (player.state.dash_timer % 2 == 0)
                         {
                                 auto ghost = reg.create();
                                 reg.emplace<C_Position>(ghost, reg.get<C_Position>(entity));
                                 reg.emplace<C_Size>(ghost, reg.get<C_Size>(entity));
-                                reg.emplace<C_Sprite>(ghost, reg.get<C_Sprite>(entity));
+                                reg.emplace<C_Sprite>(ghost, reg.get<C_Sprite>(entity)).colors.x = 0;
                                 reg.emplace<C_DrawLayer>(ghost, reg.get<C_DrawLayer>(entity));
                                 reg.emplace<C_Tilemap>(ghost, reg.get<C_Tilemap>(entity));
                                 reg.emplace<C_Lifetime>(ghost, 10);

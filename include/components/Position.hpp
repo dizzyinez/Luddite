@@ -13,12 +13,12 @@ struct C_Position
         C_Position(glm::vec3 pos) : position(pos) {
         }
 
-        float getX()
+        float getX() const
         {
                 return position.x;
         }
 
-        float getY()
+        float getY() const
         {
                 return position.y;
         }

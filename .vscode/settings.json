@@ -69,6 +69,6 @@
     "C_Cpp.errorSquiggles": "Enabled",
     "editor.fontLigatures": true,
     "editor.defaultFormatter": "LaurentTreguier.uncrustify",
-    "cmake.generator": "MinGW Makefiles",
+    // "cmake.generator": "MinGW Makefiles",
     "font-switcher.enableLivePreview": true
 }

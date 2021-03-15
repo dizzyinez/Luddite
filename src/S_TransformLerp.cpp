@@ -4,6 +4,7 @@
 #include "components/Size.hpp"
 #include "components/GameComponents.hpp"
 #include <glm/gtx/compatibility.hpp>//lerp
+#include <glm/gtx/string_cast.hpp>
 
 
 
@@ -16,6 +17,7 @@ void S_Transform_Lerp::update(entt::registry& before_reg, entt::registry& after_
                         const auto &last_pos = before_reg.get<C_Position>(Entity).position;
                         const auto &curr_pos = after_reg.get<C_Position>(Entity).position;
                         pos.position = glm::lerp(last_pos, curr_pos, alpha);
+                        std::cout << glm::to_string(pos.position) << std::endl; 
                 }
         });
         lerp_reg.view<C_Size>().each([&before_reg, &after_reg, alpha](auto Entity, C_Size &size)

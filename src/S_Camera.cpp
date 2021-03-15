@@ -15,6 +15,7 @@ constexpr float CAMERA_LERP_COEFFICIENT = 4.0f;
 
 void S_Camera::update(float alpha, float deltaTime, entt::registry& lerp_reg, entt::registry& reg)
 {
+        
         float trauma = 0;
         glm::vec2 average_player_position = glm::vec2(0.f);
         float count = 0;
@@ -53,5 +54,6 @@ void S_Camera::update(float alpha, float deltaTime, entt::registry& lerp_reg, en
                 final_cam_shake_coefficient * stb_perlin_fbm_noise3(cam.noise_timer * CAMERA_SHAKE_TIME_DILATION_COEFFICIENT, 0.f, 0.f, 2.1f, 0.5f, 3),
                 final_cam_shake_coefficient * stb_perlin_fbm_noise3(0.f, cam.noise_timer * CAMERA_SHAKE_TIME_DILATION_COEFFICIENT, 0.f, 2.1f, 0.5f, 3)
                 );
+                
         Renderer::setCameraPosition(new_cam_position);
 }

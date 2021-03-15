@@ -291,9 +291,22 @@ CMakeFiles/Luddite.dir/src/R_Textures.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luddite.dir/src/R_Textures.cpp.s"
 	/bin/x86_64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/evan/Documents/Dev/Games/Luddite/Luddite/src/R_Textures.cpp -o CMakeFiles/Luddite.dir/src/R_Textures.cpp.s
 
+CMakeFiles/Luddite.dir/src/R_Tilemap.cpp.o: CMakeFiles/Luddite.dir/flags.make
+CMakeFiles/Luddite.dir/src/R_Tilemap.cpp.o: ../src/R_Tilemap.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Luddite.dir/src/R_Tilemap.cpp.o"
+	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/R_Tilemap.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/R_Tilemap.cpp
+
+CMakeFiles/Luddite.dir/src/R_Tilemap.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Luddite.dir/src/R_Tilemap.cpp.i"
+	/bin/x86_64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/evan/Documents/Dev/Games/Luddite/Luddite/src/R_Tilemap.cpp > CMakeFiles/Luddite.dir/src/R_Tilemap.cpp.i
+
+CMakeFiles/Luddite.dir/src/R_Tilemap.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luddite.dir/src/R_Tilemap.cpp.s"
+	/bin/x86_64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/evan/Documents/Dev/Games/Luddite/Luddite/src/R_Tilemap.cpp -o CMakeFiles/Luddite.dir/src/R_Tilemap.cpp.s
+
 CMakeFiles/Luddite.dir/src/Renderer.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/Renderer.cpp.o: ../src/Renderer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Luddite.dir/src/Renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Luddite.dir/src/Renderer.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/Renderer.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/Renderer.cpp
 
 CMakeFiles/Luddite.dir/src/Renderer.cpp.i: cmake_force
@@ -306,7 +319,7 @@ CMakeFiles/Luddite.dir/src/Renderer.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/S_Ancestry.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Ancestry.cpp.o: ../src/S_Ancestry.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Luddite.dir/src/S_Ancestry.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Luddite.dir/src/S_Ancestry.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/S_Ancestry.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Ancestry.cpp
 
 CMakeFiles/Luddite.dir/src/S_Ancestry.cpp.i: cmake_force
@@ -319,7 +332,7 @@ CMakeFiles/Luddite.dir/src/S_Ancestry.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/S_Animation.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Animation.cpp.o: ../src/S_Animation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Luddite.dir/src/S_Animation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/Luddite.dir/src/S_Animation.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/S_Animation.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Animation.cpp
 
 CMakeFiles/Luddite.dir/src/S_Animation.cpp.i: cmake_force
@@ -332,7 +345,7 @@ CMakeFiles/Luddite.dir/src/S_Animation.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/S_AnimationBehavior.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_AnimationBehavior.cpp.o: ../src/S_AnimationBehavior.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/Luddite.dir/src/S_AnimationBehavior.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/Luddite.dir/src/S_AnimationBehavior.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/S_AnimationBehavior.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_AnimationBehavior.cpp
 
 CMakeFiles/Luddite.dir/src/S_AnimationBehavior.cpp.i: cmake_force
@@ -345,7 +358,7 @@ CMakeFiles/Luddite.dir/src/S_AnimationBehavior.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/S_Camera.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Camera.cpp.o: ../src/S_Camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/Luddite.dir/src/S_Camera.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/Luddite.dir/src/S_Camera.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/S_Camera.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Camera.cpp
 
 CMakeFiles/Luddite.dir/src/S_Camera.cpp.i: cmake_force
@@ -356,9 +369,22 @@ CMakeFiles/Luddite.dir/src/S_Camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luddite.dir/src/S_Camera.cpp.s"
 	/bin/x86_64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Camera.cpp -o CMakeFiles/Luddite.dir/src/S_Camera.cpp.s
 
+CMakeFiles/Luddite.dir/src/S_CharacterAgnosticAbilities.cpp.o: CMakeFiles/Luddite.dir/flags.make
+CMakeFiles/Luddite.dir/src/S_CharacterAgnosticAbilities.cpp.o: ../src/S_CharacterAgnosticAbilities.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/Luddite.dir/src/S_CharacterAgnosticAbilities.cpp.o"
+	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/S_CharacterAgnosticAbilities.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_CharacterAgnosticAbilities.cpp
+
+CMakeFiles/Luddite.dir/src/S_CharacterAgnosticAbilities.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Luddite.dir/src/S_CharacterAgnosticAbilities.cpp.i"
+	/bin/x86_64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_CharacterAgnosticAbilities.cpp > CMakeFiles/Luddite.dir/src/S_CharacterAgnosticAbilities.cpp.i
+
+CMakeFiles/Luddite.dir/src/S_CharacterAgnosticAbilities.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luddite.dir/src/S_CharacterAgnosticAbilities.cpp.s"
+	/bin/x86_64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_CharacterAgnosticAbilities.cpp -o CMakeFiles/Luddite.dir/src/S_CharacterAgnosticAbilities.cpp.s
+
 CMakeFiles/Luddite.dir/src/S_Draw.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Draw.cpp.o: ../src/S_Draw.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/Luddite.dir/src/S_Draw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/Luddite.dir/src/S_Draw.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/S_Draw.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Draw.cpp
 
 CMakeFiles/Luddite.dir/src/S_Draw.cpp.i: cmake_force
@@ -371,7 +397,7 @@ CMakeFiles/Luddite.dir/src/S_Draw.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/S_DrawLevel.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_DrawLevel.cpp.o: ../src/S_DrawLevel.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/Luddite.dir/src/S_DrawLevel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/Luddite.dir/src/S_DrawLevel.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/S_DrawLevel.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_DrawLevel.cpp
 
 CMakeFiles/Luddite.dir/src/S_DrawLevel.cpp.i: cmake_force
@@ -384,7 +410,7 @@ CMakeFiles/Luddite.dir/src/S_DrawLevel.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/S_Gui.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Gui.cpp.o: ../src/S_Gui.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/Luddite.dir/src/S_Gui.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/Luddite.dir/src/S_Gui.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/S_Gui.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Gui.cpp
 
 CMakeFiles/Luddite.dir/src/S_Gui.cpp.i: cmake_force
@@ -397,7 +423,7 @@ CMakeFiles/Luddite.dir/src/S_Gui.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/S_Hitboxes.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Hitboxes.cpp.o: ../src/S_Hitboxes.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/Luddite.dir/src/S_Hitboxes.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/Luddite.dir/src/S_Hitboxes.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/S_Hitboxes.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Hitboxes.cpp
 
 CMakeFiles/Luddite.dir/src/S_Hitboxes.cpp.i: cmake_force
@@ -408,9 +434,22 @@ CMakeFiles/Luddite.dir/src/S_Hitboxes.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luddite.dir/src/S_Hitboxes.cpp.s"
 	/bin/x86_64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Hitboxes.cpp -o CMakeFiles/Luddite.dir/src/S_Hitboxes.cpp.s
 
+CMakeFiles/Luddite.dir/src/S_Lifetime.cpp.o: CMakeFiles/Luddite.dir/flags.make
+CMakeFiles/Luddite.dir/src/S_Lifetime.cpp.o: ../src/S_Lifetime.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/Luddite.dir/src/S_Lifetime.cpp.o"
+	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/S_Lifetime.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Lifetime.cpp
+
+CMakeFiles/Luddite.dir/src/S_Lifetime.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Luddite.dir/src/S_Lifetime.cpp.i"
+	/bin/x86_64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Lifetime.cpp > CMakeFiles/Luddite.dir/src/S_Lifetime.cpp.i
+
+CMakeFiles/Luddite.dir/src/S_Lifetime.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luddite.dir/src/S_Lifetime.cpp.s"
+	/bin/x86_64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Lifetime.cpp -o CMakeFiles/Luddite.dir/src/S_Lifetime.cpp.s
+
 CMakeFiles/Luddite.dir/src/S_LocalPlayerInput.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_LocalPlayerInput.cpp.o: ../src/S_LocalPlayerInput.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/Luddite.dir/src/S_LocalPlayerInput.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/Luddite.dir/src/S_LocalPlayerInput.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/S_LocalPlayerInput.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_LocalPlayerInput.cpp
 
 CMakeFiles/Luddite.dir/src/S_LocalPlayerInput.cpp.i: cmake_force
@@ -423,7 +462,7 @@ CMakeFiles/Luddite.dir/src/S_LocalPlayerInput.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/S_Logging.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Logging.cpp.o: ../src/S_Logging.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/Luddite.dir/src/S_Logging.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/Luddite.dir/src/S_Logging.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/S_Logging.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Logging.cpp
 
 CMakeFiles/Luddite.dir/src/S_Logging.cpp.i: cmake_force
@@ -436,7 +475,7 @@ CMakeFiles/Luddite.dir/src/S_Logging.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/S_Motion.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Motion.cpp.o: ../src/S_Motion.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/Luddite.dir/src/S_Motion.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/Luddite.dir/src/S_Motion.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/S_Motion.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Motion.cpp
 
 CMakeFiles/Luddite.dir/src/S_Motion.cpp.i: cmake_force
@@ -449,7 +488,7 @@ CMakeFiles/Luddite.dir/src/S_Motion.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.o: ../src/S_PlayerController.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_PlayerController.cpp
 
 CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.i: cmake_force
@@ -460,9 +499,22 @@ CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.s"
 	/bin/x86_64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_PlayerController.cpp -o CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.s
 
+CMakeFiles/Luddite.dir/src/S_PlayerDeterministicInput.cpp.o: CMakeFiles/Luddite.dir/flags.make
+CMakeFiles/Luddite.dir/src/S_PlayerDeterministicInput.cpp.o: ../src/S_PlayerDeterministicInput.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/Luddite.dir/src/S_PlayerDeterministicInput.cpp.o"
+	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/S_PlayerDeterministicInput.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_PlayerDeterministicInput.cpp
+
+CMakeFiles/Luddite.dir/src/S_PlayerDeterministicInput.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Luddite.dir/src/S_PlayerDeterministicInput.cpp.i"
+	/bin/x86_64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_PlayerDeterministicInput.cpp > CMakeFiles/Luddite.dir/src/S_PlayerDeterministicInput.cpp.i
+
+CMakeFiles/Luddite.dir/src/S_PlayerDeterministicInput.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luddite.dir/src/S_PlayerDeterministicInput.cpp.s"
+	/bin/x86_64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_PlayerDeterministicInput.cpp -o CMakeFiles/Luddite.dir/src/S_PlayerDeterministicInput.cpp.s
+
 CMakeFiles/Luddite.dir/src/S_Projection.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Projection.cpp.o: ../src/S_Projection.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/Luddite.dir/src/S_Projection.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/Luddite.dir/src/S_Projection.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/S_Projection.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Projection.cpp
 
 CMakeFiles/Luddite.dir/src/S_Projection.cpp.i: cmake_force
@@ -475,7 +527,7 @@ CMakeFiles/Luddite.dir/src/S_Projection.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/S_Scripts.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Scripts.cpp.o: ../src/S_Scripts.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/Luddite.dir/src/S_Scripts.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/Luddite.dir/src/S_Scripts.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/S_Scripts.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Scripts.cpp
 
 CMakeFiles/Luddite.dir/src/S_Scripts.cpp.i: cmake_force
@@ -488,7 +540,7 @@ CMakeFiles/Luddite.dir/src/S_Scripts.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/S_TextRendering.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_TextRendering.cpp.o: ../src/S_TextRendering.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/Luddite.dir/src/S_TextRendering.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/Luddite.dir/src/S_TextRendering.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/S_TextRendering.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_TextRendering.cpp
 
 CMakeFiles/Luddite.dir/src/S_TextRendering.cpp.i: cmake_force
@@ -501,7 +553,7 @@ CMakeFiles/Luddite.dir/src/S_TextRendering.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/S_Tileset.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Tileset.cpp.o: ../src/S_Tileset.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/Luddite.dir/src/S_Tileset.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/Luddite.dir/src/S_Tileset.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/S_Tileset.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Tileset.cpp
 
 CMakeFiles/Luddite.dir/src/S_Tileset.cpp.i: cmake_force
@@ -514,7 +566,7 @@ CMakeFiles/Luddite.dir/src/S_Tileset.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/S_TransformLerp.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_TransformLerp.cpp.o: ../src/S_TransformLerp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/Luddite.dir/src/S_TransformLerp.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/Luddite.dir/src/S_TransformLerp.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/S_TransformLerp.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_TransformLerp.cpp
 
 CMakeFiles/Luddite.dir/src/S_TransformLerp.cpp.i: cmake_force
@@ -527,7 +579,7 @@ CMakeFiles/Luddite.dir/src/S_TransformLerp.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/S_Trauma.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/S_Trauma.cpp.o: ../src/S_Trauma.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/Luddite.dir/src/S_Trauma.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/Luddite.dir/src/S_Trauma.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/S_Trauma.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Trauma.cpp
 
 CMakeFiles/Luddite.dir/src/S_Trauma.cpp.i: cmake_force
@@ -540,7 +592,7 @@ CMakeFiles/Luddite.dir/src/S_Trauma.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/Server.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/Server.cpp.o: ../src/Server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/Luddite.dir/src/Server.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/Luddite.dir/src/Server.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/Server.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/Server.cpp
 
 CMakeFiles/Luddite.dir/src/Server.cpp.i: cmake_force
@@ -553,7 +605,7 @@ CMakeFiles/Luddite.dir/src/Server.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/SpriteBatch.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/SpriteBatch.cpp.o: ../src/SpriteBatch.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/Luddite.dir/src/SpriteBatch.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/Luddite.dir/src/SpriteBatch.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/SpriteBatch.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/SpriteBatch.cpp
 
 CMakeFiles/Luddite.dir/src/SpriteBatch.cpp.i: cmake_force
@@ -566,7 +618,7 @@ CMakeFiles/Luddite.dir/src/SpriteBatch.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/System.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/System.cpp.o: ../src/System.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/Luddite.dir/src/System.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/Luddite.dir/src/System.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/System.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/System.cpp
 
 CMakeFiles/Luddite.dir/src/System.cpp.i: cmake_force
@@ -579,7 +631,7 @@ CMakeFiles/Luddite.dir/src/System.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/Texture.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/Texture.cpp.o: ../src/Texture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/Luddite.dir/src/Texture.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/Luddite.dir/src/Texture.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/Texture.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/Texture.cpp
 
 CMakeFiles/Luddite.dir/src/Texture.cpp.i: cmake_force
@@ -592,7 +644,7 @@ CMakeFiles/Luddite.dir/src/Texture.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/TextureBatch.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/TextureBatch.cpp.o: ../src/TextureBatch.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/Luddite.dir/src/TextureBatch.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/Luddite.dir/src/TextureBatch.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/TextureBatch.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/TextureBatch.cpp
 
 CMakeFiles/Luddite.dir/src/TextureBatch.cpp.i: cmake_force
@@ -603,9 +655,22 @@ CMakeFiles/Luddite.dir/src/TextureBatch.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luddite.dir/src/TextureBatch.cpp.s"
 	/bin/x86_64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/evan/Documents/Dev/Games/Luddite/Luddite/src/TextureBatch.cpp -o CMakeFiles/Luddite.dir/src/TextureBatch.cpp.s
 
+CMakeFiles/Luddite.dir/src/Tilemap.cpp.o: CMakeFiles/Luddite.dir/flags.make
+CMakeFiles/Luddite.dir/src/Tilemap.cpp.o: ../src/Tilemap.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/Luddite.dir/src/Tilemap.cpp.o"
+	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/Tilemap.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/Tilemap.cpp
+
+CMakeFiles/Luddite.dir/src/Tilemap.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Luddite.dir/src/Tilemap.cpp.i"
+	/bin/x86_64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/evan/Documents/Dev/Games/Luddite/Luddite/src/Tilemap.cpp > CMakeFiles/Luddite.dir/src/Tilemap.cpp.i
+
+CMakeFiles/Luddite.dir/src/Tilemap.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Luddite.dir/src/Tilemap.cpp.s"
+	/bin/x86_64-linux-gnu-g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/evan/Documents/Dev/Games/Luddite/Luddite/src/Tilemap.cpp -o CMakeFiles/Luddite.dir/src/Tilemap.cpp.s
+
 CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.o: ../src/devtools/CharacterRenderer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/devtools/CharacterRenderer.cpp
 
 CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.i: cmake_force
@@ -618,7 +683,7 @@ CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/game.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/game.cpp.o: ../src/game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/Luddite.dir/src/game.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/Luddite.dir/src/game.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/game.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/game.cpp
 
 CMakeFiles/Luddite.dir/src/game.cpp.i: cmake_force
@@ -631,7 +696,7 @@ CMakeFiles/Luddite.dir/src/game.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/gason.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/gason.cpp.o: ../src/gason.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/Luddite.dir/src/gason.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/Luddite.dir/src/gason.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/gason.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/gason.cpp
 
 CMakeFiles/Luddite.dir/src/gason.cpp.i: cmake_force
@@ -644,7 +709,7 @@ CMakeFiles/Luddite.dir/src/gason.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/gui/constraints.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/gui/constraints.cpp.o: ../src/gui/constraints.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/Luddite.dir/src/gui/constraints.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/Luddite.dir/src/gui/constraints.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/gui/constraints.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/gui/constraints.cpp
 
 CMakeFiles/Luddite.dir/src/gui/constraints.cpp.i: cmake_force
@@ -657,7 +722,7 @@ CMakeFiles/Luddite.dir/src/gui/constraints.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/loadShader.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/loadShader.cpp.o: ../src/loadShader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/Luddite.dir/src/loadShader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/Luddite.dir/src/loadShader.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/loadShader.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/loadShader.cpp
 
 CMakeFiles/Luddite.dir/src/loadShader.cpp.i: cmake_force
@@ -670,7 +735,7 @@ CMakeFiles/Luddite.dir/src/loadShader.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/main.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/Luddite.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/Luddite.dir/src/main.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/main.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/main.cpp
 
 CMakeFiles/Luddite.dir/src/main.cpp.i: cmake_force
@@ -683,7 +748,7 @@ CMakeFiles/Luddite.dir/src/main.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/shader.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/shader.cpp.o: ../src/shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/Luddite.dir/src/shader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/Luddite.dir/src/shader.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/shader.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/shader.cpp
 
 CMakeFiles/Luddite.dir/src/shader.cpp.i: cmake_force
@@ -696,7 +761,7 @@ CMakeFiles/Luddite.dir/src/shader.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/monotone/soloud_monotone.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/audiosource/monotone/soloud_monotone.cpp.o: ../src/soloud/audiosource/monotone/soloud_monotone.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/monotone/soloud_monotone.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/monotone/soloud_monotone.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/audiosource/monotone/soloud_monotone.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/monotone/soloud_monotone.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/monotone/soloud_monotone.cpp.i: cmake_force
@@ -709,7 +774,7 @@ CMakeFiles/Luddite.dir/src/soloud/audiosource/monotone/soloud_monotone.cpp.s: cm
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/noise/soloud_noise.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/audiosource/noise/soloud_noise.cpp.o: ../src/soloud/audiosource/noise/soloud_noise.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/noise/soloud_noise.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/noise/soloud_noise.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/audiosource/noise/soloud_noise.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/noise/soloud_noise.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/noise/soloud_noise.cpp.i: cmake_force
@@ -722,7 +787,7 @@ CMakeFiles/Luddite.dir/src/soloud/audiosource/noise/soloud_noise.cpp.s: cmake_fo
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/openmpt/soloud_openmpt.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/audiosource/openmpt/soloud_openmpt.cpp.o: ../src/soloud/audiosource/openmpt/soloud_openmpt.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/openmpt/soloud_openmpt.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/openmpt/soloud_openmpt.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/audiosource/openmpt/soloud_openmpt.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/openmpt/soloud_openmpt.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/openmpt/soloud_openmpt.cpp.i: cmake_force
@@ -735,7 +800,7 @@ CMakeFiles/Luddite.dir/src/soloud/audiosource/openmpt/soloud_openmpt.cpp.s: cmak
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/openmpt/soloud_openmpt_dll.c.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/audiosource/openmpt/soloud_openmpt_dll.c.o: ../src/soloud/audiosource/openmpt/soloud_openmpt_dll.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/Luddite.dir/src/soloud/audiosource/openmpt/soloud_openmpt_dll.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object CMakeFiles/Luddite.dir/src/soloud/audiosource/openmpt/soloud_openmpt_dll.c.o"
 	/bin/x86_64-linux-gnu-gcc-10 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/audiosource/openmpt/soloud_openmpt_dll.c.o   -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/openmpt/soloud_openmpt_dll.c
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/openmpt/soloud_openmpt_dll.c.i: cmake_force
@@ -748,7 +813,7 @@ CMakeFiles/Luddite.dir/src/soloud/audiosource/openmpt/soloud_openmpt_dll.c.s: cm
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/sfxr/soloud_sfxr.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/audiosource/sfxr/soloud_sfxr.cpp.o: ../src/soloud/audiosource/sfxr/soloud_sfxr.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/sfxr/soloud_sfxr.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/sfxr/soloud_sfxr.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/audiosource/sfxr/soloud_sfxr.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/sfxr/soloud_sfxr.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/sfxr/soloud_sfxr.cpp.i: cmake_force
@@ -761,7 +826,7 @@ CMakeFiles/Luddite.dir/src/soloud/audiosource/sfxr/soloud_sfxr.cpp.s: cmake_forc
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/darray.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/darray.cpp.o: ../src/soloud/audiosource/speech/darray.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/darray.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/darray.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/darray.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/speech/darray.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/darray.cpp.i: cmake_force
@@ -774,7 +839,7 @@ CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/darray.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/klatt.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/klatt.cpp.o: ../src/soloud/audiosource/speech/klatt.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/klatt.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/klatt.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/klatt.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/speech/klatt.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/klatt.cpp.i: cmake_force
@@ -787,7 +852,7 @@ CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/klatt.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/resonator.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/resonator.cpp.o: ../src/soloud/audiosource/speech/resonator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/resonator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/resonator.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/resonator.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/speech/resonator.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/resonator.cpp.i: cmake_force
@@ -800,7 +865,7 @@ CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/resonator.cpp.s: cmake_forc
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/soloud_speech.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/soloud_speech.cpp.o: ../src/soloud/audiosource/speech/soloud_speech.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/soloud_speech.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/soloud_speech.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/soloud_speech.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/speech/soloud_speech.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/soloud_speech.cpp.i: cmake_force
@@ -813,7 +878,7 @@ CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/soloud_speech.cpp.s: cmake_
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/tts.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/tts.cpp.o: ../src/soloud/audiosource/speech/tts.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/tts.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/tts.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/tts.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/speech/tts.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/tts.cpp.i: cmake_force
@@ -826,7 +891,7 @@ CMakeFiles/Luddite.dir/src/soloud/audiosource/speech/tts.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/tedsid/sid.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/audiosource/tedsid/sid.cpp.o: ../src/soloud/audiosource/tedsid/sid.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/tedsid/sid.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/tedsid/sid.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/audiosource/tedsid/sid.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/tedsid/sid.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/tedsid/sid.cpp.i: cmake_force
@@ -839,7 +904,7 @@ CMakeFiles/Luddite.dir/src/soloud/audiosource/tedsid/sid.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/tedsid/soloud_tedsid.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/audiosource/tedsid/soloud_tedsid.cpp.o: ../src/soloud/audiosource/tedsid/soloud_tedsid.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/tedsid/soloud_tedsid.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/tedsid/soloud_tedsid.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/audiosource/tedsid/soloud_tedsid.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/tedsid/soloud_tedsid.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/tedsid/soloud_tedsid.cpp.i: cmake_force
@@ -852,7 +917,7 @@ CMakeFiles/Luddite.dir/src/soloud/audiosource/tedsid/soloud_tedsid.cpp.s: cmake_
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/tedsid/ted.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/audiosource/tedsid/ted.cpp.o: ../src/soloud/audiosource/tedsid/ted.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/tedsid/ted.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/tedsid/ted.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/audiosource/tedsid/ted.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/tedsid/ted.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/tedsid/ted.cpp.i: cmake_force
@@ -865,7 +930,7 @@ CMakeFiles/Luddite.dir/src/soloud/audiosource/tedsid/ted.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/vic/soloud_vic.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/audiosource/vic/soloud_vic.cpp.o: ../src/soloud/audiosource/vic/soloud_vic.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/vic/soloud_vic.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/vic/soloud_vic.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/audiosource/vic/soloud_vic.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/vic/soloud_vic.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/vic/soloud_vic.cpp.i: cmake_force
@@ -878,7 +943,7 @@ CMakeFiles/Luddite.dir/src/soloud/audiosource/vic/soloud_vic.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/vizsn/soloud_vizsn.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/audiosource/vizsn/soloud_vizsn.cpp.o: ../src/soloud/audiosource/vizsn/soloud_vizsn.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/vizsn/soloud_vizsn.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/vizsn/soloud_vizsn.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/audiosource/vizsn/soloud_vizsn.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/vizsn/soloud_vizsn.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/vizsn/soloud_vizsn.cpp.i: cmake_force
@@ -891,7 +956,7 @@ CMakeFiles/Luddite.dir/src/soloud/audiosource/vizsn/soloud_vizsn.cpp.s: cmake_fo
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/dr_impl.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/dr_impl.cpp.o: ../src/soloud/audiosource/wav/dr_impl.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/dr_impl.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/dr_impl.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/dr_impl.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/wav/dr_impl.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/dr_impl.cpp.i: cmake_force
@@ -904,7 +969,7 @@ CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/dr_impl.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/soloud_wav.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/soloud_wav.cpp.o: ../src/soloud/audiosource/wav/soloud_wav.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/soloud_wav.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/soloud_wav.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/soloud_wav.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/wav/soloud_wav.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/soloud_wav.cpp.i: cmake_force
@@ -917,7 +982,7 @@ CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/soloud_wav.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/soloud_wavstream.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/soloud_wavstream.cpp.o: ../src/soloud/audiosource/wav/soloud_wavstream.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/soloud_wavstream.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/soloud_wavstream.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/soloud_wavstream.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/wav/soloud_wavstream.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/soloud_wavstream.cpp.i: cmake_force
@@ -930,7 +995,7 @@ CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/soloud_wavstream.cpp.s: cmake_
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/stb_vorbis.c.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/stb_vorbis.c.o: ../src/soloud/audiosource/wav/stb_vorbis.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/stb_vorbis.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/stb_vorbis.c.o"
 	/bin/x86_64-linux-gnu-gcc-10 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/stb_vorbis.c.o   -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/audiosource/wav/stb_vorbis.c
 
 CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/stb_vorbis.c.i: cmake_force
@@ -943,7 +1008,7 @@ CMakeFiles/Luddite.dir/src/soloud/audiosource/wav/stb_vorbis.c.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/backend/miniaudio/soloud_miniaudio.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/backend/miniaudio/soloud_miniaudio.cpp.o: ../src/soloud/backend/miniaudio/soloud_miniaudio.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/backend/miniaudio/soloud_miniaudio.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/backend/miniaudio/soloud_miniaudio.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/backend/miniaudio/soloud_miniaudio.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/backend/miniaudio/soloud_miniaudio.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/backend/miniaudio/soloud_miniaudio.cpp.i: cmake_force
@@ -956,7 +1021,7 @@ CMakeFiles/Luddite.dir/src/soloud/backend/miniaudio/soloud_miniaudio.cpp.s: cmak
 
 CMakeFiles/Luddite.dir/src/soloud/c_api/soloud_c.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/c_api/soloud_c.cpp.o: ../src/soloud/c_api/soloud_c.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/c_api/soloud_c.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/c_api/soloud_c.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/c_api/soloud_c.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/c_api/soloud_c.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/c_api/soloud_c.cpp.i: cmake_force
@@ -969,7 +1034,7 @@ CMakeFiles/Luddite.dir/src/soloud/c_api/soloud_c.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/core/soloud.cpp.o: ../src/soloud/core/soloud.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/core/soloud.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud.cpp.i: cmake_force
@@ -982,7 +1047,7 @@ CMakeFiles/Luddite.dir/src/soloud/core/soloud.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_audiosource.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_audiosource.cpp.o: ../src/soloud/core/soloud_audiosource.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_audiosource.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_audiosource.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_audiosource.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_audiosource.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_audiosource.cpp.i: cmake_force
@@ -995,7 +1060,7 @@ CMakeFiles/Luddite.dir/src/soloud/core/soloud_audiosource.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_bus.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_bus.cpp.o: ../src/soloud/core/soloud_bus.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_bus.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_bus.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_bus.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_bus.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_bus.cpp.i: cmake_force
@@ -1008,7 +1073,7 @@ CMakeFiles/Luddite.dir/src/soloud/core/soloud_bus.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_3d.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_3d.cpp.o: ../src/soloud/core/soloud_core_3d.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_3d.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_3d.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_3d.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_core_3d.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_3d.cpp.i: cmake_force
@@ -1021,7 +1086,7 @@ CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_3d.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_basicops.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_basicops.cpp.o: ../src/soloud/core/soloud_core_basicops.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_basicops.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_basicops.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_basicops.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_core_basicops.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_basicops.cpp.i: cmake_force
@@ -1034,7 +1099,7 @@ CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_basicops.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_faderops.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_faderops.cpp.o: ../src/soloud/core/soloud_core_faderops.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_faderops.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_faderops.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_faderops.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_core_faderops.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_faderops.cpp.i: cmake_force
@@ -1047,7 +1112,7 @@ CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_faderops.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_filterops.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_filterops.cpp.o: ../src/soloud/core/soloud_core_filterops.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_filterops.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_filterops.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_filterops.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_core_filterops.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_filterops.cpp.i: cmake_force
@@ -1060,7 +1125,7 @@ CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_filterops.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_getters.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_getters.cpp.o: ../src/soloud/core/soloud_core_getters.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_getters.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_getters.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_getters.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_core_getters.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_getters.cpp.i: cmake_force
@@ -1073,7 +1138,7 @@ CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_getters.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_setters.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_setters.cpp.o: ../src/soloud/core/soloud_core_setters.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_setters.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_setters.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_setters.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_core_setters.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_setters.cpp.i: cmake_force
@@ -1086,7 +1151,7 @@ CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_setters.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_voicegroup.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_voicegroup.cpp.o: ../src/soloud/core/soloud_core_voicegroup.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_voicegroup.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_voicegroup.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_voicegroup.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_core_voicegroup.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_voicegroup.cpp.i: cmake_force
@@ -1099,7 +1164,7 @@ CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_voicegroup.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_voiceops.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_voiceops.cpp.o: ../src/soloud/core/soloud_core_voiceops.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_voiceops.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_voiceops.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_voiceops.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_core_voiceops.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_voiceops.cpp.i: cmake_force
@@ -1112,7 +1177,7 @@ CMakeFiles/Luddite.dir/src/soloud/core/soloud_core_voiceops.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_fader.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_fader.cpp.o: ../src/soloud/core/soloud_fader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_fader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_fader.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_fader.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_fader.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_fader.cpp.i: cmake_force
@@ -1125,7 +1190,7 @@ CMakeFiles/Luddite.dir/src/soloud/core/soloud_fader.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_fft.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_fft.cpp.o: ../src/soloud/core/soloud_fft.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_fft.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_fft.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_fft.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_fft.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_fft.cpp.i: cmake_force
@@ -1138,7 +1203,7 @@ CMakeFiles/Luddite.dir/src/soloud/core/soloud_fft.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_fft_lut.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_fft_lut.cpp.o: ../src/soloud/core/soloud_fft_lut.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_fft_lut.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_fft_lut.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_fft_lut.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_fft_lut.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_fft_lut.cpp.i: cmake_force
@@ -1151,7 +1216,7 @@ CMakeFiles/Luddite.dir/src/soloud/core/soloud_fft_lut.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_file.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_file.cpp.o: ../src/soloud/core/soloud_file.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_file.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_file.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_file.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_file.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_file.cpp.i: cmake_force
@@ -1164,7 +1229,7 @@ CMakeFiles/Luddite.dir/src/soloud/core/soloud_file.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_filter.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_filter.cpp.o: ../src/soloud/core/soloud_filter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_filter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_filter.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_filter.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_filter.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_filter.cpp.i: cmake_force
@@ -1177,7 +1242,7 @@ CMakeFiles/Luddite.dir/src/soloud/core/soloud_filter.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_misc.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_misc.cpp.o: ../src/soloud/core/soloud_misc.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_misc.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_misc.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_misc.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_misc.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_misc.cpp.i: cmake_force
@@ -1190,7 +1255,7 @@ CMakeFiles/Luddite.dir/src/soloud/core/soloud_misc.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_queue.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_queue.cpp.o: ../src/soloud/core/soloud_queue.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_queue.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_queue.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_queue.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_queue.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_queue.cpp.i: cmake_force
@@ -1203,7 +1268,7 @@ CMakeFiles/Luddite.dir/src/soloud/core/soloud_queue.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_thread.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_thread.cpp.o: ../src/soloud/core/soloud_thread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_thread.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/core/soloud_thread.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/core/soloud_thread.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/core/soloud_thread.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/core/soloud_thread.cpp.i: cmake_force
@@ -1216,7 +1281,7 @@ CMakeFiles/Luddite.dir/src/soloud/core/soloud_thread.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_bassboostfilter.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_bassboostfilter.cpp.o: ../src/soloud/filter/soloud_bassboostfilter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/filter/soloud_bassboostfilter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/filter/soloud_bassboostfilter.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/filter/soloud_bassboostfilter.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_bassboostfilter.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_bassboostfilter.cpp.i: cmake_force
@@ -1229,7 +1294,7 @@ CMakeFiles/Luddite.dir/src/soloud/filter/soloud_bassboostfilter.cpp.s: cmake_for
 
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_biquadresonantfilter.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_biquadresonantfilter.cpp.o: ../src/soloud/filter/soloud_biquadresonantfilter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/filter/soloud_biquadresonantfilter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/filter/soloud_biquadresonantfilter.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/filter/soloud_biquadresonantfilter.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_biquadresonantfilter.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_biquadresonantfilter.cpp.i: cmake_force
@@ -1242,7 +1307,7 @@ CMakeFiles/Luddite.dir/src/soloud/filter/soloud_biquadresonantfilter.cpp.s: cmak
 
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_dcremovalfilter.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_dcremovalfilter.cpp.o: ../src/soloud/filter/soloud_dcremovalfilter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/filter/soloud_dcremovalfilter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/filter/soloud_dcremovalfilter.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/filter/soloud_dcremovalfilter.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_dcremovalfilter.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_dcremovalfilter.cpp.i: cmake_force
@@ -1255,7 +1320,7 @@ CMakeFiles/Luddite.dir/src/soloud/filter/soloud_dcremovalfilter.cpp.s: cmake_for
 
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_echofilter.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_echofilter.cpp.o: ../src/soloud/filter/soloud_echofilter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/filter/soloud_echofilter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/filter/soloud_echofilter.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/filter/soloud_echofilter.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_echofilter.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_echofilter.cpp.i: cmake_force
@@ -1268,7 +1333,7 @@ CMakeFiles/Luddite.dir/src/soloud/filter/soloud_echofilter.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_fftfilter.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_fftfilter.cpp.o: ../src/soloud/filter/soloud_fftfilter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/filter/soloud_fftfilter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/filter/soloud_fftfilter.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/filter/soloud_fftfilter.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_fftfilter.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_fftfilter.cpp.i: cmake_force
@@ -1281,7 +1346,7 @@ CMakeFiles/Luddite.dir/src/soloud/filter/soloud_fftfilter.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_flangerfilter.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_flangerfilter.cpp.o: ../src/soloud/filter/soloud_flangerfilter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/filter/soloud_flangerfilter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/filter/soloud_flangerfilter.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/filter/soloud_flangerfilter.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_flangerfilter.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_flangerfilter.cpp.i: cmake_force
@@ -1294,7 +1359,7 @@ CMakeFiles/Luddite.dir/src/soloud/filter/soloud_flangerfilter.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_freeverbfilter.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_freeverbfilter.cpp.o: ../src/soloud/filter/soloud_freeverbfilter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/filter/soloud_freeverbfilter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/filter/soloud_freeverbfilter.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/filter/soloud_freeverbfilter.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_freeverbfilter.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_freeverbfilter.cpp.i: cmake_force
@@ -1307,7 +1372,7 @@ CMakeFiles/Luddite.dir/src/soloud/filter/soloud_freeverbfilter.cpp.s: cmake_forc
 
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_lofifilter.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_lofifilter.cpp.o: ../src/soloud/filter/soloud_lofifilter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/filter/soloud_lofifilter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/filter/soloud_lofifilter.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/filter/soloud_lofifilter.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_lofifilter.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_lofifilter.cpp.i: cmake_force
@@ -1320,7 +1385,7 @@ CMakeFiles/Luddite.dir/src/soloud/filter/soloud_lofifilter.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_robotizefilter.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_robotizefilter.cpp.o: ../src/soloud/filter/soloud_robotizefilter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/filter/soloud_robotizefilter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/filter/soloud_robotizefilter.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/filter/soloud_robotizefilter.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_robotizefilter.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_robotizefilter.cpp.i: cmake_force
@@ -1333,7 +1398,7 @@ CMakeFiles/Luddite.dir/src/soloud/filter/soloud_robotizefilter.cpp.s: cmake_forc
 
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_waveshaperfilter.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_waveshaperfilter.cpp.o: ../src/soloud/filter/soloud_waveshaperfilter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/filter/soloud_waveshaperfilter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building CXX object CMakeFiles/Luddite.dir/src/soloud/filter/soloud_waveshaperfilter.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/soloud/filter/soloud_waveshaperfilter.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/soloud/filter/soloud_waveshaperfilter.cpp
 
 CMakeFiles/Luddite.dir/src/soloud/filter/soloud_waveshaperfilter.cpp.i: cmake_force
@@ -1346,7 +1411,7 @@ CMakeFiles/Luddite.dir/src/soloud/filter/soloud_waveshaperfilter.cpp.s: cmake_fo
 
 CMakeFiles/Luddite.dir/src/stb_impl.c.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/stb_impl.c.o: ../src/stb_impl.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building C object CMakeFiles/Luddite.dir/src/stb_impl.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/Luddite.dir/src/stb_impl.c.o"
 	/bin/x86_64-linux-gnu-gcc-10 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Luddite.dir/src/stb_impl.c.o   -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/stb_impl.c
 
 CMakeFiles/Luddite.dir/src/stb_impl.c.i: cmake_force
@@ -1359,7 +1424,7 @@ CMakeFiles/Luddite.dir/src/stb_impl.c.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.o: ../src/utils/Spawning.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building CXX object CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building CXX object CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/utils/Spawning.cpp
 
 CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.i: cmake_force
@@ -1372,7 +1437,7 @@ CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.s: cmake_force
 
 CMakeFiles/Luddite.dir/src/utils/loading_screen.cpp.o: CMakeFiles/Luddite.dir/flags.make
 CMakeFiles/Luddite.dir/src/utils/loading_screen.cpp.o: ../src/utils/loading_screen.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building CXX object CMakeFiles/Luddite.dir/src/utils/loading_screen.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building CXX object CMakeFiles/Luddite.dir/src/utils/loading_screen.cpp.o"
 	/bin/x86_64-linux-gnu-g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Luddite.dir/src/utils/loading_screen.cpp.o -c /home/evan/Documents/Dev/Games/Luddite/Luddite/src/utils/loading_screen.cpp
 
 CMakeFiles/Luddite.dir/src/utils/loading_screen.cpp.i: cmake_force
@@ -1403,19 +1468,23 @@ Luddite_OBJECTS = \
 "CMakeFiles/Luddite.dir/src/R_Json.cpp.o" \
 "CMakeFiles/Luddite.dir/src/R_Sound.cpp.o" \
 "CMakeFiles/Luddite.dir/src/R_Textures.cpp.o" \
+"CMakeFiles/Luddite.dir/src/R_Tilemap.cpp.o" \
 "CMakeFiles/Luddite.dir/src/Renderer.cpp.o" \
 "CMakeFiles/Luddite.dir/src/S_Ancestry.cpp.o" \
 "CMakeFiles/Luddite.dir/src/S_Animation.cpp.o" \
 "CMakeFiles/Luddite.dir/src/S_AnimationBehavior.cpp.o" \
 "CMakeFiles/Luddite.dir/src/S_Camera.cpp.o" \
+"CMakeFiles/Luddite.dir/src/S_CharacterAgnosticAbilities.cpp.o" \
 "CMakeFiles/Luddite.dir/src/S_Draw.cpp.o" \
 "CMakeFiles/Luddite.dir/src/S_DrawLevel.cpp.o" \
 "CMakeFiles/Luddite.dir/src/S_Gui.cpp.o" \
 "CMakeFiles/Luddite.dir/src/S_Hitboxes.cpp.o" \
+"CMakeFiles/Luddite.dir/src/S_Lifetime.cpp.o" \
 "CMakeFiles/Luddite.dir/src/S_LocalPlayerInput.cpp.o" \
 "CMakeFiles/Luddite.dir/src/S_Logging.cpp.o" \
 "CMakeFiles/Luddite.dir/src/S_Motion.cpp.o" \
 "CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.o" \
+"CMakeFiles/Luddite.dir/src/S_PlayerDeterministicInput.cpp.o" \
 "CMakeFiles/Luddite.dir/src/S_Projection.cpp.o" \
 "CMakeFiles/Luddite.dir/src/S_Scripts.cpp.o" \
 "CMakeFiles/Luddite.dir/src/S_TextRendering.cpp.o" \
@@ -1427,6 +1496,7 @@ Luddite_OBJECTS = \
 "CMakeFiles/Luddite.dir/src/System.cpp.o" \
 "CMakeFiles/Luddite.dir/src/Texture.cpp.o" \
 "CMakeFiles/Luddite.dir/src/TextureBatch.cpp.o" \
+"CMakeFiles/Luddite.dir/src/Tilemap.cpp.o" \
 "CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.o" \
 "CMakeFiles/Luddite.dir/src/game.cpp.o" \
 "CMakeFiles/Luddite.dir/src/gason.cpp.o" \
@@ -1509,19 +1579,23 @@ Luddite: CMakeFiles/Luddite.dir/src/R_Font.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/R_Json.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/R_Sound.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/R_Textures.cpp.o
+Luddite: CMakeFiles/Luddite.dir/src/R_Tilemap.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/Renderer.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/S_Ancestry.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/S_Animation.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/S_AnimationBehavior.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/S_Camera.cpp.o
+Luddite: CMakeFiles/Luddite.dir/src/S_CharacterAgnosticAbilities.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/S_Draw.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/S_DrawLevel.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/S_Gui.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/S_Hitboxes.cpp.o
+Luddite: CMakeFiles/Luddite.dir/src/S_Lifetime.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/S_LocalPlayerInput.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/S_Logging.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/S_Motion.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.o
+Luddite: CMakeFiles/Luddite.dir/src/S_PlayerDeterministicInput.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/S_Projection.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/S_Scripts.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/S_TextRendering.cpp.o
@@ -1533,6 +1607,7 @@ Luddite: CMakeFiles/Luddite.dir/src/SpriteBatch.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/System.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/Texture.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/TextureBatch.cpp.o
+Luddite: CMakeFiles/Luddite.dir/src/Tilemap.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/game.cpp.o
 Luddite: CMakeFiles/Luddite.dir/src/gason.cpp.o
@@ -1607,7 +1682,7 @@ Luddite: /usr/lib/x86_64-linux-gnu/libz.so
 Luddite: /usr/lib/x86_64-linux-gnu/libbrotlicommon.so
 Luddite: /usr/lib/x86_64-linux-gnu/libbrotlidec.so
 Luddite: CMakeFiles/Luddite.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Linking CXX executable Luddite"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/evan/Documents/Dev/Games/Luddite/Luddite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Linking CXX executable Luddite"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Luddite.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -10,13 +10,7 @@ end
 
   
 function Idle()
-<<<<<<< Updated upstream
-
-  Print(tostring(Input.button2)))
-  if (Input.button1) then
-=======
   if (Input.button1_press_age <= 10) then
->>>>>>> Stashed changes
     PlayAnimation("Forehand")
   elseif (Input.button2_press_age <= 10) then
     PlayAnimation("Slam")

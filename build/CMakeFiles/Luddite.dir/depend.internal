@@ -48,6 +48,7 @@ CMakeFiles/Luddite.dir/src/Client.cpp.o
  ../include/components/NativeScript.hpp
  ../include/components/Player.hpp
  ../include/components/Simulation.hpp
+ ../include/core/defines.h
  ../include/core/game.hpp
  ../include/core/net.hpp
  ../include/ecs/entity.hpp
@@ -94,6 +95,7 @@ CMakeFiles/Luddite.dir/src/L_CharacterEditor.cpp.o
  ../include/components/Text.hpp
  ../include/components/Texture.hpp
  ../include/core/basic_includes.hpp
+ ../include/core/defines.h
  ../include/core/game.hpp
  ../include/core/types.hpp
  ../include/data/Font.hpp
@@ -146,6 +148,7 @@ CMakeFiles/Luddite.dir/src/L_Game.cpp.o
  ../include/components/GameComponents.hpp
  ../include/components/Gui.hpp
  ../include/components/Hitbox.hpp
+ ../include/components/Lifetime.hpp
  ../include/components/NativeScript.hpp
  ../include/components/Networking.hpp
  ../include/components/Npc.hpp
@@ -160,6 +163,7 @@ CMakeFiles/Luddite.dir/src/L_Game.cpp.o
  ../include/components/Velocity.hpp
  ../include/core/AudioPlayer.hpp
  ../include/core/basic_includes.hpp
+ ../include/core/defines.h
  ../include/core/game.hpp
  ../include/core/net.hpp
  ../include/core/soloudincl.h
@@ -174,6 +178,8 @@ CMakeFiles/Luddite.dir/src/L_Game.cpp.o
  ../include/data/SoundAllocator.hpp
  ../include/data/Texture.hpp
  ../include/data/TextureAllocator.hpp
+ ../include/data/Tilemap.hpp
+ ../include/data/TilemapAllocator.hpp
  ../include/ecs/entity.hpp
  ../include/entt.hpp
  ../include/events/Events.hpp
@@ -224,10 +230,12 @@ CMakeFiles/Luddite.dir/src/L_Game.cpp.o
  ../include/systems/DrawLevel.hpp
  ../include/systems/Gui.hpp
  ../include/systems/Hitboxes.hpp
+ ../include/systems/Lifetime.hpp
  ../include/systems/LocalPlayerInput.hpp
  ../include/systems/Motion.hpp
  ../include/systems/Networking.hpp
  ../include/systems/PlayerController.hpp
+ ../include/systems/PlayerDeterministicInput.hpp
  ../include/systems/Scripts.hpp
  ../include/systems/System.hpp
  ../include/systems/TextRendering.hpp
@@ -240,12 +248,11 @@ CMakeFiles/Luddite.dir/src/L_Game.cpp.o
  /home/evan/Documents/Dev/Games/Luddite/Luddite/src/L_Game.cpp
  /usr/include/soloud/include/soloud.h
  /usr/include/soloud/include/soloud_audiosource.h
- /usr/include/soloud/include/soloud_bassboostfilter.h
  /usr/include/soloud/include/soloud_bus.h
  /usr/include/soloud/include/soloud_error.h
  /usr/include/soloud/include/soloud_fader.h
- /usr/include/soloud/include/soloud_fftfilter.h
  /usr/include/soloud/include/soloud_filter.h
+ /usr/include/soloud/include/soloud_freeverbfilter.h
  /usr/include/soloud/include/soloud_queue.h
  /usr/include/soloud/include/soloud_wav.h
 CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.o
@@ -266,6 +273,7 @@ CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.o
  ../include/components/Tileset.hpp
  ../include/components/Velocity.hpp
  ../include/core/basic_includes.hpp
+ ../include/core/defines.h
  ../include/core/game.hpp
  ../include/core/net.hpp
  ../include/core/types.hpp
@@ -277,6 +285,8 @@ CMakeFiles/Luddite.dir/src/L_MainMenu.cpp.o
  ../include/data/ResourceAllocator.hpp
  ../include/data/Texture.hpp
  ../include/data/TextureAllocator.hpp
+ ../include/data/Tilemap.hpp
+ ../include/data/TilemapAllocator.hpp
  ../include/devtools/CharacterRenderer.hpp
  ../include/ecs/entity.hpp
  ../include/entt.hpp
@@ -390,6 +400,11 @@ CMakeFiles/Luddite.dir/src/R_Textures.cpp.o
  ../include/data/Texture.hpp
  ../include/data/TextureAllocator.hpp
  /home/evan/Documents/Dev/Games/Luddite/Luddite/src/R_Textures.cpp
+CMakeFiles/Luddite.dir/src/R_Tilemap.cpp.o
+ ../include/data/ResourceAllocator.hpp
+ ../include/data/Tilemap.hpp
+ ../include/data/TilemapAllocator.hpp
+ /home/evan/Documents/Dev/Games/Luddite/Luddite/src/R_Tilemap.cpp
 CMakeFiles/Luddite.dir/src/Renderer.cpp.o
  ../include/CheckGLError.hpp
  ../include/data/Assets.hpp
@@ -423,6 +438,7 @@ CMakeFiles/Luddite.dir/src/S_Animation.cpp.o
  ../include/components/GameComponents.hpp
  ../include/components/Gui.hpp
  ../include/components/Hitbox.hpp
+ ../include/components/Lifetime.hpp
  ../include/components/NativeScript.hpp
  ../include/components/Networking.hpp
  ../include/components/Npc.hpp
@@ -436,6 +452,7 @@ CMakeFiles/Luddite.dir/src/S_Animation.cpp.o
  ../include/components/Tileset.hpp
  ../include/components/Velocity.hpp
  ../include/core/AudioPlayer.hpp
+ ../include/core/defines.h
  ../include/core/net.hpp
  ../include/core/soloudincl.h
  ../include/data/Assets.hpp
@@ -446,6 +463,8 @@ CMakeFiles/Luddite.dir/src/S_Animation.cpp.o
  ../include/data/SoundAllocator.hpp
  ../include/data/Texture.hpp
  ../include/data/TextureAllocator.hpp
+ ../include/data/Tilemap.hpp
+ ../include/data/TilemapAllocator.hpp
  ../include/ecs/entity.hpp
  ../include/entt.hpp
  ../include/events/Events.hpp
@@ -484,12 +503,11 @@ CMakeFiles/Luddite.dir/src/S_Animation.cpp.o
  /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Animation.cpp
  /usr/include/soloud/include/soloud.h
  /usr/include/soloud/include/soloud_audiosource.h
- /usr/include/soloud/include/soloud_bassboostfilter.h
  /usr/include/soloud/include/soloud_bus.h
  /usr/include/soloud/include/soloud_error.h
  /usr/include/soloud/include/soloud_fader.h
- /usr/include/soloud/include/soloud_fftfilter.h
  /usr/include/soloud/include/soloud_filter.h
+ /usr/include/soloud/include/soloud_freeverbfilter.h
  /usr/include/soloud/include/soloud_queue.h
  /usr/include/soloud/include/soloud_wav.h
 CMakeFiles/Luddite.dir/src/S_AnimationBehavior.cpp.o
@@ -514,6 +532,7 @@ CMakeFiles/Luddite.dir/src/S_Camera.cpp.o
  ../include/components/GameComponents.hpp
  ../include/components/Gui.hpp
  ../include/components/Hitbox.hpp
+ ../include/components/Lifetime.hpp
  ../include/components/NativeScript.hpp
  ../include/components/Networking.hpp
  ../include/components/Npc.hpp
@@ -526,12 +545,15 @@ CMakeFiles/Luddite.dir/src/S_Camera.cpp.o
  ../include/components/Texture.hpp
  ../include/components/Tileset.hpp
  ../include/components/Velocity.hpp
+ ../include/core/defines.h
  ../include/core/game.hpp
  ../include/core/net.hpp
  ../include/data/Json.hpp
  ../include/data/JsonAllocator.hpp
  ../include/data/ResourceAllocator.hpp
  ../include/data/Texture.hpp
+ ../include/data/Tilemap.hpp
+ ../include/data/TilemapAllocator.hpp
  ../include/ecs/entity.hpp
  ../include/entt.hpp
  ../include/events/Events.hpp
@@ -573,13 +595,80 @@ CMakeFiles/Luddite.dir/src/S_Camera.cpp.o
  ../include/systems/Camera.hpp
  ../include/systems/System.hpp
  /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Camera.cpp
+CMakeFiles/Luddite.dir/src/S_CharacterAgnosticAbilities.cpp.o
+ ../include/components/Ancestry.hpp
+ ../include/components/Animation.hpp
+ ../include/components/AnimationBehavior.hpp
+ ../include/components/Camera.hpp
+ ../include/components/CircleCollider.hpp
+ ../include/components/Drag.hpp
+ ../include/components/DrawLayer.hpp
+ ../include/components/GameComponents.hpp
+ ../include/components/Gui.hpp
+ ../include/components/Hitbox.hpp
+ ../include/components/Lifetime.hpp
+ ../include/components/NativeScript.hpp
+ ../include/components/Networking.hpp
+ ../include/components/Npc.hpp
+ ../include/components/Player.hpp
+ ../include/components/PlayerKeymap.hpp
+ ../include/components/Position.hpp
+ ../include/components/Simulation.hpp
+ ../include/components/Size.hpp
+ ../include/components/Team.hpp
+ ../include/components/Texture.hpp
+ ../include/components/Tileset.hpp
+ ../include/components/Velocity.hpp
+ ../include/core/defines.h
+ ../include/core/net.hpp
+ ../include/data/Json.hpp
+ ../include/data/JsonAllocator.hpp
+ ../include/data/ResourceAllocator.hpp
+ ../include/data/Texture.hpp
+ ../include/data/Tilemap.hpp
+ ../include/data/TilemapAllocator.hpp
+ ../include/ecs/entity.hpp
+ ../include/entt.hpp
+ ../include/events/Events.hpp
+ ../include/events/Logging.hpp
+ ../include/gason.hpp
+ ../include/gui/constraints.hpp
+ ../include/kiwi/AssocVector.h
+ ../include/kiwi/constraint.h
+ ../include/kiwi/debug.h
+ ../include/kiwi/errors.h
+ ../include/kiwi/expression.h
+ ../include/kiwi/kiwi.h
+ ../include/kiwi/maptype.h
+ ../include/kiwi/row.h
+ ../include/kiwi/shareddata.h
+ ../include/kiwi/solver.h
+ ../include/kiwi/solverimpl.h
+ ../include/kiwi/strength.h
+ ../include/kiwi/symbol.h
+ ../include/kiwi/symbolics.h
+ ../include/kiwi/term.h
+ ../include/kiwi/util.h
+ ../include/kiwi/variable.h
+ ../include/kiwi/version.h
+ ../include/layers/Layer.hpp
+ ../include/net/client.hpp
+ ../include/net/common.hpp
+ ../include/net/message.hpp
+ ../include/net/server.hpp
+ ../include/systems/CharacterAgnosticAbilities.hpp
+ ../include/systems/System.hpp
+ /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_CharacterAgnosticAbilities.cpp
 CMakeFiles/Luddite.dir/src/S_Draw.cpp.o
  ../include/components/DrawLayer.hpp
  ../include/components/Position.hpp
  ../include/components/Size.hpp
  ../include/components/Texture.hpp
  ../include/components/Tileset.hpp
+ ../include/data/ResourceAllocator.hpp
  ../include/data/Texture.hpp
+ ../include/data/Tilemap.hpp
+ ../include/data/TilemapAllocator.hpp
  ../include/entt.hpp
  ../include/level/LevelGenerator.hpp
  ../include/rendering/Batch.hpp
@@ -659,6 +748,7 @@ CMakeFiles/Luddite.dir/src/S_Hitboxes.cpp.o
  ../include/components/GameComponents.hpp
  ../include/components/Gui.hpp
  ../include/components/Hitbox.hpp
+ ../include/components/Lifetime.hpp
  ../include/components/NativeScript.hpp
  ../include/components/Networking.hpp
  ../include/components/Npc.hpp
@@ -672,6 +762,7 @@ CMakeFiles/Luddite.dir/src/S_Hitboxes.cpp.o
  ../include/components/Tileset.hpp
  ../include/components/Velocity.hpp
  ../include/core/AudioPlayer.hpp
+ ../include/core/defines.h
  ../include/core/net.hpp
  ../include/core/soloudincl.h
  ../include/data/Assets.hpp
@@ -681,6 +772,8 @@ CMakeFiles/Luddite.dir/src/S_Hitboxes.cpp.o
  ../include/data/Sound.hpp
  ../include/data/SoundAllocator.hpp
  ../include/data/Texture.hpp
+ ../include/data/Tilemap.hpp
+ ../include/data/TilemapAllocator.hpp
  ../include/ecs/entity.hpp
  ../include/entt.hpp
  ../include/events/Events.hpp
@@ -716,20 +809,84 @@ CMakeFiles/Luddite.dir/src/S_Hitboxes.cpp.o
  /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Hitboxes.cpp
  /usr/include/soloud/include/soloud.h
  /usr/include/soloud/include/soloud_audiosource.h
- /usr/include/soloud/include/soloud_bassboostfilter.h
  /usr/include/soloud/include/soloud_bus.h
  /usr/include/soloud/include/soloud_error.h
  /usr/include/soloud/include/soloud_fader.h
- /usr/include/soloud/include/soloud_fftfilter.h
  /usr/include/soloud/include/soloud_filter.h
+ /usr/include/soloud/include/soloud_freeverbfilter.h
  /usr/include/soloud/include/soloud_queue.h
  /usr/include/soloud/include/soloud_wav.h
+CMakeFiles/Luddite.dir/src/S_Lifetime.cpp.o
+ ../include/components/Ancestry.hpp
+ ../include/components/Animation.hpp
+ ../include/components/AnimationBehavior.hpp
+ ../include/components/Camera.hpp
+ ../include/components/CircleCollider.hpp
+ ../include/components/Drag.hpp
+ ../include/components/DrawLayer.hpp
+ ../include/components/GameComponents.hpp
+ ../include/components/Gui.hpp
+ ../include/components/Hitbox.hpp
+ ../include/components/Lifetime.hpp
+ ../include/components/NativeScript.hpp
+ ../include/components/Networking.hpp
+ ../include/components/Npc.hpp
+ ../include/components/Player.hpp
+ ../include/components/PlayerKeymap.hpp
+ ../include/components/Position.hpp
+ ../include/components/Simulation.hpp
+ ../include/components/Size.hpp
+ ../include/components/Team.hpp
+ ../include/components/Texture.hpp
+ ../include/components/Tileset.hpp
+ ../include/components/Velocity.hpp
+ ../include/core/defines.h
+ ../include/core/net.hpp
+ ../include/data/Json.hpp
+ ../include/data/JsonAllocator.hpp
+ ../include/data/ResourceAllocator.hpp
+ ../include/data/Texture.hpp
+ ../include/data/Tilemap.hpp
+ ../include/data/TilemapAllocator.hpp
+ ../include/ecs/entity.hpp
+ ../include/entt.hpp
+ ../include/events/Events.hpp
+ ../include/events/Logging.hpp
+ ../include/gason.hpp
+ ../include/gui/constraints.hpp
+ ../include/kiwi/AssocVector.h
+ ../include/kiwi/constraint.h
+ ../include/kiwi/debug.h
+ ../include/kiwi/errors.h
+ ../include/kiwi/expression.h
+ ../include/kiwi/kiwi.h
+ ../include/kiwi/maptype.h
+ ../include/kiwi/row.h
+ ../include/kiwi/shareddata.h
+ ../include/kiwi/solver.h
+ ../include/kiwi/solverimpl.h
+ ../include/kiwi/strength.h
+ ../include/kiwi/symbol.h
+ ../include/kiwi/symbolics.h
+ ../include/kiwi/term.h
+ ../include/kiwi/util.h
+ ../include/kiwi/variable.h
+ ../include/kiwi/version.h
+ ../include/layers/Layer.hpp
+ ../include/net/client.hpp
+ ../include/net/common.hpp
+ ../include/net/message.hpp
+ ../include/net/server.hpp
+ ../include/systems/Lifetime.hpp
+ ../include/systems/System.hpp
+ /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Lifetime.cpp
 CMakeFiles/Luddite.dir/src/S_LocalPlayerInput.cpp.o
  ../include/components/NativeScript.hpp
  ../include/components/Player.hpp
  ../include/components/PlayerKeymap.hpp
  ../include/components/Position.hpp
  ../include/components/Size.hpp
+ ../include/core/defines.h
  ../include/core/game.hpp
  ../include/ecs/entity.hpp
  ../include/entt.hpp
@@ -765,24 +922,134 @@ CMakeFiles/Luddite.dir/src/S_Motion.cpp.o
  ../include/systems/System.hpp
  /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Motion.cpp
 CMakeFiles/Luddite.dir/src/S_PlayerController.cpp.o
+ ../include/components/Ancestry.hpp
+ ../include/components/Animation.hpp
  ../include/components/AnimationBehavior.hpp
+ ../include/components/Camera.hpp
+ ../include/components/CircleCollider.hpp
+ ../include/components/Drag.hpp
+ ../include/components/DrawLayer.hpp
+ ../include/components/GameComponents.hpp
+ ../include/components/Gui.hpp
+ ../include/components/Hitbox.hpp
+ ../include/components/Lifetime.hpp
  ../include/components/NativeScript.hpp
+ ../include/components/Networking.hpp
+ ../include/components/Npc.hpp
  ../include/components/Player.hpp
  ../include/components/PlayerKeymap.hpp
  ../include/components/Position.hpp
+ ../include/components/Simulation.hpp
+ ../include/components/Size.hpp
+ ../include/components/Team.hpp
+ ../include/components/Texture.hpp
+ ../include/components/Tileset.hpp
  ../include/components/Velocity.hpp
+ ../include/core/defines.h
+ ../include/core/net.hpp
  ../include/data/Json.hpp
  ../include/data/JsonAllocator.hpp
  ../include/data/ResourceAllocator.hpp
+ ../include/data/Texture.hpp
+ ../include/data/Tilemap.hpp
+ ../include/data/TilemapAllocator.hpp
  ../include/ecs/entity.hpp
  ../include/entt.hpp
  ../include/events/Events.hpp
  ../include/events/Input.hpp
+ ../include/events/Logging.hpp
  ../include/gason.hpp
+ ../include/gui/constraints.hpp
+ ../include/kiwi/AssocVector.h
+ ../include/kiwi/constraint.h
+ ../include/kiwi/debug.h
+ ../include/kiwi/errors.h
+ ../include/kiwi/expression.h
+ ../include/kiwi/kiwi.h
+ ../include/kiwi/maptype.h
+ ../include/kiwi/row.h
+ ../include/kiwi/shareddata.h
+ ../include/kiwi/solver.h
+ ../include/kiwi/solverimpl.h
+ ../include/kiwi/strength.h
+ ../include/kiwi/symbol.h
+ ../include/kiwi/symbolics.h
+ ../include/kiwi/term.h
+ ../include/kiwi/util.h
+ ../include/kiwi/variable.h
+ ../include/kiwi/version.h
  ../include/layers/Layer.hpp
+ ../include/net/client.hpp
+ ../include/net/common.hpp
+ ../include/net/message.hpp
+ ../include/net/server.hpp
  ../include/systems/PlayerController.hpp
  ../include/systems/System.hpp
  /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_PlayerController.cpp
+CMakeFiles/Luddite.dir/src/S_PlayerDeterministicInput.cpp.o
+ ../include/components/Ancestry.hpp
+ ../include/components/Animation.hpp
+ ../include/components/AnimationBehavior.hpp
+ ../include/components/Camera.hpp
+ ../include/components/CircleCollider.hpp
+ ../include/components/Drag.hpp
+ ../include/components/DrawLayer.hpp
+ ../include/components/GameComponents.hpp
+ ../include/components/Gui.hpp
+ ../include/components/Hitbox.hpp
+ ../include/components/Lifetime.hpp
+ ../include/components/NativeScript.hpp
+ ../include/components/Networking.hpp
+ ../include/components/Npc.hpp
+ ../include/components/Player.hpp
+ ../include/components/PlayerKeymap.hpp
+ ../include/components/Position.hpp
+ ../include/components/Simulation.hpp
+ ../include/components/Size.hpp
+ ../include/components/Team.hpp
+ ../include/components/Texture.hpp
+ ../include/components/Tileset.hpp
+ ../include/components/Velocity.hpp
+ ../include/core/defines.h
+ ../include/core/net.hpp
+ ../include/data/Json.hpp
+ ../include/data/JsonAllocator.hpp
+ ../include/data/ResourceAllocator.hpp
+ ../include/data/Texture.hpp
+ ../include/data/Tilemap.hpp
+ ../include/data/TilemapAllocator.hpp
+ ../include/ecs/entity.hpp
+ ../include/entt.hpp
+ ../include/events/Events.hpp
+ ../include/events/Logging.hpp
+ ../include/gason.hpp
+ ../include/gui/constraints.hpp
+ ../include/kiwi/AssocVector.h
+ ../include/kiwi/constraint.h
+ ../include/kiwi/debug.h
+ ../include/kiwi/errors.h
+ ../include/kiwi/expression.h
+ ../include/kiwi/kiwi.h
+ ../include/kiwi/maptype.h
+ ../include/kiwi/row.h
+ ../include/kiwi/shareddata.h
+ ../include/kiwi/solver.h
+ ../include/kiwi/solverimpl.h
+ ../include/kiwi/strength.h
+ ../include/kiwi/symbol.h
+ ../include/kiwi/symbolics.h
+ ../include/kiwi/term.h
+ ../include/kiwi/util.h
+ ../include/kiwi/variable.h
+ ../include/kiwi/version.h
+ ../include/layers/Layer.hpp
+ ../include/net/client.hpp
+ ../include/net/common.hpp
+ ../include/net/message.hpp
+ ../include/net/server.hpp
+ ../include/systems/PlayerDeterministicInput.hpp
+ ../include/systems/System.hpp
+ /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_PlayerDeterministicInput.cpp
 CMakeFiles/Luddite.dir/src/S_Projection.cpp.o
  ../include/entt.hpp
  ../include/events/Events.hpp
@@ -835,10 +1102,66 @@ CMakeFiles/Luddite.dir/src/S_TextRendering.cpp.o
  ../include/systems/TextRendering.hpp
  /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_TextRendering.cpp
 CMakeFiles/Luddite.dir/src/S_Tileset.cpp.o
+ ../include/components/Ancestry.hpp
+ ../include/components/Animation.hpp
+ ../include/components/AnimationBehavior.hpp
+ ../include/components/Camera.hpp
+ ../include/components/CircleCollider.hpp
+ ../include/components/Drag.hpp
+ ../include/components/DrawLayer.hpp
+ ../include/components/GameComponents.hpp
+ ../include/components/Gui.hpp
+ ../include/components/Hitbox.hpp
+ ../include/components/Lifetime.hpp
+ ../include/components/NativeScript.hpp
+ ../include/components/Networking.hpp
+ ../include/components/Npc.hpp
+ ../include/components/Player.hpp
+ ../include/components/PlayerKeymap.hpp
+ ../include/components/Position.hpp
+ ../include/components/Simulation.hpp
+ ../include/components/Size.hpp
+ ../include/components/Team.hpp
  ../include/components/Texture.hpp
  ../include/components/Tileset.hpp
+ ../include/components/Velocity.hpp
+ ../include/core/defines.h
+ ../include/core/net.hpp
+ ../include/data/Json.hpp
+ ../include/data/JsonAllocator.hpp
+ ../include/data/ResourceAllocator.hpp
  ../include/data/Texture.hpp
+ ../include/data/Tilemap.hpp
+ ../include/data/TilemapAllocator.hpp
+ ../include/ecs/entity.hpp
  ../include/entt.hpp
+ ../include/events/Events.hpp
+ ../include/events/Logging.hpp
+ ../include/gason.hpp
+ ../include/gui/constraints.hpp
+ ../include/kiwi/AssocVector.h
+ ../include/kiwi/constraint.h
+ ../include/kiwi/debug.h
+ ../include/kiwi/errors.h
+ ../include/kiwi/expression.h
+ ../include/kiwi/kiwi.h
+ ../include/kiwi/maptype.h
+ ../include/kiwi/row.h
+ ../include/kiwi/shareddata.h
+ ../include/kiwi/solver.h
+ ../include/kiwi/solverimpl.h
+ ../include/kiwi/strength.h
+ ../include/kiwi/symbol.h
+ ../include/kiwi/symbolics.h
+ ../include/kiwi/term.h
+ ../include/kiwi/util.h
+ ../include/kiwi/variable.h
+ ../include/kiwi/version.h
+ ../include/layers/Layer.hpp
+ ../include/net/client.hpp
+ ../include/net/common.hpp
+ ../include/net/message.hpp
+ ../include/net/server.hpp
  ../include/systems/System.hpp
  ../include/systems/Tileset.hpp
  /home/evan/Documents/Dev/Games/Luddite/Luddite/src/S_Tileset.cpp
@@ -853,6 +1176,7 @@ CMakeFiles/Luddite.dir/src/S_TransformLerp.cpp.o
  ../include/components/GameComponents.hpp
  ../include/components/Gui.hpp
  ../include/components/Hitbox.hpp
+ ../include/components/Lifetime.hpp
  ../include/components/NativeScript.hpp
  ../include/components/Networking.hpp
  ../include/components/Npc.hpp
@@ -865,11 +1189,14 @@ CMakeFiles/Luddite.dir/src/S_TransformLerp.cpp.o
  ../include/components/Texture.hpp
  ../include/components/Tileset.hpp
  ../include/components/Velocity.hpp
+ ../include/core/defines.h
  ../include/core/net.hpp
  ../include/data/Json.hpp
  ../include/data/JsonAllocator.hpp
  ../include/data/ResourceAllocator.hpp
  ../include/data/Texture.hpp
+ ../include/data/Tilemap.hpp
+ ../include/data/TilemapAllocator.hpp
  ../include/ecs/entity.hpp
  ../include/entt.hpp
  ../include/events/Events.hpp
@@ -913,6 +1240,7 @@ CMakeFiles/Luddite.dir/src/S_Trauma.cpp.o
  ../include/components/GameComponents.hpp
  ../include/components/Gui.hpp
  ../include/components/Hitbox.hpp
+ ../include/components/Lifetime.hpp
  ../include/components/NativeScript.hpp
  ../include/components/Networking.hpp
  ../include/components/Npc.hpp
@@ -925,11 +1253,14 @@ CMakeFiles/Luddite.dir/src/S_Trauma.cpp.o
  ../include/components/Texture.hpp
  ../include/components/Tileset.hpp
  ../include/components/Velocity.hpp
+ ../include/core/defines.h
  ../include/core/net.hpp
  ../include/data/Json.hpp
  ../include/data/JsonAllocator.hpp
  ../include/data/ResourceAllocator.hpp
  ../include/data/Texture.hpp
+ ../include/data/Tilemap.hpp
+ ../include/data/TilemapAllocator.hpp
  ../include/ecs/entity.hpp
  ../include/entt.hpp
  ../include/events/Events.hpp
@@ -967,6 +1298,7 @@ CMakeFiles/Luddite.dir/src/Server.cpp.o
  ../include/components/NativeScript.hpp
  ../include/components/Player.hpp
  ../include/components/Simulation.hpp
+ ../include/core/defines.h
  ../include/core/net.hpp
  ../include/ecs/entity.hpp
  ../include/entt.hpp
@@ -1001,8 +1333,12 @@ CMakeFiles/Luddite.dir/src/TextureBatch.cpp.o
  ../include/rendering/TextureBatch.hpp
  ../include/rendering/loadShader.hpp
  /home/evan/Documents/Dev/Games/Luddite/Luddite/src/TextureBatch.cpp
+CMakeFiles/Luddite.dir/src/Tilemap.cpp.o
+ ../include/data/Tilemap.hpp
+ /home/evan/Documents/Dev/Games/Luddite/Luddite/src/Tilemap.cpp
 CMakeFiles/Luddite.dir/src/devtools/CharacterRenderer.cpp.o
  ../include/OBJ_Loader.h
+ ../include/core/defines.h
  ../include/data/Json.hpp
  ../include/data/JsonAllocator.hpp
  ../include/data/ResourceAllocator.hpp
@@ -1064,6 +1400,7 @@ CMakeFiles/Luddite.dir/src/main.cpp.o
  ../include/OBJ_Loader.h
  ../include/core/AudioPlayer.hpp
  ../include/core/basic_includes.hpp
+ ../include/core/defines.h
  ../include/core/game.hpp
  ../include/core/soloudincl.h
  ../include/core/types.hpp
@@ -1092,12 +1429,11 @@ CMakeFiles/Luddite.dir/src/main.cpp.o
  /home/evan/Documents/Dev/Games/Luddite/Luddite/src/main.cpp
  /usr/include/soloud/include/soloud.h
  /usr/include/soloud/include/soloud_audiosource.h
- /usr/include/soloud/include/soloud_bassboostfilter.h
  /usr/include/soloud/include/soloud_bus.h
  /usr/include/soloud/include/soloud_error.h
  /usr/include/soloud/include/soloud_fader.h
- /usr/include/soloud/include/soloud_fftfilter.h
  /usr/include/soloud/include/soloud_filter.h
+ /usr/include/soloud/include/soloud_freeverbfilter.h
  /usr/include/soloud/include/soloud_queue.h
  /usr/include/soloud/include/soloud_wav.h
 CMakeFiles/Luddite.dir/src/shader.cpp.o
@@ -1597,6 +1933,7 @@ CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.o
  ../include/components/GameComponents.hpp
  ../include/components/Gui.hpp
  ../include/components/Hitbox.hpp
+ ../include/components/Lifetime.hpp
  ../include/components/NativeScript.hpp
  ../include/components/Networking.hpp
  ../include/components/Npc.hpp
@@ -1610,6 +1947,7 @@ CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.o
  ../include/components/Tileset.hpp
  ../include/components/Velocity.hpp
  ../include/core/basic_includes.hpp
+ ../include/core/defines.h
  ../include/core/game.hpp
  ../include/core/net.hpp
  ../include/core/types.hpp
@@ -1621,6 +1959,8 @@ CMakeFiles/Luddite.dir/src/utils/Spawning.cpp.o
  ../include/data/ResourceAllocator.hpp
  ../include/data/Texture.hpp
  ../include/data/TextureAllocator.hpp
+ ../include/data/Tilemap.hpp
+ ../include/data/TilemapAllocator.hpp
  ../include/ecs/entity.hpp
  ../include/entt.hpp
  ../include/events/Events.hpp

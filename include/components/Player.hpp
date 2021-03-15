@@ -20,7 +20,7 @@ struct C_Player
         float trauma = 0.f;
         struct State
         {
-                uint32_t dash_timer;
+                uint32_t dash_timer = 0;
         } state;
 };
 

@@ -114,6 +114,7 @@ int main(int argc, char *argv[])
                 double current_time = glfwGetTime();
 
 
+                // double max_fps = 60;
                 double max_fps = 165;
                 double min_frame_time = 1.0f / (double)max_fps;
                 std::cout << "min frame time: " << min_frame_time << std::endl;

@@ -30,11 +30,14 @@ void clone_registry(const entt::registry &from, entt::registry &to)
         // to.clear<Ts...>();
 
         // destroy all the enitities in the registry to clone to
-        to.each([&to](auto entity) {
-                        to.destroy(entity);
-                });
+        const auto *to_data = to.data();
+        const auto to_size = to.size();
+        to.destroy(to_data, to_data + to_size);
+        // to.each([&to](auto entity) {
+        //                 to.destroy(entity);
+        //         });
 
-        //assign all the entities that are going to be clonedZ
+        //assign all the entities that are going to be cloned
         const auto *from_data = from.data();
         const auto from_size = from.size();
         to.assign(from_data, from_data + from_size, entt::null);

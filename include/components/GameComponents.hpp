@@ -20,3 +20,4 @@
 #include "components/Team.hpp"
 #include "components/Camera.hpp"
 #include "components/Npc.hpp"
+#include "components/Lifetime.hpp"

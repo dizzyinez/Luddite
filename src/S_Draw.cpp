@@ -36,7 +36,7 @@ void S_Draw::update(float alpha, entt::registry &reg)
         //vector of vector of pairs of entities and their depth positions
         std::vector<std::vector<std::pair<int, entt::entity> > > v(static_cast<int8_t>(DrawLayer::count));
 
-        reg.group<C_DrawLayer>(entt::get<C_Position, C_Size>).each([&v, &reg, alpha](auto entity, C_DrawLayer& drawLayer, auto& pos, auto& size) {
+        reg.group<C_DrawLayer>(entt::get<C_Position, C_Size>).each([&v, &reg, alpha](auto entity, C_DrawLayer& drawLayer, const auto& pos, const auto& size) {
                 int depth = 0;
                 if (drawLayer.layer == DrawLayer::sprite)
                         depth = pos.getY();
@@ -68,8 +68,8 @@ void S_Draw::update(float alpha, entt::registry &reg)
 
                 for (pair = layer->begin(); pair != layer->end(); ++pair)
                 {
-                        glm::vec3 &object_position = reg.get<C_Position>(pair->second).position;
-                        glm::vec2 &object_size = reg.get<C_Size>(pair->second).size;
+                        glm::vec3 object_position = reg.get<C_Position>(pair->second).position;
+                        glm::vec2 object_size = reg.get<C_Size>(pair->second).size;
                         // const auto [pos, size] = reg.get<C_Position, C_Size>(pair->second);
                         if (reg.has<C_Texture>(pair->second))
                         {

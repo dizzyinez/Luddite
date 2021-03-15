@@ -16,6 +16,7 @@
 #include "systems/Gui.hpp"
 #include "systems/Animation.hpp"
 #include "systems/Tileset.hpp"
+#include "systems/Lifetime.hpp"
 
 #include "systems/DrawLevel.hpp"
 #include "systems/Camera.hpp"
@@ -51,6 +52,7 @@ void L_Game::init()
 {
         systems.add<S_Motion,
                     S_Ancestry,
+                    S_Lifetime,
                     S_Transform_Lerp,
                     S_Gui_Input,
                     S_Gui,
@@ -230,12 +232,14 @@ void L_Game::update(float deltaTime)
 
         sf.index++;
         CopyRenderingComponents(m_Registry, lerp_frame);
+        // CopyGameState(m_Registry, lerp_frame);
         // CopyRenderingComponents(sf.frame_array.at(0), lerp_frame);
 }
 
 void L_Game::Step(float deltaTime, entt::registry& reg)
 {
-        systems.update<S_Gui,
+        systems.update<S_Lifetime,
+                       S_Gui,
                        S_PlayerDeterministicInput,
                        S_Animation,
                        S_PlayerController,
@@ -250,7 +254,6 @@ void L_Game::Step(float deltaTime, entt::registry& reg)
 
 void L_Game::render(float alpha, float deltaTime)
 {
-        // LevelRenderer::Render();
         systems.update<S_Transform_Lerp> (last_frame, m_Registry, lerp_frame, alpha);
         systems.update<S_Tilemap>(alpha, lerp_frame);
         systems.update<S_Text_Rendering>(alpha, lerp_frame);
@@ -300,7 +303,7 @@ void L_Game::CopyInputs(entt::registry& from, entt::registry& to, bool overwrite
 }
 void L_Game::CopyRenderingComponents(entt::registry& from, entt::registry& to)
 {
-        utils::clone_registry<C_Position,
+        utils::copy_registry<C_Position,
                               C_Player,
                               C_DrawLayer,
                               C_Size,

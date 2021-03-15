@@ -14825,6 +14825,7 @@ class basic_registry {
     }
 
 public:
+
     /*! @brief Underlying entity identifier. */
     using entity_type = Entity;
     /*! @brief Underlying version type. */
@@ -14842,6 +14843,13 @@ public:
 
     /*! @brief Default move assignment operator. @return This registry. */
     basic_registry & operator=(basic_registry &&) = default;
+
+
+    // _set_version(const entity_type entity, const version_type version)
+    // {
+    //     const auto entt = to_integral(entity) & traits_type::entity_mask;
+    //     entities[entt]
+    // }
 
     /**
      * @brief Prepares a pool for the given type if required.
